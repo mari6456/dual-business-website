@@ -1,23 +1,59 @@
+import { useState, useEffect, useCallback } from "react";
 import { Link } from "wouter";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { PHOTOS, IMAGES } from "@/lib/images";
 import { newsData } from "@/lib/newsData";
 
+const HERO_SLIDES = [
+  { src: PHOTOS.team.laughing, alt: "UNFRAME チーム" },
+  { src: PHOTOS.white.portrait, alt: "UNFRAME ビューティー" },
+  { src: PHOTOS.team.group5, alt: "UNFRAME AI研修" },
+];
+
 export default function Home() {
   useScrollReveal();
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const nextSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(nextSlide, 5000);
+    return () => clearInterval(timer);
+  }, [nextSlide]);
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
+      {/* Hero Section - Slideshow */}
       <section className="relative min-h-screen flex items-center">
         <div className="absolute inset-0">
-          <img
-            src={PHOTOS.team.laughing}
-            alt="UNFRAME チーム"
-            className="w-full h-full object-cover object-center"
-          />
+          {HERO_SLIDES.map((slide, index) => (
+            <img
+              key={index}
+              src={slide.src}
+              alt={slide.alt}
+              className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-[1500ms] ease-in-out ${
+                index === currentSlide ? "opacity-100" : "opacity-0"
+              }`}
+            />
+          ))}
           <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/60 to-transparent lg:from-white/80 lg:via-white/40" />
+        </div>
+
+        {/* Slide indicators */}
+        <div className="absolute bottom-8 right-8 z-20 flex gap-2">
+          {HERO_SLIDES.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-8 h-[2px] transition-all duration-500 ${
+                index === currentSlide ? "bg-charcoal w-12" : "bg-charcoal/20"
+              }`}
+              aria-label={`スライド ${index + 1}`}
+            />
+          ))}
         </div>
 
         <div className="container relative z-10 pt-24">

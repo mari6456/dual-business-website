@@ -15,7 +15,7 @@ export default function Cosmetics() {
       {/* Hero */}
       <section className="relative h-[70vh] lg:h-[80vh] flex items-end">
         <div className="absolute inset-0">
-          <img src={PHOTOS.white.hero} alt="化粧品事業" className="w-full h-full object-cover object-center" />
+          <img src={PHOTOS.white.portrait} alt="化粧品事業" className="w-full h-full object-cover object-top" />
           <div className="absolute inset-0 bg-gradient-to-t from-white via-white/50 to-transparent" />
         </div>
         <div className="container relative z-10 pb-16 lg:pb-24">
