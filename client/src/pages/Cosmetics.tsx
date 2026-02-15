@@ -11,7 +11,7 @@ export default function Cosmetics() {
       {/* Hero */}
       <section className="relative h-[70vh] lg:h-[80vh] flex items-end">
         <div className="absolute inset-0">
-          <img src={PHOTOS.white.gallery4} alt="化粧品事業" className="w-full h-full object-cover object-top" />
+          <img src={PHOTOS.white.hero} alt="化粧品事業" className="w-full h-full object-cover object-center" />
           <div className="absolute inset-0 bg-gradient-to-t from-white via-white/50 to-transparent" />
         </div>
         <div className="container relative z-10 pb-16 lg:pb-24">
@@ -29,7 +29,7 @@ export default function Cosmetics() {
               <p className="section-label mb-6">Background</p>
               <h2 className="text-3xl lg:text-4xl mb-8" style={{ fontFamily: "var(--font-heading)" }}>10年以上の<br />化粧品業界経験</h2>
               <p className="text-sm text-foreground/60 leading-[2] mb-6">
-                株式会社コーセー、花王グループ（株）エキップにて、10ブランド以上、130商品以上の企画開発に携わりました。日本・中国・インド市場、百貨店からドラッグストアまで幅広い流通チャネルを担当し、ブランドの芯を形にする力を培いました。
+                大手化粧品メーカー2社にて、10ブランド以上、130商品以上の企画開発に携わりました。日本・中国・インド市場、百貨店からドラッグストアまで幅広い流通チャネルを担当し、ブランドの芯を形にする力を培いました。
               </p>
               <p className="text-sm text-foreground/60 leading-[2]">
                 独立後は5ブランドを支援し、新商品開発に20品以上携わるとともに、新規ブランド立ち上げ2件を実現しています。
@@ -132,10 +132,10 @@ export default function Cosmetics() {
           </div>
           <div className="space-y-0 stagger-children">
             {[
-              { name: "コスメフェリーチェ（株）", category: "ヘアケア・スキンケア" },
-              { name: "（株）ナハト", category: "美容ブランド" },
-              { name: "（株）FURUNO", category: "美容家電" },
-              { name: "ハナサク（株）", category: "他業種からの参入" },
+              { name: "化粧品メーカー系企業", category: "ヘアケア・スキンケア" },
+              { name: "広告会社", category: "美容ブランド" },
+              { name: "美容家電メーカー", category: "美容家電" },
+              { name: "他業種からの新規参入企業", category: "他業種からの参入" },
               { name: "美容サロン専売ブランド", category: "サロン専売品" },
             ].map((b) => (
               <div key={b.name} className="fade-in-up flex items-center justify-between py-5 border-b border-foreground/10">

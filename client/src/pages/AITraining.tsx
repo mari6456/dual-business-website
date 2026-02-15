@@ -11,7 +11,7 @@ export default function AITraining() {
       {/* Hero */}
       <section className="relative h-[70vh] lg:h-[80vh] flex items-end">
         <div className="absolute inset-0">
-          <img src={PHOTOS.suit.hero} alt="AI研修事業" className="w-full h-full object-cover object-top" />
+          <img src={PHOTOS.suit.gallery7} alt="AI研修事業" className="w-full h-full object-cover object-center" />
           <div className="absolute inset-0 bg-gradient-to-t from-white via-white/50 to-transparent" />
         </div>
         <div className="container relative z-10 pb-16 lg:pb-24">
@@ -36,7 +36,7 @@ export default function AITraining() {
               </p>
             </div>
             <div className="image-reveal fade-in-up">
-              <img src={PHOTOS.suit.portrait} alt="AI研修" className="w-full aspect-[4/3] object-cover object-top" />
+              <img src={PHOTOS.suit.gallery5} alt="AI研修" className="w-full aspect-[4/3] object-cover object-center" />
             </div>
           </div>
         </div>
