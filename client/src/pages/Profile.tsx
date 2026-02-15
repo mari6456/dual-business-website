@@ -47,7 +47,7 @@ export default function Profile() {
             <div className="space-y-12 stagger-children">
               <div className="fade-in-up border-l-2 border-rose-gold/30 pl-8">
                 <p className="text-xs text-rose-gold tracking-wider mb-2" style={{ fontFamily: "var(--font-sub)" }}>Corporate Career</p>
-                <h3 className="text-xl mb-4" style={{ fontFamily: "var(--font-heading)" }}>株式会社コーセー・エキップ</h3>
+                <h3 className="text-xl mb-4" style={{ fontFamily: "var(--font-heading)" }}>大手化粧品メーカー（2社）</h3>
                 <p className="text-sm text-foreground/60 leading-[2]">
                   約10年間、化粧品の商品企画〜開発〜マーケティング〜ブランディングまでを一貫して担当。日本・中国・インド市場、百貨店からドラッグストアまで幅広い流通チャネルを担当し、ブランドの芯を形にする力を培う。10ブランド以上、130商品以上の企画開発に携わる。
                 </p>
@@ -68,7 +68,7 @@ export default function Profile() {
                   独立後、5ブランドを支援（ヘアケア・スキンケア・美容家電・他業種からの参入・美容サロン専売）。新商品開発に20品以上携わり、新規ブランド立ち上げ2件を実現。市場リサーチ〜コンセプト企画・処方提案〜製造まで一貫支援。
                 </p>
                 <p className="text-sm text-foreground/60 leading-[2]">
-                  支援先：コスメフェリーチェ（株）・（株）ナハト・（株）FURUNO・ハナサク（株）
+                  支援先：化粧品メーカー系企業・ヘアケア系企業・広告会社・美容サロン運営企業 他
                 </p>
               </div>
             </div>

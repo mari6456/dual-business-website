@@ -121,7 +121,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-1">
             <Link href="/cosmetics">
               <div className="group relative overflow-hidden aspect-[4/3] cursor-pointer fade-in-up">
-                <img src={PHOTOS.white.gallery3} alt="化粧品事業" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+                <img src={PHOTOS.white.gallery4} alt="化粧品事業" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-500" />
                 <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-12">
                   <p className="text-[0.6rem] tracking-[0.3em] uppercase text-white/60 mb-3" style={{ fontFamily: "var(--font-sub)" }}>Beauty Business</p>
@@ -138,7 +138,7 @@ export default function Home() {
 
             <Link href="/ai-training">
               <div className="group relative overflow-hidden aspect-[4/3] cursor-pointer fade-in-up">
-                <img src={PHOTOS.suit.hero} alt="AI研修事業" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+                <img src={PHOTOS.suit.portrait} alt="AI研修事業" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-500" />
                 <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-12">
                   <p className="text-[0.6rem] tracking-[0.3em] uppercase text-white/60 mb-3" style={{ fontFamily: "var(--font-sub)" }}>AI & Digital</p>
@@ -191,7 +191,7 @@ export default function Home() {
                 化粧品開発コンサルタント / ブランドディレクター / AI講座主宰
               </p>
               <p className="text-sm text-foreground/50 leading-[2] mb-8">
-                株式会社コーセー、エキップにて約10年間、化粧品の商品企画〜開発〜マーケティング〜ブランディングまでを一貫して担当。
+                大手化粧品メーカー2社にて約10年間、化粧品の商品企画〜開発〜マーケティング〜ブランディングまでを一貫して担当。
                 日本・中国・インド市場、百貨店からドラッグストアまで幅広い流通チャネルを経験し、ブランドの芯を形にする力を培う。
               </p>
               <div className="flex flex-wrap gap-3 mb-8">
