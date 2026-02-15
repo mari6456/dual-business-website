@@ -9,18 +9,24 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Cosmetics from "./pages/Cosmetics";
 import AITraining from "./pages/AITraining";
-import About from "./pages/About";
+import Profile from "./pages/Profile";
+import News from "./pages/News";
+import NewsDetail from "./pages/NewsDetail";
 import Contact from "./pages/Contact";
+import ScrollToTop from "./components/ScrollToTop";
 
 function Router() {
   return (
     <>
       <Navigation />
+      <ScrollToTop />
       <Switch>
         <Route path={"/"} component={Home} />
         <Route path={"/cosmetics"} component={Cosmetics} />
         <Route path={"/ai-training"} component={AITraining} />
-        <Route path={"/about"} component={About} />
+        <Route path={"/profile"} component={Profile} />
+        <Route path={"/news"} component={News} />
+        <Route path={"/news/:id"} component={NewsDetail} />
         <Route path={"/contact"} component={Contact} />
         <Route path={"/404"} component={NotFound} />
         <Route component={NotFound} />

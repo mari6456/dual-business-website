@@ -3,15 +3,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/*
-Design Philosophy: Minimal Luxe × Asymmetric Dynamism
-- Dominant whitespace with generous spacing
-- Asymmetric layouts for visual tension
-- Refined details with subtle shadows and borders
-- Restrained color palette (2-3 colors) for cohesion
-- Champagne gold accents for premium feel
-*/
-
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -49,86 +40,55 @@ Design Philosophy: Minimal Luxe × Asymmetric Dynamism
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  
+
   /* Custom brand colors */
-  --color-champagne-gold: oklch(0.78 0.08 85);
-  --color-ivory: oklch(0.99 0.01 85);
-  --color-warm-gray: oklch(0.82 0.01 85);
-  --color-deep-brown: oklch(0.25 0.01 85);
-  --color-slate-gray: oklch(0.35 0.02 220);
-  --color-mist-blue: oklch(0.75 0.03 220);
-  --color-charcoal: oklch(0.28 0.01 220);
+  --color-rose-gold: oklch(0.65 0.08 15);
+  --color-rose-gold-light: oklch(0.85 0.04 15);
+  --color-warm-surface: oklch(0.97 0.005 80);
+  --color-charcoal: oklch(0.2 0.005 285);
+  --color-charcoal-light: oklch(0.35 0.005 285);
+
+  /* Font families */
+  --font-display: "Playfair Display", "Shippori Mincho", serif;
+  --font-heading: "Shippori Mincho", "Playfair Display", serif;
+  --font-sub: "Montserrat", "Noto Sans JP", sans-serif;
+  --font-body: "Noto Sans JP", "Montserrat", sans-serif;
 }
 
 :root {
-  --primary: var(--color-champagne-gold);
-  --primary-foreground: oklch(0.15 0.01 85);
-  --sidebar-primary: var(--color-champagne-gold);
-  --sidebar-primary-foreground: oklch(0.15 0.01 85);
-  --chart-1: var(--color-champagne-gold);
-  --chart-2: var(--color-warm-gray);
-  --chart-3: var(--color-mist-blue);
-  --chart-4: var(--color-slate-gray);
-  --chart-5: var(--color-deep-brown);
-  --radius: 0.5rem;
-  --background: var(--color-ivory);
-  --foreground: var(--color-deep-brown);
+  --radius: 0.25rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.15 0.005 285);
   --card: oklch(1 0 0);
-  --card-foreground: var(--color-deep-brown);
+  --card-foreground: oklch(0.15 0.005 285);
   --popover: oklch(1 0 0);
-  --popover-foreground: var(--color-deep-brown);
-  --secondary: var(--color-warm-gray);
-  --secondary-foreground: var(--color-deep-brown);
-  --muted: oklch(0.96 0.005 85);
-  --muted-foreground: oklch(0.5 0.01 85);
-  --accent: var(--color-champagne-gold);
-  --accent-foreground: oklch(0.15 0.01 85);
+  --popover-foreground: oklch(0.15 0.005 285);
+  --primary: oklch(0.65 0.08 15);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.97 0.005 80);
+  --secondary-foreground: oklch(0.3 0.005 285);
+  --muted: oklch(0.96 0.003 80);
+  --muted-foreground: oklch(0.5 0.01 285);
+  --accent: oklch(0.97 0.005 80);
+  --accent-foreground: oklch(0.15 0.005 285);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.9 0.005 85);
-  --input: oklch(0.9 0.005 85);
-  --ring: var(--color-champagne-gold);
-  --sidebar: oklch(1 0 0);
-  --sidebar-foreground: var(--color-deep-brown);
-  --sidebar-accent: var(--color-champagne-gold);
-  --sidebar-accent-foreground: oklch(0.15 0.01 85);
-  --sidebar-border: oklch(0.9 0.005 85);
-  --sidebar-ring: var(--color-champagne-gold);
-}
-
-.dark {
-  --primary: var(--color-champagne-gold);
-  --primary-foreground: oklch(0.15 0.01 85);
-  --sidebar-primary: var(--color-champagne-gold);
-  --sidebar-primary-foreground: oklch(0.15 0.01 85);
-  --background: var(--color-charcoal);
-  --foreground: oklch(0.95 0.005 85);
-  --card: var(--color-slate-gray);
-  --card-foreground: oklch(0.95 0.005 85);
-  --popover: var(--color-slate-gray);
-  --popover-foreground: oklch(0.95 0.005 85);
-  --secondary: oklch(0.35 0.01 220);
-  --secondary-foreground: oklch(0.9 0.005 85);
-  --muted: oklch(0.3 0.01 220);
-  --muted-foreground: oklch(0.65 0.01 220);
-  --accent: var(--color-champagne-gold);
-  --accent-foreground: oklch(0.15 0.01 85);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: var(--color-champagne-gold);
-  --chart-1: var(--color-champagne-gold);
-  --chart-2: var(--color-mist-blue);
-  --chart-3: var(--color-warm-gray);
-  --chart-4: var(--color-slate-gray);
-  --chart-5: var(--color-deep-brown);
-  --sidebar: var(--color-slate-gray);
-  --sidebar-foreground: oklch(0.95 0.005 85);
-  --sidebar-accent: var(--color-champagne-gold);
-  --sidebar-accent-foreground: oklch(0.15 0.01 85);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: var(--color-champagne-gold);
+  --border: oklch(0.92 0.005 80);
+  --input: oklch(0.92 0.005 80);
+  --ring: oklch(0.65 0.08 15);
+  --chart-1: oklch(0.65 0.08 15);
+  --chart-2: oklch(0.55 0.06 15);
+  --chart-3: oklch(0.45 0.04 15);
+  --chart-4: oklch(0.75 0.06 15);
+  --chart-5: oklch(0.85 0.04 15);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.15 0.005 285);
+  --sidebar-accent: oklch(0.97 0.005 80);
+  --sidebar-accent-foreground: oklch(0.15 0.005 285);
+  --sidebar-border: oklch(0.92 0.005 80);
+  --sidebar-ring: oklch(0.65 0.08 15);
+  --sidebar-primary: oklch(0.65 0.08 15);
+  --sidebar-primary-foreground: oklch(1 0 0);
 }
 
 @layer base {
@@ -137,58 +97,10 @@ Design Philosophy: Minimal Luxe × Asymmetric Dynamism
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 18px;
-    line-height: 1.8;
-    font-weight: 400;
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-weight: 400;
-    line-height: 1.3;
-  }
-  
-  h1 {
-    font-size: 72px;
-    letter-spacing: -0.02em;
-  }
-  
-  h2 {
-    font-size: 36px;
-    letter-spacing: -0.01em;
-  }
-  
-  h3 {
-    font-size: 28px;
-  }
-  
-  h4 {
-    font-size: 22px;
-  }
-  
-  @media (max-width: 768px) {
-    body {
-      font-size: 16px;
-    }
-    
-    h1 {
-      font-size: 48px;
-    }
-    
-    h2 {
-      font-size: 32px;
-    }
-    
-    h3 {
-      font-size: 24px;
-    }
-    
-    h4 {
-      font-size: 20px;
-    }
-  }
-  
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
   [type="button"]:not(:disabled),
@@ -200,6 +112,13 @@ Design Philosophy: Minimal Luxe × Asymmetric Dynamism
   input[type="radio"]:not(:disabled) {
     @apply cursor-pointer;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+  }
 }
 
 @layer components {
@@ -207,8 +126,8 @@ Design Philosophy: Minimal Luxe × Asymmetric Dynamism
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   .flex {
@@ -218,37 +137,122 @@ Design Philosophy: Minimal Luxe × Asymmetric Dynamism
 
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem;
-      padding-right: 2rem;
-      max-width: 1280px;
+      padding-left: 3rem;
+      padding-right: 3rem;
+      max-width: 1400px;
     }
   }
-  
-  /* Luxury card with subtle shadow and gold border */
-  .luxury-card {
-    @apply bg-card rounded-lg shadow-[0_8px_24px_rgba(0,0,0,0.06)] border border-[var(--color-champagne-gold)] p-8 transition-all duration-300;
+
+  /* Editorial display text */
+  .display-text {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
   }
-  
-  .luxury-card:hover {
-    @apply shadow-[0_12px_32px_rgba(0,0,0,0.1)];
+
+  /* Sub heading text */
+  .sub-text {
+    font-family: var(--font-sub);
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
   }
-  
-  /* Scroll fade-in animation */
+
+  /* Section label */
+  .section-label {
+    font-family: var(--font-sub);
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    color: oklch(0.65 0.08 15);
+  }
+
+  /* Thin separator line */
+  .editorial-line {
+    width: 100%;
+    height: 1px;
+    background: oklch(0.88 0.005 80);
+  }
+
+  /* Rose gold accent line */
+  .accent-line {
+    width: 48px;
+    height: 1px;
+    background: oklch(0.65 0.08 15);
+  }
+
+  /* Fade in up animation */
   .fade-in-up {
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
-  
+
   .fade-in-up.visible {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  /* Stagger children */
+  .stagger-children > .fade-in-up:nth-child(1) { transition-delay: 0s; }
+  .stagger-children > .fade-in-up:nth-child(2) { transition-delay: 0.1s; }
+  .stagger-children > .fade-in-up:nth-child(3) { transition-delay: 0.2s; }
+  .stagger-children > .fade-in-up:nth-child(4) { transition-delay: 0.3s; }
+  .stagger-children > .fade-in-up:nth-child(5) { transition-delay: 0.4s; }
+  .stagger-children > .fade-in-up:nth-child(6) { transition-delay: 0.5s; }
+
+  /* Image reveal */
+  .image-reveal {
+    overflow: hidden;
+  }
+  .image-reveal img {
+    transform: scale(1.1);
+    transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .image-reveal.visible img {
+    transform: scale(1);
+  }
+
+  /* Editorial card */
+  .editorial-card {
+    background: white;
+    border: 1px solid oklch(0.92 0.005 80);
+    padding: 2.5rem;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .editorial-card:hover {
+    border-color: oklch(0.65 0.08 15);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.06);
+  }
+
+  /* Dark section */
+  .dark-section {
+    background: oklch(0.15 0.005 285);
+    color: oklch(0.92 0.005 80);
+  }
+  .dark-section h1,
+  .dark-section h2,
+  .dark-section h3 {
+    color: oklch(0.97 0.005 80);
+  }
+
+  /* Horizontal scroll text */
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .marquee-track {
+    animation: marquee 30s linear infinite;
   }
 }

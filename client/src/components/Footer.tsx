@@ -1,138 +1,108 @@
-/*
-Design Philosophy: Minimal Luxe × Asymmetric Dynamism
-Footer: Clean, organized footer with champagne gold accents
-*/
-
 import { Link } from "wouter";
-import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
-    <footer className="bg-[var(--color-deep-brown)] text-[var(--color-ivory)] py-16">
+    <footer className="dark-section py-20 lg:py-28">
       <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          {/* Company Info */}
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-12 mb-16">
           <div>
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="w-10 h-10 rounded-full bg-[var(--color-champagne-gold)] flex items-center justify-center">
-                <span className="text-[var(--color-deep-brown)] font-bold text-lg">
-                  DB
-                </span>
-              </div>
-              <span className="text-xl font-semibold">Dual Business</span>
-            </div>
-            <p className="text-sm text-[var(--color-warm-gray)] leading-relaxed">
-              美とテクノロジーで、未来を創造する。化粧品開発からAI研修まで、革新的なソリューションを提供します。
+            <h2
+              className="text-3xl lg:text-4xl tracking-[0.3em] mb-4"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              UNFRAME
+            </h2>
+            <p className="text-sm text-white/50 max-w-md leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
+              自分の枠を超えて自由な生き方をデザインする。
+              <br />
+              美容とAIの力を通じて、不可能を可能にし、自由な生き方を広げる。
             </p>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6 text-[var(--color-champagne-gold)]">
-              クイックリンク
-            </h4>
-            <ul className="space-y-3">
-              <li>
-                <Link href="/">
-                  <span className="text-sm text-[var(--color-warm-gray)] hover:text-[var(--color-champagne-gold)] transition-colors duration-300 cursor-pointer">
-                    ホーム
-                  </span>
-                </Link>
-              </li>
-              <li>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-12 lg:gap-16">
+            <div>
+              <h4
+                className="text-[0.65rem] tracking-[0.2em] uppercase text-white/40 mb-5"
+                style={{ fontFamily: "var(--font-sub)", fontWeight: 500 }}
+              >
+                Services
+              </h4>
+              <div className="space-y-3">
                 <Link href="/cosmetics">
-                  <span className="text-sm text-[var(--color-warm-gray)] hover:text-[var(--color-champagne-gold)] transition-colors duration-300 cursor-pointer">
+                  <span className="block text-sm text-white/60 hover:text-rose-gold transition-colors duration-300 cursor-pointer">
                     化粧品事業
                   </span>
                 </Link>
-              </li>
-              <li>
                 <Link href="/ai-training">
-                  <span className="text-sm text-[var(--color-warm-gray)] hover:text-[var(--color-champagne-gold)] transition-colors duration-300 cursor-pointer">
+                  <span className="block text-sm text-white/60 hover:text-rose-gold transition-colors duration-300 cursor-pointer">
                     AI研修
                   </span>
                 </Link>
-              </li>
-              <li>
-                <Link href="/about">
-                  <span className="text-sm text-[var(--color-warm-gray)] hover:text-[var(--color-champagne-gold)] transition-colors duration-300 cursor-pointer">
-                    会社情報
+              </div>
+            </div>
+
+            <div>
+              <h4
+                className="text-[0.65rem] tracking-[0.2em] uppercase text-white/40 mb-5"
+                style={{ fontFamily: "var(--font-sub)", fontWeight: 500 }}
+              >
+                Company
+              </h4>
+              <div className="space-y-3">
+                <Link href="/profile">
+                  <span className="block text-sm text-white/60 hover:text-rose-gold transition-colors duration-300 cursor-pointer">
+                    プロフィール
                   </span>
                 </Link>
-              </li>
-            </ul>
-          </div>
+                <Link href="/news">
+                  <span className="block text-sm text-white/60 hover:text-rose-gold transition-colors duration-300 cursor-pointer">
+                    ニュース
+                  </span>
+                </Link>
+                <Link href="/contact">
+                  <span className="block text-sm text-white/60 hover:text-rose-gold transition-colors duration-300 cursor-pointer">
+                    お問い合わせ
+                  </span>
+                </Link>
+              </div>
+            </div>
 
-          {/* Services */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6 text-[var(--color-champagne-gold)]">
-              サービス
-            </h4>
-            <ul className="space-y-3">
-              <li className="text-sm text-[var(--color-warm-gray)]">
-                化粧品開発・企画
-              </li>
-              <li className="text-sm text-[var(--color-warm-gray)]">
-                ブランディング
-              </li>
-              <li className="text-sm text-[var(--color-warm-gray)]">
-                OEM連動サービス
-              </li>
-              <li className="text-sm text-[var(--color-warm-gray)]">
-                AI企業研修プログラム
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6 text-[var(--color-champagne-gold)]">
-              お問い合わせ
-            </h4>
-            <ul className="space-y-4">
-              <li className="flex items-start space-x-3">
-                <Mail className="w-5 h-5 text-[var(--color-champagne-gold)] mt-0.5 flex-shrink-0" />
-                <span className="text-sm text-[var(--color-warm-gray)]">
-                  info@dualbusiness.com
-                </span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <Phone className="w-5 h-5 text-[var(--color-champagne-gold)] mt-0.5 flex-shrink-0" />
-                <span className="text-sm text-[var(--color-warm-gray)]">
-                  03-1234-5678
-                </span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 text-[var(--color-champagne-gold)] mt-0.5 flex-shrink-0" />
-                <span className="text-sm text-[var(--color-warm-gray)]">
-                  東京都渋谷区〇〇1-2-3
-                </span>
-              </li>
-            </ul>
+            <div>
+              <h4
+                className="text-[0.65rem] tracking-[0.2em] uppercase text-white/40 mb-5"
+                style={{ fontFamily: "var(--font-sub)", fontWeight: 500 }}
+              >
+                Connect
+              </h4>
+              <div className="space-y-3">
+                <a
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-sm text-white/60 hover:text-rose-gold transition-colors duration-300"
+                >
+                  Instagram
+                </a>
+                <a
+                  href="https://line.me/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-sm text-white/60 hover:text-rose-gold transition-colors duration-300"
+                >
+                  LINE
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-[var(--color-warm-gray)]/20">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-sm text-[var(--color-warm-gray)]">
-              © {currentYear} Dual Business. All rights reserved.
-            </p>
-            <div className="flex space-x-6">
-              <Link href="/privacy">
-                <span className="text-sm text-[var(--color-warm-gray)] hover:text-[var(--color-champagne-gold)] transition-colors duration-300 cursor-pointer">
-                  プライバシーポリシー
-                </span>
-              </Link>
-              <Link href="/terms">
-                <span className="text-sm text-[var(--color-warm-gray)] hover:text-[var(--color-champagne-gold)] transition-colors duration-300 cursor-pointer">
-                  利用規約
-                </span>
-              </Link>
-            </div>
-          </div>
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-xs text-white/30" style={{ fontFamily: "var(--font-sub)" }}>
+            &copy; {new Date().getFullYear()} UNFRAME / 河原田 茉莉. All rights reserved.
+          </p>
+          <p className="text-xs text-white/30" style={{ fontFamily: "var(--font-sub)" }}>
+            Cosmetics Consultant &middot; Brand Director &middot; AI Instructor
+          </p>
         </div>
       </div>
     </footer>
