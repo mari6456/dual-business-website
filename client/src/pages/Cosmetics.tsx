@@ -1,10 +1,14 @@
 import { Link } from "wouter";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { PHOTOS } from "@/lib/images";
+import { newsData, NEWS_CATEGORIES } from "@/lib/newsData";
 
 export default function Cosmetics() {
   useScrollReveal();
+
+  // 化粧品関連のニュースをフィルタリング（cosmetics + media）
+  const cosmeticsNews = newsData.filter((n) => n.category === "cosmetics" || n.category === "media");
 
   return (
     <div className="min-h-screen">
@@ -66,19 +70,37 @@ export default function Cosmetics() {
         </div>
       </section>
 
-      {/* Photo Gallery */}
+      {/* News from Cosmetics category */}
       <section className="py-24 lg:py-32">
         <div className="container">
           <div className="mb-16 fade-in-up">
-            <p className="section-label mb-4">Gallery</p>
+            <p className="section-label mb-4">Activity</p>
             <h2 className="text-3xl lg:text-4xl" style={{ fontFamily: "var(--font-heading)" }}>活動の様子</h2>
           </div>
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 stagger-children">
-            {[PHOTOS.white.gallery5, PHOTOS.white.gallery6, PHOTOS.white.gallery3, PHOTOS.white.hero, PHOTOS.white.gallery2, PHOTOS.white.portrait].map((src, i) => (
-              <div key={i} className="image-reveal fade-in-up overflow-hidden">
-                <img src={src} alt={`化粧品事業 ${i + 1}`} className="w-full aspect-square object-cover object-top hover:scale-105 transition-transform duration-700" />
-              </div>
+          <div className="space-y-0 stagger-children">
+            {cosmeticsNews.map((news) => (
+              <Link key={news.id} href={`/news/${news.id}`}>
+                <div className="fade-in-up flex flex-col md:flex-row md:items-center justify-between py-6 border-b border-foreground/10 group cursor-pointer hover:bg-warm-surface/50 transition-colors duration-300 px-4 -mx-4">
+                  <div className="flex items-start md:items-center gap-4 md:gap-6 flex-1">
+                    <span className="text-xs text-foreground/30 tracking-wider shrink-0 pt-1 md:pt-0" style={{ fontFamily: "var(--font-sub)" }}>{news.date}</span>
+                    <span className="text-[0.6rem] tracking-[0.15em] uppercase text-rose-gold border border-rose-gold/30 px-2 py-0.5 shrink-0" style={{ fontFamily: "var(--font-sub)" }}>
+                      {NEWS_CATEGORIES[news.category]}
+                    </span>
+                    <h3 className="text-sm text-foreground/70 group-hover:text-foreground transition-colors duration-300 leading-relaxed" style={{ fontFamily: "var(--font-heading)" }}>
+                      {news.title}
+                    </h3>
+                  </div>
+                  <ArrowUpRight className="w-4 h-4 text-foreground/20 group-hover:text-rose-gold transition-colors duration-300 shrink-0 mt-2 md:mt-0 ml-auto md:ml-4" />
+                </div>
+              </Link>
             ))}
+          </div>
+          <div className="mt-12 text-center fade-in-up">
+            <Link href="/news">
+              <span className="inline-flex items-center gap-2 text-sm text-foreground/40 hover:text-rose-gold transition-colors duration-300 tracking-wider cursor-pointer" style={{ fontFamily: "var(--font-sub)" }}>
+                すべてのニュースを見る <ArrowRight className="w-3 h-3" />
+              </span>
+            </Link>
           </div>
         </div>
       </section>

@@ -13,9 +13,9 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center">
         <div className="absolute inset-0">
           <img
-            src={PHOTOS.white.hero}
-            alt="河原田茉莉"
-            className="w-full h-full object-cover object-top"
+            src={PHOTOS.team.laughing}
+            alt="UNFRAME チーム"
+            className="w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/60 to-transparent lg:from-white/80 lg:via-white/40" />
         </div>

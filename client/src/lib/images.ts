@@ -42,6 +42,11 @@ export const PHOTOS = {
     img1: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663045491092/EWpOUoALmSnNYODI.jpg",     // IMG_4373
     img2: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663045491092/beZgKILbwDSMKpZv.jpg",     // IMG_4363
   },
+  // チーム写真
+  team: {
+    laughing: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663045491092/mlmBFokpuVqigIaz.jpeg", // 260128_1245 - 4人笑顔
+    group5: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663045491092/ruJcizGHvatHHIMU.jpeg",   // 260128_0842 - 5人スーツ集合
+  },
 } as const;
 
 // Generated editorial images (for backgrounds / atmosphere)
