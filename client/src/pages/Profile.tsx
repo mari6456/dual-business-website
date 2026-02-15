@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { PHOTOS } from "@/lib/images";
 
@@ -23,7 +23,7 @@ export default function Profile() {
               <p className="text-lg text-rose-gold mb-8" style={{ fontFamily: "var(--font-display)" }}>Mari Kawarada</p>
               <div className="accent-line mb-8" />
               <p className="text-base text-foreground/70 leading-[2] mb-6">
-                化粧品開発コンサルタント / ブランドディレクター / AI講座主宰
+                UNFRAME代表 / 化粧品開発コンサルタント / ブランドディレクター / AI経営コーチ
               </p>
               <p className="text-sm text-foreground/50 leading-[2] mb-4">
                 福岡県出身。薬剤師。事業構想修士（MPD）修了。
@@ -36,8 +36,74 @@ export default function Profile() {
         </div>
       </section>
 
-      {/* Career */}
+      {/* Current Positions */}
       <section className="py-24 lg:py-32 bg-warm-surface">
+        <div className="container">
+          <div className="mb-16 fade-in-up">
+            <p className="section-label mb-4">Positions</p>
+            <h2 className="text-3xl lg:text-4xl" style={{ fontFamily: "var(--font-heading)" }}>現在の活動・所属</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 stagger-children">
+            {[
+              {
+                org: "UNFRAME",
+                role: "代表",
+                desc: "AI経営コーチ。セミナー・講座・社員研修、AI活用・iPadサポート、デジタル業務効率化サポートを提供。講座卒業生の秘書チーム運営。",
+                type: "ai" as const,
+              },
+              {
+                org: "OF（自社スキンケアブランド）",
+                role: "ディレクター・商品開発責任者",
+                desc: "肌育研究家として、ソーシャルジェットラグに着目したマイクロバイオームケアブランドを展開。VOCEにも掲載。",
+                type: "cosmetics" as const,
+              },
+              {
+                org: "Beauty Creators（株式会社MIKOTO）",
+                role: "取締役 管理薬剤師",
+                desc: "化粧品・美容機器の開発コンサルティング。日本・韓国にオフィスを展開。",
+                type: "cosmetics" as const,
+              },
+              {
+                org: "株式会社FURUNO",
+                role: "CMO（Chief Marketing Officer）",
+                desc: "マーケティング戦略の統括。ブランディングとデジタル戦略を推進。",
+                type: "cosmetics" as const,
+              },
+              {
+                org: "エキノックス株式会社",
+                role: "開発責任者",
+                desc: "化粧品の商品開発を統括。処方設計から製造管理まで一貫して担当。",
+                type: "cosmetics" as const,
+              },
+              {
+                org: "横浜市立大学 共創イノベーションセンター",
+                role: "未来共創リード",
+                desc: "産学連携による共創イノベーションの推進。未来実装プロジェクトに参画。",
+                type: "ai" as const,
+              },
+            ].map((pos) => (
+              <div key={pos.org} className="fade-in-up border border-foreground/10 bg-white p-8 hover:border-rose-gold/30 transition-colors duration-500">
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <p className="text-[0.6rem] tracking-[0.2em] uppercase mb-2" style={{
+                      fontFamily: "var(--font-sub)",
+                      color: pos.type === "cosmetics" ? "oklch(0.65 0.08 15)" : "oklch(0.55 0.05 250)",
+                    }}>
+                      {pos.type === "cosmetics" ? "Beauty" : "AI & Innovation"}
+                    </p>
+                    <h3 className="text-lg mb-1" style={{ fontFamily: "var(--font-heading)" }}>{pos.org}</h3>
+                    <p className="text-sm text-rose-gold" style={{ fontFamily: "var(--font-display)" }}>{pos.role}</p>
+                  </div>
+                </div>
+                <p className="text-sm text-foreground/50 leading-[1.9]">{pos.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Career */}
+      <section className="py-24 lg:py-32">
         <div className="container">
           <div className="mb-16 fade-in-up">
             <p className="section-label mb-4">Career</p>
@@ -76,13 +142,63 @@ export default function Profile() {
         </div>
       </section>
 
+      {/* Services Overview */}
+      <section className="py-24 lg:py-32 bg-warm-surface">
+        <div className="container">
+          <div className="mb-16 fade-in-up">
+            <p className="section-label mb-4">Services</p>
+            <h2 className="text-3xl lg:text-4xl" style={{ fontFamily: "var(--font-heading)" }}>提供サービス</h2>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 stagger-children">
+            <div className="fade-in-up">
+              <p className="text-[0.6rem] tracking-[0.2em] uppercase text-rose-gold mb-4" style={{ fontFamily: "var(--font-sub)" }}>Beauty Business</p>
+              <h3 className="text-xl mb-6" style={{ fontFamily: "var(--font-heading)" }}>化粧品・美容事業</h3>
+              <div className="space-y-3">
+                {[
+                  "化粧品OEMコンサルティング",
+                  "化粧品・美容機器開発",
+                  "ブランド開発・商品企画",
+                  "市場リサーチ・処方提案・製造管理",
+                  "アロマセラピスト",
+                  "骨格＆小顔矯正セラピスト",
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-3">
+                    <span className="w-1 h-1 bg-rose-gold rounded-full mt-2 shrink-0" />
+                    <span className="text-sm text-foreground/60 leading-relaxed">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="fade-in-up">
+              <p className="text-[0.6rem] tracking-[0.2em] uppercase mb-4" style={{ fontFamily: "var(--font-sub)", color: "oklch(0.55 0.05 250)" }}>AI & Digital</p>
+              <h3 className="text-xl mb-6" style={{ fontFamily: "var(--font-heading)" }}>AI・デジタル事業</h3>
+              <div className="space-y-3">
+                {[
+                  "AI経営コーチ・顧問サービス",
+                  "セミナー・講座・社員研修",
+                  "AI活用・iPadサポート",
+                  "デジタル業務効率化サポート",
+                  "SNS発信・マーケティング支援",
+                  "オンライン秘書チーム運営",
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-3">
+                    <span className="w-1 h-1 rounded-full mt-2 shrink-0" style={{ backgroundColor: "oklch(0.55 0.05 250)" }} />
+                    <span className="text-sm text-foreground/60 leading-relaxed">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* AI Activities */}
       <section className="py-24 lg:py-32">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div className="fade-in-up">
               <p className="section-label mb-6">AI & Digital</p>
-              <h2 className="text-3xl lg:text-4xl mb-8" style={{ fontFamily: "var(--font-heading)" }}>AI・デジタル活動</h2>
+              <h2 className="text-3xl lg:text-4xl mb-8" style={{ fontFamily: "var(--font-heading)" }}>AI・デジタル活動実績</h2>
               <div className="space-y-4">
                 {[
                   "AI&デジタルセミナー 累計参加者数400名超え",
@@ -112,7 +228,7 @@ export default function Profile() {
         <div className="container">
           <div className="mb-16 fade-in-up">
             <p className="section-label mb-4">Qualifications</p>
-            <h2 className="text-3xl lg:text-4xl" style={{ fontFamily: "var(--font-heading)" }}>資格・活動</h2>
+            <h2 className="text-3xl lg:text-4xl" style={{ fontFamily: "var(--font-heading)" }}>資格・認定</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
             {[
@@ -121,6 +237,8 @@ export default function Profile() {
               "骨格形成美顔矯正 YUIIGIE認定技術者",
               "事業構想修士（MPD）修了",
               "文科省認可AIスクール講師",
+              "日本成人病予防協会 健康リズムカウンセラー",
+              "肌育研究家",
               "美容サロン「jas+mine」運営",
             ].map((q) => (
               <div key={q} className="fade-in-up border border-foreground/10 bg-white px-6 py-5">
