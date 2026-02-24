@@ -28,9 +28,7 @@ export default function Profile() {
               <p className="text-sm text-foreground/50 leading-[2] mb-4">
                 福岡県出身。薬剤師。事業構想修士（MPD）修了。
               </p>
-              <p className="text-sm text-foreground/50 leading-[2]">
-                2歳の娘と愛犬と4人暮らし。美容サロン「jas+mine」運営。
-              </p>
+
             </div>
           </div>
         </div>
@@ -52,7 +50,7 @@ export default function Profile() {
                 type: "ai" as const,
               },
               {
-                org: "OF（自社スキンケアブランド）",
+                org: "OF",
                 role: "ディレクター・商品開発責任者",
                 desc: "肌育研究家として、ソーシャルジェットラグに着目したマイクロバイオームケアブランドを展開。VOCEにも掲載。",
                 type: "cosmetics" as const,
@@ -239,36 +237,10 @@ export default function Profile() {
               "文科省認可AIスクール講師",
               "日本成人病予防協会 健康リズムカウンセラー",
               "肌育研究家",
-              "美容サロン「jas+mine」運営",
+
             ].map((q) => (
               <div key={q} className="fade-in-up border border-foreground/10 bg-white px-6 py-5">
                 <span className="text-sm text-foreground/70">{q}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Photo Gallery */}
-      <section className="py-24 lg:py-32">
-        <div className="container">
-          <div className="mb-16 fade-in-up">
-            <p className="section-label mb-4">Gallery</p>
-            <h2 className="text-3xl lg:text-4xl" style={{ fontFamily: "var(--font-heading)" }}>活動の記録</h2>
-          </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 stagger-children">
-            {[
-              PHOTOS.white.hero,
-              PHOTOS.suit.gallery2,
-              PHOTOS.white.gallery5,
-              PHOTOS.suit.gallery4,
-              PHOTOS.suit.gallery7,
-              PHOTOS.white.gallery6,
-              PHOTOS.suit.gallery8,
-              PHOTOS.extra.img1,
-            ].map((src, i) => (
-              <div key={i} className="image-reveal fade-in-up overflow-hidden">
-                <img src={src} alt={`活動写真 ${i + 1}`} className="w-full aspect-square object-cover object-top hover:scale-105 transition-transform duration-700" />
               </div>
             ))}
           </div>

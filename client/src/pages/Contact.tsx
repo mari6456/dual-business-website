@@ -122,7 +122,7 @@ export default function Contact() {
                     <Mail className="w-4 h-4 text-rose-gold mt-1 shrink-0" />
                     <div>
                       <p className="text-xs text-foreground/40 tracking-wider mb-1" style={{ fontFamily: "var(--font-sub)" }}>Email</p>
-                      <a href="mailto:info@unframe.jp" className="text-sm text-foreground/70 hover:text-rose-gold transition-colors duration-300">info@unframe.jp</a>
+                      <a href="mailto:info@ai-unframe.jp" className="text-sm text-foreground/70 hover:text-rose-gold transition-colors duration-300">info@ai-unframe.jp</a>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
