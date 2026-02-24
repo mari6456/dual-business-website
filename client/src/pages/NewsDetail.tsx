@@ -1,17 +1,42 @@
-import { Link, useParams, useLocation } from "wouter";
+import { useParams, useLocation, Link } from "wouter";
+import { useState, useEffect } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { newsData, NEWS_CATEGORIES } from "@/lib/newsData";
+import { NEWS_CATEGORIES, type NewsItem } from "@/lib/newsData";
+import { fetchNewsFromSheet } from "@/lib/fetchNewsFromSheet";
 
 export default function NewsDetail() {
   useScrollReveal();
   const { id } = useParams<{ id: string }>();
   const [, setLocation] = useLocation();
+  const [newsData, setNewsData] = useState<NewsItem[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  // スプレッドシートからニュースデータを取得
+  useEffect(() => {
+    async function loadNews() {
+      setLoading(true);
+      const data = await fetchNewsFromSheet();
+      setNewsData(data);
+      setLoading(false);
+    }
+    loadNews();
+  }, []);
 
   const article = newsData.find((item) => item.id === id);
   const currentIndex = newsData.findIndex((item) => item.id === id);
   const prevArticle = currentIndex > 0 ? newsData[currentIndex - 1] : null;
   const nextArticle = currentIndex < newsData.length - 1 ? newsData[currentIndex + 1] : null;
+
+  if (loading) {
+    return (
+      <div className="min-h-screen pt-40">
+        <div className="container text-center">
+          <p className="text-sm text-foreground/30">読み込み中...</p>
+        </div>
+      </div>
+    );
+  }
 
   if (!article) {
     return (
