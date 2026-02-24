@@ -79,6 +79,18 @@ export default function Profile() {
                 desc: "産学連携による共創イノベーションの推進。未来実装プロジェクトに参画。",
                 type: "ai" as const,
               },
+              {
+                org: "AI 未来学院",
+                role: "講師",
+                desc: "文科省認可のAIスクールにて、AI活用・実践講座を担当。経営者・ビジネスパーソン向けにAIリテラシー向上を支援。",
+                type: "ai" as const,
+              },
+              {
+                org: "IMSI",
+                role: "AI講座・ブランディング講座 共同主催",
+                desc: "セラピスト向けAI活用講座とブランディング講座を共同主催。美容業界の方々のデジタル化とブランド構築を支援。",
+                type: "ai" as const,
+              },
             ].map((pos) => (
               <div key={pos.org} className="fade-in-up border border-foreground/10 bg-white p-8 hover:border-rose-gold/30 transition-colors duration-500">
                 <div className="flex items-start justify-between mb-4">
