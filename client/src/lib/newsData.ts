@@ -5,6 +5,7 @@ export interface NewsItem {
   title: string;
   excerpt: string;
   content: string;
+  image?: string;
 }
 
 export const NEWS_CATEGORIES: Record<NewsItem["category"], string> = {
@@ -35,6 +36,7 @@ export const newsData: NewsItem[] = [
       "横浜ランドマークタワーで開催されたYOXOフェスティバルに、横浜市立大学 共創イノベーションセンターの一員として運営側で参加。70名超が来場しました。",
     content:
       "1/31に横浜ランドマークタワーで開催されたYOXOフェスティバルの公式プログラム「休日にみんなで考える やさしい未来のヨコハマ」に、横浜市立大学 共創イノベーションセンター 未来実装PJの一員として運営側で参加しました。サムネやチラシ、当日資料のデザインも担当。当初25名定員のところ、事前に30名のご予約、当日は最大70名超の皆様にお越しいただきました。老若男女問わず、家族から学生まで幅広い層の方々と、みんなで未来を考えるとても楽しい時間となりました。ゲストの近藤さや香さんの横浜愛のお話にも花が咲き、素敵なイベントになりました。",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663045491092/wpmWYjBjgRmZwaEg.png",
   },
   {
     id: "2026-01-ai-seminar-400",

@@ -69,6 +69,11 @@ export default function News() {
                       {item.category === "cosmetics" ? "Beauty" : item.category === "ai" ? "AI" : item.category === "media" ? "Media" : item.category === "event" ? "Event" : "Info"}
                     </span>
                   </div>
+                  {item.image && (
+                    <div className="w-full md:w-32 shrink-0">
+                      <img src={item.image} alt={item.title} className="w-full aspect-[4/3] object-cover" />
+                    </div>
+                  )}
                   <div className="flex-1">
                     <h3 className="text-base text-foreground/80 group-hover:text-foreground transition-colors duration-300 mb-2" style={{ fontFamily: "var(--font-heading)" }}>{item.title}</h3>
                     <p className="text-sm text-foreground/40 leading-relaxed line-clamp-2">{item.excerpt}</p>
