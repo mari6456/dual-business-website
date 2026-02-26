@@ -260,19 +260,8 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="space-y-0 stagger-children">
-            {newsData.slice(0, 4).map((item) => (
-              <Link key={item.id} href={`/news/${item.id}`}>
-                <div className="group flex flex-col md:flex-row md:items-center gap-4 md:gap-8 py-6 border-b border-[oklch(0.92_0.005_80)] cursor-pointer fade-in-up hover:bg-warm-surface/50 transition-colors duration-300 px-4 -mx-4">
-                  <span className="text-xs text-foreground/30 shrink-0 w-24" style={{ fontFamily: "var(--font-sub)" }}>{item.date}</span>
-                  <span className="text-[0.6rem] tracking-[0.15em] uppercase text-rose-gold shrink-0 w-24" style={{ fontFamily: "var(--font-sub)" }}>
-                    {item.category === "cosmetics" ? "Beauty" : item.category === "ai" ? "AI" : item.category === "media" ? "Media" : "Event"}
-                  </span>
-                  <span className="text-sm text-foreground/70 group-hover:text-foreground transition-colors duration-300 flex-1">{item.title}</span>
-                  <ArrowUpRight className="w-4 h-4 text-foreground/20 group-hover:text-rose-gold transition-colors duration-300 shrink-0 hidden md:block" />
-                </div>
-              </Link>
-            ))}
+          <div className="text-center py-20 fade-in-up">
+            <p className="text-6xl lg:text-7xl tracking-[0.2em] uppercase" style={{ fontFamily: "var(--font-display)", fontWeight: 300, color: "oklch(0.85 0.01 80)" }}>COMING SOON</p>
           </div>
         </div>
       </section>
