@@ -1,9 +1,8 @@
 import { useState, useEffect, useCallback } from "react";
 import { Link } from "wouter";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { PHOTOS, IMAGES } from "@/lib/images";
-import { newsData } from "@/lib/newsData";
 
 const HERO_SLIDES = [
   { src: PHOTOS.team.laughing, alt: "UNFRAME チーム" },
@@ -166,7 +165,7 @@ export default function Home() {
                     ブランド開発・商品企画から市場リサーチ、処方提案、製造まで一貫支援。10ブランド以上、130商品以上の企画開発実績。
                   </p>
                   <span className="inline-flex items-center gap-2 text-xs tracking-[0.15em] uppercase text-white/80 group-hover:text-rose-gold transition-colors duration-300" style={{ fontFamily: "var(--font-sub)" }}>
-                    View Details <ArrowUpRight className="w-3.5 h-3.5" />
+                    View Details <ArrowRight className="w-3.5 h-3.5" />
                   </span>
                 </div>
               </div>
@@ -183,7 +182,7 @@ export default function Home() {
                     経営者向けAI顧問、法人研修、セミナー開催。累計参加者400名超。文科省認可AIスクール講師。
                   </p>
                   <span className="inline-flex items-center gap-2 text-xs tracking-[0.15em] uppercase text-white/80 group-hover:text-rose-gold transition-colors duration-300" style={{ fontFamily: "var(--font-sub)" }}>
-                    View Details <ArrowUpRight className="w-3.5 h-3.5" />
+                    View Details <ArrowRight className="w-3.5 h-3.5" />
                   </span>
                 </div>
               </div>
