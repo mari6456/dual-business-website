@@ -6,7 +6,6 @@ import { PHOTOS, IMAGES } from "@/lib/images";
 
 const HERO_SLIDES = [
   { src: PHOTOS.team.laughing, alt: "UNFRAME チーム" },
-  { src: PHOTOS.white.portrait, alt: "UNFRAME ビューティー" },
   { src: PHOTOS.team.group5, alt: "UNFRAME AI研修" },
 ];
 
