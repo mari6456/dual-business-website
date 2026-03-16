@@ -59,7 +59,7 @@ export default function Contact() {
                     <Label htmlFor="name" className="text-xs tracking-wider uppercase" style={{ fontFamily: "var(--font-sub)" }}>
                       お名前 <span className="text-rose-gold">*</span>
                     </Label>
-                    <Input id="name" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} placeholder="河原田 茉莉" required className="border-foreground/10 focus:border-rose-gold rounded-none py-3" />
+                    <Input id="name" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} placeholder="kawaharada mari" required className="border-foreground/10 focus:border-rose-gold rounded-none py-3" />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="company" className="text-xs tracking-wider uppercase" style={{ fontFamily: "var(--font-sub)" }}>会社名</Label>

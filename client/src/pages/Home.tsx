@@ -215,12 +215,11 @@ export default function Home() {
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-2 image-reveal fade-in-up">
-              <img src={PHOTOS.white.portrait} alt="河原田茉莉" className="w-full aspect-[3/4] object-cover object-top" />
+              <img src={PHOTOS.white.portrait} alt="kawaharada mari" className="w-full aspect-[3/4] object-cover object-top" />
             </div>
             <div className="lg:col-span-3 fade-in-up">
               <p className="section-label mb-6">Profile</p>
-              <h2 className="text-3xl lg:text-4xl mb-4" style={{ fontFamily: "var(--font-heading)" }}>河原田 茉莉</h2>
-              <p className="text-sm text-rose-gold tracking-wider mb-6" style={{ fontFamily: "var(--font-display)" }}>Mari Kawarada</p>
+              <h2 className="text-3xl lg:text-4xl mb-4" style={{ fontFamily: "var(--font-heading)" }}>kawaharada mari</h2>
               <p className="text-sm text-foreground/60 leading-[2] mb-4">
                 化粧品開発コンサルタント / ブランドディレクター / AI講座主宰
               </p>

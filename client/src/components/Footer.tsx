@@ -98,7 +98,7 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-white/30" style={{ fontFamily: "var(--font-sub)" }}>
-            &copy; {new Date().getFullYear()} UNFRAME / 河原田 茉莉. All rights reserved.
+            &copy; {new Date().getFullYear()} UNFRAME / kawaharada mari. All rights reserved.
           </p>
           <p className="text-xs text-white/30" style={{ fontFamily: "var(--font-sub)" }}>
             Cosmetics Consultant &middot; Brand Director &middot; AI Instructor
