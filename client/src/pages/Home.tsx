@@ -193,58 +193,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Numbers */}
-      <section className="py-24 lg:py-32 bg-warm-surface">
-        <div className="container">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 stagger-children">
-            {[
-              { number: "130+", label: "商品企画開発", sub: "Products Developed" },
-              { number: "10+", label: "ブランド支援", sub: "Brands Supported" },
-              { number: "400+", label: "セミナー参加者", sub: "Seminar Participants" },
-              { number: "10", label: "年の業界経験", sub: "Years Experience" },
-            ].map((stat) => (
-              <div key={stat.sub} className="text-center fade-in-up">
-                <div className="text-4xl lg:text-5xl text-rose-gold mb-2" style={{ fontFamily: "var(--font-display)" }}>{stat.number}</div>
-                <div className="text-sm text-foreground/80 mb-1">{stat.label}</div>
-                <div className="text-[0.6rem] tracking-[0.15em] uppercase text-foreground/30" style={{ fontFamily: "var(--font-sub)" }}>{stat.sub}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Profile Teaser */}
-      <section className="py-24 lg:py-36">
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center">
-            <div className="lg:col-span-2 image-reveal fade-in-up">
-              <img src={PHOTOS.white.portrait} alt="kawaharada mari" className="w-full aspect-[3/4] object-cover object-top" />
-            </div>
-            <div className="lg:col-span-3 fade-in-up">
-              <p className="section-label mb-6">Profile</p>
-              <h2 className="text-3xl lg:text-4xl mb-4" style={{ fontFamily: "var(--font-heading)" }}>kawaharada mari</h2>
-              <p className="text-sm text-foreground/60 leading-[2] mb-4">
-                化粧品開発コンサルタント / ブランドディレクター / AI講座主宰
-              </p>
-              <p className="text-sm text-foreground/50 leading-[2] mb-8">
-                大手化粧品メーカー2社にて約10年間、化粧品の商品企画〜開発〜マーケティング〜ブランディングまでを一貫して担当。
-                日本・中国・インド市場、百貨店からドラッグストアまで幅広い流通チャネルを経験し、ブランドの芯を形にする力を培う。
-              </p>
-              <div className="flex flex-wrap gap-3 mb-8">
-                {["薬剤師", "英国IFPA認定アロマセラピスト", "事業構想修士（MPD）"].map((q) => (
-                  <span key={q} className="text-[0.65rem] tracking-wider text-foreground/40 border border-foreground/15 px-3 py-1.5" style={{ fontFamily: "var(--font-sub)" }}>{q}</span>
-                ))}
-              </div>
-              <Link href="/profile">
-                <span className="inline-flex items-center gap-2 text-xs tracking-[0.15em] uppercase text-rose-gold hover:text-foreground transition-colors duration-300 cursor-pointer" style={{ fontFamily: "var(--font-sub)", fontWeight: 500 }}>
-                  View Full Profile <ArrowRight className="w-3.5 h-3.5" />
-                </span>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* News */}
       <section className="py-24 lg:py-32 border-t border-[oklch(0.92_0.005_80)]">
         <div className="container">
@@ -311,6 +259,58 @@ export default function Home() {
               </div>
             );
           })()}
+        </div>
+      </section>
+
+      {/* Numbers */}
+      <section className="py-24 lg:py-32 bg-warm-surface">
+        <div className="container">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 stagger-children">
+            {[
+              { number: "130+", label: "商品企画開発", sub: "Products Developed" },
+              { number: "10+", label: "ブランド支援", sub: "Brands Supported" },
+              { number: "400+", label: "セミナー参加者", sub: "Seminar Participants" },
+              { number: "10", label: "年の業界経験", sub: "Years Experience" },
+            ].map((stat) => (
+              <div key={stat.sub} className="text-center fade-in-up">
+                <div className="text-4xl lg:text-5xl text-rose-gold mb-2" style={{ fontFamily: "var(--font-display)" }}>{stat.number}</div>
+                <div className="text-sm text-foreground/80 mb-1">{stat.label}</div>
+                <div className="text-[0.6rem] tracking-[0.15em] uppercase text-foreground/30" style={{ fontFamily: "var(--font-sub)" }}>{stat.sub}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Profile Teaser */}
+      <section className="py-24 lg:py-36">
+        <div className="container">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center">
+            <div className="lg:col-span-2 image-reveal fade-in-up">
+              <img src={PHOTOS.white.portrait} alt="kawaharada mari" className="w-full aspect-[3/4] object-cover object-top" />
+            </div>
+            <div className="lg:col-span-3 fade-in-up">
+              <p className="section-label mb-6">Profile</p>
+              <h2 className="text-3xl lg:text-4xl mb-4" style={{ fontFamily: "var(--font-heading)" }}>kawaharada mari</h2>
+              <p className="text-sm text-foreground/60 leading-[2] mb-4">
+                化粧品開発コンサルタント / ブランドディレクター / AI講座主宰
+              </p>
+              <p className="text-sm text-foreground/50 leading-[2] mb-8">
+                大手化粧品メーカー2社にて約10年間、化粧品の商品企画〜開発〜マーケティング〜ブランディングまでを一貫して担当。
+                日本・中国・インド市場、百貨店からドラッグストアまで幅広い流通チャネルを経験し、ブランドの芯を形にする力を培う。
+              </p>
+              <div className="flex flex-wrap gap-3 mb-8">
+                {["薬剤師", "英国IFPA認定アロマセラピスト", "事業構想修士（MPD）"].map((q) => (
+                  <span key={q} className="text-[0.65rem] tracking-wider text-foreground/40 border border-foreground/15 px-3 py-1.5" style={{ fontFamily: "var(--font-sub)" }}>{q}</span>
+                ))}
+              </div>
+              <Link href="/profile">
+                <span className="inline-flex items-center gap-2 text-xs tracking-[0.15em] uppercase text-rose-gold hover:text-foreground transition-colors duration-300 cursor-pointer" style={{ fontFamily: "var(--font-sub)", fontWeight: 500 }}>
+                  View Full Profile <ArrowRight className="w-3.5 h-3.5" />
+                </span>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
