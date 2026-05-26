@@ -181,7 +181,7 @@ export default function Home() {
                   <p className="text-[0.6rem] tracking-[0.3em] uppercase text-white/60 mb-3" style={{ fontFamily: "var(--font-sub)" }}>AI & Digital</p>
                   <h3 className="text-2xl lg:text-3xl text-white mb-3" style={{ fontFamily: "var(--font-heading)" }}>AI研修・デジタル支援</h3>
                   <p className="text-sm text-white/70 leading-relaxed mb-4 max-w-md">
-                    経営者向けAI顧問、法人研修、セミナー開催。累計参加者400名超。文科省認可AIスクール講師。
+                    経営者向けAI顧問、法人研修、セミナー開催。累計参加者500名超。文科省認可AIスクール講師。
                   </p>
                   <span className="inline-flex items-center gap-2 text-xs tracking-[0.15em] uppercase text-white/80 group-hover:text-rose-gold transition-colors duration-300" style={{ fontFamily: "var(--font-sub)" }}>
                     View Details <ArrowRight className="w-3.5 h-3.5" />
@@ -269,7 +269,7 @@ export default function Home() {
             {[
               { number: "130+", label: "商品企画開発", sub: "Products Developed" },
               { number: "10+", label: "ブランド支援", sub: "Brands Supported" },
-              { number: "400+", label: "セミナー参加者", sub: "Seminar Participants" },
+              { number: "500+", label: "セミナー参加者", sub: "Seminar Participants" },
               { number: "10", label: "年の業界経験", sub: "Years Experience" },
             ].map((stat) => (
               <div key={stat.sub} className="text-center fade-in-up">
