@@ -26,7 +26,7 @@ function Router() {
         <Route path={"/ai-training"} component={AITraining} />
         <Route path={"/profile"} component={Profile} />
         <Route path={"/news"} component={News} />
-        <Route path={"/news/:id"} component={NewsDetail} />
+        <Route path={"/news/:id"}>{(params) => <NewsDetail id={params.id} />}</Route>
         <Route path={"/contact"} component={Contact} />
         <Route path={"/404"} component={NotFound} />
         <Route component={NotFound} />

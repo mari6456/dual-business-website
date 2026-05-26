@@ -1,161 +1,140 @@
-import { useState, useEffect } from "react";
-import { useRoute, Link } from "wouter";
-import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { fetchNewsFromSheet } from "@/lib/fetchNewsFromSheet";
-import type { NewsItem } from "@/lib/newsData";
+// Design: Minimal editorial — clean article layout with image gallery support
+import { useEffect } from "react";
+import { useLocation, Link } from "wouter";
+import { newsData, NEWS_CATEGORIES } from "@/lib/newsData";
 import { ArrowLeft } from "lucide-react";
 
-const CATEGORY_LABELS: Record<string, string> = {
-  ai: "AI",
-  cosmetics: "コスメ",
-  media: "メディア",
-  event: "イベント",
-  info: "お知らせ",
-  other: "その他",
-};
+interface Props {
+  id: string;
+}
 
-const CATEGORY_COLORS: Record<string, string> = {
-  ai: "bg-blue-50 text-blue-700",
-  cosmetics: "bg-rose-50 text-rose-700",
-  media: "bg-amber-50 text-amber-700",
-  event: "bg-emerald-50 text-emerald-700",
-  info: "bg-gray-50 text-gray-700",
-  other: "bg-purple-50 text-purple-700",
-};
-
-export default function NewsDetail() {
-  useScrollReveal();
-  const [, params] = useRoute("/news/:id");
-  const [news, setNews] = useState<NewsItem | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [notFound, setNotFound] = useState(false);
+export default function NewsDetail({ id }: { id?: string }) {
+  const [, setLocation] = useLocation();
+  const item = newsData.find((n) => n.id === id);
 
   useEffect(() => {
-    if (!params?.id) return;
-    fetchNewsFromSheet().then((items) => {
-      const found = items.find((item) => item.id === params.id);
-      if (found) {
-        setNews(found);
-      } else {
-        setNotFound(true);
-      }
-      setLoading(false);
-    });
-  }, [params?.id]);
+    if (!item) {
+      setLocation("/news");
+    }
+    window.scrollTo(0, 0);
+  }, [item, setLocation]);
 
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <p className="text-foreground/40">読み込み中...</p>
-      </div>
-    );
-  }
+  if (!item) return null;
 
-  if (notFound || !news) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <p className="text-foreground/40 mb-4">記事が見つかりませんでした</p>
-          <Link href="/news" className="text-sm text-rose-gold hover:underline">
-            ニュース一覧へ戻る
-          </Link>
-        </div>
-      </div>
-    );
-  }
+  const paragraphs = item.content.split("\n\n").filter(Boolean);
 
   return (
     <div className="min-h-screen">
       {/* Back */}
-      <div className="pt-28 pb-6 border-b border-foreground/5">
-        <div className="container">
-          <Link href="/news" className="inline-flex items-center gap-2 text-sm text-foreground/40 hover:text-foreground transition-colors">
+      <div className="container pt-8 pb-0">
+        <Link href="/news">
+          <span className="inline-flex items-center gap-2 text-sm text-foreground/50 hover:text-foreground transition-colors cursor-pointer">
             <ArrowLeft className="w-4 h-4" />
             ニュース一覧へ戻る
-          </Link>
-        </div>
+          </span>
+        </Link>
       </div>
 
-      {/* Article */}
-      <article className="py-16">
-        <div className="container max-w-3xl mx-auto">
-          {/* Meta */}
-          <div className="fade-in-up mb-8">
-            <div className="flex items-center gap-3 mb-6">
-              <time className="text-xs text-foreground/40 font-mono">{news.date}</time>
-              <span className={`text-xs px-2 py-0.5 rounded-sm font-medium ${CATEGORY_COLORS[news.category] || CATEGORY_COLORS.info}`}>
-                {CATEGORY_LABELS[news.category] || news.category}
-              </span>
-            </div>
-            <h1 className="text-2xl lg:text-4xl leading-snug mb-6" style={{ fontFamily: "var(--font-heading)" }}>
-              {news.title}
-            </h1>
-            <p className="text-base text-foreground/60 leading-relaxed border-l-2 border-rose-gold pl-4">
-              {news.excerpt}
-            </p>
+      <article className="container py-12 max-w-3xl mx-auto">
+        {/* Meta */}
+        <div className="flex items-center gap-3 mb-6">
+          <time className="text-xs text-foreground/40 font-mono">{item.date}</time>
+          <span className="text-xs px-2 py-0.5 bg-foreground/5 rounded-full text-foreground/60">
+            {NEWS_CATEGORIES[item.category]}
+          </span>
+        </div>
+
+        {/* Title */}
+        <h1
+          className="text-2xl lg:text-4xl font-medium mb-8 leading-snug"
+          style={{ fontFamily: "var(--font-heading)" }}
+        >
+          {item.title}
+        </h1>
+
+        {/* Main image */}
+        {item.image && (
+          <div className="mb-10 rounded-sm overflow-hidden bg-muted aspect-[16/9]">
+            <img
+              src={item.image}
+              alt={item.title}
+              className="w-full h-full object-cover"
+            />
           </div>
+        )}
 
-          {/* Main Image */}
-          {news.image && (
-            <div className="fade-in-up mb-12 overflow-hidden">
-              <img
-                src={news.image}
-                alt={news.title}
-                className="w-full object-cover max-h-[500px]"
-              />
-            </div>
-          )}
-
-          {/* Body */}
-          {news.content && (
-            <div className="fade-in-up prose prose-sm max-w-none">
-              {news.content.split("\n").map((paragraph, i) => {
-                if (paragraph.trim() === "") return <br key={i} />;
-                // 見出し行（■で始まる）
-                if (paragraph.startsWith("■")) {
-                  return (
-                    <h2 key={i} className="text-lg font-semibold mt-10 mb-4 text-foreground" style={{ fontFamily: "var(--font-heading)" }}>
-                      {paragraph}
-                    </h2>
-                  );
-                }
-                // 引用（「」で囲まれた発言）
-                if (paragraph.startsWith("「") && paragraph.endsWith("」")) {
-                  return (
-                    <blockquote key={i} className="border-l-2 border-rose-gold pl-4 my-6 text-foreground/70 italic leading-relaxed">
-                      {paragraph}
-                    </blockquote>
-                  );
-                }
-                // 箇条書き（・で始まる）
-                if (paragraph.startsWith("・") || paragraph.startsWith("講義名：") || paragraph.startsWith("実施日：") || paragraph.startsWith("実施先：") || paragraph.startsWith("登壇者：") || paragraph.startsWith("内容：")) {
-                  return (
-                    <p key={i} className="text-sm text-foreground/70 leading-relaxed pl-2 my-1">
-                      {paragraph}
+        {/* Body */}
+        <div className="prose prose-neutral max-w-none space-y-5">
+          {paragraphs.map((para, i) => {
+            if (para.startsWith("■")) {
+              // セクションヘッダー
+              const lines = para.split("\n");
+              return (
+                <div key={i} className="mt-10 pt-8 border-t border-border/30">
+                  <h2
+                    className="text-base font-semibold mb-4 text-foreground/80"
+                    style={{ fontFamily: "var(--font-heading)" }}
+                  >
+                    {lines[0]}
+                  </h2>
+                  {lines.slice(1).map((line, j) => (
+                    <p key={j} className="text-sm text-foreground/70 leading-relaxed">
+                      {line}
                     </p>
-                  );
-                }
-                return (
-                  <p key={i} className="text-base text-foreground/70 leading-[2] mb-4">
-                    {paragraph}
-                  </p>
-                );
-              })}
-            </div>
-          )}
+                  ))}
+                </div>
+              );
+            }
+            if (para.startsWith("「") && para.endsWith("」")) {
+              // 引用
+              return (
+                <blockquote
+                  key={i}
+                  className="border-l-2 border-primary/40 pl-5 py-1 text-foreground/70 italic text-sm leading-relaxed"
+                >
+                  {para}
+                </blockquote>
+              );
+            }
+            return (
+              <p key={i} className="text-sm lg:text-base text-foreground/80 leading-relaxed">
+                {para}
+              </p>
+            );
+          })}
+        </div>
 
-          {/* Footer */}
-          <div className="fade-in-up mt-16 pt-8 border-t border-foreground/10">
-            <div className="flex items-center justify-between">
-              <Link href="/news" className="inline-flex items-center gap-2 text-sm text-foreground/40 hover:text-foreground transition-colors">
-                <ArrowLeft className="w-4 h-4" />
-                ニュース一覧へ戻る
-              </Link>
-              <Link href="/contact" className="text-sm text-rose-gold hover:underline">
-                お問い合わせ →
-              </Link>
+        {/* Additional images gallery */}
+        {item.images && item.images.length > 1 && (
+          <div className="mt-12">
+            <p className="text-xs text-foreground/40 mb-4 uppercase tracking-widest">Photo</p>
+            <div className="grid grid-cols-2 gap-3">
+              {item.images.slice(1).map((src, i) => (
+                <div key={i} className="aspect-[4/3] overflow-hidden rounded-sm bg-muted">
+                  <img
+                    src={src}
+                    alt={`${item.title} ${i + 2}`}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              ))}
             </div>
           </div>
+        )}
+
+        {/* Footer */}
+        <div className="mt-16 pt-8 border-t border-border/30 flex items-center justify-between">
+          <Link href="/news">
+            <span className="inline-flex items-center gap-2 text-sm text-foreground/50 hover:text-foreground transition-colors cursor-pointer">
+              <ArrowLeft className="w-4 h-4" />
+              ニュース一覧へ戻る
+            </span>
+          </Link>
+          <Link href="/contact">
+            <span className="text-sm text-foreground/50 hover:text-foreground transition-colors cursor-pointer">
+              お問い合わせ →
+            </span>
+          </Link>
         </div>
       </article>
     </div>
