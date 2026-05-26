@@ -55,39 +55,15 @@ export default function Profile() {
                 type: "cosmetics" as const,
               },
               {
-                org: "Beauty Creators（株式会社MIKOTO）",
-                role: "取締役 管理薬剤師",
-                desc: "化粧品・美容機器の開発コンサルティング。日本・韓国にオフィスを展開。",
-                type: "cosmetics" as const,
-              },
-              {
                 org: "株式会社FURUNO",
                 role: "CMO（Chief Marketing Officer）",
                 desc: "マーケティング戦略の統括。ブランディングとデジタル戦略を推進。",
                 type: "cosmetics" as const,
               },
               {
-                org: "エキノックス株式会社",
-                role: "開発責任者",
-                desc: "化粧品の商品開発を統括。処方設計から製造管理まで一貫して担当。",
-                type: "cosmetics" as const,
-              },
-              {
-                org: "横浜市立大学 共創イノベーションセンター",
-                role: "未来共創リード",
-                desc: "産学連携による共創イノベーションの推進。未来実装プロジェクトに参画。",
-                type: "ai" as const,
-              },
-              {
                 org: "AI 未来学院",
                 role: "講師",
                 desc: "文科省認可のAIスクールにて、AI活用・実践講座を担当。経営者・ビジネスパーソン向けにAIリテラシー向上を支援。",
-                type: "ai" as const,
-              },
-              {
-                org: "IMSI",
-                role: "AI講座・ブランディング講座 共同主催",
-                desc: "セラピスト向けAI活用講座とブランディング講座を共同主催。美容業界の方々のデジタル化とブランド構築を支援。",
                 type: "ai" as const,
               },
             ].map((pos) => (
@@ -210,9 +186,8 @@ export default function Profile() {
               <h2 className="text-3xl lg:text-4xl mb-8" style={{ fontFamily: "var(--font-heading)" }}>AI・デジタル活動実績</h2>
               <div className="space-y-4">
                 {[
-                  "AI&デジタルセミナー 累計参加者数400名超え",
+                  "AI&デジタルセミナー 累計参加者数500名以上",
                   "文科省認可AIスクール講師",
-                  "IMSI「AI×ブランディング講座」主宰",
                   "オンライン秘書チーム運営",
                   "介護業界（支援事業者）でのAI×マーケティング支援",
                   "SNS発信や業務効率化サポート",
