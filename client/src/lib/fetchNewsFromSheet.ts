@@ -27,6 +27,8 @@ export async function fetchNewsFromSheet(): Promise<NewsItem[]> {
 
 /**
  * CSV文字列をNewsItem配列にパース
+ * 列順: ステータス(A), 公開状態(B), Manus公開状態(C), 公開開始日時(D),
+ *       カテゴリ(E), タイトル(F), 概要(G), 本文(H), 画像URL(I)
  */
 function parseCSV(csvText: string): NewsItem[] {
   const lines = csvText.split("\n");
@@ -38,23 +40,35 @@ function parseCSV(csvText: string): NewsItem[] {
     .map((line, index) => {
       const columns = parseCSVLine(line);
       
-      const [date, category, title, excerpt, content, image, status] = columns;
+      // 列インデックス: 0=ステータス, 1=公開状態, 2=Manus公開状態, 3=日付,
+      //                  4=カテゴリ, 5=タイトル, 6=概要, 7=本文, 8=画像URL
+      const status = columns[1] || "";   // 公開状態（B列）
+      const date = columns[3] || "";     // 公開開始日時（D列）
+      const category = columns[4] || ""; // カテゴリ（E列）
+      const title = columns[5] || "";    // タイトル（F列）
+      const excerpt = columns[6] || "";  // 概要（G列）
+      const content = columns[7] || "";  // 本文（H列）
+      const image = columns[8] || "";    // 画像URL（I列）
 
       // IDを生成（日付とインデックスから）
       const id = `${date.replace(/\./g, "-")}-${index}`;
 
       return {
         id,
-        date: date || "",
+        date: date,
         category: (category as NewsItem["category"]) || "info",
-        title: title || "",
-        excerpt: excerpt || "",
-        content: content || "",
+        title: title,
+        excerpt: excerpt,
+        content: content,
         image: image || undefined,
-        status: status || "",
+        status: status,
       };
     })
-    .filter((item) => item.status === "公開"); // 「公開」のみ表示
+    .filter((item) => item.status === "公開") // 「公開」のみ表示
+    .sort((a, b) => {
+      // 日付降順（新しい順）
+      return b.date.localeCompare(a.date);
+    });
 }
 
 /**
