@@ -5,7 +5,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 // ニュースを公開するには newsData.ts に記事を追加してください
 // 現在公開中の記事: yamano-lecture など
-const PUBLISHED_IDS = ["2026-05-yamano-lecture"];
+const PUBLISHED_IDS = ["2026-04-reborn-beauty-summit", "2026-05-yamano-lecture"];
 
 export default function News() {
   useScrollReveal();
