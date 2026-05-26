@@ -47,7 +47,7 @@ export default function AITraining() {
         <div className="container">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 stagger-children">
             {[
-              { label: "累計セミナー参加者", value: "400名超" },
+              { label: "累計セミナー参加者", value: "500名超" },
               { label: "文科省認可AIスクール", value: "講師" },
               { label: "IMSI AI×ブランディング講座", value: "主宰" },
               { label: "介護業界AI支援", value: "実施中" },
