@@ -3,6 +3,9 @@ import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { PHOTOS, IMAGES } from "@/lib/images";
+import { newsData, NEWS_CATEGORIES } from "@/lib/newsData";
+
+const PUBLISHED_IDS = ["2026-05-yamano-lecture"];
 
 const HERO_SLIDES = [
   { src: PHOTOS.team.laughing, alt: "UNFRAME チーム" },
@@ -257,9 +260,57 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="text-center py-20 fade-in-up">
-            <p className="text-6xl lg:text-7xl tracking-[0.2em] uppercase" style={{ fontFamily: "var(--font-display)", fontWeight: 300, color: "oklch(0.85 0.01 80)" }}>COMING SOON</p>
-          </div>
+          {(() => {
+            const published = newsData.filter((item) => PUBLISHED_IDS.includes(item.id)).slice(0, 3);
+            if (published.length === 0) {
+              return (
+                <div className="text-center py-20 fade-in-up">
+                  <p className="text-6xl lg:text-7xl tracking-[0.2em] uppercase" style={{ fontFamily: "var(--font-display)", fontWeight: 300, color: "oklch(0.85 0.01 80)" }}>COMING SOON</p>
+                </div>
+              );
+            }
+            return (
+              <div className="space-y-0">
+                {published.map((item, i) => (
+                  <Link key={item.id} href={`/news/${item.id}`}>
+                    <article
+                      className="fade-in-up group flex flex-col md:flex-row gap-6 py-10 border-b border-[oklch(0.92_0.005_80)] hover:bg-warm-surface/50 transition-colors duration-200 cursor-pointer px-2 -mx-2 rounded-sm"
+                      style={{ animationDelay: `${i * 0.05}s` }}
+                    >
+                      {item.image && (
+                        <div className="md:w-48 lg:w-56 flex-shrink-0">
+                          <div className="aspect-[4/3] overflow-hidden bg-muted">
+                            <img
+                              src={item.image}
+                              alt={item.title}
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            />
+                          </div>
+                        </div>
+                      )}
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-3 mb-3">
+                          <time className="text-xs text-foreground/40 font-mono">{item.date}</time>
+                          <span className="text-xs px-2 py-0.5 bg-foreground/5 rounded-full text-foreground/60">
+                            {NEWS_CATEGORIES[item.category]}
+                          </span>
+                        </div>
+                        <h3
+                          className="text-lg lg:text-xl font-medium mb-2 group-hover:text-rose-gold transition-colors leading-snug"
+                          style={{ fontFamily: "var(--font-heading)" }}
+                        >
+                          {item.title}
+                        </h3>
+                        <p className="text-sm text-foreground/60 leading-relaxed line-clamp-2">
+                          {item.excerpt}
+                        </p>
+                      </div>
+                    </article>
+                  </Link>
+                ))}
+              </div>
+            );
+          })()}
         </div>
       </section>
 
