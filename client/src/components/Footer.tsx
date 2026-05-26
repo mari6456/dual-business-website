@@ -76,20 +76,12 @@ export default function Footer() {
               </h4>
               <div className="space-y-3">
                 <a
-                  href="https://www.instagram.com/"
+                  href="https://www.instagram.com/mari_partner/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block text-sm text-white/60 hover:text-rose-gold transition-colors duration-300"
                 >
                   Instagram
-                </a>
-                <a
-                  href="https://line.me/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-sm text-white/60 hover:text-rose-gold transition-colors duration-300"
-                >
-                  LINE
                 </a>
               </div>
             </div>
