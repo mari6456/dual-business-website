@@ -1,7 +1,7 @@
 export interface NewsItem {
   id: string;
   date: string;
-  category: "cosmetics" | "ai" | "media" | "event" | "info";
+  category: "cosmetics" | "ai" | "ai_beauty" | "media" | "event" | "info";
   title: string;
   excerpt: string;
   content: string;
@@ -9,9 +9,12 @@ export interface NewsItem {
   images?: string[];
 }
 
+export type NewsCategory = NewsItem["category"];
+
 export const NEWS_CATEGORIES: Record<NewsItem["category"], string> = {
   cosmetics: "化粧品事業",
   ai: "AI研修",
+  ai_beauty: "AI×美容",
   media: "メディア",
   event: "イベント",
   info: "お知らせ",
@@ -21,7 +24,7 @@ export const newsData: NewsItem[] = [
   {
     id: "2026-05-yamano-lecture",
     date: "2026.05.21",
-    category: "ai",
+    category: "ai_beauty",
     title: "UNFRAME、山野美容芸術短期大学にて「美容福祉×AI」をテーマに特別授業を実施",
     excerpt:
       "化粧品開発者・薬剤師・AI講師として活動するkawaharada mariが登壇。「ボーダレス・ビューティ 制約を可能性に変える、美容福祉とAIの未来」をテーマに90分の特別授業を実施。回答者34名中32名が「美容福祉の見え方が変わった」と回答。",
