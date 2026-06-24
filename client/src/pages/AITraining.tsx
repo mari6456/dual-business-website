@@ -1,8 +1,9 @@
 import { Link } from "wouter";
-import { ArrowRight, CheckSquare, ChevronDown, ChevronUp } from "lucide-react";
+import { ArrowRight, CheckSquare, ChevronDown, ChevronUp, Mail, FileText, Users, PlayCircle } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { PHOTOS } from "@/lib/images";
 import { useState } from "react";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 // Design: Sophisticated dark editorial with warm rose-gold accents
 // Sections: FV → 課題提起 → 共感・原因 → 3つの強み → プログラム → 対象・形式 → 講師 → 受講者の声 → FAQ → CTA
@@ -118,8 +119,8 @@ export default function AITraining() {
             <div className="flex flex-wrap gap-x-6 gap-y-2">
               {[
                 "ハウスメーカー様で半年継続研修導入",
-                "美容芸術短期大学 登壇",
-                "建設業向け研修 実績",
+                "文科省認可スクール AI未来学院 講師",
+                "累計セミナー参加者 500名超",
               ].map((badge) => (
                 <span
                   key={badge}
@@ -130,6 +131,64 @@ export default function AITraining() {
                 </span>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Section 01b: 統計データ ── */}
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="container">
+          <div className="text-center mb-14 fade-in-up">
+            <p className="section-label mb-4">Data</p>
+            <h2 className="text-2xl lg:text-3xl" style={{ fontFamily: "var(--font-heading)" }}>
+              AIを“使っている会社”と、まだ迷っている会社。差は、もう開いている。
+            </h2>
+            <p className="text-sm text-foreground/50 mt-4 max-w-xl mx-auto" style={{ fontFamily: "var(--font-body)" }}>
+              国・東京都の公式調査が示す「AI活用の現在地」。数字が語る、今研修が必要な理由。
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1 stagger-children">
+            {[
+              {
+                value: "約50%",
+                label: "企業が生成AI活用方針を策定",
+                source: "総務省 令和7年版 情報通信白書",
+                note: "裏を返せば、半数はまだ方針すら未整備",
+              },
+              {
+                value: "44.6%",
+                label: "東京都内企業の生成AI活用率",
+                source: "帝国データバンク×東京都 2026年3月調査",
+                note: "活用しているのは半数以下。差がつく今がチャンス",
+              },
+              {
+                value: "約12%",
+                label: "中小企業のAI導入率",
+                source: "中小企業AI導入実態調査 2026",
+                note: "大企業との格差が拡大中。早期導入が競争力に直結",
+              },
+              {
+                value: "85.1%",
+                label: "DX推進人材が不足している企業",
+                source: "IPA DX動向 2025",
+                note: "社内育成こそが最速・最安のDX戦略",
+              },
+            ].map((stat) => (
+              <div key={stat.label} className="fade-in-up editorial-card text-center">
+                <div className="text-3xl lg:text-4xl text-rose-gold mb-3" style={{ fontFamily: "var(--font-display)" }}>
+                  {stat.value}
+                </div>
+                <p className="text-sm font-medium mb-2 leading-snug" style={{ fontFamily: "var(--font-heading)" }}>
+                  {stat.label}
+                </p>
+                <p className="text-[0.65rem] text-foreground/35 mb-3" style={{ fontFamily: "var(--font-sub)" }}>
+                  {stat.source}
+                </p>
+                <p className="text-xs text-rose-gold/80 leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
+                  {stat.note}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -217,17 +276,17 @@ export default function AITraining() {
               {
                 num: "01",
                 title: '"知る"ではなく、"自分の業務で動かす"まで',
-                body: 'ゴール宣言 → まず触らせる → たとえ話で概念理解 → コピペで使えるプロンプト配布 → 手を動かすワーク → 気づきのシェア → 宿題。この黄金フローで、毎回「自分の成果物を1つ」持ち帰ります。聞いて終わりにしません。',
+                body: '毎回「自分の成果物を1つ」持ち帰る流れ。聞いて終わりにしません。',
               },
               {
                 num: "02",
                 title: '業界別の"自分ごと"実例',
-                body: '美容・サロン／建設・工事管理／美容福祉／士業・契約書——受講者の業界に合わせた実例で講義します。抽象論ゼロ。最初から「あなたの仕事」の話だから、腹落ちのスピードが違います。',
+                body: '美容・建設・介護・士業——受講者の業界に合わせた実例で講義。抽象論ゼロ。',
               },
               {
                 num: "03",
                 title: '"リテラシー"で終わらず、"自動化・制作"まで到達',
-                body: 'Gemini・Gem／NotebookLM／画像生成／スライド・HP制作／スプレッドシート連携の自動化まで。研修後、組織には「回り続ける仕組みと、目に見える成果物」が残ります。',
+                body: '研修後、組織に「回り続ける仕組み」と「目に見える成果物」が残ります。',
               },
             ].map((s) => (
               <div key={s.num} className="editorial-card fade-in-up">
@@ -249,7 +308,7 @@ export default function AITraining() {
       {/* ── Section 05: プログラム内容 ── */}
       <section id="program" className="py-24 lg:py-32 bg-warm-surface">
         <div className="container">
-          <div className="mb-16 fade-in-up">
+          <div className="mb-12 fade-in-up">
             <p className="section-label mb-4">Program</p>
             <h2 className="text-2xl lg:text-3xl" style={{ fontFamily: "var(--font-heading)" }}>
               ツールが変わっても、使いこなせる。<br />「AIとの向き合い方」を身につける研修
@@ -259,72 +318,128 @@ export default function AITraining() {
               下記のメニューはステップではなく、御社の目的・状況に合わせて自由に組み合わせます。
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 stagger-children">
+
+          <Tabs defaultValue="basic" className="w-full">
+            <TabsList className="flex flex-wrap h-auto gap-2 bg-transparent mb-10 justify-start">
+              {[
+                { value: "basic", label: "基礎編" },
+                { value: "tools", label: "ツール活用編" },
+                { value: "automation", label: "自動化編" },
+                { value: "creation", label: "制作編" },
+                { value: "dx", label: "業務DX定着編" },
+                { value: "custom", label: "業界特化・カスタム" },
+              ].map((t) => (
+                <TabsTrigger
+                  key={t.value}
+                  value={t.value}
+                  className="px-5 py-2 text-xs tracking-wider border border-foreground/15 data-[state=active]:bg-rose-gold data-[state=active]:text-white data-[state=active]:border-rose-gold rounded-none"
+                  style={{ fontFamily: "var(--font-sub)" }}
+                >
+                  {t.label}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+
             {[
               {
+                value: "basic",
                 tag: "Basic",
                 title: "基礎編",
-                content: "AIの全体像と「怖くない」使い方。プロンプトの型を体得し、習慣化する。",
+                content: "AIの全体像と『怖くない』使い方。プロンプトの型を体得し、習慣化する。まず触れることで、苦手意識を取り除くところから始めます。",
                 goal: "AIへの苦手意識がなくなる",
+                img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663045491092/mAJ6yzJwtYgBjF8R6h4Rmz/prog-basic-5tahrHxD3b9B7UfDaBF6wS.png",
+                points: ["ゴール宣言からスタート", "たとえ話で概念理解", "コピペで使えるプロンプト配布", "手を動かすワーク"],
               },
               {
+                value: "tools",
                 tag: "Tools",
                 title: "ツール活用編",
-                content: "ChatGPT・Claude・Gemini・Gem・NotebookLMなど、その時々の目的に最適なツールを選んで導入。「どれが正解」ではなく、使い分ける力を身につける。",
+                content: "ChatGPT・Claude・Gemini・Gem・NotebookLMなど、その時々の目的に最適なツールを選んで導入。『どれが正解』ではなく、使い分ける力を身につける。",
                 goal: "自分専用AIを1つ作る",
+                img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663045491092/mAJ6yzJwtYgBjF8R6h4Rmz/prog-tools-cx2aiQMvVVkuZ52QLbAJZw.png",
+                points: ["主要AIツールの比較・選び方", "Gemカスタム指示の設定", "NotebookLMで社内資料を整理", "自分専用AIを1つ完成させる"],
               },
               {
+                value: "automation",
                 tag: "Automation",
                 title: "自動化編",
-                content: "GAS・Notebook・API連携などで繰り返し業務を仕組み化。「やりっぱなし」の状態を作る。",
+                content: "GAS・Notebook・API連携などで繰り返し業務を仕組み化。『やりっぱなし』ではなく、定期実行・通知・記録まで自動で回る状態を作る。",
                 goal: "定例業務を1つ自動化する",
+                img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663045491092/mAJ6yzJwtYgBjF8R6h4Rmz/prog-automation-DoPF3njM6eHnt6UkzWLHGm.png",
+                points: ["GASで定期実行を設定", "メール・LINEへの自動通知", "スプレッドシートとAIの連携", "業務1つを当日中に自動化"],
               },
               {
+                value: "creation",
                 tag: "Creation",
                 title: "制作編",
-                content: "画像生成・スライド・HP制作・提案資料作成。目に見える成果物を当日中に作る。",
+                content: "画像生成・スライド・HP制作・提案資料作成。目に見える成果物を当日中に作る。AIを使えば、デザイン経験ゼロでもプロ品質のアウトプットが可能です。",
                 goal: "提案資料/HPを1つ完成させる",
+                img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663045491092/mAJ6yzJwtYgBjF8R6h4Rmz/prog-creation-dsr9uqyA2ZqdVa9teTdYoK.png",
+                points: ["AI画像生成で提案資料を強化", "スライドをAIで一気に作成", "HPをコードなしで制作", "成果物を当日中に完成させる"],
               },
               {
+                value: "dx",
                 tag: "DX",
                 title: "業務DX定着編",
-                content: "各部署の業務にAIを組み込み、組織に定着させる。「回り続ける仕組み」を残す。",
+                content: "各部署の業務にAIを組み込み、組織に定着させる。一部の人だけが使う状態を脱し、チーム全体で『回り続ける仕組み』を残します。",
                 goal: "チームで使う仕組みを作る",
+                img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663045491092/mAJ6yzJwtYgBjF8R6h4Rmz/prog-dx-Hf3JSwE4XbHZ5CnejXjEux.png",
+                points: ["部署別の業務フロー整理", "AI活用ルール・ガイドライン策定", "定着支援・フォローアップ", "組織全体の仕組みを設計"],
               },
               {
+                value: "custom",
                 tag: "Custom",
                 title: "業界特化・カスタム",
-                content: "美容・建設・介護・士業など、業界の実例に完全応用したカスタム設計。抽象論ゼロ。",
+                content: "美容・建設・介護・士業など、業界の実例に完全応用したカスタム設計。抽象論ゼロ。受講者の業務にそのまま使える内容だけで構成します。",
                 goal: "自社の業務にそのまま使える",
+                img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663045491092/mAJ6yzJwtYgBjF8R6h4Rmz/prog-custom-RdQadNEB2igbXs36z7oV2Q.png",
+                points: ["業界特有の業務課題を整理", "実際の業務フローに沿った実例", "そのまま使えるプロンプト配布", "翌日から使える状態で終了"],
               },
             ].map((item) => (
-              <div
-                key={item.tag}
-                className="fade-in-up editorial-card hover:border-rose-gold/30 transition-colors duration-300"
-              >
-                <span className="text-[0.6rem] tracking-[0.2em] text-rose-gold mb-3 block" style={{ fontFamily: "var(--font-sub)" }}>
-                  {item.tag}
-                </span>
-                <h3 className="text-base font-medium mb-3" style={{ fontFamily: "var(--font-heading)" }}>
-                  {item.title}
-                </h3>
-                <p className="text-sm text-foreground/55 leading-[1.9] mb-4" style={{ fontFamily: "var(--font-body)" }}>
-                  {item.content}
-                </p>
-                <div className="pt-4 border-t border-foreground/8">
-                  <p className="text-[0.6rem] tracking-[0.15em] text-foreground/30 mb-1" style={{ fontFamily: "var(--font-sub)" }}>
-                    ゴール
-                  </p>
-                  <p className="text-xs text-foreground/50" style={{ fontFamily: "var(--font-body)" }}>
-                    {item.goal}
-                  </p>
+              <TabsContent key={item.value} value={item.value}>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-1 fade-in-up">
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={item.img}
+                      alt={item.title}
+                      className="w-full aspect-[4/3] object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 to-transparent" />
+                    <span
+                      className="absolute bottom-4 left-4 text-[0.6rem] tracking-[0.2em] text-white/70 bg-charcoal/50 px-3 py-1"
+                      style={{ fontFamily: "var(--font-sub)" }}
+                    >
+                      {item.tag}
+                    </span>
+                  </div>
+                  <div className="editorial-card">
+                    <h3 className="text-xl mb-4" style={{ fontFamily: "var(--font-heading)" }}>
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-foreground/60 leading-[2] mb-6" style={{ fontFamily: "var(--font-body)" }}>
+                      {item.content}
+                    </p>
+                    <div className="space-y-2 mb-6">
+                      {item.points.map((pt) => (
+                        <div key={pt} className="flex items-start gap-3">
+                          <span className="w-1 h-1 bg-rose-gold rounded-full mt-2 shrink-0" />
+                          <span className="text-sm text-foreground/60" style={{ fontFamily: "var(--font-body)" }}>{pt}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="pt-4 border-t border-foreground/8">
+                      <p className="text-[0.6rem] tracking-[0.15em] text-foreground/30 mb-1" style={{ fontFamily: "var(--font-sub)" }}>ゴール</p>
+                      <p className="text-sm text-rose-gold" style={{ fontFamily: "var(--font-body)" }}>{item.goal}</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </TabsContent>
             ))}
-          </div>
+          </Tabs>
+
           <div className="fade-in-up mt-8 p-6 border-l-2 border-rose-gold bg-white">
             <p className="text-sm text-foreground/60 leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
-              <strong className="text-foreground">各回共通のゴール：</strong>その日のうちに、自分の業務で“1つ”完成させて帰る。<br />
+              <strong className="text-foreground">各回共通のゴール：</strong>その日のうちに、自分の業務で"1つ"完成させて帰る。<br />
               単発の体験会から、6回以上の伴走型まで、回数・テーマは御社に合わせて設計します。
             </p>
           </div>
@@ -526,6 +641,70 @@ export default function AITraining() {
 
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Section 08b: ご利用の流れ ── */}
+      <section className="py-24 lg:py-32">
+        <div className="container">
+          <div className="mb-16 fade-in-up">
+            <p className="section-label mb-4">Flow</p>
+            <h2 className="text-2xl lg:text-3xl" style={{ fontFamily: "var(--font-heading)" }}>ご利用の流れ</h2>
+            <p className="text-sm text-foreground/50 mt-4" style={{ fontFamily: "var(--font-body)" }}>
+              お問い合わせから研修実施まで、最短2週間で対応可能です。
+            </p>
+          </div>
+          <div className="relative">
+            {/* 縦線 */}
+            <div className="absolute left-6 top-0 bottom-0 w-px bg-foreground/8 hidden md:block" />
+            <div className="space-y-1 stagger-children">
+              {[
+                {
+                  step: "01",
+                  icon: <Mail className="w-5 h-5" />,
+                  title: "お問い合わせ・無料相談",
+                  desc: "フォームまたはSNSからお気軽にご連絡ください。御社の課題・目的・規模をヒアリングします。しつこい営業は一切しません。",
+                },
+                {
+                  step: "02",
+                  icon: <FileText className="w-5 h-5" />,
+                  title: "研修プランのご提案",
+                  desc: "業界・職種・目的に合わせてカスタム設計した研修プランをご提案。回数・テーマ・形式を御社に合わせて調整します。",
+                },
+                {
+                  step: "03",
+                  icon: <Users className="w-5 h-5" />,
+                  title: "事前準備・ヒアリング",
+                  desc: "受講者の業務内容・AIリテラシーレベルを事前に確認。当日使えるプロンプト集や資料を業務に合わせて準備します。",
+                },
+                {
+                  step: "04",
+                  icon: <PlayCircle className="w-5 h-5" />,
+                  title: "研修実施",
+                  desc: "ゴール宣言 → まず触らせる → たとえ話で概念理解 → コピペで使えるプロンプト配布 → 手を動かすワーク → 気づきのシェア → 宿題。この黄金フローで、毎回『自分の成果物を1つ』持ち帰ります。",
+                },
+                {
+                  step: "05",
+                  icon: <ArrowRight className="w-5 h-5" />,
+                  title: "定着支援・フォローアップ",
+                  desc: "研修後の質問対応・定着支援も対応。『やって終わり』にしません。継続伴走型では次回の研修内容を受講者の進捗に合わせて調整します。",
+                },
+              ].map((item) => (
+                <div key={item.step} className="fade-in-up flex gap-8 items-start editorial-card relative">
+                  <div className="shrink-0 w-12 h-12 bg-rose-gold/10 flex items-center justify-center text-rose-gold">
+                    {item.icon}
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="text-[0.6rem] tracking-[0.2em] text-rose-gold" style={{ fontFamily: "var(--font-sub)" }}>STEP {item.step}</span>
+                    </div>
+                    <h3 className="text-base font-medium mb-2" style={{ fontFamily: "var(--font-heading)" }}>{item.title}</h3>
+                    <p className="text-sm text-foreground/55 leading-[1.9]" style={{ fontFamily: "var(--font-body)" }}>{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
