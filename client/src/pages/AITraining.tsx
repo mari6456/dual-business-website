@@ -252,62 +252,70 @@ export default function AITraining() {
           <div className="mb-16 fade-in-up">
             <p className="section-label mb-4">Program</p>
             <h2 className="text-2xl lg:text-3xl" style={{ fontFamily: "var(--font-heading)" }}>
-              御社のレベルに合わせて設計する、<br />5つのステップ
+              ツールが変わっても、使いこなせる。<br />「AIとの向き合い方」を身につける研修
             </h2>
+            <p className="text-sm text-foreground/55 mt-5 leading-[2] max-w-2xl" style={{ fontFamily: "var(--font-body)" }}>
+              ChatGPT・Claude・Gemini…ツールはこれからも変わり続けます。だからこそ、「その時に最適なツールを選んで使いこなせる思考」を導くことを大切にしています。
+              下記のメニューはステップではなく、御社の目的・状況に合わせて自由に組み合わせます。
+            </p>
           </div>
-          <div className="space-y-1 stagger-children">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 stagger-children">
             {[
               {
-                step: "STEP 1",
+                tag: "Basic",
                 title: "基礎編",
-                content: "AIの全体像と「怖くない」使い方／プロンプトの型",
+                content: "AIの全体像と「怖くない」使い方。プロンプトの型を体得し、習慣化する。",
                 goal: "AIへの苦手意識がなくなる",
               },
               {
-                step: "STEP 2",
+                tag: "Tools",
                 title: "ツール活用編",
-                content: "Gemini・Gem・NotebookLMで日常業務を時短",
+                content: "ChatGPT・Claude・Gemini・Gem・NotebookLMなど、その時々の目的に最適なツールを選んで導入。「どれが正解」ではなく、使い分ける力を身につける。",
                 goal: "自分専用AIを1つ作る",
               },
               {
-                step: "STEP 3",
+                tag: "Automation",
                 title: "自動化編",
-                content: "スプレッドシート連携等で繰り返し業務を仕組み化",
+                content: "GAS・Notebook・API連携などで繰り返し業務を仕組み化。「やりっぱなし」の状態を作る。",
                 goal: "定例業務を1つ自動化する",
               },
               {
-                step: "STEP 4",
-                title: "上級・制作編",
-                content: "画像生成・スライド・HP制作・資料作成",
+                tag: "Creation",
+                title: "制作編",
+                content: "画像生成・スライド・HP制作・提案資料作成。目に見える成果物を当日中に作る。",
                 goal: "提案資料/HPを1つ完成させる",
               },
               {
-                step: "STEP 5",
+                tag: "DX",
                 title: "業務DX定着編",
-                content: "各部署の業務にAIを組み込み、組織に定着",
+                content: "各部署の業務にAIを組み込み、組織に定着させる。「回り続ける仕組み」を残す。",
                 goal: "チームで使う仕組みを作る",
               },
-            ].map((item, i) => (
+              {
+                tag: "Custom",
+                title: "業界特化・カスタム",
+                content: "美容・建設・介護・士業など、業界の実例に完全応用したカスタム設計。抽象論ゼロ。",
+                goal: "自社の業務にそのまま使える",
+              },
+            ].map((item) => (
               <div
-                key={i}
-                className="fade-in-up grid grid-cols-[auto_1fr_auto] lg:grid-cols-[120px_1fr_auto] items-center gap-6 p-6 bg-white border border-foreground/5 hover:border-rose-gold/20 transition-colors duration-300"
+                key={item.tag}
+                className="fade-in-up editorial-card hover:border-rose-gold/30 transition-colors duration-300"
               >
-                <div>
-                  <p className="text-[0.6rem] tracking-[0.2em] text-rose-gold mb-1" style={{ fontFamily: "var(--font-sub)" }}>
-                    {item.step}
-                  </p>
-                  <p className="text-base font-medium" style={{ fontFamily: "var(--font-heading)" }}>
-                    {item.title}
-                  </p>
-                </div>
-                <p className="text-sm text-foreground/60 leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
+                <span className="text-[0.6rem] tracking-[0.2em] text-rose-gold mb-3 block" style={{ fontFamily: "var(--font-sub)" }}>
+                  {item.tag}
+                </span>
+                <h3 className="text-base font-medium mb-3" style={{ fontFamily: "var(--font-heading)" }}>
+                  {item.title}
+                </h3>
+                <p className="text-sm text-foreground/55 leading-[1.9] mb-4" style={{ fontFamily: "var(--font-body)" }}>
                   {item.content}
                 </p>
-                <div className="hidden lg:block text-right min-w-[180px]">
+                <div className="pt-4 border-t border-foreground/8">
                   <p className="text-[0.6rem] tracking-[0.15em] text-foreground/30 mb-1" style={{ fontFamily: "var(--font-sub)" }}>
-                    この回のゴール
+                    ゴール
                   </p>
-                  <p className="text-xs text-foreground/60" style={{ fontFamily: "var(--font-body)" }}>
+                  <p className="text-xs text-foreground/50" style={{ fontFamily: "var(--font-body)" }}>
                     {item.goal}
                   </p>
                 </div>
@@ -316,8 +324,8 @@ export default function AITraining() {
           </div>
           <div className="fade-in-up mt-8 p-6 border-l-2 border-rose-gold bg-white">
             <p className="text-sm text-foreground/60 leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
-              <strong className="text-foreground">各回共通のゴール：</strong>その日のうちに、自分の業務で"1つ"完成させて帰る。<br />
-              単発の体験会から、全6回の伴走型まで、回数・テーマは御社に合わせて設計します。
+              <strong className="text-foreground">各回共通のゴール：</strong>その日のうちに、自分の業務で“1つ”完成させて帰る。<br />
+              単発の体験会から、6回以上の伴走型まで、回数・テーマは御社に合わせて設計します。
             </p>
           </div>
         </div>
