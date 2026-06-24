@@ -277,19 +277,29 @@ export default function AITraining() {
                 num: "01",
                 title: '"知る"ではなく、"自分の業務で動かす"まで',
                 body: '毎回「自分の成果物を1つ」持ち帰る流れ。聞いて終わりにしません。',
+                img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663045491092/mAJ6yzJwtYgBjF8R6h4Rmz/strength-1-practical-YiytMh5hvzWhowPejiA9Uf.webp",
               },
               {
                 num: "02",
                 title: '業界別の"自分ごと"実例',
                 body: '美容・建設・介護・士業——受講者の業界に合わせた実例で講義。抽象論ゼロ。',
+                img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663045491092/mAJ6yzJwtYgBjF8R6h4Rmz/strength-2-tools-YbUvJLJf9iEzDqpdjw9rKY.webp",
               },
               {
                 num: "03",
                 title: '"リテラシー"で終わらず、"自動化・制作"まで到達',
                 body: '研修後、組織に「回り続ける仕組み」と「目に見える成果物」が残ります。',
+                img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663045491092/mAJ6yzJwtYgBjF8R6h4Rmz/strength-3-output-JkZQeRqdmeWjAyua7jaBKB.webp",
               },
             ].map((s) => (
-              <div key={s.num} className="editorial-card fade-in-up">
+              <div key={s.num} className="editorial-card fade-in-up overflow-hidden">
+                <div className="mb-5 -mx-6 -mt-6 overflow-hidden">
+                  <img
+                    src={s.img}
+                    alt={s.title}
+                    className="w-full h-44 object-cover object-center"
+                  />
+                </div>
                 <span className="text-xs text-rose-gold tracking-wider mb-4 block" style={{ fontFamily: "var(--font-sub)" }}>
                   {s.num}
                 </span>
@@ -596,39 +606,18 @@ export default function AITraining() {
             {[
               {
                 quote: "なんとなくで使っていたAIへの解像度が上がった。プロンプトへの意識で、返信業務がそのまま効率化できると感じました",
-                role: "設計",
-              },
-              {
-                quote: "初めてでしたが、とても利便性が良く、業務の時短になると実感しました",
-                role: "経理・総務",
               },
               {
                 quote: "自分がやっていた仕事に寄り添った内容で、すぐ実践できそう。とても有意義でした",
-                role: "アシスタント",
-              },
-              {
-                quote: "お客様とのメッセージ作成が多いので、自分専用AI（Gem）が非常に便利でした",
-                role: "設計",
               },
               {
                 quote: "HPを自分で作れることが驚きでした。コードまで作れるのはすごい",
-                role: "設計",
-              },
-              {
-                quote: "スプレッドシートから読み取ってリマインドを自動化できる。スケジュール管理に早速使います",
-                role: "設計",
               },
               {
                 quote: "他社の画像からプロンプトを作ると新しいアイデアが生まれる。お客様への提案資料に活かします",
-                role: "社長",
-              },
-              {
-                quote: "NotebookLMで要約や資料が簡単に作れる。ただ調べるのでなく、効率よく仕事できるようにしたい",
-                role: "アシスタント",
               },
               {
                 quote: "カスタム指示はYouTube等で情報過多になり試せずにいた。信頼できる方の説明で、ようやく取り入れられました",
-                role: "アシスタント",
               },
             ].map((v, i) => (
               <div
