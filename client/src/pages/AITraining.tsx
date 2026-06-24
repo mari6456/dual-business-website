@@ -117,7 +117,7 @@ export default function AITraining() {
             {/* 信頼バッジ */}
             <div className="flex flex-wrap gap-x-6 gap-y-2">
               {[
-                "建築設計会社で全6回導入",
+                "ハウスメーカー様で半年継続研修導入",
                 "美容芸術短期大学 登壇",
                 "建設業向け研修 実績",
               ].map((badge) => (
@@ -413,7 +413,7 @@ export default function AITraining() {
                 </p>
                 <div className="space-y-3">
                   {[
-                    "建築設計会社にて全6回のAI研修を担当（基礎〜HP制作・自動化まで）",
+                    "ハウスメーカー様にて半年間の継続AI研修を担当（基礎〜HP制作・自動化まで）",
                     "美容芸術短期大学にて「美容福祉 × AI」授業を担当",
                     "建設業向けAI研修（GAS・業務自動化）",
                     "美容・サロン・個人事業向けAI／ブランディング講座 多数",
@@ -439,14 +439,14 @@ export default function AITraining() {
             <p className="section-label mb-4">Case Study</p>
             <h2 className="text-2xl lg:text-3xl" style={{ fontFamily: "var(--font-heading)" }}>
               数字で見る研修の実態<br />
-              <span className="text-lg text-foreground/50">建築設計会社・全6回導入</span>
+              <span className="text-lg text-foreground/50">ハウスメーカー様・半年継続研修導入</span>
             </h2>
           </div>
 
           {/* 実績数字 */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16 stagger-children">
             {[
-              { value: "全6回", label: "Day1〜6を完走" },
+              { value: "半年間", label: "継続研修を完走" },
               { value: "全職種", label: "経理〜社長まで参加" },
               { value: "500名超", label: "累計セミナー参加者" },
               { value: "自動化まで", label: "到達範囲" },
