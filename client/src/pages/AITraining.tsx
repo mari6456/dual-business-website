@@ -398,7 +398,7 @@ export default function AITraining() {
                 講師｜まり
               </h2>
               <p className="text-xs text-white/40 tracking-wider mb-8" style={{ fontFamily: "var(--font-sub)" }}>
-                UNFRAME 代表 / AI未来学院
+                UNFRAME 代表 / AI未来学院講師
               </p>
               <p className="text-sm text-white/80 leading-[2] mb-6 italic" style={{ fontFamily: "var(--font-body)" }}>
                 「ツールを教える人」ではなく、「現場で成果を出している人」が、その使い方を教えます。
@@ -415,7 +415,8 @@ export default function AITraining() {
                   {[
                     "ハウスメーカー様にて半年間の継続AI研修を担当（基礎〜HP制作・自動化まで）",
                     "美容芸術短期大学にて「美容福祉 × AI」授業を担当",
-                    "建設業向けAI研修（GAS・業務自動化）",
+                    "建設業向けAI研修",
+                    "介護業界向けAIシステム導入（GAS・業務自動化）",
                     "美容・サロン・個人事業向けAI／ブランディング講座 多数",
                   ].map((item) => (
                     <div key={item} className="flex items-start gap-3">
