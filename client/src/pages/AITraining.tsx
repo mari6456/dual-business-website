@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     q: "何回・何時間から頼めますか？",
-    a: "2時間の単発から、全6回の伴走型まで柔軟に設計します。",
+    a: "2時間の単発から、6回以上の伴走型まで柔軟に設計します。",
   },
 ];
 
@@ -466,7 +466,7 @@ export default function AITraining() {
           {/* 受講者の声 */}
           <div className="mb-12 fade-in-up">
             <p className="text-[0.65rem] tracking-[0.2em] uppercase text-foreground/30 mb-8" style={{ fontFamily: "var(--font-sub)" }}>
-              受講者の声（実コメント・職種別）
+              受講者の声（実コメント）
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
@@ -515,9 +515,7 @@ export default function AITraining() {
                 <p className="text-sm text-foreground/65 leading-[1.9] mb-4 italic" style={{ fontFamily: "var(--font-body)" }}>
                   「{v.quote}」
                 </p>
-                <p className="text-[0.65rem] tracking-[0.15em] text-rose-gold" style={{ fontFamily: "var(--font-sub)" }}>
-                  {v.role}
-                </p>
+
               </div>
             ))}
           </div>
