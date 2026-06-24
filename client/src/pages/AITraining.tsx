@@ -85,20 +85,6 @@ export default function AITraining() {
         </div>
       </section>
 
-      {/* News Section - COMING SOON */}
-      <section className="py-24 lg:py-32 bg-warm-surface">
-        <div className="container text-center">
-          <div className="fade-in-up">
-            <p className="section-label mb-4">Activity</p>
-            <h2 className="text-3xl lg:text-4xl mb-8" style={{ fontFamily: "var(--font-heading)" }}>活動の様子</h2>
-            <div className="py-16">
-              <p className="text-5xl lg:text-6xl text-foreground/20 mb-4" style={{ fontFamily: "var(--font-heading)" }}>COMING SOON</p>
-              <p className="text-sm text-foreground/40">AI研修・セミナーの活動情報を準備中です。</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Detailed Services */}
       <section className="dark-section py-24 lg:py-32">
         <div className="container">
