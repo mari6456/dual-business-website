@@ -70,9 +70,9 @@ export default function AITraining() {
       <section className="relative min-h-screen flex items-center">
         <div className="absolute inset-0">
           <img
-            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663045491092/mAJ6yzJwtYgBjF8R6h4Rmz/training-photo_2b279ceb.jpg"
+            src={PHOTOS.team.group5}
             alt="AI企業研修"
-            className="w-full h-full object-cover object-[center_20%]"
+            className="w-full h-full object-cover object-[center_30%]"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-charcoal/90 via-charcoal/70 to-charcoal/30" />
         </div>
@@ -389,7 +389,7 @@ export default function AITraining() {
               <img
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663045491092/mAJ6yzJwtYgBjF8R6h4Rmz/training-photo_2b279ceb.jpg"
                 alt="講師 まり"
-                className="w-full aspect-[3/4] object-cover object-center"
+                className="w-full aspect-[4/3] object-cover object-center"
               />
             </div>
             <div className="fade-in-up order-1 lg:order-2">
