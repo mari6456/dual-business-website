@@ -351,95 +351,162 @@ export default function AITraining() {
             </TabsList>
 
             {[
-              {
+                {
                 value: "basic",
-                tag: "Basic",
+                tag: "STEP 1",
                 title: "基礎編",
-                content: "AIの全体像と『怖くない』使い方。プロンプトの型を体得し、習慣化する。まず触れることで、苦手意識を取り除くところから始めます。",
-                goal: "AIへの苦手意識がなくなる",
+                subtitle: "「AIが怖い」を「明日から使える」に変える",
+                target: "AI初心者 / PCが苦手な人もOK。全社の底上げ用。",
+                time: "2〜3時間 × 1回（単発体験会としても可）",
+                goal: "AIへの苦手意識が消え、自分の業務で使えるプロンプトを自力で書ける",
+                content: "使うツールは問いません。Google Gemini / ChatGPT / Copilot / Claude——どれでも構いません。特定ツールの操作ではなく、どのAIにも通用するリテラシーと「伝え方」の土台を身につけます。",
                 img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663045491092/mAJ6yzJwtYgBjF8R6h4Rmz/prog-basic-5tahrHxD3b9B7UfDaBF6wS.png",
-                points: ["ゴール宣言からスタート", "たとえ話で概念理解", "コピペで使えるプロンプト配布", "手を動かすワーク"],
+                points: ["AIの全体像（得意・苦手・ハルシネーションとは）", "怖くない使い方の原則（入れていい情報・ダメな情報）", "プロンプトの型：役割・背景・条件・出力形式の4点セット", "対話で精度を上げる方法", "自分専用AI入門（Gem / GPTs / Copilotエージェント）"],
+                outputs: ["自分の業務メール/メッセージ1本をプロンプトの型で清書", "自分だけの秘書Gemを1体作成"],
+                takeaways: ["コピペで使える基本プロンプト集", "やってはいけないことチェックリスト1枚"],
               },
               {
                 value: "tools",
-                tag: "Tools",
+                tag: "STEP 2",
                 title: "ツール活用編",
-                content: "ChatGPT・Claude・Gemini・Gem・NotebookLMなど、その時々の目的に最適なツールを選んで導入。『どれが正解』ではなく、使い分ける力を身につける。",
-                goal: "自分専用AIを1つ作る",
+                subtitle: "御社が使っているツールに最適化して時短する",
+                target: "基礎を終えた人 / 日常業務の効率化を狙う実務層。",
+                time: "2時間 × 2回",
+                goal: "御社ツールを使い分け、日常業務を時短。自分専用AIを実務で1つ完成",
+                content: "STEP1で土台を作ったら、御社が実際に使っているツールに特化して深掘りします。Google / ChatGPT / Microsoft / Claude——どの環境でも同じ考え方で設計します。",
                 img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663045491092/mAJ6yzJwtYgBjF8R6h4Rmz/prog-tools-cx2aiQMvVVkuZ52QLbAJZw.png",
-                points: ["主要AIツールの比較・選び方", "Gemカスタム指示の設定", "NotebookLMで社内資料を整理", "自分専用AIを1つ完成させる"],
+                points: ["メインAIの基本（検索の延長ではない使い方）", "自分専用AIの活用（議事録BOT / 文面アシスタント / チェックリスト）", "社内資料の活用（PDF・議事録・マニュアルを読み込ませる）", "使い分けの地図（アイデア用途 vs 自社資料用途）", "複数機能の掛け合わせで自社専用の検索環境を作る"],
+                outputs: ["自分の業務用の専用AIを1体（議事録・問い合わせ対応・チェックリスト等）", "自社資料を読み込ませ、要約＆Q&Aできる状態を作る"],
+                takeaways: ["業務別 専用AIのテンプレ（プロンプト設計シート）", "どの用途でどの機能を使う？判断フロー1枚（御社ツール版）"],
               },
               {
                 value: "automation",
-                tag: "Automation",
+                tag: "STEP 3",
                 title: "自動化編",
-                content: "GAS・Notebook・API連携などで繰り返し業務を仕組み化。『やりっぱなし』ではなく、定期実行・通知・記録まで自動で回る状態を作る。",
-                goal: "定例業務を1つ自動化する",
+                subtitle: "繰り返し業務を仕組みにして手放す",
+                target: "ツール活用編を終えた人 / 定例・反復業務に消耗している人。",
+                time: "2時間 × 1〜2回",
+                goal: "繰り返し業務を1つ自動化し、毎回やる手作業を仕組みに置き換える",
+                content: "GAS・スプレッドシート・Workspace連携で繰り返し業務を仕組み化。定期実行・通知・記録まで自動で回る状態を作ります。",
                 img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663045491092/mAJ6yzJwtYgBjF8R6h4Rmz/prog-automation-DoPF3njM6eHnt6UkzWLHGm.png",
-                points: ["GASで定期実行を設定", "メール・LINEへの自動通知", "スプレッドシートとAIの連携", "業務1つを当日中に自動化"],
+                points: ["自動化の見つけ方（毎回・定型・手作業を棚卸し）", "スプレッドシート × AI（自動入力・チェック・逆算スケジュール）", "リマインド自動化（期限・工程を自動でリマインド）", "チェックリスト→タスク自動生成", "工程表・進行管理をAIに作らせる"],
+                outputs: ["自分の定例業務を1つ選び、スプレッドシート＋自動リマインドの雛形を構築", "既存チェックリストを抜け漏れ検知Gemに変換"],
+                takeaways: ["自動リマインドのテンプレ（スプレッドシート＋スクリプト雛形）", "自動化できる業務 棚卸しシート"],
               },
               {
                 value: "creation",
-                tag: "Creation",
+                tag: "STEP 4",
                 title: "制作編",
-                content: "画像生成・スライド・HP制作・提案資料作成。目に見える成果物を当日中に作る。AIを使えば、デザイン経験ゼロでもプロ品質のアウトプットが可能です。",
-                goal: "提案資料/HPを1つ完成させる",
+                subtitle: "提案資料・画像・HPまで作れるようになる",
+                target: "提案・販促・発信で成果物を作る人 / 資料作成の多い人。",
+                time: "2時間 × 2〜3回",
+                goal: "画像・スライド・HPのいずれかを1つ完成。制作スピードを一変させる",
+                content: "デザイン経験ゼロでもプロ品質のアウトプットが可能。画像生成・スライド・HP制作・提案資料作成まで、目に見える成果物を当日中に作ります。",
                 img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663045491092/mAJ6yzJwtYgBjF8R6h4Rmz/prog-creation-dsr9uqyA2ZqdVa9teTdYoK.png",
-                points: ["AI画像生成で提案資料を強化", "スライドをAIで一気に作成", "HPをコードなしで制作", "成果物を当日中に完成させる"],
+                points: ["画像生成の基礎とコツ（変えたくない所を明示する技術）", "画像編集・部分修正（狙った所だけ直す指示の出し方）", "既存画像からプロンプトを逆生成", "スライド資料制作（トンマナ統一・ブランドカラーのGem化）", "HP/LP制作（イベント情報や素材からページを自分で作る）"],
+                outputs: ["提案用スライド or 販促画像 or 簡易HP のいずれかを1つ完成", "自社トンマナを反映したデザイン統一Gemを作成"],
+                takeaways: ["画像生成プロンプトのコツ集", "自社カラー/トンマナのスライドGem", "HP/LP制作の手順テンプレ"],
               },
               {
                 value: "dx",
-                tag: "DX",
+                tag: "STEP 5",
                 title: "業務DX定着編",
-                content: "各部署の業務にAIを組み込み、組織に定着させる。一部の人だけが使う状態を脱し、チーム全体で『回り続ける仕組み』を残します。",
-                goal: "チームで使う仕組みを作る",
+                subtitle: "個人スキルを組織の仕組みに変える",
+                target: "管理職・推進担当・経営層 / 研修を組織展開したい層。",
+                time: "2時間 × 1〜2回（推進担当との伴走推奨）",
+                goal: "AI活用を部署・チームの仕組みに落とし込み、属人化させず定着させる",
+                content: "各部署の業務にAIを組み込み、組織に定着させます。一部の人だけが使う状態を脱し、チーム全体で回り続ける仕組みを残します。",
                 img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663045491092/mAJ6yzJwtYgBjF8R6h4Rmz/prog-dx-Hf3JSwE4XbHZ5CnejXjEux.png",
-                points: ["部署別の業務フロー整理", "AI活用ルール・ガイドライン策定", "定着支援・フォローアップ", "組織全体の仕組みを設計"],
+                points: ["各部署への展開設計（設計・現場・経理・事務それぞれに翻訳）", "社内ルール作り（安全運用のガイドライン整備）", "ナレッジの共有（Gem・プロンプトを社内資産化）", "属人化の解消（マニュアル・引き継ぎ・新人教育をAIで）", "DX KPIの置き方（削減効果を見える化）"],
+                outputs: ["自社のAI活用ルール（1枚）のドラフト", "共有Gem/プロンプトの社内ライブラリ初版"],
+                takeaways: ["社内AI活用ガイドライン雛形", "ナレッジ共有・定着のロードマップ"],
               },
               {
                 value: "custom",
                 tag: "Custom",
                 title: "業界特化・カスタム",
-                content: "美容・建設・介護・士業など、業界の実例に完全応用したカスタム設計。抽象論ゼロ。受講者の業務にそのまま使える内容だけで構成します。",
-                goal: "自社の業務にそのまま使える",
+                subtitle: "あなたの業界の言葉で設計する",
+                target: "STEP1〜5を御社の業界・業務に完全カスタムしたいすべての企業。",
+                time: "御社の状況に合わせて設計",
+                goal: "自社業務にそのまま使えるGem群・プロンプト集を持ち帰る",
+                content: "架空例でなく実際の業務・お客様・物件・案件を題材にします。事前アンケートで業務の悩みを棚卸し → 業界別実例で講義 → 自社データでワーク。",
                 img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663045491092/mAJ6yzJwtYgBjF8R6h4Rmz/prog-custom-RdQadNEB2igbXs36z7oV2Q.png",
-                points: ["業界特有の業務課題を整理", "実際の業務フローに沿った実例", "そのまま使えるプロンプト配布", "翌日から使える状態で終了"],
+                points: ["美容・サロン（集客投稿・薬機法チェック・顧客カウンセリング整理）", "建設・設計・工事管理（議事録BOT・法改正抽出・工程表自動化）", "美容福祉・教育（授業資料作成・福祉記録要約・ケース整理）", "士業・管理部門（契約書管理・法令整合チェック・定型報告書自動化）"],
+                outputs: ["自社業務に最適化したGem群・プロンプト集", "業界別の運用テンプレ一式"],
+                takeaways: ["業界別の運用テンプレ一式", "翌日から使える状態で終了"],
               },
             ].map((item) => (
               <TabsContent key={item.value} value={item.value}>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-1 fade-in-up">
-                  <div className="relative overflow-hidden">
-                    <img
-                      src={item.img}
-                      alt={item.title}
-                      className="w-full aspect-[4/3] object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 to-transparent" />
-                    <span
-                      className="absolute bottom-4 left-4 text-[0.6rem] tracking-[0.2em] text-white/70 bg-charcoal/50 px-3 py-1"
-                      style={{ fontFamily: "var(--font-sub)" }}
-                    >
-                      {item.tag}
-                    </span>
-                  </div>
-                  <div className="editorial-card">
-                    <h3 className="text-xl mb-4" style={{ fontFamily: "var(--font-heading)" }}>
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-foreground/60 leading-[2] mb-6" style={{ fontFamily: "var(--font-body)" }}>
-                      {item.content}
-                    </p>
-                    <div className="space-y-2 mb-6">
-                      {item.points.map((pt) => (
-                        <div key={pt} className="flex items-start gap-3">
-                          <span className="w-1 h-1 bg-rose-gold rounded-full mt-2 shrink-0" />
-                          <span className="text-sm text-foreground/60" style={{ fontFamily: "var(--font-body)" }}>{pt}</span>
-                        </div>
-                      ))}
+                <div className="fade-in-up">
+                  {/* Top: image + overview */}
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-1 mb-1">
+                    <div className="relative overflow-hidden">
+                      <img
+                        src={item.img}
+                        alt={item.title}
+                        className="w-full aspect-[4/3] object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 to-transparent" />
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <span className="text-[0.6rem] tracking-[0.2em] text-white/60 bg-charcoal/50 px-2 py-0.5" style={{ fontFamily: "var(--font-sub)" }}>{item.tag}</span>
+                        <h3 className="text-xl text-white mt-1" style={{ fontFamily: "var(--font-heading)" }}>{item.title}</h3>
+                        <p className="text-sm text-white/80 mt-1" style={{ fontFamily: "var(--font-body)" }}>{item.subtitle}</p>
+                      </div>
                     </div>
-                    <div className="pt-4 border-t border-foreground/8">
-                      <p className="text-[0.6rem] tracking-[0.15em] text-foreground/30 mb-1" style={{ fontFamily: "var(--font-sub)" }}>ゴール</p>
-                      <p className="text-sm text-rose-gold" style={{ fontFamily: "var(--font-body)" }}>{item.goal}</p>
+                    <div className="editorial-card flex flex-col justify-between">
+                      <div>
+                        <div className="flex flex-wrap gap-4 mb-4">
+                          <div>
+                            <p className="text-[0.6rem] tracking-[0.15em] text-foreground/30 mb-0.5" style={{ fontFamily: "var(--font-sub)" }}>対象</p>
+                            <p className="text-xs text-foreground/70" style={{ fontFamily: "var(--font-body)" }}>{item.target}</p>
+                          </div>
+                          <div>
+                            <p className="text-[0.6rem] tracking-[0.15em] text-foreground/30 mb-0.5" style={{ fontFamily: "var(--font-sub)" }}>時間</p>
+                            <p className="text-xs text-foreground/70" style={{ fontFamily: "var(--font-body)" }}>{item.time}</p>
+                          </div>
+                        </div>
+                        <p className="text-sm text-foreground/60 leading-[2] mb-4" style={{ fontFamily: "var(--font-body)" }}>{item.content}</p>
+                        <div className="pt-3 border-t border-foreground/8">
+                          <p className="text-[0.6rem] tracking-[0.15em] text-foreground/30 mb-1" style={{ fontFamily: "var(--font-sub)" }}>到達ゴール</p>
+                          <p className="text-sm text-rose-gold leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>{item.goal}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Bottom: points + outputs + takeaways */}
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-1">
+                    <div className="editorial-card">
+                      <p className="text-[0.6rem] tracking-[0.15em] text-foreground/30 mb-3" style={{ fontFamily: "var(--font-sub)" }}>学ぶこと</p>
+                      <div className="space-y-2">
+                        {item.points.map((pt) => (
+                          <div key={pt} className="flex items-start gap-2">
+                            <span className="w-1 h-1 bg-rose-gold rounded-full mt-2 shrink-0" />
+                            <span className="text-xs text-foreground/60 leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>{pt}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="editorial-card">
+                      <p className="text-[0.6rem] tracking-[0.15em] text-foreground/30 mb-3" style={{ fontFamily: "var(--font-sub)" }}>ワーク（当日の成果物）</p>
+                      <div className="space-y-2">
+                        {item.outputs.map((o) => (
+                          <div key={o} className="flex items-start gap-2">
+                            <span className="text-rose-gold text-xs mt-0.5 shrink-0">✓</span>
+                            <span className="text-xs text-foreground/60 leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>{o}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="editorial-card">
+                      <p className="text-[0.6rem] tracking-[0.15em] text-foreground/30 mb-3" style={{ fontFamily: "var(--font-sub)" }}>持ち帰るもの</p>
+                      <div className="space-y-2">
+                        {item.takeaways.map((t) => (
+                          <div key={t} className="flex items-start gap-2">
+                            <span className="text-rose-gold text-xs mt-0.5 shrink-0">→</span>
+                            <span className="text-xs text-foreground/60 leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>{t}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
