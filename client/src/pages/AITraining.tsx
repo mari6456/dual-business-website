@@ -282,7 +282,7 @@ export default function AITraining() {
               {
                 num: "02",
                 title: '業界別の"自分ごと"実例',
-                body: '美容・建設・介護・士業——受講者の業界に合わせた実例で講義。抽象論ゼロ。',
+                body: '美容・建設・介護・士業——受講者の業界に合わせた実例で講義。',
                 img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663045491092/mAJ6yzJwtYgBjF8R6h4Rmz/strength-2-tools-YbUvJLJf9iEzDqpdjw9rKY.webp",
               },
               {
