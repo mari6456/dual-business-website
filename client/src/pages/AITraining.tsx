@@ -359,7 +359,7 @@ export default function AITraining() {
                 target: "AI初心者 / PCが苦手な人もOK。全社の底上げ用。",
                 time: "2〜3時間 × 1回（単発体験会としても可）",
                 goal: "AIへの苦手意識が消え、自分の業務で使えるプロンプトを自力で書ける",
-                content: "使うツールは問いません。Google Gemini / ChatGPT / Copilot / Claude——どれでも構いません。特定ツールの操作ではなく、どのAIにも通用するリテラシーと「伝え方」の土台を身につけます。",
+                content: "使うツールは問いません。Google Gemini / ChatGPT / Copilot / Claude——どれでも構いません。特定ツールの操作ではなく、どのAIにも通用するリテラシーと伝え方の土台を身につけます。",
                 img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663045491092/mAJ6yzJwtYgBjF8R6h4Rmz/prog-basic-5tahrHxD3b9B7UfDaBF6wS.png",
                 points: ["AIの全体像（得意・苦手・ハルシネーションとは）", "怖くない使い方の原則（入れていい情報・ダメな情報）", "プロンプトの型：役割・背景・条件・出力形式の4点セット", "対話で精度を上げる方法", "自分専用AI入門（Gem / GPTs / Copilotエージェント）"],
                 outputs: ["自分の業務メール/メッセージ1本をプロンプトの型で清書", "自分だけの秘書Gemを1体作成"],
@@ -437,7 +437,7 @@ export default function AITraining() {
               },
             ].map((item) => (
               <TabsContent key={item.value} value={item.value}>
-                <div className="fade-in-up">
+                <div>
                   {/* Top: image + overview */}
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-1 mb-1">
                     <div className="relative overflow-hidden">
