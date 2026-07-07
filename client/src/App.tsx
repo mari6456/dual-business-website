@@ -7,6 +7,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
+import About from "./pages/About";
 import Cosmetics from "./pages/Cosmetics";
 import AITraining from "./pages/AITraining";
 import Profile from "./pages/Profile";
@@ -23,6 +24,7 @@ function Router() {
       <ScrollToTop />
       <Switch>
         <Route path={"/"} component={Home} />
+        <Route path={"/about"} component={About} />
         <Route path={"/cosmetics"} component={Cosmetics} />
         <Route path={"/ai-training"} component={AITraining} />
         <Route path={"/profile"} component={Profile} />

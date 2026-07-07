@@ -49,6 +49,11 @@ export default function Footer() {
                 Company
               </h4>
               <div className="space-y-3">
+                <Link href="/about">
+                  <span className="block text-sm text-white/60 hover:text-rose-gold transition-colors duration-300 cursor-pointer">
+                    About
+                  </span>
+                </Link>
                 <Link href="/profile">
                   <span className="block text-sm text-white/60 hover:text-rose-gold transition-colors duration-300 cursor-pointer">
                     代表プロフィール
