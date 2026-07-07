@@ -54,6 +54,11 @@ export default function Footer() {
                     プロフィール
                   </span>
                 </Link>
+                <Link href="/company">
+                  <span className="block text-sm text-white/60 hover:text-rose-gold transition-colors duration-300 cursor-pointer">
+                    会社概要
+                  </span>
+                </Link>
                 <Link href="/news">
                   <span className="block text-sm text-white/60 hover:text-rose-gold transition-colors duration-300 cursor-pointer">
                     ニュース

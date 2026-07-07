@@ -13,6 +13,7 @@ import Profile from "./pages/Profile";
 import News from "./pages/News";
 import NewsDetail from "./pages/NewsDetail";
 import Contact from "./pages/Contact";
+import Company from "./pages/Company";
 import ScrollToTop from "./components/ScrollToTop";
 
 function Router() {
@@ -28,6 +29,7 @@ function Router() {
         <Route path={"/news"} component={News} />
         <Route path={"/news/:id"}>{(params) => <NewsDetail id={params.id} />}</Route>
         <Route path={"/contact"} component={Contact} />
+        <Route path={"/company"} component={Company} />
         <Route path={"/404"} component={NotFound} />
         <Route component={NotFound} />
       </Switch>
