@@ -8,8 +8,8 @@ import { newsData, NEWS_CATEGORIES } from "@/lib/newsData";
 const PUBLISHED_IDS = ["2026-04-reborn-beauty-summit", "2026-05-yamano-lecture"];
 
 const HERO_SLIDES = [
-  { src: PHOTOS.team.laughing, alt: "UNFRAME チーム" },
-  { src: PHOTOS.team.group5, alt: "UNFRAME AI研修" },
+  { src: PHOTOS.team.laughing, alt: "株式会社UNFRAME チーム" },
+  { src: PHOTOS.team.group5, alt: "株式会社UNFRAME AI研修" },
 ];
 
 export default function Home() {
@@ -58,33 +58,33 @@ export default function Home() {
         </div>
 
         <div className="container relative z-10 pt-24">
-          <div className="max-w-2xl">
+          <div className="max-w-2xl w-full min-w-0">
             <p
-              className="text-[0.65rem] tracking-[0.3em] uppercase text-rose-gold mb-6"
+              className="text-[0.65rem] tracking-normal md:tracking-[0.3em] uppercase text-rose-gold mb-6 leading-relaxed max-w-xs md:max-w-none"
               style={{ fontFamily: "var(--font-sub)", fontWeight: 500 }}
             >
               Cosmetics Consultant &middot; Brand Director &middot; AI Instructor
             </p>
-            <h1 className="display-text text-5xl md:text-7xl lg:text-[5.5rem] text-charcoal mb-6">
-              UNFRAME
+            <h1 className="display-text text-4xl md:text-6xl lg:text-7xl text-charcoal mb-6 tracking-normal">
+              株式会社UNFRAME
             </h1>
             <p className="text-lg md:text-xl text-charcoal/70 leading-relaxed max-w-xl mb-4" style={{ fontFamily: "var(--font-heading)" }}>
               自分の枠を超えて
               <br />
               自由な生き方をデザインする
             </p>
-            <p className="text-sm text-charcoal/50 leading-relaxed max-w-lg mb-10">
+            <p className="text-sm text-charcoal/50 leading-relaxed w-full max-w-xs sm:max-w-lg mb-10">
               美容とAIの力を通じて、不可能を可能にし、自由な生き方を広げる。
-              私は、その道のりを一緒に歩く伴走者です。
+              株式会社UNFRAMEは、その道のりを一緒に歩く伴走者です。
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col sm:flex-row sm:flex-wrap gap-4 w-full max-w-xs sm:max-w-none">
               <Link href="/cosmetics">
-                <span className="inline-flex items-center gap-3 px-8 py-4 bg-charcoal text-white text-sm tracking-[0.1em] uppercase hover:bg-charcoal/90 transition-colors duration-300 cursor-pointer" style={{ fontFamily: "var(--font-sub)", fontWeight: 500 }}>
+                <span className="flex box-border w-full sm:w-auto justify-center items-center gap-3 px-8 py-4 bg-charcoal text-white text-sm tracking-[0.1em] uppercase hover:bg-charcoal/90 transition-colors duration-300 cursor-pointer" style={{ fontFamily: "var(--font-sub)", fontWeight: 500 }}>
                   Cosmetics <ArrowRight className="w-4 h-4" />
                 </span>
               </Link>
               <Link href="/ai-training">
-                <span className="inline-flex items-center gap-3 px-8 py-4 border border-charcoal text-charcoal text-sm tracking-[0.1em] uppercase hover:bg-charcoal hover:text-white transition-all duration-300 cursor-pointer" style={{ fontFamily: "var(--font-sub)", fontWeight: 500 }}>
+                <span className="flex box-border w-full sm:w-auto justify-center items-center gap-3 px-8 py-4 border border-charcoal text-charcoal text-sm tracking-[0.1em] uppercase hover:bg-charcoal hover:text-white transition-all duration-300 cursor-pointer" style={{ fontFamily: "var(--font-sub)", fontWeight: 500 }}>
                   AI Training <ArrowRight className="w-4 h-4" />
                 </span>
               </Link>
@@ -124,7 +124,7 @@ export default function Home() {
               </p>
               <div className="accent-line mb-8" />
               <p className="text-sm text-foreground/40 italic leading-relaxed" style={{ fontFamily: "var(--font-display)" }}>
-                — 私は、その道のりを一緒に歩く伴走者です —
+                — 株式会社UNFRAMEは、その道のりを一緒に歩く伴走者です —
               </p>
             </div>
 

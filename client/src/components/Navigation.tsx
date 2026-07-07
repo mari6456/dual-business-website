@@ -51,10 +51,10 @@ export default function Navigation() {
             {/* Logo */}
             <Link href="/">
               <span
-                className="text-xl lg:text-2xl tracking-[0.3em] font-medium"
+                className="text-lg lg:text-xl tracking-normal font-medium"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                UNFRAME
+                株式会社UNFRAME
               </span>
             </Link>
 

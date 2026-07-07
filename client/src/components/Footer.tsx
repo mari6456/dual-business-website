@@ -7,10 +7,10 @@ export default function Footer() {
         <div className="flex flex-col lg:flex-row justify-between items-start gap-12 mb-16">
           <div>
             <h2
-              className="text-3xl lg:text-4xl tracking-[0.3em] mb-4"
+              className="text-2xl lg:text-3xl tracking-normal mb-4"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              UNFRAME
+              株式会社UNFRAME
             </h2>
             <p className="text-sm text-white/50 max-w-md leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
               自分の枠を超えて自由な生き方をデザインする。
@@ -90,7 +90,7 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-white/30" style={{ fontFamily: "var(--font-sub)" }}>
-            &copy; {new Date().getFullYear()} UNFRAME / kawaharada mari. All rights reserved.
+            &copy; {new Date().getFullYear()} 株式会社UNFRAME. All rights reserved.
           </p>
           <p className="text-xs text-white/30" style={{ fontFamily: "var(--font-sub)" }}>
             Cosmetics Consultant &middot; Brand Director &middot; AI Instructor

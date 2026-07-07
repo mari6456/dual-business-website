@@ -254,7 +254,7 @@ export default function AITraining() {
             </div>
             <p className="text-sm text-white/60 leading-[2]" style={{ fontFamily: "var(--font-body)" }}>
               ここを越えさせないまま終わるから、研修は「いい話だった」で消えていきます。<br /><br />
-              UNFRAMEの研修は、500回超の実研修から磨いた
+              株式会社UNFRAMEの研修は、500回超の実研修から磨いた
               <strong className="text-white">「手を動かして、自分の業務で1つ完成させて帰る」</strong>型。<br />
               だから受けた翌日、現場が動き出します。
             </p>
@@ -268,7 +268,7 @@ export default function AITraining() {
           <div className="mb-16 fade-in-up">
             <p className="section-label mb-4">Strengths</p>
             <h2 className="text-2xl lg:text-3xl" style={{ fontFamily: "var(--font-heading)" }}>
-              UNFRAMEのAI研修が、<br />"使われる研修"になる3つの理由
+              株式会社UNFRAMEのAI研修が、<br />"使われる研修"になる3つの理由
             </h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-1 stagger-children">
@@ -598,7 +598,7 @@ export default function AITraining() {
                 講師｜まり
               </h2>
               <p className="text-xs text-white/40 tracking-wider mb-8" style={{ fontFamily: "var(--font-sub)" }}>
-                UNFRAME 代表 / AI未来学院講師
+                株式会社UNFRAME 代表 / AI未来学院講師
               </p>
               <p className="text-sm text-white/80 leading-[2] mb-6 italic" style={{ fontFamily: "var(--font-body)" }}>
                 「ツールを教える人」ではなく、「現場で成果を出している人」が、その使い方を教えます。

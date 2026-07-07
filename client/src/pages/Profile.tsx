@@ -22,7 +22,7 @@ export default function Profile() {
               <h1 className="text-4xl lg:text-5xl mb-3" style={{ fontFamily: "var(--font-heading)" }}>kawaharada mari</h1>
               <div className="accent-line mb-8" />
               <p className="text-base text-foreground/70 leading-[2] mb-6">
-                UNFRAME代表 / 化粧品開発コンサルタント / ブランドディレクター / AI経営コーチ
+                株式会社UNFRAME 代表 / 化粧品開発コンサルタント / ブランドディレクター / AI経営コーチ
               </p>
               <p className="text-sm text-foreground/50 leading-[2] mb-4">
                 福岡県出身。薬剤師。事業構想修士（MPD）修了。
@@ -43,21 +43,21 @@ export default function Profile() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 stagger-children">
             {[
               {
-                org: "UNFRAME",
+                org: "株式会社UNFRAME",
                 role: "代表",
                 desc: "AI経営コーチ。セミナー・講座・社員研修、AI活用・iPadサポート、デジタル業務効率化サポートを提供。講座卒業生の秘書チーム運営。",
                 type: "ai" as const,
               },
               {
-                org: "OF",
-                role: "ディレクター・商品開発責任者",
-                desc: "肌育研究家として、ソーシャルジェットラグに着目したマイクロバイオームケアブランドを展開。VOCEにも掲載。",
+                org: "LA VERDE VITA JAPAN CO.LTD.",
+                role: "Product Planning and Development Manager",
+                desc: "イタリア・トスカーナ発のブランドにおいて、商品企画・開発領域を担当。",
                 type: "cosmetics" as const,
               },
               {
-                org: "株式会社FURUNO",
-                role: "CMO（Chief Marketing Officer）",
-                desc: "マーケティング戦略の統括。ブランディングとデジタル戦略を推進。",
+                org: "OF",
+                role: "ディレクター・商品開発責任者",
+                desc: "肌育研究家として、ソーシャルジェットラグに着目したマイクロバイオームケアブランドを展開。VOCEにも掲載。",
                 type: "cosmetics" as const,
               },
               {
