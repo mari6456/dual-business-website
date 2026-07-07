@@ -54,14 +54,14 @@ export default function About() {
 
       <section className="py-24 lg:py-32">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-            <div className="fade-in-up">
-              <p className="section-label mb-6">Philosophy</p>
-              <h2 className="text-3xl lg:text-5xl leading-tight mb-8" style={{ fontFamily: "var(--font-heading)" }}>
-                自由な生き方を、<br />
-                事業の力に変える。
-              </h2>
-              <p className="text-sm text-foreground/60 leading-[2] mb-6">
+          <div className="max-w-4xl fade-in-up">
+            <p className="section-label mb-6">Philosophy</p>
+            <h2 className="text-3xl lg:text-5xl leading-tight mb-8" style={{ fontFamily: "var(--font-heading)" }}>
+              自由な生き方を、<br />
+              事業の力に変える。
+            </h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+              <p className="text-sm text-foreground/60 leading-[2]">
                 UNFRAMEが大切にしているのは、単に売れるものを作ることでも、便利なツールを導入することでもありません。
                 その人、その会社、そのブランドが本来持っている感性や強みを見つけ、現実の仕事として動く形に整えることです。
               </p>
@@ -69,10 +69,6 @@ export default function About() {
                 美容は、感性と信頼を形にする領域。AIは、時間と可能性を広げる領域。
                 その2つをつなぐことで、もっと自由で、もっとしなやかな事業のあり方を支援します。
               </p>
-            </div>
-
-            <div className="image-reveal fade-in-up">
-              <img src={PHOTOS.white.gallery1} alt="UNFRAMEの考え方" className="w-full aspect-[4/5] object-cover object-top" />
             </div>
           </div>
         </div>
