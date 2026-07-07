@@ -4,7 +4,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const companyInfo = [
   { label: "会社名", value: "株式会社UNFRAME" },
-  { label: "代表者", value: "河原田 真理" },
+  { label: "代表者", value: "河原田茉莉" },
   {
     label: "事業内容",
     value: "化粧品・美容ブランドの企画開発支援、AI研修・デジタル活用支援、ブランディング・マーケティング支援",

@@ -14,7 +14,7 @@ export default function Profile() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-20 items-start">
             <div className="lg:col-span-2 fade-in-up">
               <div className="image-reveal">
-                <img src={PHOTOS.white.portrait} alt="kawaharada mari" className="w-full aspect-[3/4] object-cover object-top" />
+                <img src={PHOTOS.white.portrait} alt="河原田茉莉" className="w-full aspect-[3/4] object-cover object-top" />
               </div>
             </div>
             <div className="lg:col-span-3 fade-in-up">
