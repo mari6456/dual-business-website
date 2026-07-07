@@ -290,7 +290,7 @@ export default function Home() {
               <img src={PHOTOS.white.portrait} alt="kawaharada mari" className="w-full aspect-[3/4] object-cover object-top" />
             </div>
             <div className="lg:col-span-3 fade-in-up">
-              <p className="section-label mb-6">Profile</p>
+              <p className="section-label mb-6">Representative Profile</p>
               <h2 className="text-3xl lg:text-4xl mb-4" style={{ fontFamily: "var(--font-heading)" }}>kawaharada mari</h2>
               <p className="text-sm text-foreground/60 leading-[2] mb-4">
                 化粧品開発コンサルタント / ブランドディレクター / AI講座主宰
@@ -306,7 +306,7 @@ export default function Home() {
               </div>
               <Link href="/profile">
                 <span className="inline-flex items-center gap-2 text-xs tracking-[0.15em] uppercase text-rose-gold hover:text-foreground transition-colors duration-300 cursor-pointer" style={{ fontFamily: "var(--font-sub)", fontWeight: 500 }}>
-                  View Full Profile <ArrowRight className="w-3.5 h-3.5" />
+                  View Representative Profile <ArrowRight className="w-3.5 h-3.5" />
                 </span>
               </Link>
             </div>

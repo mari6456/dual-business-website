@@ -51,7 +51,7 @@ export default function Footer() {
               <div className="space-y-3">
                 <Link href="/profile">
                   <span className="block text-sm text-white/60 hover:text-rose-gold transition-colors duration-300 cursor-pointer">
-                    プロフィール
+                    代表プロフィール
                   </span>
                 </Link>
                 <Link href="/company">

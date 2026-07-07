@@ -18,7 +18,7 @@ export default function Profile() {
               </div>
             </div>
             <div className="lg:col-span-3 fade-in-up">
-              <p className="section-label mb-6">Profile</p>
+              <p className="section-label mb-6">Representative Profile</p>
               <h1 className="text-4xl lg:text-5xl mb-3" style={{ fontFamily: "var(--font-heading)" }}>kawaharada mari</h1>
               <div className="accent-line mb-8" />
               <p className="text-base text-foreground/70 leading-[2] mb-6">
