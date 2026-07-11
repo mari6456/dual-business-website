@@ -1,7 +1,7 @@
 export interface NewsItem {
   id: string;
   date: string;
-  category: "cosmetics" | "ai" | "ai_beauty" | "media" | "event" | "info";
+  category: "beauty" | "ai";
   title: string;
   excerpt: string;
   content: string;
@@ -16,19 +16,15 @@ export interface NewsItem {
 export type NewsCategory = NewsItem["category"];
 
 export const NEWS_CATEGORIES: Record<NewsItem["category"], string> = {
-  cosmetics: "化粧品事業",
-  ai: "AI研修",
-  ai_beauty: "AI×美容",
-  media: "メディア",
-  event: "イベント",
-  info: "お知らせ",
+  beauty: "美容",
+  ai: "AI",
 };
 
 export const newsData: NewsItem[] = [
   {
     id: "2026-07-kokuhaku-cosmetics-supervision",
     date: "2026.07.11",
-    category: "media",
+    category: "beauty",
     title: "日本テレビ系ドラマ『告白－25年目の秘密－』のコスメ監修を担当しました",
     excerpt:
       "2026年7月11日に初回放送を迎えた日本テレビ系ドラマ『告白－25年目の秘密－』にて、株式会社UNFRAME代表・河原田茉莉がコスメ監修を担当しました。",
@@ -43,7 +39,7 @@ export const newsData: NewsItem[] = [
   {
     id: "2026-05-yamano-lecture",
     date: "2026.05.21",
-    category: "ai_beauty",
+    category: "beauty",
     title: "山野美容芸術短期大学にて「美容福祉×AI」をテーマに特別授業を実施",
     excerpt:
       "「ボーダレス・ビューティ 制約を可能性に変える、美容福祉とAIの未来」をテーマに90分の特別授業を実施。回答者34名中32名が「美容福祉の見え方が変わった」と回答。",
@@ -60,7 +56,7 @@ export const newsData: NewsItem[] = [
   {
     id: "2026-04-reborn-beauty-summit",
     date: "2026.04.14",
-    category: "ai_beauty",
+    category: "beauty",
     title: "「Beauty & Mind Synergy Summit 2026」に登壇",
     excerpt:
       "化粧品開発の知見とAIを活かし、\"化粧品迷子\"を卒業する方法を紹介。13年以上の化粧品開発経験をもとに、自分に合う化粧品を選ぶための考え方と「美の設計図AI」を解説しました。",
@@ -81,7 +77,7 @@ export const newsData: NewsItem[] = [
   {
     id: "2025-11-branding-lecture-1500",
     date: "2025.11.07",
-    category: "event",
+    category: "beauty",
     title: "社員数1500名の企業にてブランディング講演に登壇",
     excerpt:
       "大手企業にてブランディングをテーマに2時間の講演・対談を実施。起業家としての経験を踏まえ、コーポレートブランディングとセルフブランディングについてお話ししました。",
@@ -91,7 +87,7 @@ export const newsData: NewsItem[] = [
   {
     id: "2025-11-innovator-talk",
     date: "2025.11.01",
-    category: "event",
+    category: "beauty",
     title: "企業でのイノベータ対談に登壇",
     excerpt:
       "イノベータ対談に登壇。市場の変化のスピードが上がっている今こそ大切な要素について語りました。",
@@ -111,7 +107,7 @@ export const newsData: NewsItem[] = [
   {
     id: "2025-10-of-brand-debut",
     date: "2025.10.15",
-    category: "cosmetics",
+    category: "beauty",
     title: "自社ブランド「OF」がデビュー ― ソーシャルジェットラグに着目したスキンケア",
     excerpt:
       "昨年から準備していたスキンケアブランド「OF」がついにデビュー。SNS時代の肌ストレスに着目し、マイクロバイオーム（皮膚常在菌）にフォーカスした美容液です。",
@@ -121,7 +117,7 @@ export const newsData: NewsItem[] = [
   {
     id: "2025-10-new-brand",
     date: "2025.10.05",
-    category: "cosmetics",
+    category: "beauty",
     title: "新規ヘアケアブランドの立ち上げ支援",
     excerpt:
       "新たにヘアケアブランドの立ち上げを支援。市場リサーチからコンセプト企画、処方提案、製造まで一貫してサポートしています。",

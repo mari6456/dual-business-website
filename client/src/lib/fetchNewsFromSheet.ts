@@ -44,7 +44,7 @@ function parseCSV(csvText: string): NewsItem[] {
       //                  4=カテゴリ, 5=タイトル, 6=概要, 7=本文, 8=画像URL
       const status = columns[1] || "";   // 公開状態（B列）
       const date = columns[3] || "";     // 公開開始日時（D列）
-      const category = columns[4] || ""; // カテゴリ（E列）
+      const category = normalizeCategory(columns[4] || ""); // カテゴリ（E列）
       const title = columns[5] || "";    // タイトル（F列）
       const excerpt = columns[6] || "";  // 概要（G列）
       const content = columns[7] || "";  // 本文（H列）
@@ -56,7 +56,7 @@ function parseCSV(csvText: string): NewsItem[] {
       return {
         id,
         date: date,
-        category: (category as NewsItem["category"]) || "info",
+        category,
         title: title,
         excerpt: excerpt,
         content: content,
@@ -69,6 +69,14 @@ function parseCSV(csvText: string): NewsItem[] {
       // 日付降順（新しい順）
       return b.date.localeCompare(a.date);
     });
+}
+
+function normalizeCategory(category: string): NewsItem["category"] {
+  const normalized = category.trim().toLowerCase();
+  if (normalized === "ai" || normalized === "ai研修") {
+    return "ai";
+  }
+  return "beauty";
 }
 
 /**
