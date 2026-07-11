@@ -8,6 +8,18 @@ interface Props {
   id: string;
 }
 
+function CategoryTags({ categories }: { categories: (keyof typeof NEWS_CATEGORIES)[] }) {
+  return (
+    <div className="flex flex-wrap items-center gap-2">
+      {categories.map((category) => (
+        <span key={category} className="text-xs px-2 py-0.5 bg-foreground/5 rounded-full text-foreground/60">
+          {NEWS_CATEGORIES[category]}
+        </span>
+      ))}
+    </div>
+  );
+}
+
 export default function NewsDetail({ id }: { id?: string }) {
   const [, setLocation] = useLocation();
   const item = newsData.find((n) => n.id === id);
@@ -39,9 +51,7 @@ export default function NewsDetail({ id }: { id?: string }) {
         {/* Meta */}
         <div className="flex items-center gap-3 mb-6">
           <time className="text-xs text-foreground/40 font-mono">{item.date}</time>
-          <span className="text-xs px-2 py-0.5 bg-foreground/5 rounded-full text-foreground/60">
-            {NEWS_CATEGORIES[item.category]}
-          </span>
+          <CategoryTags categories={item.categories} />
         </div>
 
         {/* Title */}

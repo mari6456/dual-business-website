@@ -1,7 +1,7 @@
 export interface NewsItem {
   id: string;
   date: string;
-  category: "beauty" | "ai";
+  categories: NewsCategory[];
   title: string;
   excerpt: string;
   content: string;
@@ -13,9 +13,9 @@ export interface NewsItem {
   };
 }
 
-export type NewsCategory = NewsItem["category"];
+export type NewsCategory = "beauty" | "ai";
 
-export const NEWS_CATEGORIES: Record<NewsItem["category"], string> = {
+export const NEWS_CATEGORIES: Record<NewsCategory, string> = {
   beauty: "美容",
   ai: "AI",
 };
@@ -24,7 +24,7 @@ export const newsData: NewsItem[] = [
   {
     id: "2026-07-kokuhaku-cosmetics-supervision",
     date: "2026.07.11",
-    category: "beauty",
+    categories: ["beauty"],
     title: "日本テレビ系ドラマ『告白－25年目の秘密－』のコスメ監修を担当しました",
     excerpt:
       "2026年7月11日に初回放送を迎えた日本テレビ系ドラマ『告白－25年目の秘密－』にて、株式会社UNFRAME代表・河原田茉莉がコスメ監修を担当しました。",
@@ -39,7 +39,7 @@ export const newsData: NewsItem[] = [
   {
     id: "2026-05-yamano-lecture",
     date: "2026.05.21",
-    category: "beauty",
+    categories: ["beauty", "ai"],
     title: "山野美容芸術短期大学にて「美容福祉×AI」をテーマに特別授業を実施",
     excerpt:
       "「ボーダレス・ビューティ 制約を可能性に変える、美容福祉とAIの未来」をテーマに90分の特別授業を実施。回答者34名中32名が「美容福祉の見え方が変わった」と回答。",
@@ -56,7 +56,7 @@ export const newsData: NewsItem[] = [
   {
     id: "2026-04-reborn-beauty-summit",
     date: "2026.04.14",
-    category: "beauty",
+    categories: ["beauty", "ai"],
     title: "「Beauty & Mind Synergy Summit 2026」に登壇",
     excerpt:
       "化粧品開発の知見とAIを活かし、\"化粧品迷子\"を卒業する方法を紹介。13年以上の化粧品開発経験をもとに、自分に合う化粧品を選ぶための考え方と「美の設計図AI」を解説しました。",
@@ -67,7 +67,7 @@ export const newsData: NewsItem[] = [
   {
     id: "2025-12-imsi-branding",
     date: "2025.12.15",
-    category: "ai",
+    categories: ["ai"],
     title: "IMSI「AI×ブランディング講座」開講のお知らせ",
     excerpt:
       "創立30周年を迎える自然療法スクールにて、セラピスト向け「AI×ブランディング講座」を主宰します。",
@@ -77,7 +77,7 @@ export const newsData: NewsItem[] = [
   {
     id: "2025-11-branding-lecture-1500",
     date: "2025.11.07",
-    category: "beauty",
+    categories: ["beauty"],
     title: "社員数1500名の企業にてブランディング講演に登壇",
     excerpt:
       "大手企業にてブランディングをテーマに2時間の講演・対談を実施。起業家としての経験を踏まえ、コーポレートブランディングとセルフブランディングについてお話ししました。",
@@ -87,7 +87,7 @@ export const newsData: NewsItem[] = [
   {
     id: "2025-11-innovator-talk",
     date: "2025.11.01",
-    category: "beauty",
+    categories: ["beauty"],
     title: "企業でのイノベータ対談に登壇",
     excerpt:
       "イノベータ対談に登壇。市場の変化のスピードが上がっている今こそ大切な要素について語りました。",
@@ -97,7 +97,7 @@ export const newsData: NewsItem[] = [
   {
     id: "2025-11-mirai-ai",
     date: "2025.11.01",
-    category: "ai",
+    categories: ["ai"],
     title: "文科省認可スクール「未来AI学院」講師就任",
     excerpt:
       "文科省認可スクール「未来AI学院」の立ち上げサポート・講師として参画しました。",
@@ -107,7 +107,7 @@ export const newsData: NewsItem[] = [
   {
     id: "2025-10-of-brand-debut",
     date: "2025.10.15",
-    category: "beauty",
+    categories: ["beauty"],
     title: "自社ブランド「OF」がデビュー ― ソーシャルジェットラグに着目したスキンケア",
     excerpt:
       "昨年から準備していたスキンケアブランド「OF」がついにデビュー。SNS時代の肌ストレスに着目し、マイクロバイオーム（皮膚常在菌）にフォーカスした美容液です。",
@@ -117,7 +117,7 @@ export const newsData: NewsItem[] = [
   {
     id: "2025-10-new-brand",
     date: "2025.10.05",
-    category: "beauty",
+    categories: ["beauty"],
     title: "新規ヘアケアブランドの立ち上げ支援",
     excerpt:
       "新たにヘアケアブランドの立ち上げを支援。市場リサーチからコンセプト企画、処方提案、製造まで一貫してサポートしています。",
@@ -127,7 +127,7 @@ export const newsData: NewsItem[] = [
   {
     id: "2025-09-care-ai",
     date: "2025.09.15",
-    category: "ai",
+    categories: ["ai"],
     title: "介護業界向けAI×マーケティング支援を開始",
     excerpt:
       "介護業界（支援事業者）向けに、AI×マーケティング支援サービスを開始しました。",
