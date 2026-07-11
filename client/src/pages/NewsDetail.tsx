@@ -104,6 +104,20 @@ export default function NewsDetail({ id }: { id?: string }) {
           })}
         </div>
 
+        {item.source && (
+          <div className="mt-10 pt-8 border-t border-border/30">
+            <p className="text-xs text-foreground/40 mb-3 uppercase tracking-widest">Related Link</p>
+            <a
+              href={item.source.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-foreground/70 hover:text-primary transition-colors underline underline-offset-4"
+            >
+              {item.source.label}
+            </a>
+          </div>
+        )}
+
         {/* Additional images gallery */}
         {item.images && item.images.length > 1 && (
           <div className="mt-12">

@@ -5,7 +5,11 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { PHOTOS, IMAGES } from "@/lib/images";
 import { newsData, NEWS_CATEGORIES } from "@/lib/newsData";
 
-const PUBLISHED_IDS = ["2026-04-reborn-beauty-summit", "2026-05-yamano-lecture"];
+const PUBLISHED_IDS = [
+  "2026-07-kokuhaku-cosmetics-supervision",
+  "2026-05-yamano-lecture",
+  "2026-04-reborn-beauty-summit",
+];
 
 const HERO_SLIDES = [
   { src: PHOTOS.team.laughing, alt: "株式会社UNFRAME チーム" },

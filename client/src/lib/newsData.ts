@@ -7,6 +7,10 @@ export interface NewsItem {
   content: string;
   image?: string;
   images?: string[];
+  source?: {
+    label: string;
+    url: string;
+  };
 }
 
 export type NewsCategory = NewsItem["category"];
@@ -21,6 +25,20 @@ export const NEWS_CATEGORIES: Record<NewsItem["category"], string> = {
 };
 
 export const newsData: NewsItem[] = [
+  {
+    id: "2026-07-kokuhaku-cosmetics-supervision",
+    date: "2026.07.11",
+    category: "media",
+    title: "日本テレビ系ドラマ『告白－25年目の秘密－』のコスメ監修を担当しました",
+    excerpt:
+      "2026年7月11日に初回放送を迎えた日本テレビ系ドラマ『告白－25年目の秘密－』にて、株式会社UNFRAME代表・河原田茉莉がコスメ監修を担当しました。",
+    content:
+      "2026年7月11日に初回放送を迎えた日本テレビ系ドラマ『告白－25年目の秘密－』にて、株式会社UNFRAME代表・河原田茉莉がコスメ監修を担当しました。\n\n化粧品会社を舞台とする作品において、化粧品開発・ブランド企画・業界構造に関する専門知見をもとに、監修協力を行っています。\n\n作品の詳細は、日本テレビ公式サイトをご覧ください。\n\n公式ハッシュタグ：#土ドラ告白",
+    source: {
+      label: "日本テレビ『告白－25年目の秘密－』公式サイト",
+      url: "https://www.ntv.co.jp/kokuhaku/",
+    },
+  },
   {
     id: "2026-05-yamano-lecture",
     date: "2026.05.21",
