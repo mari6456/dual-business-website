@@ -20,9 +20,9 @@ export const pageSeo: Record<string, SeoConfig> = {
     description:
       "株式会社UNFRAMEは、化粧品OEM・ブランド開発・商品企画と、法人向けAI研修・デジタル活用支援を提供します。代表は薬剤師・事業構想修士の河原田茉莉。",
     path: "/",
-    fallbackTitle: "化粧品開発・ブランド支援・法人AI研修",
+    fallbackTitle: "自由な生き方を、事業の力に変える。",
     fallbackText:
-      "株式会社UNFRAMEは、美容とAIの力を通じて、ブランド・事業・人の可能性を広げる伴走型の会社です。",
+      "UNFRAMEは、化粧品開発・ブランド支援・法人AI研修を通じて、想いが事業として動き出すまでを伴走する会社です。",
   },
   "/about": {
     title: "ABOUT｜UNFRAMEの考え方・事業紹介｜株式会社UNFRAME",

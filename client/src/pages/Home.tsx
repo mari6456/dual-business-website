@@ -79,19 +79,19 @@ export default function Home() {
               className="text-[0.65rem] tracking-normal md:tracking-[0.3em] uppercase text-rose-gold mb-6 leading-relaxed max-w-xs md:max-w-none"
               style={{ fontFamily: "var(--font-sub)", fontWeight: 500 }}
             >
-              Cosmetics Consultant &middot; Brand Director &middot; AI Instructor
+              UNFRAME &middot; Beauty & AI Business Design
             </p>
             <h1 className="display-text text-4xl md:text-6xl lg:text-7xl text-charcoal mb-6 tracking-normal">
-              株式会社UNFRAME
+              自由な生き方を、
+              <br />
+              事業の力に変える。
             </h1>
             <p className="text-lg md:text-xl text-charcoal/70 leading-relaxed max-w-xl mb-4" style={{ fontFamily: "var(--font-heading)" }}>
-              自分の枠を超えて
-              <br />
-              自由な生き方をデザインする
+              美容とAIで、ブランド・事業・人の可能性をひらく。
             </p>
             <p className="text-sm text-charcoal/50 leading-relaxed w-full max-w-xs sm:max-w-lg mb-10">
-              美容とAIの力を通じて、不可能を可能にし、自由な生き方を広げる。
-              株式会社UNFRAMEは、その道のりを一緒に歩く伴走者です。
+              UNFRAMEは、化粧品開発・ブランド支援・法人AI研修を通じて、
+              想いが事業として動き出すまでを伴走する会社です。
             </p>
             <div className="flex flex-col sm:flex-row sm:flex-wrap gap-4 w-full max-w-xs sm:max-w-none">
               <Link href="/cosmetics">
