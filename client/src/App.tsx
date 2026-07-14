@@ -16,11 +16,13 @@ import NewsDetail from "./pages/NewsDetail";
 import Contact from "./pages/Contact";
 import Company from "./pages/Company";
 import ScrollToTop from "./components/ScrollToTop";
+import SEO from "./components/SEO";
 
 function Router() {
   return (
     <>
       <Navigation />
+      <SEO />
       <ScrollToTop />
       <Switch>
         <Route path={"/"} component={Home} />
