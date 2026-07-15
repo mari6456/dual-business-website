@@ -25,6 +25,7 @@ const staticRoutes = new Set([
   "/news/2025-09-care-ai",
   "/contact",
   "/company",
+  "/privacy",
 ]);
 
 async function startServer() {

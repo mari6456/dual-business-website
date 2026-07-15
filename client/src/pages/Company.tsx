@@ -5,6 +5,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 const companyInfo = [
   { label: "会社名", value: "株式会社UNFRAME" },
   { label: "代表者", value: "河原田茉莉" },
+  { label: "所在地", value: "〒220-0004 神奈川県横浜市西区北幸二丁目10番48号 むつみビル3階" },
   {
     label: "事業内容",
     value: "化粧品・美容ブランドの企画開発支援、AI研修・デジタル活用支援、ブランディング・マーケティング支援",

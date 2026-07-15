@@ -75,6 +75,7 @@ export default function News() {
                         <div className="aspect-[4/3] overflow-hidden rounded-sm bg-muted">
                           <img
                             src={item.image}
+                            loading="lazy"
                             alt={item.title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                           />

@@ -15,6 +15,7 @@ import News from "./pages/News";
 import NewsDetail from "./pages/NewsDetail";
 import Contact from "./pages/Contact";
 import Company from "./pages/Company";
+import Privacy from "./pages/Privacy";
 import ScrollToTop from "./components/ScrollToTop";
 import SEO from "./components/SEO";
 
@@ -34,6 +35,7 @@ function Router() {
         <Route path={"/news/:id"}>{(params) => <NewsDetail id={params.id} />}</Route>
         <Route path={"/contact"} component={Contact} />
         <Route path={"/company"} component={Company} />
+        <Route path={"/privacy"} component={Privacy} />
         <Route path={"/404"} component={NotFound} />
         <Route component={NotFound} />
       </Switch>

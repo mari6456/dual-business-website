@@ -20,7 +20,7 @@ export const pageSeo: Record<string, SeoConfig> = {
     description:
       "株式会社UNFRAMEは、化粧品OEM・ブランド開発・商品企画と、法人向けAI研修・デジタル活用支援を提供します。代表は薬剤師・事業構想修士の河原田茉莉。",
     path: "/",
-    fallbackTitle: "自由な生き方を、事業の力に変える。",
+    fallbackTitle: "自由な生き方を、事業の力に。",
     fallbackText:
       "UNFRAMEは、化粧品開発・ブランド支援・法人AI研修を通じて、想いが事業として動き出すまでを伴走する会社です。",
   },
@@ -87,6 +87,14 @@ export const pageSeo: Record<string, SeoConfig> = {
     fallbackText:
       "株式会社UNFRAMEは、化粧品・美容ブランドの企画開発支援、AI研修・デジタル活用支援を行っています。",
   },
+  "/privacy": {
+    title: "プライバシーポリシー｜株式会社UNFRAME",
+    description:
+      "株式会社UNFRAMEのプライバシーポリシー。個人情報の取得・利用目的・第三者提供・安全管理措置などの取り扱いについて定めています。",
+    path: "/privacy",
+    fallbackTitle: "プライバシーポリシー",
+    fallbackText: "株式会社UNFRAMEにおける個人情報の取り扱いについて定めたものです。",
+  },
 };
 
 export function absoluteUrl(path: string) {
@@ -143,6 +151,14 @@ export function getBaseJsonLd() {
       founder: {
         "@type": "Person",
         name: "河原田茉莉",
+      },
+      address: {
+        "@type": "PostalAddress",
+        postalCode: "220-0004",
+        addressRegion: "神奈川県",
+        addressLocality: "横浜市西区",
+        streetAddress: "北幸二丁目10番48号 むつみビル3階",
+        addressCountry: "JP",
       },
       contactPoint: {
         "@type": "ContactPoint",

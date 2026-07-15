@@ -38,7 +38,7 @@ export default function Cosmetics() {
               </p>
             </div>
             <div className="image-reveal fade-in-up">
-              <img src={PHOTOS.white.gallery1} alt="化粧品開発" className="w-full aspect-[4/3] object-cover object-top" />
+              <img loading="lazy" src={PHOTOS.white.gallery1} alt="化粧品開発" className="w-full aspect-[4/3] object-cover object-top" />
             </div>
           </div>
         </div>

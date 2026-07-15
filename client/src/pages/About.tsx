@@ -113,7 +113,7 @@ export default function About() {
             {businesses.map((business) => (
               <Link key={business.title} href={business.href}>
                 <div className="group relative overflow-hidden aspect-[4/3] cursor-pointer fade-in-up">
-                  <img src={business.image} alt={business.title} className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
+                  <img loading="lazy" src={business.image} alt={business.title} className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-black/45 group-hover:bg-black/35 transition-colors duration-500" />
                   <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-12">
                     <p className="text-[0.6rem] tracking-[0.3em] uppercase text-white/60 mb-3" style={{ fontFamily: "var(--font-sub)" }}>

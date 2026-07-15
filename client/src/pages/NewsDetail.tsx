@@ -137,6 +137,7 @@ export default function NewsDetail({ id }: { id?: string }) {
                 <div key={i} className="aspect-[4/3] overflow-hidden rounded-sm bg-muted">
                   <img
                     src={src}
+                    loading="lazy"
                     alt={`${item.title} ${i + 2}`}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   />

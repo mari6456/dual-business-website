@@ -81,10 +81,10 @@ export default function Home() {
             >
               UNFRAME &middot; Beauty & AI Business Design
             </p>
-            <h1 className="display-text text-4xl md:text-6xl lg:text-7xl text-charcoal mb-6 tracking-normal">
+            <h1 className="display-text text-3xl md:text-5xl lg:text-6xl text-charcoal mb-6 tracking-normal leading-[1.35]">
               自由な生き方を、
               <br />
-              事業の力に変える。
+              事業の力に。
             </h1>
             <p className="text-lg md:text-xl text-charcoal/70 leading-relaxed max-w-xl mb-4" style={{ fontFamily: "var(--font-heading)" }}>
               美容とAIで、ブランド・事業・人の可能性をひらく。
@@ -174,7 +174,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-1">
             <Link href="/cosmetics">
               <div className="group relative overflow-hidden aspect-[4/3] cursor-pointer fade-in-up">
-                <img src={IMAGES.pillarCosmetics} alt="化粧品事業" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
+                <img loading="lazy" src={IMAGES.pillarCosmetics} alt="化粧品事業" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-500" />
                 <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-12">
                   <p className="text-[0.6rem] tracking-[0.3em] uppercase text-white/60 mb-3" style={{ fontFamily: "var(--font-sub)" }}>Beauty Business</p>
@@ -191,7 +191,7 @@ export default function Home() {
 
             <Link href="/ai-training">
               <div className="group relative overflow-hidden aspect-[4/3] cursor-pointer fade-in-up">
-                <img src={IMAGES.pillarAI} alt="AI研修事業" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
+                <img loading="lazy" src={IMAGES.pillarAI} alt="AI研修事業" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-500" />
                 <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-12">
                   <p className="text-[0.6rem] tracking-[0.3em] uppercase text-white/60 mb-3" style={{ fontFamily: "var(--font-sub)" }}>AI & Digital</p>
@@ -246,6 +246,7 @@ export default function Home() {
                           <div className="aspect-[4/3] overflow-hidden bg-muted">
                             <img
                               src={item.image}
+                              loading="lazy"
                               alt={item.title}
                               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                             />
@@ -301,7 +302,7 @@ export default function Home() {
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-2 image-reveal fade-in-up">
-              <img src={PHOTOS.white.portrait} alt="河原田茉莉" className="w-full aspect-[3/4] object-cover object-top" />
+              <img loading="lazy" src={PHOTOS.white.portrait} alt="河原田茉莉" className="w-full aspect-[3/4] object-cover object-top" />
             </div>
             <div className="lg:col-span-3 fade-in-up">
               <p className="section-label mb-6">Representative Profile</p>

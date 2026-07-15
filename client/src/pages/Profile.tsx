@@ -201,7 +201,7 @@ export default function Profile() {
               </div>
             </div>
             <div className="image-reveal fade-in-up">
-              <img src={PHOTOS.suit.gallery1} alt="AI活動" className="w-full aspect-[4/3] object-cover object-top" />
+              <img loading="lazy" src={PHOTOS.suit.gallery1} alt="AI活動" className="w-full aspect-[4/3] object-cover object-top" />
             </div>
           </div>
         </div>

@@ -24,14 +24,35 @@ export default function Contact() {
     message: "",
   });
 
+  const inquiryTypeLabels: Record<string, string> = {
+    "cosmetics-brand": "化粧品ブランド開発・商品企画",
+    "cosmetics-oem": "OEM連動・製造管理",
+    "ai-consulting": "AI顧問サービス",
+    "ai-training": "法人向けAI研修",
+    "online-secretary": "オンライン秘書サービス",
+    other: "その他",
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.inquiryType || !formData.message) {
       toast.error("必須項目を入力してください");
       return;
     }
-    toast.success("お問い合わせを受け付けました。担当者より折り返しご連絡いたします。");
-    setFormData({ name: "", company: "", email: "", phone: "", inquiryType: "", message: "" });
+    const typeLabel = inquiryTypeLabels[formData.inquiryType] ?? formData.inquiryType;
+    const subject = `【お問い合わせ】${typeLabel}（${formData.name} 様）`;
+    const body = [
+      `お名前: ${formData.name}`,
+      `会社名: ${formData.company || "（未記入）"}`,
+      `メールアドレス: ${formData.email}`,
+      `電話番号: ${formData.phone || "（未記入）"}`,
+      `お問い合わせ種別: ${typeLabel}`,
+      "",
+      "お問い合わせ内容:",
+      formData.message,
+    ].join("\n");
+    window.location.href = `mailto:info@ai-unframe.jp?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    toast.success("メールアプリが開きます。内容をご確認のうえ、送信を完了してください。");
   };
 
   return (
@@ -59,7 +80,7 @@ export default function Contact() {
                     <Label htmlFor="name" className="text-xs tracking-wider uppercase" style={{ fontFamily: "var(--font-sub)" }}>
                       お名前 <span className="text-rose-gold">*</span>
                     </Label>
-                    <Input id="name" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} placeholder="kawaharada mari" required className="border-foreground/10 focus:border-rose-gold rounded-none py-3" />
+                    <Input id="name" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} placeholder="山田 花子" required className="border-foreground/10 focus:border-rose-gold rounded-none py-3" />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="company" className="text-xs tracking-wider uppercase" style={{ fontFamily: "var(--font-sub)" }}>会社名</Label>
