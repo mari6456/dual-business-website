@@ -23,6 +23,7 @@ export default function Contact() {
     inquiryType: "",
     message: "",
   });
+  const [submitting, setSubmitting] = useState(false);
 
   const inquiryTypeLabels: Record<string, string> = {
     "cosmetics-brand": "化粧品ブランド開発・商品企画",
@@ -33,26 +34,42 @@ export default function Contact() {
     other: "その他",
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.inquiryType || !formData.message) {
       toast.error("必須項目を入力してください");
       return;
     }
     const typeLabel = inquiryTypeLabels[formData.inquiryType] ?? formData.inquiryType;
-    const subject = `【お問い合わせ】${typeLabel}（${formData.name} 様）`;
-    const body = [
-      `お名前: ${formData.name}`,
-      `会社名: ${formData.company || "（未記入）"}`,
-      `メールアドレス: ${formData.email}`,
-      `電話番号: ${formData.phone || "（未記入）"}`,
-      `お問い合わせ種別: ${typeLabel}`,
-      "",
-      "お問い合わせ内容:",
-      formData.message,
-    ].join("\n");
-    window.location.href = `mailto:info@ai-unframe.jp?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    toast.success("メールアプリが開きます。内容をご確認のうえ、送信を完了してください。");
+    setSubmitting(true);
+    try {
+      const res = await fetch("https://formsubmit.co/ajax/info@ai-unframe.jp", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          _subject: `【お問い合わせ】${typeLabel}（${formData.name} 様）`,
+          _template: "table",
+          _captcha: "false",
+          _replyto: formData.email,
+          お名前: formData.name,
+          会社名: formData.company || "（未記入）",
+          メールアドレス: formData.email,
+          電話番号: formData.phone || "（未記入）",
+          お問い合わせ種別: typeLabel,
+          お問い合わせ内容: formData.message,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok || !(data.success === true || data.success === "true")) {
+        throw new Error("send failed");
+      }
+      toast.success("お問い合わせを送信しました。担当者より折り返しご連絡いたします。");
+      setFormData({ name: "", company: "", email: "", phone: "", inquiryType: "", message: "" });
+    } catch {
+      toast.error("送信に失敗しました。お手数ですが info@ai-unframe.jp まで直接ご連絡ください。");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -127,8 +144,8 @@ export default function Contact() {
                   <Textarea id="message" value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} placeholder="お問い合わせ内容をご記入ください" rows={8} required className="border-foreground/10 focus:border-rose-gold rounded-none py-3 resize-none" />
                 </div>
 
-                <button type="submit" className="w-full py-4 bg-charcoal text-white text-sm tracking-[0.15em] uppercase hover:bg-charcoal/90 transition-colors duration-300" style={{ fontFamily: "var(--font-sub)", fontWeight: 500 }}>
-                  送信する
+                <button type="submit" disabled={submitting} className="w-full py-4 bg-charcoal text-white text-sm tracking-[0.15em] uppercase hover:bg-charcoal/90 transition-colors duration-300 disabled:opacity-60 disabled:cursor-not-allowed" style={{ fontFamily: "var(--font-sub)", fontWeight: 500 }}>
+                  {submitting ? "送信中..." : "送信する"}
                 </button>
               </form>
             </div>
