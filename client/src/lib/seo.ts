@@ -162,7 +162,7 @@ export function getBaseJsonLd() {
       },
       contactPoint: {
         "@type": "ContactPoint",
-        email: "info@ai-unframe.jp",
+        email: "info@ai-unframe.com",
         contactType: "customer support",
         availableLanguage: ["Japanese"],
       },

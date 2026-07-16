@@ -39,7 +39,7 @@ const sections = [
   },
   {
     title: "10. お問い合わせ窓口",
-    body: "個人情報の取り扱いに関するお問い合わせは、株式会社UNFRAME（info@ai-unframe.jp）までご連絡ください。",
+    body: "個人情報の取り扱いに関するお問い合わせは、株式会社UNFRAME（info@ai-unframe.com）までご連絡ください。",
   },
 ];
 

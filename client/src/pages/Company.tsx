@@ -10,7 +10,7 @@ const companyInfo = [
     label: "事業内容",
     value: "化粧品・美容ブランドの企画開発支援、AI研修・デジタル活用支援、ブランディング・マーケティング支援",
   },
-  { label: "お問い合わせ", value: "info@ai-unframe.jp", href: "mailto:info@ai-unframe.jp" },
+  { label: "お問い合わせ", value: "info@ai-unframe.com", href: "mailto:info@ai-unframe.com" },
 ];
 
 export default function Company() {

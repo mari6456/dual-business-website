@@ -43,7 +43,7 @@ export default function Contact() {
     const typeLabel = inquiryTypeLabels[formData.inquiryType] ?? formData.inquiryType;
     setSubmitting(true);
     try {
-      const res = await fetch("https://formsubmit.co/ajax/info@ai-unframe.jp", {
+      const res = await fetch("https://formsubmit.co/ajax/info@ai-unframe.com", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
@@ -66,7 +66,7 @@ export default function Contact() {
       toast.success("お問い合わせを送信しました。担当者より折り返しご連絡いたします。");
       setFormData({ name: "", company: "", email: "", phone: "", inquiryType: "", message: "" });
     } catch {
-      toast.error("送信に失敗しました。お手数ですが info@ai-unframe.jp まで直接ご連絡ください。");
+      toast.error("送信に失敗しました。お手数ですが info@ai-unframe.com まで直接ご連絡ください。");
     } finally {
       setSubmitting(false);
     }
@@ -160,7 +160,7 @@ export default function Contact() {
                     <Mail className="w-4 h-4 text-rose-gold mt-1 shrink-0" />
                     <div>
                       <p className="text-xs text-foreground/40 tracking-wider mb-1" style={{ fontFamily: "var(--font-sub)" }}>Email</p>
-                      <a href="mailto:info@ai-unframe.jp" className="text-sm text-foreground/70 hover:text-rose-gold transition-colors duration-300">info@ai-unframe.jp</a>
+                      <a href="mailto:info@ai-unframe.com" className="text-sm text-foreground/70 hover:text-rose-gold transition-colors duration-300">info@ai-unframe.com</a>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">

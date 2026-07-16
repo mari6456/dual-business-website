@@ -199,7 +199,7 @@ const pages = [
     title: "お問い合わせ｜株式会社UNFRAME",
     description: "化粧品開発、ブランド支援、法人AI研修、デジタル活用支援に関するご相談・お問い合わせはこちらから。",
     h1: "お問い合わせ",
-    body: "化粧品開発、ブランド支援、法人AI研修、デジタル活用支援に関するご相談を受け付けています。メール：info@ai-unframe.jp",
+    body: "化粧品開発、ブランド支援、法人AI研修、デジタル活用支援に関するご相談を受け付けています。メール：info@ai-unframe.com",
     sections: [
       {
         h2: "お問い合わせ種別",
@@ -228,7 +228,7 @@ const pages = [
           "代表者：河原田茉莉",
           "所在地：〒220-0004 神奈川県横浜市西区北幸二丁目10番48号 むつみビル3階",
           "事業内容：化粧品・美容ブランドの企画開発支援、AI研修・デジタル活用支援、ブランディング・マーケティング支援",
-          "お問い合わせ：info@ai-unframe.jp",
+          "お問い合わせ：info@ai-unframe.com",
         ],
       },
     ],
@@ -368,7 +368,7 @@ function baseJsonLd() {
       },
       contactPoint: {
         "@type": "ContactPoint",
-        email: "info@ai-unframe.jp",
+        email: "info@ai-unframe.com",
         contactType: "customer support",
         availableLanguage: ["Japanese"],
       },
