@@ -6,12 +6,15 @@ export default function Footer() {
       <div className="container">
         <div className="flex flex-col lg:flex-row justify-between items-start gap-12 mb-16">
           <div>
-            <h2
-              className="text-2xl lg:text-3xl tracking-normal mb-4"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              株式会社UNFRAME
-            </h2>
+            <Link href="/" aria-label="UNFRAME ホーム">
+              <span className="brand-logo-frame brand-logo-frame--footer mb-5" aria-hidden="true">
+                <img
+                  src="/images/brand/unframe-logo-reverse.svg"
+                  alt=""
+                  className="brand-logo-image"
+                />
+              </span>
+            </Link>
             <p className="text-sm text-white/50 max-w-md leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
               自分の枠を超えて自由な生き方をデザインする。
               <br />

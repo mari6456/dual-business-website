@@ -101,7 +101,7 @@ export default function About() {
       <section className="dark-section py-24 lg:py-32">
         <div className="container">
           <div className="text-center mb-16 fade-in-up">
-            <p className="section-label mb-6" style={{ color: "oklch(0.65 0.08 15)" }}>
+            <p className="section-label mb-6" style={{ color: "var(--brand-luster)" }}>
               Business
             </p>
             <h2 className="text-3xl lg:text-5xl" style={{ fontFamily: "var(--font-heading)" }}>

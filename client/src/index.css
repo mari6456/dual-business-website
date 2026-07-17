@@ -41,12 +41,15 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  /* Custom brand colors */
-  --color-rose-gold: oklch(0.65 0.08 15);
-  --color-rose-gold-light: oklch(0.85 0.04 15);
-  --color-warm-surface: oklch(0.97 0.005 80);
-  --color-charcoal: oklch(0.2 0.005 285);
-  --color-charcoal-light: oklch(0.35 0.005 285);
+  /* UNFRAME brand system — legacy utility names remain as compatibility aliases */
+  --color-rose-gold: #8fddf3;
+  --color-rose-gold-light: #dce2ff;
+  --color-warm-surface: #faf9f6;
+  --color-charcoal: #111111;
+  --color-charcoal-light: #343434;
+  --color-luster: #8fddf3;
+  --color-silent-silver: #d9dadd;
+  --color-canvas: #faf9f6;
 
   /* Font families */
   --font-display: "Playfair Display", "Shippori Mincho", serif;
@@ -57,38 +60,43 @@
 
 :root {
   --radius: 0.25rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.15 0.005 285);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.15 0.005 285);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.15 0.005 285);
-  --primary: oklch(0.65 0.08 15);
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.97 0.005 80);
-  --secondary-foreground: oklch(0.3 0.005 285);
-  --muted: oklch(0.96 0.003 80);
-  --muted-foreground: oklch(0.5 0.01 285);
-  --accent: oklch(0.97 0.005 80);
-  --accent-foreground: oklch(0.15 0.005 285);
+  --brand-logic: #111111;
+  --brand-canvas: #faf9f6;
+  --brand-silver: #d9dadd;
+  --brand-luster: #8fddf3;
+  --brand-luster-soft: #dce2ff;
+  --background: #faf9f6;
+  --foreground: #111111;
+  --card: #ffffff;
+  --card-foreground: #111111;
+  --popover: #ffffff;
+  --popover-foreground: #111111;
+  --primary: #111111;
+  --primary-foreground: #faf9f6;
+  --secondary: #f2f1ee;
+  --secondary-foreground: #2f2f2f;
+  --muted: #f1f0ed;
+  --muted-foreground: #6f7073;
+  --accent: #eef7fa;
+  --accent-foreground: #111111;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.005 80);
-  --input: oklch(0.92 0.005 80);
-  --ring: oklch(0.65 0.08 15);
-  --chart-1: oklch(0.65 0.08 15);
-  --chart-2: oklch(0.55 0.06 15);
-  --chart-3: oklch(0.45 0.04 15);
-  --chart-4: oklch(0.75 0.06 15);
-  --chart-5: oklch(0.85 0.04 15);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.15 0.005 285);
-  --sidebar-accent: oklch(0.97 0.005 80);
-  --sidebar-accent-foreground: oklch(0.15 0.005 285);
-  --sidebar-border: oklch(0.92 0.005 80);
-  --sidebar-ring: oklch(0.65 0.08 15);
-  --sidebar-primary: oklch(0.65 0.08 15);
-  --sidebar-primary-foreground: oklch(1 0 0);
+  --border: #d9dadd;
+  --input: #d9dadd;
+  --ring: #8fddf3;
+  --chart-1: #8fddf3;
+  --chart-2: #c8cdd4;
+  --chart-3: #111111;
+  --chart-4: #dce2ff;
+  --chart-5: #aeb8c8;
+  --sidebar: #faf9f6;
+  --sidebar-foreground: #111111;
+  --sidebar-accent: #eef7fa;
+  --sidebar-accent-foreground: #111111;
+  --sidebar-border: #d9dadd;
+  --sidebar-ring: #8fddf3;
+  --sidebar-primary: #111111;
+  --sidebar-primary-foreground: #faf9f6;
 }
 
 @layer base {
@@ -98,6 +106,7 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-body);
+    background-color: var(--brand-canvas);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -174,7 +183,19 @@
     letter-spacing: 0.2em;
     text-transform: uppercase;
     font-size: 0.7rem;
-    color: oklch(0.65 0.08 15);
+    color: var(--brand-logic);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.9rem;
+  }
+
+  .section-label::after {
+    content: "";
+    width: 20px;
+    height: 2px;
+    background: linear-gradient(90deg, #c8cdd4 0%, #8fddf3 56%, #dce2ff 100%);
+    transform: rotate(-27deg);
+    transform-origin: center;
   }
 
   /* Thin separator line */
@@ -186,9 +207,9 @@
 
   /* Rose gold accent line */
   .accent-line {
-    width: 48px;
-    height: 1px;
-    background: oklch(0.65 0.08 15);
+    width: 54px;
+    height: 2px;
+    background: linear-gradient(90deg, #c8cdd4 0%, #8fddf3 56%, #dce2ff 100%);
   }
 
   /* Fade in up animation */
@@ -226,25 +247,80 @@
 
   /* Editorial card */
   .editorial-card {
-    background: white;
-    border: 1px solid oklch(0.92 0.005 80);
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid var(--brand-silver);
     padding: 2.5rem;
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   .editorial-card:hover {
-    border-color: oklch(0.65 0.08 15);
+    border-color: var(--brand-luster);
     box-shadow: 0 8px 40px rgba(0, 0, 0, 0.06);
   }
 
   /* Dark section */
   .dark-section {
-    background: oklch(0.15 0.005 285);
-    color: oklch(0.92 0.005 80);
+    background:
+      radial-gradient(circle at 88% 12%, rgba(143, 221, 243, 0.08), transparent 28%),
+      var(--brand-logic);
+    color: var(--brand-silver);
   }
   .dark-section h1,
   .dark-section h2,
   .dark-section h3 {
-    color: oklch(0.97 0.005 80);
+    color: var(--brand-canvas);
+  }
+
+  /* Official logo files retain their original viewBox and clear space. */
+  .brand-logo-frame {
+    width: 176px;
+    height: 44px;
+    overflow: hidden;
+    align-items: center;
+    flex: none;
+  }
+
+  .brand-logo-frame--header,
+  .brand-logo-frame--footer {
+    display: flex;
+  }
+
+  .brand-logo-image {
+    width: 248px;
+    height: 62px;
+    max-width: none;
+    flex: none;
+    transform: translateX(-10px);
+  }
+
+  .brand-mark-frame {
+    width: 58px;
+    height: 44px;
+    overflow: hidden;
+  }
+
+  .brand-mark-image {
+    width: 80px;
+    height: 50px;
+    max-width: none;
+    transform: translateX(-9px);
+  }
+
+  /* Subtle layered planes replace the former warm decorative treatment. */
+  .bg-warm-surface {
+    background-color: var(--brand-canvas);
+    background-image:
+      linear-gradient(132deg, transparent 0 74%, rgba(217, 218, 221, 0.24) 74% 84%, transparent 84%),
+      linear-gradient(145deg, transparent 0 83%, rgba(143, 221, 243, 0.09) 83% 92%, rgba(220, 226, 255, 0.12) 92%);
+  }
+
+  @media (max-width: 639px) {
+    .brand-logo-frame--footer {
+      width: 158px;
+    }
+
+    .brand-logo-frame--footer .brand-logo-image {
+      width: 226px;
+    }
   }
 
   /* Horizontal scroll text */

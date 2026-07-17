@@ -87,7 +87,7 @@ export default function Cosmetics() {
       <section className="dark-section py-24 lg:py-32">
         <div className="container">
           <div className="mb-16 fade-in-up">
-            <p className="section-label mb-4" style={{ color: "oklch(0.65 0.08 15)" }}>Process</p>
+            <p className="section-label mb-4" style={{ color: "var(--brand-luster)" }}>Process</p>
             <h2 className="text-3xl lg:text-4xl" style={{ fontFamily: "var(--font-heading)" }}>開発プロセス</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8 stagger-children">

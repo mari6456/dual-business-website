@@ -239,7 +239,7 @@ export default function AITraining() {
       <section className="dark-section py-24 lg:py-32">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center fade-in-up">
-            <p className="section-label mb-6" style={{ color: "oklch(0.65 0.08 15)" }}>Why</p>
+            <p className="section-label mb-6" style={{ color: "var(--brand-luster)" }}>Why</p>
             <h2 className="text-2xl lg:text-3xl text-white mb-8" style={{ fontFamily: "var(--font-heading)" }}>
               多くの研修は"機能紹介"で終わる。<br />だから現場で使われない。
             </h2>
@@ -596,7 +596,7 @@ export default function AITraining() {
               />
             </div>
             <div className="fade-in-up order-1 lg:order-2">
-              <p className="section-label mb-6" style={{ color: "oklch(0.65 0.08 15)" }}>Instructor</p>
+              <p className="section-label mb-6" style={{ color: "var(--brand-luster)" }}>Instructor</p>
               <h2 className="text-2xl lg:text-3xl text-white mb-4" style={{ fontFamily: "var(--font-heading)" }}>
                 講師｜まり
               </h2>
@@ -825,7 +825,7 @@ export default function AITraining() {
       {/* ── Section 11: 最後のCTA ── */}
       <section className="dark-section py-24 lg:py-32">
         <div className="container text-center fade-in-up">
-          <p className="section-label mb-6" style={{ color: "oklch(0.65 0.08 15)" }}>Contact</p>
+          <p className="section-label mb-6" style={{ color: "var(--brand-luster)" }}>Contact</p>
           <h2 className="text-2xl lg:text-4xl text-white mb-6" style={{ fontFamily: "var(--font-heading)" }}>
             「研修して終わり」を、<br />もう繰り返さない。
           </h2>

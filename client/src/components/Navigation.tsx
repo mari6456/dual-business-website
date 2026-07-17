@@ -50,12 +50,20 @@ export default function Navigation() {
         <div className="container">
           <div className="flex items-center justify-between h-20 lg:h-24">
             {/* Logo */}
-            <Link href="/">
-              <span
-                className="text-lg lg:text-xl tracking-normal font-medium"
-                style={{ fontFamily: "var(--font-display)" }}
-              >
-                株式会社UNFRAME
+            <Link href="/" aria-label="UNFRAME ホーム">
+              <span className="hidden sm:block brand-logo-frame brand-logo-frame--header" aria-hidden="true">
+                <img
+                  src="/images/brand/unframe-logo-primary.svg"
+                  alt=""
+                  className="brand-logo-image"
+                />
+              </span>
+              <span className="block sm:hidden brand-mark-frame" aria-hidden="true">
+                <img
+                  src="/images/brand/unframe-mark-primary.svg"
+                  alt=""
+                  className="brand-mark-image"
+                />
               </span>
             </Link>
 
@@ -95,7 +103,7 @@ export default function Navigation() {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 z-40 bg-white transition-all duration-500 lg:hidden ${
+        className={`fixed inset-0 z-40 bg-[#FAF9F6] transition-all duration-500 lg:hidden ${
           isMobileOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"

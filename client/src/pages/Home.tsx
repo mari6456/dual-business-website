@@ -167,7 +167,7 @@ export default function Home() {
       <section className="dark-section py-24 lg:py-36">
         <div className="container">
           <div className="text-center mb-20 fade-in-up">
-            <p className="section-label mb-6" style={{ color: "oklch(0.65 0.08 15)" }}>Our Services</p>
+            <p className="section-label mb-6" style={{ color: "var(--brand-luster)" }}>Our Services</p>
             <h2 className="text-4xl lg:text-5xl" style={{ fontFamily: "var(--font-heading)" }}>Two Pillars</h2>
           </div>
 
@@ -333,7 +333,7 @@ export default function Home() {
       <section className="dark-section py-24 lg:py-36">
         <div className="container text-center">
           <div className="max-w-2xl mx-auto fade-in-up">
-            <p className="section-label mb-6" style={{ color: "oklch(0.65 0.08 15)" }}>Get in Touch</p>
+            <p className="section-label mb-6" style={{ color: "var(--brand-luster)" }}>Get in Touch</p>
             <h2 className="text-3xl lg:text-5xl mb-6" style={{ fontFamily: "var(--font-heading)" }}>お気軽にご相談ください</h2>
             <p className="text-sm text-white/50 leading-[2] mb-10">
               化粧品開発やブランディング、AI研修に関するご質問、ご相談など、どんなことでもお気軽にお問い合わせください。
