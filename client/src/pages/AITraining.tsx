@@ -1,5 +1,4 @@
 import { Link } from "wouter";
-import { ChevronDown, ChevronUp } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { PHOTOS } from "@/lib/images";
 import { useState } from "react";
@@ -46,11 +45,13 @@ function FaqItem({ q, a }: { q: string; a: string }) {
         <span className="text-sm leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
           {q}
         </span>
-        {open ? (
-          <ChevronUp className="w-4 h-4 text-rose-gold shrink-0" />
-        ) : (
-          <ChevronDown className="w-4 h-4 text-foreground/40 shrink-0" />
-        )}
+        <span
+          className={`shrink-0 text-[0.55rem] tracking-[0.16em] ${open ? "text-rose-gold" : "text-foreground/40"}`}
+          style={{ fontFamily: "var(--font-sub)" }}
+          aria-hidden="true"
+        >
+          {open ? "CLOSE" : "OPEN"}
+        </span>
       </button>
       {open && (
         <p className="pb-5 text-sm text-foreground/55 leading-relaxed pl-0" style={{ fontFamily: "var(--font-body)" }}>
