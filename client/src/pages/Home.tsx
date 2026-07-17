@@ -191,7 +191,7 @@ export default function Home() {
 
             <Link href="/ai-training">
               <div className="group relative overflow-hidden aspect-[4/3] cursor-pointer fade-in-up">
-                <img loading="lazy" src={IMAGES.pillarAI} alt="AI研修事業" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
+                <img loading="lazy" src={PHOTOS.team.group5} alt="AI研修事業" className="w-full h-full object-cover object-[center_30%] transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-500" />
                 <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-12">
                   <p className="text-[0.6rem] tracking-[0.3em] uppercase text-white/60 mb-3" style={{ fontFamily: "var(--font-sub)" }}>AI & Digital</p>

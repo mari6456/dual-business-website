@@ -1,11 +1,11 @@
 import { Link } from "wouter";
-import { ArrowRight, CheckSquare, ChevronDown, ChevronUp, Mail, FileText, Users, PlayCircle } from "lucide-react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { PHOTOS } from "@/lib/images";
 import { useState } from "react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
-// Design: Sophisticated dark editorial with warm rose-gold accents
+// Design: Sophisticated dark editorial with UNFRAME luster accents
 // Sections: FV → 課題提起 → 共感・原因 → 3つの強み → プログラム → 対象・形式 → 講師 → 受講者の声 → FAQ → CTA
 
 const faqs = [
@@ -68,7 +68,7 @@ export default function AITraining() {
     <div className="min-h-screen">
 
       {/* ── Section 01: Hero / FV ── */}
-      <section className="relative min-h-screen flex items-center">
+      <section className="brand-dark-hero relative min-h-screen flex items-center">
         <div className="absolute inset-0">
           <img
             src={PHOTOS.team.group5}
@@ -104,7 +104,7 @@ export default function AITraining() {
                   className="inline-flex items-center gap-3 px-8 py-4 bg-rose-gold text-white text-sm tracking-[0.1em] uppercase hover:opacity-90 transition-opacity duration-300 cursor-pointer"
                   style={{ fontFamily: "var(--font-sub)", fontWeight: 500 }}
                 >
-                  無料で相談する <ArrowRight className="w-4 h-4" />
+                  無料で相談する
                 </span>
               </Link>
               <a
@@ -112,7 +112,7 @@ export default function AITraining() {
                 className="inline-flex items-center gap-3 px-8 py-4 border border-white/40 text-white text-sm tracking-[0.1em] uppercase hover:bg-white/10 transition-colors duration-300 cursor-pointer"
                 style={{ fontFamily: "var(--font-sub)", fontWeight: 500 }}
               >
-                研修プログラムを見る <ArrowRight className="w-4 h-4" />
+                研修プログラムを見る
               </a>
             </div>
             {/* 信頼バッジ */}
@@ -127,7 +127,7 @@ export default function AITraining() {
                   className="text-[0.65rem] tracking-[0.15em] text-white/50"
                   style={{ fontFamily: "var(--font-sub)" }}
                 >
-                  ✓ {badge}
+                  {badge}
                 </span>
               ))}
             </div>
@@ -214,9 +214,8 @@ export default function AITraining() {
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="fade-in-up flex items-start gap-4 p-5 bg-white border border-foreground/5 hover:border-rose-gold/20 transition-colors duration-300"
+                  className="fade-in-up p-5 bg-white border border-foreground/5 hover:border-rose-gold/20 transition-colors duration-300"
                 >
-                  <CheckSquare className="w-4 h-4 text-foreground/20 mt-0.5 shrink-0" />
                   <p className="text-sm text-foreground/70 leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
                     {item}
                   </p>
@@ -492,10 +491,7 @@ export default function AITraining() {
                       <p className="text-[0.6rem] tracking-[0.15em] text-foreground/30 mb-3" style={{ fontFamily: "var(--font-sub)" }}>ワーク（当日の成果物）</p>
                       <div className="space-y-2">
                         {item.outputs.map((o) => (
-                          <div key={o} className="flex items-start gap-2">
-                            <span className="text-rose-gold text-xs mt-0.5 shrink-0">✓</span>
-                            <span className="text-xs text-foreground/60 leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>{o}</span>
-                          </div>
+                          <p key={o} className="text-xs text-foreground/60 leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>{o}</p>
                         ))}
                       </div>
                     </div>
@@ -503,10 +499,7 @@ export default function AITraining() {
                       <p className="text-[0.6rem] tracking-[0.15em] text-foreground/30 mb-3" style={{ fontFamily: "var(--font-sub)" }}>持ち帰るもの</p>
                       <div className="space-y-2">
                         {item.takeaways.map((t) => (
-                          <div key={t} className="flex items-start gap-2">
-                            <span className="text-rose-gold text-xs mt-0.5 shrink-0">→</span>
-                            <span className="text-xs text-foreground/60 leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>{t}</span>
-                          </div>
+                          <p key={t} className="text-xs text-foreground/60 leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>{t}</p>
                         ))}
                       </div>
                     </div>
@@ -721,39 +714,31 @@ export default function AITraining() {
               {[
                 {
                   step: "01",
-                  icon: <Mail className="w-5 h-5" />,
                   title: "お問い合わせ・無料相談",
                   desc: "フォームまたはSNSからお気軽にご連絡ください。御社の課題・目的・規模をヒアリングします。しつこい営業は一切しません。",
                 },
                 {
                   step: "02",
-                  icon: <FileText className="w-5 h-5" />,
                   title: "研修プランのご提案",
                   desc: "業界・職種・目的に合わせてカスタム設計した研修プランをご提案。回数・テーマ・形式を御社に合わせて調整します。",
                 },
                 {
                   step: "03",
-                  icon: <Users className="w-5 h-5" />,
                   title: "事前準備・ヒアリング",
                   desc: "受講者の業務内容・AIリテラシーレベルを事前に確認。当日使えるプロンプト集や資料を業務に合わせて準備します。",
                 },
                 {
                   step: "04",
-                  icon: <PlayCircle className="w-5 h-5" />,
                   title: "研修実施",
                   desc: "ゴール宣言 → まず触らせる → たとえ話で概念理解 → コピペで使えるプロンプト配布 → 手を動かすワーク → 気づきのシェア → 宿題。この黄金フローで、毎回『自分の成果物を1つ』持ち帰ります。",
                 },
                 {
                   step: "05",
-                  icon: <ArrowRight className="w-5 h-5" />,
                   title: "定着支援・フォローアップ",
                   desc: "研修後の質問対応・定着支援も対応。『やって終わり』にしません。継続伴走型では次回の研修内容を受講者の進捗に合わせて調整します。",
                 },
               ].map((item) => (
-                <div key={item.step} className="fade-in-up flex gap-8 items-start editorial-card relative">
-                  <div className="shrink-0 w-12 h-12 bg-rose-gold/10 flex items-center justify-center text-rose-gold">
-                    {item.icon}
-                  </div>
+                <div key={item.step} className="fade-in-up editorial-card relative">
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-2">
                       <span className="text-[0.6rem] tracking-[0.2em] text-rose-gold" style={{ fontFamily: "var(--font-sub)" }}>STEP {item.step}</span>
@@ -839,7 +824,7 @@ export default function AITraining() {
                 className="inline-flex items-center gap-3 px-10 py-4 bg-rose-gold text-white text-sm tracking-[0.15em] uppercase hover:opacity-90 transition-opacity duration-300 cursor-pointer"
                 style={{ fontFamily: "var(--font-sub)", fontWeight: 500 }}
               >
-                無料で相談する <ArrowRight className="w-4 h-4" />
+                無料で相談する
               </span>
             </Link>
           </div>

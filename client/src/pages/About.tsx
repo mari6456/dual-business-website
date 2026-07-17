@@ -23,7 +23,7 @@ const businesses = [
     title: "AI研修・デジタル活用支援",
     desc: "AIを知識で終わらせず、日々の業務に使える状態へ。経営者・チーム・現場に合わせた研修と伴走支援を行います。",
     href: "/ai-training",
-    image: IMAGES.pillarAI,
+    image: PHOTOS.team.group5,
   },
 ];
 

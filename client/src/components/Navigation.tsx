@@ -16,6 +16,7 @@ export default function Navigation() {
   const [location] = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const usesDarkHeroHeader = location === "/ai-training" && !isScrolled && !isMobileOpen;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,7 +54,9 @@ export default function Navigation() {
             <Link href="/" aria-label="UNFRAME ホーム">
               <span className="hidden sm:block brand-logo-frame brand-logo-frame--header" aria-hidden="true">
                 <img
-                  src="/images/brand/unframe-logo-primary.svg"
+                  src={usesDarkHeroHeader
+                    ? "/images/brand/unframe-logo-monochrome-white.svg"
+                    : "/images/brand/unframe-logo-primary.svg"}
                   alt=""
                   className="brand-logo-image"
                 />
@@ -62,7 +65,7 @@ export default function Navigation() {
                 <img
                   src="/images/brand/unframe-mark-primary.svg"
                   alt=""
-                  className="brand-mark-image"
+                  className={`brand-mark-image ${usesDarkHeroHeader ? "brand-mark-image--reverse" : ""}`}
                 />
               </span>
             </Link>
@@ -72,10 +75,10 @@ export default function Navigation() {
               {navLinks.map((link) => (
                 <Link key={link.href} href={link.href}>
                   <span
-                    className={`text-[0.65rem] tracking-[0.2em] uppercase transition-colors duration-300 hover:text-rose-gold ${
+                    className={`text-[0.65rem] tracking-[0.2em] uppercase transition-colors duration-300 ${
                       location === link.href
-                        ? "text-rose-gold"
-                        : "text-foreground/70"
+                        ? usesDarkHeroHeader ? "text-[#8fddf3]" : "text-rose-gold"
+                        : usesDarkHeroHeader ? "text-white/75 hover:text-white" : "text-foreground/70 hover:text-rose-gold"
                     }`}
                     style={{ fontFamily: "var(--font-sub)", fontWeight: 500 }}
                   >
@@ -88,7 +91,7 @@ export default function Navigation() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileOpen(!isMobileOpen)}
-              className="lg:hidden p-2"
+              className={`lg:hidden p-2 ${usesDarkHeroHeader ? "text-white" : ""}`}
               aria-label="メニュー"
             >
               {isMobileOpen ? (

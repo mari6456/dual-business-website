@@ -72,7 +72,7 @@ export default function Profile() {
                   <div>
                     <p className="text-[0.6rem] tracking-[0.2em] uppercase mb-2" style={{
                       fontFamily: "var(--font-sub)",
-                      color: pos.type === "cosmetics" ? "#8fddf3" : "#b9c8f1",
+                      color: pos.type === "cosmetics" ? "#376f82" : "#555f98",
                     }}>
                       {pos.type === "cosmetics" ? "Beauty" : "AI & Innovation"}
                     </p>

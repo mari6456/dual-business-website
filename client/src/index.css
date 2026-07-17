@@ -42,7 +42,7 @@
   --color-sidebar-ring: var(--sidebar-ring);
 
   /* UNFRAME brand system — legacy utility names remain as compatibility aliases */
-  --color-rose-gold: #8fddf3;
+  --color-rose-gold: #376f82;
   --color-rose-gold-light: #dce2ff;
   --color-warm-surface: #faf9f6;
   --color-charcoal: #111111;
@@ -305,6 +305,10 @@
     transform: translateX(-9px);
   }
 
+  .brand-mark-image--reverse {
+    filter: brightness(0) invert(1);
+  }
+
   /* Subtle layered planes replace the former warm decorative treatment. */
   .bg-warm-surface {
     background-color: var(--brand-canvas);
@@ -331,4 +335,12 @@
   .marquee-track {
     animation: marquee 30s linear infinite;
   }
+}
+
+/* Keep bright luster readable only on dark imagery; unlayered rules override utilities. */
+.dark-section .text-rose-gold,
+.dark-section [class*="text-rose-gold/"],
+.brand-dark-hero .text-rose-gold,
+.brand-dark-hero [class*="text-rose-gold/"] {
+  color: var(--brand-luster);
 }
