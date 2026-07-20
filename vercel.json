@@ -1,4 +1,12 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/demo/music", "destination": "https://studio-oto.net/demo/music" },
+    { "source": "/uploads/:path*", "destination": "https://studio-oto.net/uploads/:path*" },
+    { "source": "/_astro/:path*", "destination": "https://studio-oto.net/_astro/:path*" },
+    { "source": "/demo.js", "destination": "https://studio-oto.net/demo.js" },
+    { "source": "/contact.js", "destination": "https://studio-oto.net/contact.js" },
+    { "source": "/demo-favicon.svg", "destination": "https://studio-oto.net/demo-favicon.svg" }
+  ]
 }
