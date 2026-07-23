@@ -3,6 +3,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { PHOTOS } from "@/lib/images";
 import { useState } from "react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import MiniDiagnosis from "@/components/MiniDiagnosis";
 
 // Design: Sophisticated dark editorial with UNFRAME luster accents
 // Sections: FV → 課題提起 → 共感・原因 → 3つの強み → プログラム → 対象・形式 → 講師 → 受講者の声 → FAQ → CTA
@@ -263,7 +264,7 @@ export default function AITraining() {
       </section>
 
       {/* ── Section 04: 3つの強み ── */}
-      <section className="py-24 lg:py-32">
+      <section id="strengths" className="py-24 lg:py-32">
         <div className="container">
           <div className="mb-16 fade-in-up">
             <p className="section-label mb-4">Strengths</p>
@@ -277,19 +278,19 @@ export default function AITraining() {
                 num: "01",
                 title: '"知る"ではなく、"自分の業務で動かす"まで',
                 body: '毎回「自分の成果物を1つ」持ち帰る流れ。聞いて終わりにしません。',
-                img: "/images/ai-training/strength-1-practical-YiytMh5hvzWhowPejiA9Uf.webp",
+                img: "/images/ai-training/unframe-editorial-v2/strength-practical-varied.webp",
               },
               {
                 num: "02",
                 title: '業界別の"自分ごと"実例',
                 body: '美容・建設・介護・士業——受講者の業界に合わせた実例で講義。',
-                img: "/images/ai-training/strength-2-tools-YbUvJLJf9iEzDqpdjw9rKY.webp",
+                img: "/images/ai-training/unframe-editorial-v2/strength-industry-varied.webp",
               },
               {
                 num: "03",
                 title: '"リテラシー"で終わらず、"自動化・制作"まで到達',
                 body: '研修後、組織に「回り続ける仕組み」と「目に見える成果物」が残ります。',
-                img: "/images/ai-training/strength-3-output-JkZQeRqdmeWjAyua7jaBKB.webp",
+                img: "/images/ai-training/unframe-editorial-v2/strength-output.webp",
               },
             ].map((s) => (
               <div key={s.num} className="editorial-card fade-in-up overflow-hidden">
@@ -298,7 +299,7 @@ export default function AITraining() {
                     src={s.img}
                     loading="lazy"
                     alt={s.title}
-                    className="w-full h-44 object-cover object-center"
+                    className="w-full aspect-[3/2] object-cover object-center"
                   />
                 </div>
                 <span className="text-xs text-rose-gold tracking-wider mb-4 block" style={{ fontFamily: "var(--font-sub)" }}>
@@ -361,7 +362,7 @@ export default function AITraining() {
                 time: "2〜3時間 × 1回（単発体験会としても可）",
                 goal: "AIへの苦手意識が消え、自分の業務で使えるプロンプトを自力で書ける",
                 content: "使うツールは問いません。Google Gemini / ChatGPT / Copilot / Claude——どれでも構いません。特定ツールの操作ではなく、どのAIにも通用するリテラシーと伝え方の土台を身につけます。",
-                img: "/images/ai-training/prog-basic-5tahrHxD3b9B7UfDaBF6wS.jpg",
+                img: "/images/ai-training/unframe-editorial-v2/program-basic.webp",
                 points: ["AIの全体像（得意・苦手・ハルシネーションとは）", "怖くない使い方の原則（入れていい情報・ダメな情報）", "プロンプトの型：役割・背景・条件・出力形式の4点セット", "対話で精度を上げる方法", "自分専用AI入門（Gem / GPTs / Copilotエージェント）"],
                 outputs: ["自分の業務メール/メッセージ1本をプロンプトの型で清書", "自分だけの秘書Gemを1体作成"],
                 takeaways: ["コピペで使える基本プロンプト集", "やってはいけないことチェックリスト1枚"],
@@ -375,7 +376,7 @@ export default function AITraining() {
                 time: "2時間 × 2回",
                 goal: "御社ツールを使い分け、日常業務を時短。自分専用AIを実務で1つ完成",
                 content: "STEP1で土台を作ったら、御社が実際に使っているツールに特化して深掘りします。Google / ChatGPT / Microsoft / Claude——どの環境でも同じ考え方で設計します。",
-                img: "/images/ai-training/prog-tools-cx2aiQMvVVkuZ52QLbAJZw.jpg",
+                img: "/images/ai-training/unframe-editorial-v2/program-tools-varied.webp",
                 points: ["メインAIの基本（検索の延長ではない使い方）", "自分専用AIの活用（議事録BOT / 文面アシスタント / チェックリスト）", "社内資料の活用（PDF・議事録・マニュアルを読み込ませる）", "使い分けの地図（アイデア用途 vs 自社資料用途）", "複数機能の掛け合わせで自社専用の検索環境を作る"],
                 outputs: ["自分の業務用の専用AIを1体（議事録・問い合わせ対応・チェックリスト等）", "自社資料を読み込ませ、要約＆Q&Aできる状態を作る"],
                 takeaways: ["業務別 専用AIのテンプレ（プロンプト設計シート）", "どの用途でどの機能を使う？判断フロー1枚（御社ツール版）"],
@@ -389,7 +390,7 @@ export default function AITraining() {
                 time: "2時間 × 1〜2回",
                 goal: "繰り返し業務を1つ自動化し、毎回やる手作業を仕組みに置き換える",
                 content: "GAS・スプレッドシート・Workspace連携で繰り返し業務を仕組み化。定期実行・通知・記録まで自動で回る状態を作ります。",
-                img: "/images/ai-training/prog-automation-DoPF3njM6eHnt6UkzWLHGm.jpg",
+                img: "/images/ai-training/unframe-editorial-v2/program-automation.webp",
                 points: ["自動化の見つけ方（毎回・定型・手作業を棚卸し）", "スプレッドシート × AI（自動入力・チェック・逆算スケジュール）", "リマインド自動化（期限・工程を自動でリマインド）", "チェックリスト→タスク自動生成", "工程表・進行管理をAIに作らせる"],
                 outputs: ["自分の定例業務を1つ選び、スプレッドシート＋自動リマインドの雛形を構築", "既存チェックリストを抜け漏れ検知Gemに変換"],
                 takeaways: ["自動リマインドのテンプレ（スプレッドシート＋スクリプト雛形）", "自動化できる業務 棚卸しシート"],
@@ -403,7 +404,7 @@ export default function AITraining() {
                 time: "2時間 × 2〜3回",
                 goal: "画像・スライド・HPのいずれかを1つ完成。制作スピードを一変させる",
                 content: "デザイン経験ゼロでもプロ品質のアウトプットが可能。画像生成・スライド・HP制作・提案資料作成まで、目に見える成果物を当日中に作ります。",
-                img: "/images/ai-training/prog-creation-dsr9uqyA2ZqdVa9teTdYoK.jpg",
+                img: "/images/ai-training/unframe-editorial-v2/program-creation-varied.webp",
                 points: ["画像生成の基礎とコツ（変えたくない所を明示する技術）", "画像編集・部分修正（狙った所だけ直す指示の出し方）", "既存画像からプロンプトを逆生成", "スライド資料制作（トンマナ統一・ブランドカラーのGem化）", "HP/LP制作（イベント情報や素材からページを自分で作る）"],
                 outputs: ["提案用スライド or 販促画像 or 簡易HP のいずれかを1つ完成", "自社トンマナを反映したデザイン統一Gemを作成"],
                 takeaways: ["画像生成プロンプトのコツ集", "自社カラー/トンマナのスライドGem", "HP/LP制作の手順テンプレ"],
@@ -417,7 +418,7 @@ export default function AITraining() {
                 time: "2時間 × 1〜2回（推進担当との伴走推奨）",
                 goal: "AI活用を部署・チームの仕組みに落とし込み、属人化させず定着させる",
                 content: "各部署の業務にAIを組み込み、組織に定着させます。一部の人だけが使う状態を脱し、チーム全体で回り続ける仕組みを残します。",
-                img: "/images/ai-training/prog-dx-Hf3JSwE4XbHZ5CnejXjEux.jpg",
+                img: "/images/ai-training/unframe-editorial-v2/program-dx.webp",
                 points: ["各部署への展開設計（設計・現場・経理・事務それぞれに翻訳）", "社内ルール作り（安全運用のガイドライン整備）", "ナレッジの共有（Gem・プロンプトを社内資産化）", "属人化の解消（マニュアル・引き継ぎ・新人教育をAIで）", "DX KPIの置き方（削減効果を見える化）"],
                 outputs: ["自社のAI活用ルール（1枚）のドラフト", "共有Gem/プロンプトの社内ライブラリ初版"],
                 takeaways: ["社内AI活用ガイドライン雛形", "ナレッジ共有・定着のロードマップ"],
@@ -431,7 +432,7 @@ export default function AITraining() {
                 time: "御社の状況に合わせて設計",
                 goal: "自社業務にそのまま使えるGem群・プロンプト集を持ち帰る",
                 content: "架空例でなく実際の業務・お客様・物件・案件を題材にします。事前アンケートで業務の悩みを棚卸し → 業界別実例で講義 → 自社データでワーク。",
-                img: "/images/ai-training/prog-custom-RdQadNEB2igbXs36z7oV2Q.jpg",
+                img: "/images/ai-training/unframe-editorial-v2/program-custom.webp",
                 points: ["美容・サロン（集客投稿・薬機法チェック・顧客カウンセリング整理）", "建設・設計・工事管理（議事録BOT・法改正抽出・工程表自動化）", "美容福祉・教育（授業資料作成・福祉記録要約・ケース整理）", "士業・管理部門（契約書管理・法令整合チェック・定型報告書自動化）"],
                 outputs: ["自社業務に最適化したGem群・プロンプト集", "業界別の運用テンプレ一式"],
                 takeaways: ["業界別の運用テンプレ一式", "翌日から使える状態で終了"],
@@ -783,8 +784,8 @@ export default function AITraining() {
             ))}
           </div>
           <div className="fade-in-up p-6 border-l-2 border-rose-gold bg-warm-surface">
-            <p className="text-xs text-rose-gold tracking-wider mb-2" style={{ fontFamily: "var(--font-sub)" }}>
-              💡 助成金の活用サポートあり
+            <p className="text-xs text-foreground/70 tracking-wider mb-2" style={{ fontFamily: "var(--font-sub)" }}>
+              助成金の活用サポートあり
             </p>
             <p className="text-sm text-foreground/60 leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
               人材開発支援助成金等の活用で、実質負担を大きく抑えられる場合があります。申請のサポートも可能です。詳しくはお問い合わせください。
@@ -807,6 +808,8 @@ export default function AITraining() {
           </div>
         </div>
       </section>
+
+      <MiniDiagnosis kind="ai" />
 
       {/* ── Section 11: 最後のCTA ── */}
       <section className="dark-section py-24 lg:py-32">

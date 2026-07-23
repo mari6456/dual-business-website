@@ -100,7 +100,7 @@ export default function Profile() {
                 <p className="text-xs text-rose-gold tracking-wider mb-2" style={{ fontFamily: "var(--font-sub)" }}>Corporate Career</p>
                 <h3 className="text-xl mb-4" style={{ fontFamily: "var(--font-heading)" }}>大手化粧品メーカー（2社）</h3>
                 <p className="text-sm text-foreground/60 leading-[2]">
-                  約10年間、化粧品の商品企画〜開発〜マーケティング〜ブランディングまでを一貫して担当。日本・中国・インド市場、百貨店からドラッグストアまで幅広い流通チャネルを担当し、ブランドの芯を形にする力を培う。10ブランド以上、130商品以上の企画開発に携わる。
+                  2013年から、化粧品の商品企画〜開発〜マーケティング〜ブランディングまでを一貫して担当。日本・中国・インド市場、百貨店からドラッグストアまで幅広い流通チャネルを担当し、ブランドの芯を形にする力を培う。13ブランド以上、200商品以上の企画・開発に携わる。
                 </p>
               </div>
 

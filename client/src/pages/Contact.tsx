@@ -13,15 +13,39 @@ import { Mail, Clock } from "lucide-react";
 import { toast } from "sonner";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
+const validInquiryTypes = new Set([
+  "cosmetics-brand",
+  "cosmetics-oem",
+  "ai-consulting",
+  "ai-training",
+  "online-secretary",
+  "other",
+]);
+
+function getInitialContactData() {
+  if (typeof window === "undefined") {
+    return { inquiryType: "", message: "", source: "" };
+  }
+  const params = new URLSearchParams(window.location.search);
+  const inquiryType = params.get("inquiryType") ?? "";
+  return {
+    inquiryType: validInquiryTypes.has(inquiryType) ? inquiryType : "",
+    message: params.get("diagnosis") ?? "",
+    source: params.get("source") ?? "",
+  };
+}
+
 export default function Contact() {
   useScrollReveal();
+  const initialData = getInitialContactData();
+  const [diagnosisSource] = useState(initialData.source);
   const [formData, setFormData] = useState({
     name: "",
     company: "",
     email: "",
     phone: "",
-    inquiryType: "",
-    message: "",
+    inquiryType: initialData.inquiryType,
+    message: initialData.message,
   });
   const [submitting, setSubmitting] = useState(false);
 
@@ -33,6 +57,24 @@ export default function Contact() {
     "online-secretary": "オンライン秘書サービス",
     other: "その他",
   };
+  const isCosmeticsInquiry = formData.inquiryType === "cosmetics-brand" || formData.inquiryType === "cosmetics-oem";
+  const contactLead = isCosmeticsInquiry
+    ? "化粧品開発のご相談を受け付けています。商品アイデアがまだ曖昧な段階でも、現在決まっていること・迷っていることから整理します。"
+    : "化粧品開発やAI研修に関するご質問、ご相談など、どんなことでもお気軽にお問い合わせください。";
+  const messagePlaceholder = isCosmeticsInquiry
+    ? "例：作りたい商品カテゴリ、現在決まっていること、相談したいこと、発売希望時期、予算やロットの希望などをご記入ください"
+    : "お問い合わせ内容をご記入ください";
+  const sidebarFaqs = isCosmeticsInquiry
+    ? [
+        { q: "商品アイデアが曖昧でも相談できますか？", a: "はい。商品名・成分・OEM先が決まっていない段階からご相談いただけます。" },
+        { q: "希望するロットから相談できますか？", a: "はい。商品カテゴリーや仕様を伺い、条件に合うOEM候補と実現可能な進め方を検討します。" },
+        { q: "初回相談で何を伝えればいいですか？", a: "商品カテゴリ、届けたい相手、発売希望時期、予算感、今困っていることが分かる範囲であれば十分です。" },
+      ]
+    : [
+        { q: "お見積もりは無料ですか？", a: "はい、お見積もりは無料です。お気軽にお問い合わせください。" },
+        { q: "希望するロットから相談できますか？", a: "はい。商品カテゴリーや仕様を伺い、条件に合うOEM候補と実現可能な進め方を検討します。" },
+        { q: "AI研修のカスタマイズは可能ですか？", a: "はい、貴社のニーズに合わせたカスタマイズが可能です。" },
+      ];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -56,6 +98,7 @@ export default function Contact() {
           メールアドレス: formData.email,
           電話番号: formData.phone || "（未記入）",
           お問い合わせ種別: typeLabel,
+          診断経由: diagnosisSource || "（診断なし）",
           お問い合わせ内容: formData.message,
         }),
       });
@@ -80,7 +123,7 @@ export default function Contact() {
           <p className="section-label mb-6">Get in Touch</p>
           <h1 className="text-4xl lg:text-6xl mb-6" style={{ fontFamily: "var(--font-heading)" }}>お問い合わせ</h1>
           <p className="text-base text-foreground/50 max-w-xl leading-relaxed">
-            化粧品開発やAI研修に関するご質問、ご相談など、どんなことでもお気軽にお問い合わせください。
+            {contactLead}
           </p>
         </div>
       </section>
@@ -91,6 +134,13 @@ export default function Contact() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
             {/* Form */}
             <div className="lg:col-span-2 fade-in-up">
+              {diagnosisSource && (
+                <div className="mb-8 border border-foreground/15 bg-white px-5 py-4">
+                  <p className="text-sm text-foreground/75 leading-relaxed">
+                    {diagnosisSource}の回答を引き継ぎました。内容をご確認のうえ、相談したいことを追記してください。
+                  </p>
+                </div>
+              )}
               <form onSubmit={handleSubmit} className="space-y-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
@@ -141,7 +191,7 @@ export default function Contact() {
                   <Label htmlFor="message" className="text-xs tracking-wider uppercase" style={{ fontFamily: "var(--font-sub)" }}>
                     お問い合わせ内容 <span className="text-rose-gold">*</span>
                   </Label>
-                  <Textarea id="message" value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} placeholder="お問い合わせ内容をご記入ください" rows={8} required className="border-foreground/10 focus:border-rose-gold rounded-none py-3 resize-none" />
+                  <Textarea id="message" value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} placeholder={messagePlaceholder} rows={8} required className="border-foreground/10 focus:border-rose-gold rounded-none py-3 resize-none" />
                 </div>
 
                 <button type="submit" disabled={submitting} className="w-full py-4 bg-charcoal text-white text-sm tracking-[0.15em] uppercase hover:bg-charcoal/90 transition-colors duration-300 disabled:opacity-60 disabled:cursor-not-allowed" style={{ fontFamily: "var(--font-sub)", fontWeight: 500 }}>
@@ -179,11 +229,7 @@ export default function Contact() {
                 <p className="section-label mb-4">FAQ</p>
                 <h3 className="text-xl mb-6" style={{ fontFamily: "var(--font-heading)" }}>よくある質問</h3>
                 <div className="space-y-6">
-                  {[
-                    { q: "お見積もりは無料ですか？", a: "はい、お見積もりは無料です。お気軽にお問い合わせください。" },
-                    { q: "小ロットでも対応可能ですか？", a: "はい、小ロットから対応可能です。詳細はご相談ください。" },
-                    { q: "AI研修のカスタマイズは可能ですか？", a: "はい、貴社のニーズに合わせたカスタマイズが可能です。" },
-                  ].map((faq) => (
+                  {sidebarFaqs.map((faq) => (
                     <div key={faq.q}>
                       <p className="text-sm text-foreground/80 mb-1" style={{ fontFamily: "var(--font-heading)" }}>Q. {faq.q}</p>
                       <p className="text-xs text-foreground/40 leading-relaxed">A. {faq.a}</p>

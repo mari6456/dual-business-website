@@ -4,6 +4,34 @@ export const SITE_URL = "https://www.unframelife.com";
 export const SITE_NAME = "株式会社UNFRAME";
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/images/og/unframe-og.jpg`;
 
+const cosmeticsDevelopmentFaqs = [
+  {
+    question: "商品アイデアがまだ曖昧でも相談できますか？",
+    answer:
+      "はい。商品名・成分・OEM先が決まっていない段階からご相談いただけます。まず、誰にどんな価値を届けたいかを一緒に整理します。",
+  },
+  {
+    question: "化粧品業界の知識がなくても大丈夫ですか？",
+    answer:
+      "大丈夫です。専門用語や開発の流れを分かりやすく説明し、判断が必要なポイントを一つずつ整理しながら進めます。",
+  },
+  {
+    question: "OEM会社が決まっていなくても相談できますか？",
+    answer:
+      "はい。商品仕様・予算・希望ロットなどを整理したうえで、条件に合うOEM候補の検討と連携を支援します。",
+  },
+  {
+    question: "何個から製造できますか？完成までどのくらいかかりますか？",
+    answer:
+      "最低ロットや期間は、商品カテゴリー・処方・容器・OEMによって異なります。初回相談で希望条件を伺い、実現可能な進め方を整理します。",
+  },
+  {
+    question: "容器やパッケージ、表示確認も相談できますか？",
+    answer:
+      "はい。ブランド表現と商品仕様をつなぎ、OEMや各専門パートナーと連携しながら発売できる形まで整えます。",
+  },
+];
+
 export interface SeoConfig {
   title: string;
   description: string;
@@ -34,13 +62,13 @@ export const pageSeo: Record<string, SeoConfig> = {
       "UNFRAMEは、美容とAIを軸に、ブランド・事業・人の可能性を広げる伴走型の会社です。",
   },
   "/cosmetics": {
-    title: "化粧品OEM・ブランド開発支援｜株式会社UNFRAME",
+    title: "化粧品開発相談受付・OEM/ブランド開発支援｜株式会社UNFRAME",
     description:
-      "化粧品OEM、ブランド開発、商品企画、市場リサーチ、処方提案、製造管理まで一貫支援。化粧品開発経験をもとにブランドの芯を形にします。",
+      "化粧品開発の初回相談を受付中。商品アイデアの整理、ブランド設計、OEM選定、処方・容器・製造進行まで、アイデア段階から商品化まで伴走します。",
     path: "/cosmetics",
-    fallbackTitle: "化粧品OEM・ブランド開発支援",
+    fallbackTitle: "化粧品開発相談受付・OEM/ブランド開発支援",
     fallbackText:
-      "市場リサーチからコンセプト企画、処方提案、製造管理まで、化粧品・美容ブランドの立ち上げを支援します。",
+      "商品アイデアの整理からOEM選定、処方・容器・製造進行まで、化粧品・美容ブランドの商品化を支援します。",
   },
   "/ai-training": {
     title: "法人AI研修・生成AI活用支援｜株式会社UNFRAME",
@@ -198,6 +226,46 @@ export function getJsonLdForPath(path: string) {
       alumniOf: "事業構想大学院大学",
       hasCredential: ["薬剤師", "事業構想修士"],
       sameAs: ["https://www.instagram.com/mari_partner/"],
+    } as any);
+  }
+
+  if (normalizePath(path) === "/cosmetics") {
+    jsonLd.push({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: "化粧品開発相談受付・OEM/ブランド開発支援",
+      serviceType: "化粧品開発支援",
+      url: `${SITE_URL}/cosmetics`,
+      provider: {
+        "@type": "Organization",
+        name: SITE_NAME,
+        url: SITE_URL,
+      },
+      areaServed: {
+        "@type": "Country",
+        name: "Japan",
+      },
+      description:
+        "化粧品開発の初回相談受付。商品アイデアの整理、ブランド設計、OEM選定、処方・容器・製造進行まで、アイデア段階から商品化まで伴走します。",
+      offers: {
+        "@type": "Offer",
+        url: `${SITE_URL}/contact?inquiryType=cosmetics-brand`,
+        priceCurrency: "JPY",
+        description: "相談内容・支援範囲に応じて個別見積り。初回相談から受付。",
+      },
+    } as any);
+
+    jsonLd.push({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: cosmeticsDevelopmentFaqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
     } as any);
   }
 

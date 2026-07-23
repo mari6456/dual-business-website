@@ -335,6 +335,16 @@
   .marquee-track {
     animation: marquee 30s linear infinite;
   }
+
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none !important;
+  }
 }
 
 /* Keep bright luster readable only on dark imagery; unlayered rules override utilities. */

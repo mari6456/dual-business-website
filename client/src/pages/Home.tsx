@@ -180,7 +180,7 @@ export default function Home() {
                   <p className="text-[0.6rem] tracking-[0.3em] uppercase text-white/60 mb-3" style={{ fontFamily: "var(--font-sub)" }}>Beauty Business</p>
                   <h3 className="text-2xl lg:text-3xl text-white mb-3" style={{ fontFamily: "var(--font-heading)" }}>化粧品事業</h3>
                   <p className="text-sm text-white/70 leading-relaxed mb-4 max-w-md">
-                    ブランド開発・商品企画から市場リサーチ、処方提案、製造まで一貫支援。10ブランド以上、130商品以上の企画開発実績。
+                    ブランドの構想整理から商品企画、OEM選定、製造進行まで一貫支援。13ブランド以上、200商品以上の企画・開発実績。
                   </p>
                   <span className="inline-flex items-center gap-2 text-xs tracking-[0.15em] uppercase text-white/80 group-hover:text-rose-gold transition-colors duration-300" style={{ fontFamily: "var(--font-sub)" }}>
                     View Details <ArrowRight className="w-3.5 h-3.5" />
@@ -282,10 +282,10 @@ export default function Home() {
         <div className="container">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 stagger-children">
             {[
-              { number: "130+", label: "商品企画開発", sub: "Products Developed" },
-              { number: "10+", label: "ブランド支援", sub: "Brands Supported" },
+              { number: "200+", label: "商品企画・開発", sub: "Products Developed" },
+              { number: "13+", label: "ブランド支援", sub: "Brands Supported" },
               { number: "500+", label: "セミナー参加者", sub: "Seminar Participants" },
-              { number: "10", label: "年の業界経験", sub: "Years Experience" },
+              { number: "2013–", label: "化粧品業界経験", sub: "In Cosmetics Since" },
             ].map((stat) => (
               <div key={stat.sub} className="text-center fade-in-up">
                 <div className="text-4xl lg:text-5xl text-rose-gold mb-2" style={{ fontFamily: "var(--font-display)" }}>{stat.number}</div>
@@ -311,7 +311,7 @@ export default function Home() {
                 化粧品開発コンサルタント / ブランドディレクター / AI講座主宰
               </p>
               <p className="text-sm text-foreground/50 leading-[2] mb-8">
-                大手化粧品メーカー2社にて約10年間、化粧品の商品企画〜開発〜マーケティング〜ブランディングまでを一貫して担当。
+                2013年から化粧品業界に携わり、大手化粧品メーカー2社にて、化粧品の商品企画〜開発〜マーケティング〜ブランディングまでを一貫して担当。
                 日本・中国・インド市場、百貨店からドラッグストアまで幅広い流通チャネルを経験し、ブランドの芯を形にする力を培う。
               </p>
               <div className="flex flex-wrap gap-3 mb-8">
