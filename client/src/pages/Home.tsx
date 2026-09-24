@@ -96,12 +96,12 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row sm:flex-wrap gap-4 w-full max-w-xs sm:max-w-none">
               <Link href="/cosmetics">
                 <span className="flex box-border w-full sm:w-auto justify-center items-center gap-3 px-8 py-4 bg-charcoal text-white text-sm tracking-[0.1em] uppercase hover:bg-charcoal/90 transition-colors duration-300 cursor-pointer" style={{ fontFamily: "var(--font-sub)", fontWeight: 500 }}>
-                  Cosmetics <ArrowRight className="w-4 h-4" />
+                  美容・化粧品事業 <ArrowRight className="w-4 h-4" />
                 </span>
               </Link>
               <Link href="/ai-training">
                 <span className="flex box-border w-full sm:w-auto justify-center items-center gap-3 px-8 py-4 border border-charcoal text-charcoal text-sm tracking-[0.1em] uppercase hover:bg-charcoal hover:text-white transition-all duration-300 cursor-pointer" style={{ fontFamily: "var(--font-sub)", fontWeight: 500 }}>
-                  AI Training <ArrowRight className="w-4 h-4" />
+                  AI・デジタル事業 <ArrowRight className="w-4 h-4" />
                 </span>
               </Link>
             </div>
@@ -125,6 +125,54 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Two Business Sections */}
+      <section className="dark-section py-24 lg:py-36">
+        <div className="container">
+          <div className="text-center mb-20 fade-in-up">
+            <p className="section-label mb-6" style={{ color: "var(--brand-luster)" }}>Our Services</p>
+            <h2 className="text-4xl lg:text-5xl" style={{ fontFamily: "var(--font-heading)" }}>二つの事業</h2>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-1">
+            <Link href="/cosmetics">
+              <div className="group relative overflow-hidden min-h-[360px] lg:aspect-[4/3] cursor-pointer fade-in-up">
+                <img loading="lazy" src={IMAGES.pillarCosmetics} alt="化粧品事業" className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-500" />
+                <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-12">
+                  <p className="text-[0.6rem] tracking-[0.3em] uppercase text-white/60 mb-3" style={{ fontFamily: "var(--font-sub)" }}>Beauty Business</p>
+                  <h3 className="text-2xl lg:text-3xl text-white mb-3" style={{ fontFamily: "var(--font-heading)" }}>美容・化粧品事業</h3>
+                  <p className="text-sm text-white/70 leading-relaxed mb-4 max-w-md">
+                    ブランドの構想整理から商品企画、OEM選定、製造進行まで一貫支援。商品企画とブランドづくりを支援します。
+                  </p>
+                  <span className="inline-flex items-center gap-2 text-xs tracking-[0.15em] uppercase text-white/80 group-hover:text-rose-gold transition-colors duration-300" style={{ fontFamily: "var(--font-sub)" }}>
+                    事業内容を見る <ArrowRight className="w-3.5 h-3.5" />
+                  </span>
+                </div>
+              </div>
+            </Link>
+
+            <Link href="/ai-training">
+              <div className="group relative overflow-hidden min-h-[360px] lg:aspect-[4/3] cursor-pointer fade-in-up">
+                <img loading="lazy" src={PHOTOS.team.group5} alt="AI研修事業" className="absolute inset-0 w-full h-full object-cover object-[center_30%] transition-transform duration-700 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-500" />
+                <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-12">
+                  <p className="text-[0.6rem] tracking-[0.3em] uppercase text-white/60 mb-3" style={{ fontFamily: "var(--font-sub)" }}>AI & Digital</p>
+                  <h3 className="text-2xl lg:text-3xl text-white mb-3" style={{ fontFamily: "var(--font-heading)" }}>AI研修・デジタル支援</h3>
+                  <p className="text-sm text-white/70 leading-relaxed mb-4 max-w-md">
+                    経営者向けAI顧問、法人研修、セミナー開催。実務に合わせたAI・デジタル活用を支援します。
+                  </p>
+                  <span className="inline-flex items-center gap-2 text-xs tracking-[0.15em] uppercase text-white/80 group-hover:text-rose-gold transition-colors duration-300" style={{ fontFamily: "var(--font-sub)" }}>
+                    事業内容を見る <ArrowRight className="w-3.5 h-3.5" />
+                  </span>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="container py-20"><p className="section-label mb-4">Selected Works</p><h2 className="text-3xl mb-10">実績・事例</h2><div className="grid md:grid-cols-2 gap-8"><article className="border-t pt-6"><h3 className="text-xl mb-4">ドラマ作品のコスメ監修</h3><p className="text-sm text-foreground/70 leading-[2]">化粧品開発の知見を活かした専門監修。</p></article><article className="border-t pt-6"><h3 className="text-xl mb-4">美容福祉とAIの特別授業</h3><p className="text-sm text-foreground/70 leading-[2]">山野美容芸術短期大学での講義・AI活用体験。</p></article></div><Link href="/works" className="inline-flex gap-3 mt-8 border-b pb-2">実績・担当内容を見る <ArrowRight size={16}/></Link></section>
+      <section className="container py-20"><p className="section-label mb-4">Our Approach</p><h2 className="text-3xl mb-8">構想を整理し、現場で動く形へ。</h2><div className="grid md:grid-cols-3 gap-8">{["想いと課題を言葉にする", "専門性をつないで進める", "現場に合う形を一緒に考える"].map(title=><h3 key={title} className="border-t pt-6 text-lg">{title}</h3>)}</div></section>
       {/* MVV Section */}
       <section className="py-24 lg:py-36">
         <div className="container">
@@ -163,48 +211,34 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Two Business Sections */}
-      <section className="dark-section py-24 lg:py-36">
+      {/* Profile Teaser */}
+      <section className="py-24 lg:py-36">
         <div className="container">
-          <div className="text-center mb-20 fade-in-up">
-            <p className="section-label mb-6" style={{ color: "var(--brand-luster)" }}>Our Services</p>
-            <h2 className="text-4xl lg:text-5xl" style={{ fontFamily: "var(--font-heading)" }}>Two Pillars</h2>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-1">
-            <Link href="/cosmetics">
-              <div className="group relative overflow-hidden aspect-[4/3] cursor-pointer fade-in-up">
-                <img loading="lazy" src={IMAGES.pillarCosmetics} alt="化粧品事業" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-500" />
-                <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-12">
-                  <p className="text-[0.6rem] tracking-[0.3em] uppercase text-white/60 mb-3" style={{ fontFamily: "var(--font-sub)" }}>Beauty Business</p>
-                  <h3 className="text-2xl lg:text-3xl text-white mb-3" style={{ fontFamily: "var(--font-heading)" }}>化粧品事業</h3>
-                  <p className="text-sm text-white/70 leading-relaxed mb-4 max-w-md">
-                    ブランドの構想整理から商品企画、OEM選定、製造進行まで一貫支援。13ブランド以上、200商品以上の企画・開発実績。
-                  </p>
-                  <span className="inline-flex items-center gap-2 text-xs tracking-[0.15em] uppercase text-white/80 group-hover:text-rose-gold transition-colors duration-300" style={{ fontFamily: "var(--font-sub)" }}>
-                    View Details <ArrowRight className="w-3.5 h-3.5" />
-                  </span>
-                </div>
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center">
+            <div className="lg:col-span-2 image-reveal fade-in-up">
+              <img loading="lazy" src={PHOTOS.white.portrait} alt="河原田茉莉" className="w-full aspect-[3/4] object-cover object-top" />
+            </div>
+            <div className="lg:col-span-3 fade-in-up">
+              <p className="section-label mb-6">Representative Profile</p>
+              <h2 className="text-3xl lg:text-4xl mb-4" style={{ fontFamily: "var(--font-heading)" }}>河原田 茉莉</h2>
+              <p className="text-sm text-foreground/60 leading-[2] mb-4">
+                化粧品開発コンサルタント / ブランドディレクター / AI講座主宰
+              </p>
+              <p className="text-sm text-foreground/50 leading-[2] mb-8">
+                化粧品開発13年以上・200商品超の設計に従事。大手化粧品メーカー2社にて、化粧品の商品企画〜開発〜マーケティング〜ブランディングまでを一貫して担当。
+                日本・中国・インド・EU市場、百貨店からドラッグストアまで幅広い流通チャネルを経験し、ブランドの芯を形にする力を培う。
+              </p>
+              <div className="flex flex-wrap gap-3 mb-8">
+                {["薬剤師", "英国IFPA認定アロマセラピスト", "事業構想修士（MPD）"].map((q) => (
+                  <span key={q} className="text-[0.65rem] tracking-wider text-foreground/40 border border-foreground/15 px-3 py-1.5" style={{ fontFamily: "var(--font-sub)" }}>{q}</span>
+                ))}
               </div>
-            </Link>
-
-            <Link href="/ai-training">
-              <div className="group relative overflow-hidden aspect-[4/3] cursor-pointer fade-in-up">
-                <img loading="lazy" src={PHOTOS.team.group5} alt="AI研修事業" className="w-full h-full object-cover object-[center_30%] transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-500" />
-                <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-12">
-                  <p className="text-[0.6rem] tracking-[0.3em] uppercase text-white/60 mb-3" style={{ fontFamily: "var(--font-sub)" }}>AI & Digital</p>
-                  <h3 className="text-2xl lg:text-3xl text-white mb-3" style={{ fontFamily: "var(--font-heading)" }}>AI研修・デジタル支援</h3>
-                  <p className="text-sm text-white/70 leading-relaxed mb-4 max-w-md">
-                    経営者向けAI顧問、法人研修、セミナー開催。累計参加者500名超。文科省認可AIスクール講師。
-                  </p>
-                  <span className="inline-flex items-center gap-2 text-xs tracking-[0.15em] uppercase text-white/80 group-hover:text-rose-gold transition-colors duration-300" style={{ fontFamily: "var(--font-sub)" }}>
-                    View Details <ArrowRight className="w-3.5 h-3.5" />
-                  </span>
-                </div>
-              </div>
-            </Link>
+              <Link href="/profile">
+                <span className="inline-flex items-center gap-2 text-xs tracking-[0.15em] uppercase text-rose-gold hover:text-foreground transition-colors duration-300 cursor-pointer" style={{ fontFamily: "var(--font-sub)", fontWeight: 500 }}>
+                  代表プロフィールを見る <ArrowRight className="w-3.5 h-3.5" />
+                </span>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -215,11 +249,11 @@ export default function Home() {
           <div className="flex justify-between items-end mb-16 fade-in-up">
             <div>
               <p className="section-label mb-4">Latest</p>
-              <h2 className="text-3xl lg:text-4xl" style={{ fontFamily: "var(--font-heading)" }}>News</h2>
+              <h2 className="text-3xl lg:text-4xl" style={{ fontFamily: "var(--font-heading)" }}>お知らせ</h2>
             </div>
             <Link href="/news">
               <span className="hidden md:inline-flex items-center gap-2 text-xs tracking-[0.15em] uppercase text-foreground/50 hover:text-rose-gold transition-colors duration-300 cursor-pointer" style={{ fontFamily: "var(--font-sub)", fontWeight: 500 }}>
-                View All <ArrowRight className="w-3.5 h-3.5" />
+                お知らせ一覧 <ArrowRight className="w-3.5 h-3.5" />
               </span>
             </Link>
           </div>
@@ -277,58 +311,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Numbers */}
-      <section className="py-24 lg:py-32 bg-warm-surface">
-        <div className="container">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 stagger-children">
-            {[
-              { number: "200+", label: "商品企画・開発", sub: "Products Developed" },
-              { number: "13+", label: "ブランド支援", sub: "Brands Supported" },
-              { number: "500+", label: "セミナー参加者", sub: "Seminar Participants" },
-              { number: "2013–", label: "化粧品業界経験", sub: "In Cosmetics Since" },
-            ].map((stat) => (
-              <div key={stat.sub} className="text-center fade-in-up">
-                <div className="text-4xl lg:text-5xl text-rose-gold mb-2" style={{ fontFamily: "var(--font-display)" }}>{stat.number}</div>
-                <div className="text-sm text-foreground/80 mb-1">{stat.label}</div>
-                <div className="text-[0.6rem] tracking-[0.15em] uppercase text-foreground/30" style={{ fontFamily: "var(--font-sub)" }}>{stat.sub}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Profile Teaser */}
-      <section className="py-24 lg:py-36">
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center">
-            <div className="lg:col-span-2 image-reveal fade-in-up">
-              <img loading="lazy" src={PHOTOS.white.portrait} alt="河原田茉莉" className="w-full aspect-[3/4] object-cover object-top" />
-            </div>
-            <div className="lg:col-span-3 fade-in-up">
-              <p className="section-label mb-6">Representative Profile</p>
-              <h2 className="text-3xl lg:text-4xl mb-4" style={{ fontFamily: "var(--font-heading)" }}>kawaharada mari</h2>
-              <p className="text-sm text-foreground/60 leading-[2] mb-4">
-                化粧品開発コンサルタント / ブランドディレクター / AI講座主宰
-              </p>
-              <p className="text-sm text-foreground/50 leading-[2] mb-8">
-                2013年から化粧品業界に携わり、大手化粧品メーカー2社にて、化粧品の商品企画〜開発〜マーケティング〜ブランディングまでを一貫して担当。
-                日本・中国・インド市場、百貨店からドラッグストアまで幅広い流通チャネルを経験し、ブランドの芯を形にする力を培う。
-              </p>
-              <div className="flex flex-wrap gap-3 mb-8">
-                {["薬剤師", "英国IFPA認定アロマセラピスト", "事業構想修士（MPD）"].map((q) => (
-                  <span key={q} className="text-[0.65rem] tracking-wider text-foreground/40 border border-foreground/15 px-3 py-1.5" style={{ fontFamily: "var(--font-sub)" }}>{q}</span>
-                ))}
-              </div>
-              <Link href="/profile">
-                <span className="inline-flex items-center gap-2 text-xs tracking-[0.15em] uppercase text-rose-gold hover:text-foreground transition-colors duration-300 cursor-pointer" style={{ fontFamily: "var(--font-sub)", fontWeight: 500 }}>
-                  View Representative Profile <ArrowRight className="w-3.5 h-3.5" />
-                </span>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="dark-section py-24 lg:py-36">
         <div className="container text-center">
@@ -336,11 +318,11 @@ export default function Home() {
             <p className="section-label mb-6" style={{ color: "var(--brand-luster)" }}>Get in Touch</p>
             <h2 className="text-3xl lg:text-5xl mb-6" style={{ fontFamily: "var(--font-heading)" }}>お気軽にご相談ください</h2>
             <p className="text-sm text-white/50 leading-[2] mb-10">
-              化粧品開発やブランディング、AI研修に関するご質問、ご相談など、どんなことでもお気軽にお問い合わせください。
+              化粧品開発やブランディング、AI研修に関するご質問、ご相談など、ご検討内容と希望する支援範囲をお知らせください。
             </p>
             <Link href="/contact">
               <span className="inline-flex items-center gap-3 px-10 py-4 border border-white/30 text-white text-sm tracking-[0.15em] uppercase hover:bg-white hover:text-charcoal transition-all duration-500 cursor-pointer" style={{ fontFamily: "var(--font-sub)", fontWeight: 500 }}>
-                Contact Us <ArrowRight className="w-4 h-4" />
+                お問い合わせ <ArrowRight className="w-4 h-4" />
               </span>
             </Link>
           </div>

@@ -1,4 +1,6 @@
+import { BEAUTY_CATEGORIES } from "./beautyExperience";
 import { newsData } from "./newsData";
+import { aiJournalData } from "./aiJournalData";
 
 export const SITE_URL = "https://www.unframelife.com";
 export const SITE_NAME = "株式会社UNFRAME";
@@ -46,7 +48,7 @@ export const pageSeo: Record<string, SeoConfig> = {
   "/": {
     title: "株式会社UNFRAME｜化粧品開発・ブランド支援・法人AI研修",
     description:
-      "株式会社UNFRAMEは、化粧品OEM・ブランド開発・商品企画と、法人向けAI研修・デジタル活用支援を提供します。代表は薬剤師・事業構想修士の河原田茉莉。",
+      "株式会社UNFRAMEは、化粧品の商品企画・ブランド開発支援と、法人向けAI研修・デジタル活用支援を提供します。代表は薬剤師・事業構想修士の河原田茉莉。",
     path: "/",
     fallbackTitle: "自由な生き方を、事業の力に。",
     fallbackText:
@@ -64,11 +66,11 @@ export const pageSeo: Record<string, SeoConfig> = {
   "/cosmetics": {
     title: "化粧品開発相談受付・OEM/ブランド開発支援｜株式会社UNFRAME",
     description:
-      "化粧品開発の初回相談を受付中。商品アイデアの整理、ブランド設計、OEM選定、処方・容器・製造進行まで、アイデア段階から商品化まで伴走します。",
+      "化粧品開発の初回相談を受付中。商品アイデアの整理、ブランド設計、OEM選定、開発要件・容器・製造進行まで、アイデア段階から商品化まで伴走します。",
     path: "/cosmetics",
     fallbackTitle: "化粧品開発相談受付・OEM/ブランド開発支援",
     fallbackText:
-      "商品アイデアの整理からOEM選定、処方・容器・製造進行まで、化粧品・美容ブランドの商品化を支援します。",
+      "商品アイデアの整理からOEM選定、開発要件・容器・製造進行まで、化粧品・美容ブランドの商品化を支援します。",
   },
   "/ai-training": {
     title: "法人AI研修・生成AI活用支援｜株式会社UNFRAME",
@@ -82,7 +84,7 @@ export const pageSeo: Record<string, SeoConfig> = {
   "/profile": {
     title: "代表プロフィール 河原田茉莉｜株式会社UNFRAME",
     description:
-      "株式会社UNFRAME代表・河原田茉莉のプロフィール。薬剤師、事業構想修士。化粧品開発、ブランド支援、AI研修を横断して活動しています。",
+      "株式会社UNFRAME代表・河原田茉莉のプロフィール。化粧品開発13年以上・200商品超の設計に従事。薬剤師、事業構想修士。化粧品開発、ブランド支援、AI研修を横断して活動しています。",
     path: "/profile",
     fallbackTitle: "代表プロフィール 河原田茉莉",
     fallbackText:
@@ -96,6 +98,15 @@ export const pageSeo: Record<string, SeoConfig> = {
     fallbackTitle: "ニュース",
     fallbackText:
       "美容、化粧品開発、ブランド支援、AI研修、登壇、監修実績などの最新情報を掲載しています。",
+  },
+  "/ai-journal": {
+    title: "AI Journal｜仕事に活かすAI最新情報｜株式会社UNFRAME",
+    description:
+      "ChatGPTを中心に、Google・Geminiや注目AIツールの最新情報を、初心者にも分かりやすく業務活用の視点で解説します。",
+    path: "/ai-journal",
+    fallbackTitle: "AI Journal",
+    fallbackText:
+      "ChatGPT、Google・Gemini、注目AIツールの更新を、仕事での使い方と注意点まで分かりやすく整理します。",
   },
   "/contact": {
     title: "お問い合わせ｜株式会社UNFRAME",
@@ -125,6 +136,22 @@ export const pageSeo: Record<string, SeoConfig> = {
   },
 };
 
+// Keep corporate pages and service guides distinct; also used by the static HTML build.
+pageSeo["/lp/cosmetics-development"] = {...pageSeo["/cosmetics"], path: "/lp/cosmetics-development"};
+pageSeo["/lp/ai-training"] = {...pageSeo["/ai-training"], path: "/lp/ai-training"};
+for (const [path, title, description] of [
+  ["/cosmetics", "美容・化粧品事業", "化粧品ブランドの立ち上げから既存ブランドの商品開発まで。ブランド戦略、商品企画、OEM連携、マーケティングの支援内容と体制をご紹介します。"],
+  ["/ai-training", "AI・デジタル事業", "法人向けAI研修、経営者向けAI顧問、業務改善・デジタル活用支援。企業の課題に合わせた支援内容と進め方をご紹介します。"],
+  ["/works", "実績・事例", "UNFRAMEの美容・化粧品とAIの実績。コスメ監修、美容福祉とAIの特別授業、講演など、担当した内容をご紹介します。"],
+]) {
+  pageSeo[path] = {title: `${title}｜株式会社UNFRAME`, description, path, fallbackTitle: title, fallbackText: description};
+}
+
+for (const path of ["/cosmetics", "/lp/cosmetics-development"]) {
+  const description = `${BEAUTY_CATEGORIES.join("、")}などの企画・開発経験を活かし、ブランドづくりと商品開発を支援します。`;
+  pageSeo[path] = {...pageSeo[path], description, fallbackText: description};
+}
+
 export function absoluteUrl(path: string) {
   if (path.startsWith("http://") || path.startsWith("https://")) return path;
   return `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
@@ -141,6 +168,7 @@ export function normalizePath(path: string) {
 export function getSeoForPath(path: string): SeoConfig {
   const normalizedPath = normalizePath(path);
   const newsMatch = normalizedPath.match(/^\/news\/([^/]+)$/);
+  const journalMatch = normalizedPath.match(/^\/ai-journal\/([^/]+)$/);
 
   if (newsMatch) {
     const item = newsData.find((news) => news.id === newsMatch[1]);
@@ -151,6 +179,21 @@ export function getSeoForPath(path: string): SeoConfig {
         path: normalizedPath,
         type: "article",
         image: item.image ? absoluteUrl(item.image) : DEFAULT_OG_IMAGE,
+        fallbackTitle: item.title,
+        fallbackText: item.excerpt,
+      };
+    }
+  }
+
+  if (journalMatch) {
+    const item = aiJournalData.find((article) => article.id === journalMatch[1]);
+    if (item) {
+      return {
+        title: `${item.title}｜AI Journal｜${SITE_NAME}`,
+        description: item.excerpt,
+        path: normalizedPath,
+        type: "article",
+        image: DEFAULT_OG_IMAGE,
         fallbackTitle: item.title,
         fallbackText: item.excerpt,
       };
@@ -229,13 +272,13 @@ export function getJsonLdForPath(path: string) {
     } as any);
   }
 
-  if (normalizePath(path) === "/cosmetics") {
+  if (normalizePath(path) === "/lp/cosmetics-development") {
     jsonLd.push({
       "@context": "https://schema.org",
       "@type": "Service",
       name: "化粧品開発相談受付・OEM/ブランド開発支援",
       serviceType: "化粧品開発支援",
-      url: `${SITE_URL}/cosmetics`,
+      url: `${SITE_URL}/lp/cosmetics-development`,
       provider: {
         "@type": "Organization",
         name: SITE_NAME,
@@ -246,7 +289,7 @@ export function getJsonLdForPath(path: string) {
         name: "Japan",
       },
       description:
-        "化粧品開発の初回相談受付。商品アイデアの整理、ブランド設計、OEM選定、処方・容器・製造進行まで、アイデア段階から商品化まで伴走します。",
+        "化粧品開発の初回相談受付。商品アイデアの整理、ブランド設計、OEM選定、開発要件・容器・製造進行まで、アイデア段階から商品化まで伴走します。",
       offers: {
         "@type": "Offer",
         url: `${SITE_URL}/contact?inquiryType=cosmetics-brand`,
@@ -295,6 +338,30 @@ export function getJsonLdForPath(path: string) {
             "@type": "ImageObject",
             url: `${SITE_URL}/favicon.png`,
           },
+        },
+      } as any);
+    }
+  }
+
+  const journalMatch = normalizePath(path).match(/^\/ai-journal\/([^/]+)$/);
+  if (journalMatch) {
+    const item = aiJournalData.find((article) => article.id === journalMatch[1]);
+    if (item) {
+      jsonLd.push({
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: item.title,
+        description: item.excerpt,
+        image: DEFAULT_OG_IMAGE,
+        datePublished: item.date.replace(/\./g, "-"),
+        dateModified: item.date.replace(/\./g, "-"),
+        inLanguage: "ja",
+        mainEntityOfPage: absoluteUrl(seo.path),
+        author: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
+        publisher: {
+          "@type": "Organization",
+          name: SITE_NAME,
+          logo: { "@type": "ImageObject", url: `${SITE_URL}/favicon.png` },
         },
       } as any);
     }

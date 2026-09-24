@@ -17,6 +17,11 @@ import Contact from "./pages/Contact";
 import Company from "./pages/Company";
 import Privacy from "./pages/Privacy";
 import ScrollToTop from "./components/ScrollToTop";
+import CosmeticsLP from "./pages/CosmeticsLP";
+import AITrainingLP from "./pages/AITrainingLP";
+import Works from "./pages/Works";
+import AIJournal from "./pages/AIJournal";
+import AIJournalDetail from "./pages/AIJournalDetail";
 import SEO from "./components/SEO";
 
 function Router() {
@@ -30,6 +35,11 @@ function Router() {
         <Route path={"/about"} component={About} />
         <Route path={"/cosmetics"} component={Cosmetics} />
         <Route path={"/ai-training"} component={AITraining} />
+        <Route path={"/lp/cosmetics-development"} component={CosmeticsLP} />
+        <Route path={"/lp/ai-training"} component={AITrainingLP} />
+        <Route path={"/works"} component={Works} />
+        <Route path={"/ai-journal"} component={AIJournal} />
+        <Route path={"/ai-journal/:id"}>{(params) => <AIJournalDetail id={params.id} />}</Route>
         <Route path={"/profile"} component={Profile} />
         <Route path={"/news"} component={News} />
         <Route path={"/news/:id"}>{(params) => <NewsDetail id={params.id} />}</Route>

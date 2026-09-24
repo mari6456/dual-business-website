@@ -14,7 +14,7 @@ const businesses = [
   {
     label: "Beauty Business",
     title: "化粧品・美容ブランド支援",
-    desc: "ブランド開発、商品企画、OEM連動、処方提案、製造管理まで。美容の現場と事業の視点をつなぎ、ブランドの芯を形にします。",
+    desc: "ブランド開発、商品企画、OEM連動、開発ディレクション、製造管理まで。美容の現場と事業の視点をつなぎ、ブランドの芯を形にします。",
     href: "/cosmetics",
     image: IMAGES.pillarCosmetics,
   },

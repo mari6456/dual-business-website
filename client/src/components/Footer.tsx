@@ -33,12 +33,12 @@ export default function Footer() {
               <div className="space-y-3">
                 <Link href="/cosmetics">
                   <span className="block text-sm text-white/60 hover:text-rose-gold transition-colors duration-300 cursor-pointer">
-                    化粧品事業
+                    美容・化粧品事業
                   </span>
                 </Link>
                 <Link href="/ai-training">
                   <span className="block text-sm text-white/60 hover:text-rose-gold transition-colors duration-300 cursor-pointer">
-                    AI研修
+                    AI・デジタル事業
                   </span>
                 </Link>
               </div>
@@ -54,7 +54,7 @@ export default function Footer() {
               <div className="space-y-3">
                 <Link href="/about">
                   <span className="block text-sm text-white/60 hover:text-rose-gold transition-colors duration-300 cursor-pointer">
-                    About
+                    UNFRAMEについて
                   </span>
                 </Link>
                 <Link href="/profile">
@@ -67,9 +67,15 @@ export default function Footer() {
                     会社概要
                   </span>
                 </Link>
+                <Link href="/works"><span className="block text-sm text-white/60 hover:text-rose-gold">実績・事例</span></Link>
                 <Link href="/news">
                   <span className="block text-sm text-white/60 hover:text-rose-gold transition-colors duration-300 cursor-pointer">
                     ニュース
+                  </span>
+                </Link>
+                <Link href="/ai-journal">
+                  <span className="block text-sm text-white/60 hover:text-rose-gold transition-colors duration-300 cursor-pointer">
+                    AI Journal
                   </span>
                 </Link>
                 <Link href="/contact">

@@ -2,6 +2,7 @@ import express from "express";
 import { createServer } from "http";
 import path from "path";
 import { fileURLToPath } from "url";
+import { aiJournalData } from "../client/src/lib/aiJournalData";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -13,6 +14,7 @@ const staticRoutes = new Set([
   "/ai-training",
   "/profile",
   "/news",
+  "/ai-journal",
   "/news/2026-07-kokuhaku-cosmetics-supervision",
   "/news/2026-05-yamano-lecture",
   "/news/2026-04-reborn-beauty-summit",
@@ -26,6 +28,7 @@ const staticRoutes = new Set([
   "/contact",
   "/company",
   "/privacy",
+  ...aiJournalData.map((item) => `/ai-journal/${item.id}`),
 ]);
 
 async function startServer() {

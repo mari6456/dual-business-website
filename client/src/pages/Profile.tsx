@@ -1,3 +1,4 @@
+import { BEAUTY_CATEGORIES } from "@/lib/beautyExperience";
 import { Link } from "wouter";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
@@ -25,8 +26,9 @@ export default function Profile() {
                 株式会社UNFRAME 代表 / 化粧品開発コンサルタント / ブランドディレクター / AI経営コーチ
               </p>
               <p className="text-sm text-foreground/50 leading-[2] mb-4">
-                福岡県出身。薬剤師。事業構想修士（MPD）修了。
+                福岡県出身。薬剤師。事業構想修士（MPD）修了。化粧品開発13年以上・200商品超の設計に従事。
               </p>
+              <Link href="/cosmetics#skincare-columns" className="inline-flex items-center gap-2 text-sm text-rose-gold border-b border-rose-gold/30 pb-2">代表が執筆するスキンケアコラム <ArrowRight size={16}/></Link>
 
             </div>
           </div>
@@ -61,9 +63,9 @@ export default function Profile() {
                 type: "cosmetics" as const,
               },
               {
-                org: "AI 未来学院",
+                org: "社会人向けAIスクール",
                 role: "講師",
-                desc: "文科省認可のAIスクールにて、AI活用・実践講座を担当。経営者・ビジネスパーソン向けにAIリテラシー向上を支援。",
+                desc: "AI活用・実践講座を担当し、経営者・ビジネスパーソンのAI活用を継続して支援。",
                 type: "ai" as const,
               },
             ].map((pos) => (
@@ -100,7 +102,7 @@ export default function Profile() {
                 <p className="text-xs text-rose-gold tracking-wider mb-2" style={{ fontFamily: "var(--font-sub)" }}>Corporate Career</p>
                 <h3 className="text-xl mb-4" style={{ fontFamily: "var(--font-heading)" }}>大手化粧品メーカー（2社）</h3>
                 <p className="text-sm text-foreground/60 leading-[2]">
-                  2013年から、化粧品の商品企画〜開発〜マーケティング〜ブランディングまでを一貫して担当。日本・中国・インド市場、百貨店からドラッグストアまで幅広い流通チャネルを担当し、ブランドの芯を形にする力を培う。13ブランド以上、200商品以上の企画・開発に携わる。
+                  2013年から、化粧品の商品企画〜開発〜マーケティング〜ブランディングまでを一貫して担当。日本・中国・インド・EU市場、百貨店からドラッグストアまで幅広い流通チャネルを担当し、ブランドの芯を形にする力を培う。
                 </p>
               </div>
 
@@ -108,7 +110,7 @@ export default function Profile() {
                 <p className="text-xs text-rose-gold tracking-wider mb-2" style={{ fontFamily: "var(--font-sub)" }}>Categories</p>
                 <h3 className="text-xl mb-4" style={{ fontFamily: "var(--font-heading)" }}>担当カテゴリー</h3>
                 <p className="text-sm text-foreground/60 leading-[2]">
-                  スキンケア、ヘアケア、ボディケア、フレグランス、健康食品、日焼け止め、アロマセラピー系、メンズなど多岐にわたるカテゴリーを経験。
+                  {BEAUTY_CATEGORIES.join("、")}など、幅広い分野の企画・開発を経験。
                 </p>
               </div>
 
@@ -116,7 +118,7 @@ export default function Profile() {
                 <p className="text-xs text-rose-gold tracking-wider mb-2" style={{ fontFamily: "var(--font-sub)" }}>Independent</p>
                 <h3 className="text-xl mb-4" style={{ fontFamily: "var(--font-heading)" }}>独立後の活動</h3>
                 <p className="text-sm text-foreground/60 leading-[2] mb-4">
-                  独立後、5ブランドを支援（ヘアケア・スキンケア・美容家電・他業種からの参入・美容サロン専売）。新商品開発に20品以上携わり、新規ブランド立ち上げ2件を実現。市場リサーチ〜コンセプト企画・処方提案〜製造まで一貫支援。
+                  市場リサーチ〜コンセプト企画・開発ディレクション〜製造まで一貫支援。
                 </p>
                 <p className="text-sm text-foreground/60 leading-[2]">
                   支援先：化粧品メーカー系企業・ヘアケア系企業・広告会社・美容サロン運営企業 他
@@ -143,7 +145,7 @@ export default function Profile() {
                   "化粧品OEMコンサルティング",
                   "化粧品・美容機器開発",
                   "ブランド開発・商品企画",
-                  "市場リサーチ・処方提案・製造管理",
+                  "市場リサーチ・開発ディレクション・製造管理",
                   "アロマセラピスト",
                   "骨格＆小顔矯正セラピスト",
                 ].map((item) => (
@@ -187,7 +189,7 @@ export default function Profile() {
               <div className="space-y-4">
                 {[
                   "AI&デジタルセミナー 累計参加者数500名以上",
-                  "文科省認可AIスクール講師",
+                  "社会人向けAIスクール講師",
                   "オンライン秘書チーム運営",
                   "介護業界（支援事業者）でのAI×マーケティング支援",
                   "SNS発信や業務効率化サポート",
@@ -220,7 +222,6 @@ export default function Profile() {
               "英国IFPA認定アロマセラピスト",
               "骨格形成美顔矯正 YUIIGIE認定技術者",
               "事業構想修士（MPD）修了",
-              "文科省認可AIスクール講師",
               "日本成人病予防協会 健康リズムカウンセラー",
               "肌育研究家",
 

@@ -3,20 +3,20 @@ import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/cosmetics", label: "Cosmetics" },
-  { href: "/ai-training", label: "AI Training" },
-  { href: "/profile", label: "Profile" },
-  { href: "/news", label: "News" },
-  { href: "/contact", label: "Contact" },
+  { href: "/about", label: "UNFRAMEについて" },
+  { href: "/cosmetics", label: "美容・化粧品事業" },
+  { href: "/ai-training", label: "AI・デジタル事業" },
+  { href: "/works", label: "実績・事例" },
+  { href: "/ai-journal", label: "AI Journal" },
+  { href: "/news", label: "お知らせ" },
+  { href: "/contact", label: "お問い合わせ" },
 ];
 
 export default function Navigation() {
   const [location] = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const usesDarkHeroHeader = location === "/ai-training" && !isScrolled && !isMobileOpen;
+  const usesDarkHeroHeader = location === "/lp/ai-training" && !isScrolled && !isMobileOpen;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,6 +29,15 @@ export default function Navigation() {
   useEffect(() => {
     setIsMobileOpen(false);
   }, [location]);
+
+  useEffect(() => {
+    if (!isMobileOpen) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsMobileOpen(false);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [isMobileOpen]);
 
   useEffect(() => {
     if (isMobileOpen) {
@@ -71,11 +80,11 @@ export default function Navigation() {
             </Link>
 
             {/* Desktop Nav */}
-            <div className="hidden lg:flex items-center gap-7 xl:gap-10">
+            <div className="hidden lg:flex items-center gap-4 xl:gap-6">
               {navLinks.map((link) => (
                 <Link key={link.href} href={link.href}>
                   <span
-                    className={`text-[0.65rem] tracking-[0.2em] uppercase transition-colors duration-300 ${
+                    className={`text-xs tracking-wide uppercase transition-colors duration-300 ${
                       location === link.href
                         ? usesDarkHeroHeader ? "text-[#8fddf3]" : "text-rose-gold"
                         : usesDarkHeroHeader ? "text-white/75 hover:text-white" : "text-foreground/70 hover:text-rose-gold"
@@ -92,7 +101,9 @@ export default function Navigation() {
             <button
               onClick={() => setIsMobileOpen(!isMobileOpen)}
               className={`lg:hidden p-2 ${usesDarkHeroHeader ? "text-white" : ""}`}
-              aria-label="メニュー"
+              aria-label={isMobileOpen ? "メニューを閉じる" : "メニューを開く"}
+              aria-expanded={isMobileOpen}
+              aria-controls="mobile-navigation"
             >
               {isMobileOpen ? (
                 <X className="w-6 h-6" />
@@ -106,17 +117,19 @@ export default function Navigation() {
 
       {/* Mobile Menu Overlay */}
       <div
+        id="mobile-navigation"
+        inert={!isMobileOpen}
         className={`fixed inset-0 z-40 bg-[#FAF9F6] transition-all duration-500 lg:hidden ${
           isMobileOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
         }`}
       >
-        <div className="flex flex-col items-center justify-center h-full gap-8">
+        <div className="flex flex-col items-center justify-center h-full gap-6 pt-24 pb-8 overflow-y-auto">
           {navLinks.map((link, i) => (
             <Link key={link.href} href={link.href}>
               <span
-                className={`text-2xl tracking-[0.15em] transition-all duration-500 ${
+                className={`text-lg tracking-wide transition-all duration-500 ${
                   isMobileOpen
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-4"
