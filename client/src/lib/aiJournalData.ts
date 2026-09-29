@@ -21,6 +21,25 @@ export const AI_JOURNAL_CATEGORIES: Record<AIJournalCategory, string> = {
 // Generated from checked Obsidian notes. Do not edit article data here.
 export const aiJournalData: AIJournalItem[] = [
   {
+    "id": "2026-09-28-chatgpt-data-export",
+    "date": "2026.09.28",
+    "category": "chatgpt",
+    "product": "ChatGPT",
+    "title": "ChatGPTのデータをエクスポートする",
+    "excerpt": "ChatGPTの「データをエクスポート」では、会話履歴など自分のアカウントデータをZIPで受け取れます。ClaudeやGeminiなど別のAIへ移るときに、これまでの会話から必要な前提や指示を整理し直す材料として使えます。",
+    "content": "ChatGPTとの会話に、よく使う指示、仕事の前提、好みの書き方などが蓄積されていると、ClaudeやGeminiなど別のAIへ移る際に、一から説明し直すのは大変です。そんなときに役立つのが、ChatGPTの「データをエクスポート」です。\n\n対象アカウントでは、**ブラウザ版**の「設定」→「データコントロール」→「データをエクスポート」から書き出しを依頼できます。準備ができると、登録しているメールアドレスまたは電話番号へ案内が届き、チャット履歴などのアカウントデータを含むZIPファイルをダウンロードできます。\n![記事内の説明画像](/ai-journal/assets/2026-09-28-chatgpt-data-export-01.png)\n\n\nZIPには個人情報や機密情報が含まれる可能性があるため、気をつけましょう。\n\nエクスポートの到着には最大7日かかる場合があり、ダウンロードリンクは受信から24時間で失効します。削除済みのチャットは復元できません。Business・Enterpriseなど管理対象ワークスペースでは自己操作できない場合があるため、管理者へ確認しましょう。",
+    "sources": [
+      {
+        "label": "Exporting your ChatGPT history and data｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/7260999-how-do-i-export-my-chatgpt-history-and-data"
+      },
+      {
+        "label": "Data controls in ChatGPT｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/7730893-data-controls-in-chatgpt"
+      }
+    ]
+  },
+  {
     "id": "2026-09-24-chatgpt-flashcards",
     "date": "2026.09.24",
     "category": "chatgpt",
