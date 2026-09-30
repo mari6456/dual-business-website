@@ -21,6 +21,29 @@ export const AI_JOURNAL_CATEGORIES: Record<AIJournalCategory, string> = {
 // Generated from checked Obsidian notes. Do not edit article data here.
 export const aiJournalData: AIJournalItem[] = [
   {
+    "id": "2026-09-30-chatgpt-archive-vs-delete",
+    "date": "2026.09.30",
+    "category": "chatgpt",
+    "product": "ChatGPT",
+    "title": "今日のChatGPT活用ヒント：チャットは「アーカイブ」と「削除」を使い分ける",
+    "excerpt": "ChatGPTの会話を消さずに整理したいときは「アーカイブ」が便利です。検索や復元ができるアーカイブと、元に戻せない削除の違い、Library内ファイルの注意点を整理します。",
+    "content": "ChatGPTのサイドバーに会話が増えると、必要な仕事のチャットを探しにくくなります。そんなときは、すぐ削除せずに「アーカイブ」を使うと安全です。\n\nアーカイブは、会話を通常のサイドバーから隠して整理する機能です。内容はアカウントに残り、検索結果にも表示されます。戻したい場合は「設定」→「データコントロール」→「アーカイブ済みのチャット」から解除できます。\n一方、削除したチャットは画面からすぐ消え、復元できません。OpenAIのシステムからは原則30日以内に削除予定となりますが、法的・安全上の例外があります。\n\n![記事内の説明画像](/ai-journal/assets/2026-09-30-chatgpt-archive-vs-delete-01.png)\n\nまずは、完了した案件や一時的に見えなくしたい会話を一つ選び、会話名の「…」から「アーカイブ」を試してみましょう。保管中の議事メモ、参考にしたいプロンプト、後で再利用する調査はアーカイブ、不要と判断できるテスト会話は削除、という分け方が実用的です。\n\n注意したいのは、アーカイブしても保存期間は変わらず、削除したチャットは戻せないことです。また、チャットを削除してもLibraryへ別に保存されたファイルは残る場合があります。ファイルも消したいときはLibrary側を確認してください。画面名は端末や提供状況により少し異なる場合があります。",
+    "sources": [
+      {
+        "label": "Deleting and archiving chats in ChatGPT｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/8809935-deleting-and-archiving-chats-in-chatgpt"
+      },
+      {
+        "label": "Finding your chats, projects, and files in ChatGPT｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/10056348-finding-your-chats-projects-and-files-in-chatgpt"
+      },
+      {
+        "label": "Chat and file retention in ChatGPT｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/8983778-how-do-i-opt-out-of-my-data-being-used-to-train-future-models"
+      }
+    ]
+  },
+  {
     "id": "2026-09-28-chatgpt-data-export",
     "date": "2026.09.28",
     "category": "chatgpt",
@@ -36,6 +59,25 @@ export const aiJournalData: AIJournalItem[] = [
       {
         "label": "Data controls in ChatGPT｜OpenAI Help Center",
         "url": "https://help.openai.com/en/articles/7730893-data-controls-in-chatgpt"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-25-chatgpt-voice-plugins",
+    "date": "2026.09.25",
+    "category": "chatgpt",
+    "product": "ChatGPT",
+    "title": "ChatGPTの音声会話でプラグインを使えるように",
+    "excerpt": "ChatGPTの音声会話「Live」で、接続済みのプラグインやアプリを声で使えるようになりました。結果は文字でも確認でき、予定確認や資料探しを会話のまま進められます。",
+    "content": "OpenAIは2026年9月23日、ChatGPTの音声会話「Live」で、アカウントに利用可能なプラグインや接続済みアプリを使えるようにしたと発表しました。Web、iOS、Androidに対応し、声で依頼しながら結果をチャットの文字でも確認できます。\n\nこれにより、画面を細かく操作しにくい移動中や作業中でも、「明日の予定を確認して」「接続した保存先から○○の資料を探して」のように頼みやすくなります。Liveはウェブ検索にも対応しているため、最新情報を調べ、結果を文字で見直す使い方もできます。\n\n試すときは、\n①使いたいプラグインやアプリを事前に接続\n②ChatGPTのWeb版またはモバイル版でVoiceを開始\n③Liveに声で依頼し、表示された結果を文字で確認\nの3段階です。利用できるプラグインや操作は、プラン、地域、アプリのバージョン、ワークスペース設定によって異なります。\n\n注意したいのは操作承認です。送信や更新など承認が必要な操作では、画面上の確認を求められます。口頭だけでは承認できません。また、接続先の権限や利用上限はそのまま適用されます。重要な予定、資料、外部送信の内容は、実行前後に画面で必ず確認しましょう。\n\nちなみに、LIVEモードで会話すると、待っている間も少し優しい気持ちになれます。\n例えば「カレンダーの予定を削除して」と伝えると、音声で「ちょっと待ってね」「あっ少しつまずいたからもう一度確認するね」と言ってくれるので、テキストで見るより、「大丈夫だよ」「よろしく」とつい私も声をかけてしまい、\nなんだかほっこり優しい時間が流れました。\nAIにあたたかさを感じた、そんな体験でした。",
+    "sources": [
+      {
+        "label": "ChatGPT Release Notes｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      },
+      {
+        "label": "ChatGPT Voice｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/20001274-chatgpt-voice"
       }
     ]
   },

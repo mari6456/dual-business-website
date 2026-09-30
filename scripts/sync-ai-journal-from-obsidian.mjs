@@ -39,12 +39,29 @@ function section(body, heading) {
   return body.slice(contentStart + 1, nextHeading === -1 ? undefined : nextHeading).trim();
 }
 
+function resolveVaultImage(imageTarget) {
+  const requested = imageTarget.trim();
+  const direct = path.resolve(vaultRoot, requested);
+  const vaultPrefix = `${path.resolve(vaultRoot)}${path.sep}`;
+  if (direct.startsWith(vaultPrefix) && existsSync(direct)) return direct;
+
+  // Obsidian allows filename-only embeds and resolves them anywhere in the Vault.
+  // Mirror that behavior only when the filename identifies exactly one file.
+  if (requested !== path.basename(requested)) return null;
+  const matches = readdirSync(vaultRoot, { withFileTypes: true, recursive: true })
+    .filter((entry) => entry.isFile() && entry.name === requested)
+    .map((entry) => path.join(entry.parentPath, entry.name));
+  if (matches.length > 1) {
+    throw new Error(`HP本文内の画像名がVault内で重複しています: ${requested}`);
+  }
+  return matches[0] || null;
+}
+
 function publishInlineImages(markdown, slug) {
   let imageIndex = 0;
   return markdown.replace(/!\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (_match, vaultRelativePath, label) => {
-    const source = path.resolve(vaultRoot, vaultRelativePath);
-    const vaultPrefix = `${path.resolve(vaultRoot)}${path.sep}`;
-    if (!source.startsWith(vaultPrefix) || !existsSync(source)) {
+    const source = resolveVaultImage(vaultRelativePath);
+    if (!source) {
       throw new Error(`HP本文内の画像が見つかりません: ${vaultRelativePath}`);
     }
     imageIndex += 1;
