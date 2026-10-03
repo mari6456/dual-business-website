@@ -21,6 +21,29 @@ export const AI_JOURNAL_CATEGORIES: Record<AIJournalCategory, string> = {
 // Generated from checked Obsidian notes. Do not edit article data here.
 export const aiJournalData: AIJournalItem[] = [
   {
+    "id": "2026-10-02-gpt-6-1-sol",
+    "date": "2026.10.02",
+    "category": "chatgpt",
+    "product": "ChatGPT Work・Codex",
+    "title": "GPT-6.1 Sol、WorkとCodexで提供開始",
+    "excerpt": "OpenAIがGPT-6.1 SolをChatGPT WorkとCodexへ提供開始。複雑な資料の理解や複数工程の業務、コード作業が強化されました。通常のChatではまだ使えません。",
+    "content": "OpenAIは2026年9月29日、GPT-6 Solを改良した「GPT-6.1 Sol」を発表しました。ChatGPT WorkとCodexで、Plus、Pro、Business、Enterprise、Eduへ段階的に提供されます。通常のChatには、現時点では提供されていません。\n\nGPT-6.1 Solは、複雑なPDFや文書の理解、複数の手順を伴う業務、パソコン操作、コード作成・修正などでGPT-6 Solより改善したと案内されています。仕事では、資料を読み込んで要点と確認事項を整理する、作業手順を組み立てて成果物を作る、コードを調べて修正案と検証結果をまとめる、といった場面で試せます。\n\n使うときは、\n①WorkまたはCodexを開く、\n②モデル選択にGPT-6.1 Solがあれば選ぶ、\n③目的・資料・守る条件・完成形を伝える、\n④出典、数値、ファイル、実行結果を人が確認する、の順です。\n表示されない場合は、プラン、段階提供、アプリの更新、ワークスペースのモデル権限を確認してください。\n\n高性能になっても、回答や操作結果が常に正しいとは限りません。外部送信、削除、公開、金銭や契約に関わる操作は、実行前後に内容と対象を確認しましょう。モデルの評価結果は実運用と条件が異なる場合があります。",
+    "sources": [
+      {
+        "label": "Introducing GPT-6.1 Sol｜OpenAI",
+        "url": "https://openai.com/index/introducing-gpt-6-1-sol/"
+      },
+      {
+        "label": "ChatGPT Release Notes｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      },
+      {
+        "label": "ChatGPT Work and Codex｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex"
+      }
+    ]
+  },
+  {
     "id": "2026-09-30-chatgpt-archive-vs-delete",
     "date": "2026.09.30",
     "category": "chatgpt",
