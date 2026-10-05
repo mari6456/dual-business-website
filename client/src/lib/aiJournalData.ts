@@ -21,6 +21,70 @@ export const AI_JOURNAL_CATEGORIES: Record<AIJournalCategory, string> = {
 // Generated from checked Obsidian notes. Do not edit article data here.
 export const aiJournalData: AIJournalItem[] = [
   {
+    "id": "2026-10-05-chatgpt-finances-free-go",
+    "date": "2026.10.05",
+    "category": "chatgpt",
+    "product": "ChatGPT Finances",
+    "title": "米国でFree・Goへ拡大。ChatGPT Financesで支出を整理",
+    "excerpt": "米国のChatGPT Free・Goでも、金融口座をつないで支出や定期購入を確認できる「Finances」が利用可能に。家計を一か所で整理し、データをもとに質問できます。",
+    "content": "OpenAIは2026年10月2日、米国のChatGPT Free・Goユーザーにも「Finances」の提供を拡大しました。Web・iOS・Androidで利用でき、Plus・Proを含む対象ユーザーは、Plaid経由で金融口座を接続し、支出、請求、サブスクリプション、資産状況、投資などを一か所で確認できます。\n\nたとえば「今月は何に多く使った？」「契約中のサブスクは？」「次の支払いは？」と質問すると、接続したデータをもとに整理できます。\n\n2026年10月5日時点では米国向けで、日本での提供は案内されていません。\n\n### 便利だからこそ考えたいリスク\n\nまず、Financesは金融機関から共有されたデータと同期時点をもとに整理します。未取得の口座や取引、反映待ちがあれば表示が不完全になり、振替、カード支払い、返金、保留中の取引などを支出として重複計上する場合もあります。AIの分類や説明を、そのまま正しい明細だと思い込まないことが大切です。\n\n次に、支出、資産、請求、投資、信用情報が一か所へ集まるため、便利になるほど扱う情報の機微性も高くなります。必要な口座だけを接続し、カード番号、CVV・CVC、暗証番号などを会話やファイルへ直接入力しないようにします。\n\n接続解除後も、すべてが即時に消えるわけではありません。OpenAIとPlaidの接続データは30日以内に削除されますが、過去の会話とFinancial memoriesは別途削除が必要です。\n\n### 私の考え\n\n今後日本に導入されるまでに間生えたいのはリスク。ChatGPTが勝手が中を見れる＝自分が意図していないことが作為的に見えるようにするリスクも出てくる。見やすく整理された結果を「正しい判断」だと過信することはとっても危険です。\nChatGPTは送金、支払い、取引、口座設定の変更はできず、金融・税務・法務の専門家でもありません。まずは確認と整理に限定し、重要な判断前には金融機関の明細や専門家でも確認する。接続する口座を最小限にする。この二つを基本にすると、便利さと安全性のバランスを取りやすくなります。",
+    "sources": [
+      {
+        "label": "ChatGPT Release Notes｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      },
+      {
+        "label": "Finances in ChatGPT｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/20001222-finances-in-chatgpt"
+      },
+      {
+        "label": "Customer Responsibilities in Safeguarding Financial Data｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/12429613-customer-responsibilities-in-safeguarding-financial-data.pdf"
+      }
+    ]
+  },
+  {
+    "id": "2026-10-04-dotのai秘書体験-確認用下書き",
+    "date": "2026.10.04",
+    "category": "chatgpt",
+    "product": "dot",
+    "title": "AI秘書を試して感じた仕事を整理する価値",
+    "excerpt": "私が「モコ」と名づけたAIアシスタントのdotを試したところ、接続した情報から日程の食い違いに気づき、優先すべきことを提案してくれました。許可したObsidianの関連メモから未チェック項目を発見し、実際に未完了であることも確認しました。",
+    "content": "### dotsを体験してみたら、すごいことが起きていた\nAIとのチャットをいくつも動かしていると、「今何してたっけ？」となることがあります。私も、途中の仕事や未完了のチャットの管理を手伝ってほしいと感じていました。\nChatGPTがリリースした、dotsという新しい機能、もう試しましたか？\n私はその子に「モコ」と名付けました。\n[![dots活用術｜営業・経理・個人事業主…職種ごとの任せ方21選 |  まるお｜AIエージェント×コンテンツマーケ｜AI特許取得｜慶應AI卒｜元日テレAI責任者｜1年で2億 (@Maruo_0314) on X](https://pbs.twimg.com/media/HTnH5aQbcAAUOjM?format=webp&name=medium)![dots活用術｜営業・経理・個人事業主…職種ごとの任せ方21選 |  まるお｜AIエージェント×コンテンツマーケ｜AI特許取得｜慶應AI卒｜元日テレAI責任者｜1年で2億 (@Maruo_0314) on X](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0wRKagcP8pWCHJAGPSQeTBQWQyUi9A7jlBmvXN4m8BA&s=10)](https://www.google.com/url?sa=t&source=web&rct=j&url=https%3A%2F%2Fx.com%2Fi%2Farticle%2F2105943320832950429&ved=0CBgQjRxqFwoTCICa1ZqoopcDFQAAAAAdAAAAABBo&opi=89978449)\n今回、私が「モコ」と名づけたAIアシスタントのdotに、接続したメール、カレンダー、資料を確認してもらいました。日程の食い違いに気づき、その後、私の依頼で日程表も修正。今優先したいことまで整理して提案してくれました。\nさらに、許可したMacのObsidianの関連メモを読み、期限が近い未チェック見落としていたこと。\n\n### 感じたことと確認したいこと\n「本当に秘書と思えるレベルがきた！」というのが、今回の感想です。状況を踏まえて自分から提案してくれるところに、主体性を感じました。\n実は主体性がない、と評価されていたdots、あえて主体性を持って、私の業務改善と発展のための改善を支持し、提案をして欲しいと最初に指示しました。",
+    "sources": []
+  },
+  {
+    "id": "2026-10-04-chatgpt-shopping-try-on",
+    "date": "2026.10.04",
+    "category": "chatgpt",
+    "product": "ChatGPT Shopping",
+    "title": "似合うかを購入前に確認。ChatGPTで服・小物をバーチャル試着",
+    "excerpt": "ChatGPTで衣類やアクセサリーを選ぶ際、セルフィーから試着イメージを作れる機能が登場。参照写真の管理や候補商品の保存もでき、購入前の比較をまとめやすくなりました。",
+    "content": "OpenAIは2026年10月1日、ChatGPTのショッピングに、衣類やアクセサリーのバーチャル試着を追加しました。対象の商品候補に表示される「試着」ボタンを選び、セルフィーを撮影またはアップロードすると、ChatGPT Imagesが着用イメージを生成します。\n\n実は、ChatGPTには「ショッピングアシスタント」という機能があります。これは、欲しいもの、予算、好み、用途などを伝えると、条件に合う商品を探し、比較を手伝ってくれる機能です。たとえば「5万円以内で、軽くてパソコンが入る仕事用バッグを探して」と依頼すると、条件を確認しながら候補を絞り込み、商品画像、価格、特徴、販売サイトへのリンクなどを見比べられます。\n![記事内の説明画像](/ai-journal/assets/2026-10-04-chatgpt-shopping-try-on-01.png)\n\nすでにチャット内に商品が表示されている場合は、気になる商品を1つ以上選び、「リサーチ」を選択します。そこから候補同士を比較したり、似た条件の代替商品を探したりできます。途中で「もう少し軽いもの」「このブランドは除外して」などと条件を足し、調査の方向を調整することも可能です。\n\nバーチャル試着は、この商品探しと比較の進化です。①希望・予算・好みを伝えて商品を探す、②画像・価格・特徴・販売サイトを比較する、③必要に応じて「リサーチ」で比較や代替品の調査を深める、④商品候補の「試着」を選ぶ、⑤自分の写真を撮影または追加し、生成画像と実際の商品情報を見比べる、の順です。気になる商品はお気に入りやフォルダへ保存できるため、候補が増えてもLibraryで整理できます。\n\n![294](/ai-journal/assets/2026-10-04-chatgpt-shopping-try-on-02.png)![253](/ai-journal/assets/2026-10-04-chatgpt-shopping-try-on-03.png)\n\n試着に使う参照写真は次回以降も再利用されます。変更・削除は「設定」→「パーソナライズ」→「参照写真」から行えます。機能はWeb・モバイルで案内されていますが、公式情報では対象プラン・地域の詳細は明記されていません。\n\n生成画像は、本人の見た目や商品の色・形を正確に再現するとは限らず、サイズやフィット感も保証しません。購入前には販売元の寸法、素材、商品画像、返品条件を確認し、顔写真を保存したくない場合は使用後に参照写真を削除しましょう。",
+    "sources": [
+      {
+        "label": "ChatGPT Release Notes｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      },
+      {
+        "label": "ChatGPTでショッピングリサーチを使う｜OpenAI Help Center",
+        "url": "https://help.openai.com/ja-jp/articles/12911370-using-shopping-research-in-chatgpt"
+      },
+      {
+        "label": "Shopping with ChatGPT Search｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/11128490-shopping-with-chatgpt-search"
+      },
+      {
+        "label": "ChatGPT Searchでのショッピング｜OpenAI Help Center",
+        "url": "https://help.openai.com/ja-jp/articles/11128490-shopping-with-chatgpt-search"
+      },
+      {
+        "label": "Using Library to manage files in ChatGPT｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/20001052-using-library-to-manage-files-in-chatgpt"
+      }
+    ]
+  },
+  {
     "id": "2026-10-02-gpt-6-1-sol",
     "date": "2026.10.02",
     "category": "chatgpt",
