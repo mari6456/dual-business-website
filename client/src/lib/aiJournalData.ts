@@ -21,6 +21,29 @@ export const AI_JOURNAL_CATEGORIES: Record<AIJournalCategory, string> = {
 // Generated from checked Obsidian notes. Do not edit article data here.
 export const aiJournalData: AIJournalItem[] = [
   {
+    "id": "2026-10-06-chatgpt-space",
+    "date": "2026.10.06",
+    "category": "chatgpt",
+    "product": "ChatGPT Space",
+    "title": "ページ・ファイルを一か所に。ChatGPT Spaceで仕事を整理",
+    "excerpt": "ChatGPT Spaceは、ページやファイルをまとめ、ChatGPTと編集しながら整理・共有できる新しい仕事場所です。Libraryに代わる機能ですが、チャットや指示を管理するProjectsとは別に使います。",
+    "content": "OpenAIは2026年10月1日、ChatGPTの「Space」を発表しました。Spaceは、ページ、アップロードしたファイル、関連する仕事を一か所にまとめる場所です。対象アカウントではLibraryに代わって表示されますが、チャット、ファイル、プロジェクト指示をまとめる従来のProjectsはそのまま別に残ります。\n\n企画書、議事録、調査まとめなどを「Page」という編集可能な文書として作り、文章を直接直したり、ChatGPTに要約・比較・表やグラフの追加を頼んだりできます。ページの下にサブページを置いて、概要と資料を階層で整理することも可能です。\n\n試すときは、\n①「〇〇というSpaceを作って」と依頼する、\n②そのSpaceにPageやファイルを追加する、\n③ChatGPTと内容を編集する、\n④必要な相手へ閲覧または編集権限を設定して共有する、の順です。\n\n作成・編集の対象はChatGPT Pro、Business、Enterpriseで、Web版とデスクトップアプリに対応します。モバイルではページの検索・閲覧・共有はできますが、編集には対応していません。段階提供のため、対象プランでもまだ表示されない場合があります。\n\n共有前には内容と権限を確認しましょう。個人のMemoryや非公開チャット自体は共有されませんが、ChatGPTがそこからページへ書き込んだ情報は閲覧者から見えるようになります。ページへアップロードしたファイルも、そのページの権限に従います。",
+    "sources": [
+      {
+        "label": "ChatGPT Release Notes｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      },
+      {
+        "label": "Getting started with Space in ChatGPT｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/20001549-getting-started-with-space-in-chatgpt"
+      },
+      {
+        "label": "ChatGPT Space: sharing, data, and controls｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/20001544-chatgpt-space-sharing-data-and-controls"
+      }
+    ]
+  },
+  {
     "id": "2026-10-05-chatgpt-finances-free-go",
     "date": "2026.10.05",
     "category": "chatgpt",
