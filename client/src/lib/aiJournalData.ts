@@ -21,6 +21,67 @@ export const AI_JOURNAL_CATEGORIES: Record<AIJournalCategory, string> = {
 // Generated from checked Obsidian notes. Do not edit article data here.
 export const aiJournalData: AIJournalItem[] = [
   {
+    "id": "2026-10-10-codex-faster-steering",
+    "date": "2026.10.10",
+    "category": "chatgpt",
+    "product": "ChatGPT",
+    "title": "待たずに方向転換。Codexの「Steer」が高速化",
+    "excerpt": "Codexで作業中に追加指示を送る「Steer」の反映が高速化。完了を待たず、方針修正や不足情報の追加がしやすくなりました。",
+    "content": "OpenAIは2026年10月8日、ChatGPTデスクトップアプリのCodexで、実行中の作業へ追加指示を反映する「Steer」を高速化すると発表しました。Codexが長い作業を進めている途中でも、完了を待たずに「この方針はやめて」「この条件も加えて」「先にこの資料を確認して」と伝え、現在の実行へ反映しやすくなります。\n\n似た操作に「Queue」がありますが、役割は異なります。Steerは進行中の実行へ指示を加え、Queueは現在の作業が終わった後の次の実行として保存します。デスクトップアプリでは「設定」→「一般」→「フォローアップの動作」から既定値を選べます。Codex CLIでは、作業中にEnterでSteer、TabでQueueを使います。\n\nただし、Steerで追加した指示が、すでに終わった処理まで自動で巻き戻すとは限りません。重要な変更は反映結果と差分を確認してください。高速化はデスクトップで段階的に提供されており、利用できる時期は環境によって異なります。",
+    "sources": [
+      {
+        "label": "ChatGPT Release Notes｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      },
+      {
+        "label": "Using Codex with your ChatGPT plan｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan"
+      }
+    ]
+  },
+  {
+    "id": "2026-10-09-chatgpt-gpt6-intelligent-ui",
+    "date": "2026.10.09",
+    "category": "chatgpt",
+    "product": "ChatGPT",
+    "title": "GPT-6で回答が「画面」に。ChatGPTのIntelligent UIとは",
+    "excerpt": "ChatGPTにGPT-6とIntelligent UIが登場。質問に合わせて、文章だけでなく比較表、図解、その場で使える計算ツールなどを自動で組み合わせるようになりました。",
+    "content": "OpenAIは2026年10月7日、ChatGPTへGPT-6と「Intelligent UI」を導入すると発表しました。Intelligent UIは、質問に合わせて文章、画像、比較表、図解、操作できるツールなどを組み合わせ、回答に適した画面を自動で作る仕組みです。内容によっては、従来どおり文章だけで回答します。\n\nたとえば「3つの料金プランを比較して」と頼むと横並びの比較表、「この仕組みを初心者向けに説明して」と頼むと図解、「4人で割り勘したい」と頼むと会話内で使える計算ツール、といった形が考えられます。\n①目的を具体的に伝える、\n②GPT-6が回答形式を選ぶ、\n③比較表・図解・ツールで内容を確認する、\n④不足があれば条件を足して追加質問する、の順で試せます。\n\nGPT-6は、回答を続けて考えたりツールを使ったりしている途中でも、先に読める部分から表示し、追加の結果を同じ回答へ反映できます。ただし、見やすい表示になっても内容が必ず正しいとは限りません。金額、契約条件、制度、医療・法律など重要な情報は、元の資料や公式情報と照合してください。\n\n出力条件まで出さなくてよくなる、ついに、人は承認を超えて、「何を何のためにするのか」目的さえ伝えるだけでよい、状態になりますね。\n進化ですね。\nここまでくると、今度は何をするのか、さえ人は与えずに、「これやってみたら？」「これやると売り上げ伸びるよ？」という提案までしてきてくれる様になるはずです。\nさて、その時に人に求められるものとは、、、、、\n\n提供はPlus、Pro、Business、Enterpriseで世界的に始まり、FreeとGoには翌日から拡大すると案内されています。Plus、Pro、Business、EnterpriseではGPT-6 Sol、FreeとGoではGPT-6 Lunaを使用します。Intelligent UIはInstantからExtra Highまでの推論設定に対応しますが、Proの推論オプションで使われるGPT-6 Astraは対象外です。また、WorkとCodexで使われるモデルは今回の発表では変更されません。",
+    "sources": [
+      {
+        "label": "ChatGPT Release Notes｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      }
+    ]
+  },
+  {
+    "id": "2026-10-07-chatgpt-ads-manager-japan",
+    "date": "2026.10.07",
+    "category": "chatgpt",
+    "product": "ChatGPT Ads",
+    "title": "日本でも利用可能に。ChatGPT Ads Managerで広告を始める",
+    "excerpt": "OpenAIの広告管理画面「Ads Manager Beta」が日本の事業者にもセルフサービスで提供されています。Webサイトから広告案を作る流れと、会話文脈・プライバシーに関する注意点を整理します。",
+    "content": "OpenAIの「Ads Manager Beta」が、日本に拠点を置く事業者もセルフサービスで利用できるようになっています。WebサイトのURLを入力すると広告案が作られ、内容を確認・修正してキャンペーン設定へ進めます。\n\n始め方は、\n① ads.openai.comへOpenAIアカウントでログイン\n[ChatGPT で広告掲載 \\| OpenAI Ads](https://ads.openai.com/ja-JP)\n![521](/ai-journal/assets/2026-10-07-chatgpt-ads-manager-japan-01.png)\n②WebサイトのURLを入れて広告案を確認\n![473](/ai-journal/assets/2026-10-07-chatgpt-ads-manager-japan-02.png)\n③目的・予算・配信国などを設定\n![473](/ai-journal/assets/2026-10-07-chatgpt-ads-manager-japan-03.png)\n④広告主情報と支払い方法を登録し、審査後に配信、という流れです。\n\n広告は条件を満たすFree・Go利用者の回答末尾に「スポンサー」と明示して表示され、ChatGPTの回答とは分けられます。Plus、Pro、Business、Enterprise、Eduは広告表示の対象外です。\n\n注意したいのは、検索広告のようなキーワードだけではなく、現在の会話の文脈や意図も広告選択に使われる点です。広告のパーソナライズが有効な場合は、過去のチャットやMemoryも関連性の判断に利用されることがあります。ただし、広告主へ会話、履歴、Memory、氏名やメールアドレスが渡るわけではなく、広告主が受け取るのは表示数やクリック数などの集計情報です。\n\n広告は有料掲載であり、OpenAIの推奨を意味しません。回答への広告の影響はないと案内されていますが、会話内容に沿って広告が出ることへの違和感や誤認リスクは残ります。利用者は広告の理由確認、非表示、報告、パーソナライズ停止、広告データ削除が可能です。広告主側も、生成された広告文、リンク先、予算、配信地域、審査状況を確認してから開始しましょう。Betaのため仕様や配信量、費用は変動する可能性があります。",
+    "sources": [
+      {
+        "label": "Ads Manager Availability｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/20001245-ads-manager-availability"
+      },
+      {
+        "label": "Ads Manager Account Setup｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/20001213-ads-manager-account-setup"
+      },
+      {
+        "label": "Ads in ChatGPT｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/20001047-ads-in-chatgpt"
+      },
+      {
+        "label": "Our approach to advertising and expanding access to ChatGPT｜OpenAI",
+        "url": "https://openai.com/index/our-approach-to-advertising-and-expanding-access/"
+      }
+    ]
+  },
+  {
     "id": "2026-10-06-chatgpt-space",
     "date": "2026.10.06",
     "category": "chatgpt",
@@ -73,8 +134,17 @@ export const aiJournalData: AIJournalItem[] = [
     "product": "dot",
     "title": "AI秘書を試して感じた仕事を整理する価値",
     "excerpt": "私が「モコ」と名づけたAIアシスタントのdotを試したところ、接続した情報から日程の食い違いに気づき、優先すべきことを提案してくれました。許可したObsidianの関連メモから未チェック項目を発見し、実際に未完了であることも確認しました。",
-    "content": "### dotsを体験してみたら、すごいことが起きていた\nAIとのチャットをいくつも動かしていると、「今何してたっけ？」となることがあります。私も、途中の仕事や未完了のチャットの管理を手伝ってほしいと感じていました。\nChatGPTがリリースした、dotsという新しい機能、もう試しましたか？\n私はその子に「モコ」と名付けました。\n[![dots活用術｜営業・経理・個人事業主…職種ごとの任せ方21選 |  まるお｜AIエージェント×コンテンツマーケ｜AI特許取得｜慶應AI卒｜元日テレAI責任者｜1年で2億 (@Maruo_0314) on X](https://pbs.twimg.com/media/HTnH5aQbcAAUOjM?format=webp&name=medium)![dots活用術｜営業・経理・個人事業主…職種ごとの任せ方21選 |  まるお｜AIエージェント×コンテンツマーケ｜AI特許取得｜慶應AI卒｜元日テレAI責任者｜1年で2億 (@Maruo_0314) on X](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0wRKagcP8pWCHJAGPSQeTBQWQyUi9A7jlBmvXN4m8BA&s=10)](https://www.google.com/url?sa=t&source=web&rct=j&url=https%3A%2F%2Fx.com%2Fi%2Farticle%2F2105943320832950429&ved=0CBgQjRxqFwoTCICa1ZqoopcDFQAAAAAdAAAAABBo&opi=89978449)\n今回、私が「モコ」と名づけたAIアシスタントのdotに、接続したメール、カレンダー、資料を確認してもらいました。日程の食い違いに気づき、その後、私の依頼で日程表も修正。今優先したいことまで整理して提案してくれました。\nさらに、許可したMacのObsidianの関連メモを読み、期限が近い未チェック見落としていたこと。\n\n### 感じたことと確認したいこと\n「本当に秘書と思えるレベルがきた！」というのが、今回の感想です。状況を踏まえて自分から提案してくれるところに、主体性を感じました。\n実は主体性がない、と評価されていたdots、あえて主体性を持って、私の業務改善と発展のための改善を支持し、提案をして欲しいと最初に指示しました。",
-    "sources": []
+    "content": "### dotsを体験してみたら、すごいことが起きていた\nAIとのチャットをいくつも動かしていると、「今何してたっけ？」となることがあります。私も、途中の仕事や未完了のチャットの管理を手伝ってほしいと感じていました。\nOpenAIが2026年9月29日に発表した、ChatGPTの「dots」という新しい機能、もう試しましたか？\n私はその子に「モコ」と名付けました。\n[![dots活用術｜営業・経理・個人事業主…職種ごとの任せ方21選 |  まるお｜AIエージェント×コンテンツマーケ｜AI特許取得｜慶應AI卒｜元日テレAI責任者｜1年で2億 (@Maruo_0314) on X](https://pbs.twimg.com/media/HTnH5aQbcAAUOjM?format=webp&name=medium)![dots活用術｜営業・経理・個人事業主…職種ごとの任せ方21選 |  まるお｜AIエージェント×コンテンツマーケ｜AI特許取得｜慶應AI卒｜元日テレAI責任者｜1年で2億 (@Maruo_0314) on X](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0wRKagcP8pWCHJAGPSQeTBQWQyUi9A7jlBmvXN4m8BA&s=10)](https://www.google.com/url?sa=t&source=web&rct=j&url=https%3A%2F%2Fx.com%2Fi%2Farticle%2F2105943320832950429&ved=0CBgQjRxqFwoTCICa1ZqoopcDFQAAAAAdAAAAABBo&opi=89978449)\n今回、私が「モコ」と名づけたAIアシスタントのdotに、接続したメール、カレンダー、資料を確認してもらいました。日程の食い違いに気づき、その後、私の依頼で日程表も修正。今優先したいことまで整理して提案してくれました。\nさらに、許可したMacのObsidianの関連メモを読み、期限が近い未チェック項目も見つけてくれました。\n\n### 感じたことと確認したいこと\n「本当に秘書と思えるレベルがきた！」というのが、今回の感想です。状況を踏まえて自分から提案してくれるところに、主体性を感じました。\n実は主体性がない、と評価されていたdots。私は最初に、あえて主体性を持ち、私の業務改善と発展のために改善を提案してほしいと指示しました。",
+    "sources": [
+      {
+        "label": "Introducing dots｜OpenAI",
+        "url": "https://openai.com/index/introducing-dots/"
+      },
+      {
+        "label": "ChatGPT Release Notes｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      }
+    ]
   },
   {
     "id": "2026-10-04-chatgpt-shopping-try-on",
