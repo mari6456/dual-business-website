@@ -21,6 +21,48 @@ export const AI_JOURNAL_CATEGORIES: Record<AIJournalCategory, string> = {
 // Generated from checked Obsidian notes. Do not edit article data here.
 export const aiJournalData: AIJournalItem[] = [
   {
+    "id": "2026-10-14-chatgpt-college-planner",
+    "date": "2026.10.14",
+    "category": "chatgpt",
+    "product": "ChatGPT College Planner",
+    "title": "進学準備を1つの計画に。ChatGPT College Planner",
+    "excerpt": "OpenAIは、米国の高校生向けに、大学出願の要件・締切・タスク・学費支援の手続きを1つの計画で管理する「College Planner」をChatGPT for Teensへ近日追加すると発表しました。",
+    "content": "OpenAIは2026年10月7日、ChatGPT for Teensに「College Planner」を近日追加すると発表しました。複数の大学を検討する学生が、学校ごとの出願要件、締切、やること、学費支援の手続きを1つの計画にまとめ、進捗や残りの作業を確認できる機能です。\n\n基本の使い方は、①候補校を登録、②出願要件と締切を整理、③奨学金・学費支援・手数料免除などの条件を確認、④進捗を更新しながら残りの作業を見る、という流れです。複数校の出願を一覧で管理する、提出期限の見落としを防ぐ、申請書類や学校への質問を整理する、といった活用が想定されています。途中で要件の意味や着手方法をChatGPTへ質問することもできます。\n\nただし、最初の提供対象は、米国で4年制大学への進学を検討する高校10〜12年生です。発表時点では「近日提供」で、日本での提供時期や対応校は案内されていません。OpenAIは今後、対象国や2年制大学、専門・技術教育機関などへ広げる計画を示しています。\n\nCollege Plannerは、出願作業を整理するための支援ツールです。進学先そのものを決めてもらうのではなく、本人の希望、家族や学校の進路指導、大学の最新公式情報と照らして判断することが大切です。締切・費用・出願条件は変更される可能性があるため、最終確認は必ず各大学や公的機関の公式案内で行いましょう。",
+    "sources": [
+      {
+        "label": "10代の学び、将来の計画、AIの未来づくりを支援｜OpenAI",
+        "url": "https://openai.com/ja-JP/index/teens-learn-and-plan/"
+      },
+      {
+        "label": "ChatGPT Release Notes｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      }
+    ]
+  },
+  {
+    "id": "2026-10-13-codex-cloud",
+    "date": "2026.10.13",
+    "category": "chatgpt",
+    "product": "Codex Cloud",
+    "title": "PCを閉じても作業が続く。Codex Cloud",
+    "excerpt": "Codex Cloudは、OpenAIが管理するクラウド環境でコーディング作業を進め、PCを閉じた後もタスクを継続できる仕組みです。",
+    "content": "OpenAIは2026年9月29日、Codex Cloudを案内しました。Codex Cloudは、リポジトリ、ツール、依存関係、アクセス設定をまとめた再利用可能なクラウド環境で、コーディング作業をOpenAI管理のコンピューター上で進める仕組みです。環境を一度準備すると、デスクトップ、Web、モバイルからタスクを開始・継続でき、手元のPCがスリープしてもクラウドタスクは進みます。\n\n基本の流れは、①対象リポジトリを接続、②必要なツールや依存関係、ネットワークアクセスを設定、③環境をテストして公開、④修正・テスト・レビューなどのタスクを開始、⑤完了結果と変更内容を確認、です。時間のかかるテストや複数ファイルの修正を任せ、移動中にスマートフォンから進捗を見る、といった使い方ができます。\n\n対象は、展開対象となっているPlus、すべてのPro、Business、Enterprise、Healthcare、Educationです。FreeとGoには含まれず、管理ワークスペースでは管理者設定にも左右されます。環境の作成と公開はデスクトップまたはWebで行います。開始時点では標準環境に別途VM料金はありませんが、モデル利用はCodexの通常の上限やクレジット・課金対象です。\n\nクラウド環境にはコードや認証情報を扱う設定が含まれるため、必要なリポジトリだけを接続し、シークレットとネットワークアクセスは最小限にします。完了した変更はそのまま採用せず、差分、テスト結果、権限設定を人が確認してから反映しましょう。",
+    "sources": [
+      {
+        "label": "ChatGPT Release Notes｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      },
+      {
+        "label": "Using Codex Cloud｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/20001545-using-codex-cloud"
+      },
+      {
+        "label": "ChatGPT プランで Codex を使う｜OpenAI Help Center",
+        "url": "https://help.openai.com/ja-jp/articles/11369540-using-codex-with-your-chatgpt-plan"
+      }
+    ]
+  },
+  {
     "id": "2026-10-10-codex-faster-steering",
     "date": "2026.10.10",
     "category": "chatgpt",
