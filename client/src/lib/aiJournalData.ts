@@ -21,6 +21,223 @@ export const AI_JOURNAL_CATEGORIES: Record<AIJournalCategory, string> = {
 // Generated from checked Obsidian notes. Do not edit article data here.
 export const aiJournalData: AIJournalItem[] = [
   {
+    "id": "2026-10-26-openai-models-google-cloud",
+    "date": "2026.10.26",
+    "category": "chatgpt",
+    "product": "OpenAI models on Google Cloud",
+    "title": "OpenAIモデルをGoogle Cloudで選べるように",
+    "excerpt": "OpenAIのGPT-6 Astra、GPT-6.1 Sol、GPT-6 LunaとCodexのワークフローが、Google CloudのModel Gardenから利用できるようになります。まずは一部企業向けのプライベートプレビューです。",
+    "content": "OpenAIとGoogle Cloudは2026年10月21日、OpenAIのモデルとCodexのエージェント型ワークフローをGoogle Cloudの「Model Garden」へ提供すると発表しました。企業は、普段使うGoogle Cloudの環境からOpenAIモデルを選び、アクセス管理、監査、データガバナンスと組み合わせて業務アプリやAIエージェントを構築できます。\n\nGoogle Cloud側では、GPT-6 Astra、GPT-6.1 Sol、GPT-6 Lunaを一部の企業顧客向けにプライベートプレビューとして提供開始。Google Cloud Marketplace経由で購入でき、既存のGoogle Cloud利用契約へまとめられる点も案内されています。ChatGPTへGoogle Cloudが追加されたという話ではなく、企業や開発者がクラウド上でAIシステムを作るための選択肢です。\n\n一般提供は今後数週間で予定されています。現時点では誰でもすぐ使える機能ではなく、利用可否、価格、地域、契約条件は組織ごとに確認が必要です。機密情報を扱う場合は、管理者が権限、保存、監査、データ境界を設定し、出力も人が確認しましょう。",
+    "sources": [
+      {
+        "label": "OpenAI models are coming to Google Cloud｜OpenAI",
+        "url": "https://openai.com/index/openai-models-google-cloud/"
+      },
+      {
+        "label": "Google Cloud brings OpenAI models to customers｜Google Cloud",
+        "url": "https://cloud.google.com/blog/products/ai-machine-learning/google-cloud-brings-openai-models-to-customers"
+      },
+      {
+        "label": "Google CloudがOpenAIモデルを提供開始｜Google Cloud公式ブログ日本語版",
+        "url": "https://cloud.google.com/blog/ja/products/ai-machine-learning/google-cloud-brings-openai-models-to-customers"
+      }
+    ]
+  },
+  {
+    "id": "2026-10-25-openai-decisions-api",
+    "date": "2026.10.25",
+    "category": "chatgpt",
+    "product": "Decisions API",
+    "title": "OpenAI Decisions APIでAIアプリの判断を高速化",
+    "excerpt": "OpenAIのDecisions APIが一般提供されました。AIアプリの「分類する・振り分ける・次の操作を選ぶ」といった答えが限定された判断を、確率・選択・スコアで高速に返します。",
+    "content": "OpenAIは2026年10月22日、Decisions APIの一般提供を開始しました。AIアプリやエージェントが繰り返す「問い合わせをどこへ振り分けるか」「画像に損傷があるか」「次に続行・再試行・確認のどれを選ぶか」といった、答えの範囲が決まった小さな判断に特化したAPIです。GPT-6 Lunaを基盤とし、文章・画像・JSONを材料に、確率・選択・スコアのいずれかを返します。\n\nこれはChatGPTのモデル選択画面でLunaを選んで使う機能ではありません。開発者がアプリから専用の `/v1/decisions` を呼び出し、リクエスト内で `gpt-6-luna` を指定して組み込みます。通常のChatGPTやResponses APIが、内容に応じて自動でDecisions APIへ切り替わるわけではありません。一度組み込めば、利用者がモデルを選ばなくても、設計した場面でアプリ側から自動実行できます。\n\n1回のリクエストで最大400問を扱え、同じ文脈を再利用するプロンプトキャッシュや、GPT-Liveとの連携にも対応しました。たとえば、問い合わせの担当部署分け、商品画像の状態判定、音声案内で確認質問を挟むかどうかの選択などに使えます。\n\n### 大切な注意点\n\nDecisions APIは、自由な文章を作る用途ではなく、あらかじめ答えを限定できる判断向けです。OpenAIは高速化を案内していますが、実際の速度や精度は入力・地域・実装で変わります。重要な契約、採用、医療、安全に関わる判断を自動確定せず、人の確認や低信頼時の保留ルールを設けてください。送信する個人情報や機密情報も必要最小限にし、データ管理条件を確認しましょう。",
+    "sources": [
+      {
+        "label": "Build more responsive apps with the Decisions API｜OpenAI",
+        "url": "https://openai.com/index/decisions-api/"
+      }
+    ]
+  },
+  {
+    "id": "2026-10-24-chatgpt-locked-chats",
+    "date": "2026.10.24",
+    "category": "chatgpt",
+    "product": "ChatGPT",
+    "title": "ChatGPTの会話をロックして履歴・検索から隠す",
+    "excerpt": "ChatGPTに「ロックされたチャット」が登場しました。選んだ会話を通常の履歴や検索から隠し、4桁のPINまたは対応端末の認証で開けます。",
+    "content": "OpenAIは2026年10月20日、ChatGPTに「ロックされたチャット」を追加しました。選んだ会話を保存したまま、通常のチャット履歴、ピン留め、検索から隠し、4桁のアカウントPINや対応端末の端末認証で開ける機能です。画面共有の前に個人的な相談を隠したい時や、共有端末で企画メモを見られにくくしたい時など、プライバシーを保ちたい場面に役立ちます。\n\n### 使い方\n\n1. 対象の会話で「•••」を開く\n2. 「チャットをロック」を選び、もう一度確認する\n3. 初回は4桁のPINを作成し、以後はPINまたは対応端末の認証で開く\n4. 開く時は「Projects」から「Locked chats」を選ぶ\n\n対応状況は段階展開中です。OpenAIのヘルプではFree、Go、Plus、Pro、Business、Enterprise、Eduが対象で、Web、iOS、Android、新しいmacOS・Windows版ChatGPTアプリで利用できます。項目が表示されない場合は、まだアカウントへ届いていない可能性があります。\n\nただし、Codexの会話（クラウドCodexを含む）、ローカルのWork会話、定期タスクやバックグラウンドタスクに関連する会話などは対象外です。対象外の会話では、機能がアカウントへ提供済みでも「チャットをロック」は表示されません。\n\nまだ私のアカウントでも実装されておらず、対象アカウントや対象チャットなど色々とルールがあるので、実装されたら、ぜひ試してみてください。\n\n### 大切な注意点\n\nロックは会話を通常の一覧から隠す機能で、エンドツーエンド暗号化や別の暗号化保管庫を作る機能ではありません。保存期間や「すべての人のためにモデルを改善する」の設定も変わりません。特に、忘れたPINをリセットすると、ロック中の会話、その中だけに保存されたメモリ、保護されたファイルなどが完全に削除され、復元できません。PINは安全な方法で管理し、共有リンクがある会話はリンクを別途削除してください。",
+    "sources": [
+      {
+        "label": "Using locked chats in ChatGPT｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/20001411-using-locked-chats-in-chatgpt"
+      },
+      {
+        "label": "ChatGPT release notes｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      }
+    ]
+  },
+  {
+    "id": "2026-10-23-codex-php-version-checker",
+    "date": "2026.10.23",
+    "category": "chatgpt",
+    "product": "Codex",
+    "title": "CodexでPHPサイトの更新要否を確認",
+    "excerpt": "OpenAIが、PHPサイトのバージョンを確認するCodexスキルを公開しました。URLだけ、またはサーバー上のPHP情報から、更新が必要な可能性を調べられます。",
+    "content": "OpenAIは2026年10月21日、PHPの重大な脆弱性への対応を公表し、サイト運営者が影響を確認できる「PHP Version Checker」をCodexスキルとして公開しました。OpenAIによると、脆弱性はGPT-5.6 Solを使った調査で発見され、PHPの保守チームが修正とリリースを主導しました。\n\nこのスキルは、サーバーへ入れる場合はローカルのPHPバージョンを、URLしか分からない場合はWeb応答ヘッダーを調べます。自社サイト、制作会社の保守案件、複数サイトの棚卸しに使えます。\n\n### 使い方\n\nOpenAI公式の[PHP Version Checker公開ページ](https://github.com/openai/php2shell-checker)から導入でき、Codexのチャットで使います。\n\n**① スキルをインストールする**\n\nCodexの入力欄に、次の文をコピーして送ります。URL用とサーバー用の2つのスキルを導入する指示です。\n\n```text\n$skill-installer install both skills from https://github.com/openai/php2shell-checker\n```\n\n**② 調べたいサイトを指定する**\n\nインストール後、次の文の `https://example.com` を自分が管理するサイトのURLに置き換えて送ります。\n\n```text\n$phpcheck-url check https://example.com\n```\n\nサーバーへ直接アクセスできる環境では、サーバー用のスキルも使えます。次の文は「サイトで使っているPHPのバージョンを確認して」という指示です。\n\n```text\n$phpcheck-server check the PHP version serving my site\n```\n\n**③ 結果を確認する**\n\n結果は「OK」「POTENTIALLY VULNERABLE（脆弱性の影響を受ける可能性あり）」「UNKNOWN」の3種類です。ただし、UNKNOWNは安全を意味しません。ヘッダーでPHP情報が隠れている場合などは判定できません。また、OKも修正済みを独自に証明するものではないため、アップデート前のバックアップ、互換性確認、公式情報との照合を省かないことが重要です。",
+    "sources": [
+      {
+        "label": "Patch the Planet：重大な脆弱性への対応｜OpenAI",
+        "url": "https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities/"
+      },
+      {
+        "label": "PHP Version Checker｜OpenAI GitHub",
+        "url": "https://github.com/openai/php2shell-checker"
+      }
+    ]
+  },
+  {
+    "id": "2026-10-22-chatgpt-sites-no-fixed-count-limit",
+    "date": "2026.10.22",
+    "category": "chatgpt",
+    "product": "ChatGPT Sites",
+    "title": "ChatGPT Sitesの作成数に固定上限なし",
+    "excerpt": "ChatGPT Plus・Proでは、ChatGPT Sitesを作成できる数の固定上限がなくなりました。ただし、利用量とストレージの共有上限は残るため、「完全に無制限」になったわけではありません。",
+    "content": "OpenAIは2026年10月15日、ChatGPT Plus・Proで作成できる「ChatGPT Sites」の数について、固定上限をなくしたと案内しました。Sitesは、ChatGPT上でWebサイトや軽量アプリを作成し、プレビュー、公開、共有まで進められる機能です。今回変わったのは作成数の固定上限であり、Sites自体は以前から利用できました。\n\n対象はChatGPT Plus・Proと、対応するBusiness・Enterpriseワークスペースです。ただし、Plus・Proで固定上限がなくなっても、利用量とストレージの共有上限は継続します。新しいSiteを作れない場合は、Sites内に表示される制限メッセージを確認してください。構築・編集はCodexの利用量に含まれます。また、公開前には機密情報、第三者コンテンツ、フォームで取得する個人情報、公開範囲を必ず確認しましょう。",
+    "sources": [
+      {
+        "label": "ChatGPT release notes｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      },
+      {
+        "label": "Creating and using ChatGPT Sites｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/20001339-creating-and-using-chatgpt-sites"
+      }
+    ]
+  },
+  {
+    "id": "2026-10-21-codex-composer-predictions",
+    "date": "2026.10.21",
+    "category": "chatgpt",
+    "product": "Codex",
+    "title": "Codexの次メッセージ予測を使う",
+    "excerpt": "Codexに、会話の流れから次のメッセージを提案する「Composer predictions」がベータで追加されました。Tabで入力欄に反映し、内容を確認・編集してから送信できます。",
+    "content": "OpenAIは2026年10月9日、Codexデスクトップアプリに「Composer predictions」をベータで追加しました。Codexの応答後、現在のスレッドの会話をもとに次のメッセージ候補が入力欄へ表示されます。候補はTabキーで取り込めますが、自動送信はされません。自分で確認・編集してから送信します。\n\n試すときは、\n①Codexアプリを最新版にする\n②対応モデルで会話する\n③提案が表示されたらTabを押す\n④内容を確認・編集して送信する、の4段階です。\n追加調査を頼む、表現の修正を依頼する、次の作業へ進む、といった会話の続きに使えます。\n\n対象は18歳以上の個人向けChatGPT Proユーザーで、対応モデルはGPT-6 AstraとGPT-6.1 Solです。候補は毎回表示されるとは限らず、入力中の文章を1語ずつ補完する機能でもありません。予測は現在のスレッド内の文脈を使い、メモリや接続アプリを独自に検索しません。ベータ期間中、候補生成はCodexの利用枠やクレジットを消費しませんが、送信したメッセージには通常の利用条件が適用されます。意図と違う提案は使わず、自分の指示として適切か確認しましょう。",
+    "sources": [
+      {
+        "label": "Composer predictions in Codex｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/20001601-composer-predictions-in-codex"
+      },
+      {
+        "label": "ChatGPT release notes｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      }
+    ]
+  },
+  {
+    "id": "2026-10-20-chatgptのセキュリティ履歴",
+    "date": "2026.10.20",
+    "category": "chatgpt",
+    "product": "ChatGPT",
+    "title": "見覚えのないログインを確認。ChatGPTのセキュリティ履歴",
+    "excerpt": "ChatGPTへ仕事の相談や資料の下書きを任せる機会が増えるほど、アカウントに「いつ、どこから、どの端末で」アクセスがあったかを確認できることが大切になります。OpenAIは2026年9月25日、ChatGPTへ「セキュリティ履歴」を追加しました。最近のログイン・ログアウト、パスワード変更、MFA（多要素認証）、パスキ",
+    "content": "ChatGPTへ仕事の相談や資料の下書きを任せる機会が増えるほど、アカウントに「いつ、どこから、どの端末で」アクセスがあったかを確認できることが大切になります。OpenAIは2026年9月25日、ChatGPTへ「セキュリティ履歴」を追加しました。最近のログイン・ログアウト、パスワード変更、MFA（多要素認証）、パスキー、その他のセキュリティ設定の変更を一覧で確認でき、各イベントには時刻、場所、端末の詳細が表示されます。\n\n### まずは4段階で確認\n\nWeb版ChatGPTで、次の順に開きます。\n\n1. 設定を開く\n2. 「セキュリティとログイン」を選ぶ\n3. 「セキュリティ履歴」を開く\n4. イベントの種類、時刻、場所、端末を見比べる\n\n新しい端末でログインした後、MFAやパスキーを変更した後、身に覚えのない通知が届いた時などに、アカウントの動きを振り返れます。仕事用のChatGPTでは、定期的な確認項目として運用に組み込むと、異変へ早く気づくきっかけになります。\n\n### 1件の表示だけで断定しない\n\n場所や端末の情報は概算だったり、表示されなかったりする場合があります。見覚えのない場所が表示されても、1件だけで不正アクセスと断定せず、自分が利用した時刻、端末、通信環境と照合してください。\n\n心当たりのない操作を見つけた場合は、パスワードを使っているなら変更し、アクティブなセッションを確認して不要な端末からログアウトします。APIを利用している場合は、APIキーと利用状況も確認します。MFAを有効にしても既存のログインは自動では解除されないため、疑わしい時はセッション管理も一緒に行うことが重要です。\n\n### AI活用とアカウント管理はセット\n\n便利な機能を増やすことだけがAI活用ではありません。日々の業務データを扱うなら、誰がアクセスできる状態かを確認し、不要なセッションを残さないことも実務の一部です。履歴の表示内容を過信せず、重要な判断は自社の管理記録や端末情報とも照合しましょう。",
+    "sources": [
+      {
+        "label": "ChatGPT Release Notes｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      },
+      {
+        "label": "Keeping your OpenAI account secure｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/8304786-keeping-your-openai-account-secure"
+      },
+      {
+        "label": "Managing active sessions in ChatGPT｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/20001257-managing-active-sessions-in-chatgpt/"
+      }
+    ]
+  },
+  {
+    "id": "2026-10-19-chatgpt-slides-collaboration",
+    "date": "2026.10.19",
+    "category": "chatgpt",
+    "product": "ChatGPT Slides",
+    "title": "ChatGPT Slidesで資料づくりを共同編集",
+    "excerpt": "ChatGPTでプレゼン資料を作ることは以前から可能でした。今回のChatGPT Slidesでは、Space上で同じ資料を直接編集し、チームとリアルタイムで共同編集・コメント・発表まで進められます。更新の中心は、作成後もChatGPT内で資料を仕上げられることです。",
+    "content": "ChatGPTでプレゼン資料を作ること自体は、以前からできました。従来もWorkへ資料作成を頼んだり、PowerPoint内のChatGPTアドインでスライドを作成・修正したりできました。OpenAIが2026年10月16日に発表した「ChatGPT Slides」の主な更新点は、Space上で同じ資料を直接編集し、チームとリアルタイムで共同編集できることです。\n\n文章、画像、図形、表、グラフを自分で直し、選択した要素の修正をChatGPTへ頼めます。編集権限を持つメンバーは同じ資料を同時に編集し、コメントやメンションで相談できます。たとえば、研修資料の説明文を担当者が直しながら、別のメンバーがグラフを確認し、AIへ文章の短縮を頼む、といった進め方ができます。\n\n使い方は、\n①Workで、Spaceにプレゼンを作るよう頼む、またはSpaceの「作成」からSlideを選ぶ\n②参考資料やテンプレートを追加する、\n③文章・図・グラフを直接編集する、\n④チームへ共有し、コメントや共同編集で仕上げる、の4段階です。\n\n![記事内の説明画像](/ai-journal/assets/2026-10-19-chatgpt-slides-collaboration-01.png)\nChatGPT内でそのまま発表でき、Web版ではPowerPoint、PDF、Google Slidesへ書き出せます。既にPowerPointなどで共同編集している人にとっては、AIへの修正依頼と資料の編集・確認を一か所で進められる点が変化です。\n\n対象はSpaceを利用できるPro、Business、Enterpriseで段階提供中です。Windowsの一部環境では共同編集SlidesではなくPowerPointファイルとして扱われます。生成された文章、数字、図表、レイアウトは、共有・発表前に原資料と照合しましょう。",
+    "sources": [
+      {
+        "label": "ChatGPT release notes｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      },
+      {
+        "label": "Creating and collaborating on slides in ChatGPT｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/20001605-creating-and-collaborating-on-slides-in-chatgpt"
+      }
+    ]
+  },
+  {
+    "id": "2026-10-17-chatgpt-voice-japanese-voices",
+    "date": "2026.10.17",
+    "category": "chatgpt",
+    "product": "ChatGPT Voice",
+    "title": "日本語ボイス「ひまり」「りんどう」が追加。ChatGPT Voiceがより自然に",
+    "excerpt": "ChatGPT VoiceにGPT-Live-1.1と日本語向けの新しい声「Himari（ひまり）」「Rindō（りんどう）」が追加され、設定から好みの声を選べるようになりました。",
+    "content": "OpenAIは2026年10月15日、ChatGPT Voiceへ「GPT-Live-1.1」と軽量版の「GPT-Live-1.1 Quip」を順次提供し、日本語向けの声として「Himari（ひまり）」と「Rindō（りんどう）」を追加しました。言語ごとのアクセントがより自然になり、検索中の案内にも複数の短い表現が使われます。\n\n使い方は、\n①ChatGPTの設定を開く、\n②「Voice（音声）」を選ぶ、\n③声の一覧から「ひまり（女性）」または「りんどう（男性）」を選ぶ、\n④会話を始めて聞き比べる、の4段階です。発音練習、移動中の情報確認、話しながらのアイデア整理など、画面を見続けにくい場面で使えます。\n![記事内の説明画像](/ai-journal/assets/2026-10-17-chatgpt-voice-japanese-voices-01.png)\n\n利用できる声は地域・アカウント・プラン・ワークスペース設定・アプリのバージョンなどで異なり、すぐに表示されない場合があります。LiveはWeb、iOS、AndroidのVoice in Chatで利用できますが、動画や画面共有には対応していません。必要な場合は、対象ユーザーがモバイルアプリのAdvancedを使います。\n\n現状は、ブラウザ版で使用することができます。\nデスクトップ版では、まだ未実装です。\nちなみに、日本語だけでなく、さまざまな言語が追加されています。\n\n![記事内の説明画像](/ai-journal/assets/2026-10-17-chatgpt-voice-japanese-voices-02.png)\n\nVoiceは聞き間違いや事実誤認をすることがあります。日付、時刻、場所、業務上の重要事項は文字表示や一次情報でも確認しましょう。会話後の文字起こしも逐語記録ではないため、正式な議事録として使う場合は原音や記録と照合することが大切です。",
+    "sources": [
+      {
+        "label": "ChatGPT release notes｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      },
+      {
+        "label": "ChatGPT Voice｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/20001274-chatgpt-voice"
+      }
+    ]
+  },
+  {
+    "id": "2026-10-16-chatgpt-for-word",
+    "date": "2026.10.16",
+    "category": "chatgpt",
+    "product": "ChatGPT for Word",
+    "title": "Wordを離れず下書き・要約・推敲。ChatGPT for Word",
+    "excerpt": "ChatGPT for Wordは、Microsoft Wordのサイドバーで、開いている文書の下書き、要約、推敲、見出しや書式の調整を手伝う公式アドインです。",
+    "content": "OpenAIは2026年9月17日、Microsoft Word内でChatGPTを使える「ChatGPT for Word」を発表しました。Freeを含むすべてのChatGPTプランで利用でき、Wordのサイドバーから、開いている文書について質問したり、選択した文章を書き直したり、メモから初稿を作ったりできます。\n\n使い方は、\n①Microsoft MarketplaceからChatGPTアドインを入れる\n[Microsoft Marketplace](https://marketplace.microsoft.com/ja-jp/)\n[ChatGPT \\| Microsoft Marketplace](https://marketplace.microsoft.com/ja-jp/product/WA200010215)\n②WordのリボンからChatGPTを開いてサインインする\n③文書全体または修正したい範囲を指定する、\n④提案内容を確認して反映する、の4段階です。メモから提案書を作る、長い資料を要約する、用語の不統一を見つける、といった作業をWordから離れず進められます。\n\n組織のMicrosoft 365では、管理者がアドインを許可していないと表示されない場合があります。また、開いている文書は扱えますが、パソコン内の別ファイルを自動で参照することはできません。必要な情報はプロンプトへ貼り付けます。\n\n複雑な表・グラフ・書式は手直しが必要になる場合があります。ChatGPTが事実や数字を誤ったり、残したい表現を変えたりする可能性もあるため、重要な文書はコピーを保存し、事実、数値、引用、変更箇所を確認してから共有しましょう。アドイン内の会話は通常のChatGPT履歴とは別で、メモリやスキルも引き継がれません。",
+    "sources": [
+      {
+        "label": "ChatGPT for Word｜OpenAI Help Center",
+        "url": "https://help.openai.com/ja-jp/articles/20001526-chatgpt-for-word"
+      },
+      {
+        "label": "ChatGPT release notes｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      }
+    ]
+  },
+  {
+    "id": "2026-10-15-chatgpt-security-history",
+    "date": "2026.10.15",
+    "category": "chatgpt",
+    "product": "ChatGPT Security history",
+    "title": "見覚えのないログインを確認。ChatGPTのセキュリティ履歴",
+    "excerpt": "ChatGPTの「セキュリティ履歴」では、OpenAIアカウントへのログイン・ログアウトやMFA、パスキーなどの変更履歴を確認できます。",
+    "content": "OpenAIは2026年9月25日、ChatGPTに「セキュリティ履歴」を追加しました。OpenAIアカウントで最近起きたログイン・ログアウト、パスワード変更、MFA（多要素認証）、パスキー、その他のセキュリティ設定の変更を確認できます。イベントには時刻、場所、端末の詳細が表示されます。\n\n確認方法はWeb版ChatGPTで、\n①設定を開く\n②「セキュリティとログイン」を選ぶ\n③「セキュリティ履歴」を開く\n![記事内の説明画像](/ai-journal/assets/2026-10-15-chatgpt-security-history-01.png)\n④イベントの種類、時刻、場所、端末を見比べる、の4段階です。新しい端末でのログイン後、MFAやパスキーを変更した後、身に覚えのない通知が届いた時などに、アカウントの動きを振り返れます。\n![記事内の説明画像](/ai-journal/assets/2026-10-15-chatgpt-security-history-02.png)\n\nただし、場所や端末の情報は概算だったり、表示されなかったりする場合があります。1件の表示だけで不正アクセスと断定せず、自分の利用時間や端末と照合してください。\n\n心当たりのない操作を見つけた場合は、パスワードを使っているなら変更し、アクティブなセッションを確認して不要な端末からログアウトします。APIを利用している場合は、APIキーと利用状況も確認します。MFAを有効にするだけでは既存のログインは解除されないため、疑わしい時はセッション管理も一緒に行うことが重要です。",
+    "sources": [
+      {
+        "label": "ChatGPT Release Notes｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      },
+      {
+        "label": "Keeping your OpenAI account secure｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/8304786-keeping-your-openai-account-secure"
+      },
+      {
+        "label": "Managing active sessions in ChatGPT｜OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/20001257-managing-active-sessions-in-chatgpt/"
+      }
+    ]
+  },
+  {
     "id": "2026-10-14-chatgpt-college-planner",
     "date": "2026.10.14",
     "category": "chatgpt",
@@ -153,7 +370,7 @@ export const aiJournalData: AIJournalItem[] = [
     "product": "ChatGPT Finances",
     "title": "米国でFree・Goへ拡大。ChatGPT Financesで支出を整理",
     "excerpt": "米国のChatGPT Free・Goでも、金融口座をつないで支出や定期購入を確認できる「Finances」が利用可能に。家計を一か所で整理し、データをもとに質問できます。",
-    "content": "OpenAIは2026年10月2日、米国のChatGPT Free・Goユーザーにも「Finances」の提供を拡大しました。Web・iOS・Androidで利用でき、Plus・Proを含む対象ユーザーは、Plaid経由で金融口座を接続し、支出、請求、サブスクリプション、資産状況、投資などを一か所で確認できます。\n\nたとえば「今月は何に多く使った？」「契約中のサブスクは？」「次の支払いは？」と質問すると、接続したデータをもとに整理できます。\n\n2026年10月5日時点では米国向けで、日本での提供は案内されていません。\n\n### 便利だからこそ考えたいリスク\n\nまず、Financesは金融機関から共有されたデータと同期時点をもとに整理します。未取得の口座や取引、反映待ちがあれば表示が不完全になり、振替、カード支払い、返金、保留中の取引などを支出として重複計上する場合もあります。AIの分類や説明を、そのまま正しい明細だと思い込まないことが大切です。\n\n次に、支出、資産、請求、投資、信用情報が一か所へ集まるため、便利になるほど扱う情報の機微性も高くなります。必要な口座だけを接続し、カード番号、CVV・CVC、暗証番号などを会話やファイルへ直接入力しないようにします。\n\n接続解除後も、すべてが即時に消えるわけではありません。OpenAIとPlaidの接続データは30日以内に削除されますが、過去の会話とFinancial memoriesは別途削除が必要です。\n\n### 私の考え\n\n今後日本に導入されるまでに間生えたいのはリスク。ChatGPTが勝手が中を見れる＝自分が意図していないことが作為的に見えるようにするリスクも出てくる。見やすく整理された結果を「正しい判断」だと過信することはとっても危険です。\nChatGPTは送金、支払い、取引、口座設定の変更はできず、金融・税務・法務の専門家でもありません。まずは確認と整理に限定し、重要な判断前には金融機関の明細や専門家でも確認する。接続する口座を最小限にする。この二つを基本にすると、便利さと安全性のバランスを取りやすくなります。",
+    "content": "OpenAIは2026年10月2日、米国のChatGPT Free・Goユーザーにも「Finances」の提供を拡大しました。Web・iOS・Androidで利用でき、Plus・Proを含む対象ユーザーは、Plaid経由で金融口座を接続し、支出、請求、サブスクリプション、資産状況、投資などを一か所で確認できます。\n\nたとえば「今月は何に多く使った？」「契約中のサブスクは？」「次の支払いは？」と質問すると、接続したデータをもとに整理できます。\n\n2026年10月5日時点では米国向けで、日本での提供は案内されていません。\n\n### 便利だからこそ考えたいリスク\n\nまず、Financesは金融機関から共有されたデータと同期時点をもとに整理します。未取得の口座や取引、反映待ちがあれば表示が不完全になり、振替、カード支払い、返金、保留中の取引などを支出として重複計上する場合もあります。AIの分類や説明を、そのまま正しい明細だと思い込まないことが大切です。\n\n次に、支出、資産、請求、投資、信用情報が一か所へ集まるため、便利になるほど扱う情報の機微性も高くなります。必要な口座だけを接続し、カード番号、CVV・CVC、暗証番号などを会話やファイルへ直接入力しないようにします。\n\n接続解除後も、すべてが即時に消えるわけではありません。OpenAIとPlaidの接続データは30日以内に削除されますが、過去の会話とFinancial memoriesは別途削除が必要です。\n\n### 私の考え\n\n今後、日本に導入されるまでに考えておきたいのはリスクです。ChatGPTが勝手に口座の中を見られるようになるのではないか、自分が意図していない情報が意図と異なる形で見えるようになるのではないか、という不安も出てきます。見やすく整理された結果を「正しい判断」だと過信することはとっても危険です。\nChatGPTは送金、支払い、取引、口座設定の変更はできず、金融・税務・法務の専門家でもありません。まずは確認と整理に限定し、重要な判断前には金融機関の明細や専門家でも確認する。接続する口座を最小限にする。この二つを基本にすると、便利さと安全性のバランスを取りやすくなります。",
     "sources": [
       {
         "label": "ChatGPT Release Notes｜OpenAI Help Center",
