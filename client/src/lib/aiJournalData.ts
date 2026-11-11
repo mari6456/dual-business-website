@@ -21,6 +21,25 @@ export const AI_JOURNAL_CATEGORIES: Record<AIJournalCategory, string> = {
 // Generated from checked Obsidian notes. Do not edit article data here.
 export const aiJournalData: AIJournalItem[] = [
   {
+    "id": "2026-10-29-human-first-workflow-design",
+    "date": "2026.10.29",
+    "category": "chatgpt",
+    "product": "ChatGPT",
+    "title": "「AIに何ができるか」より、人がやる仕事を先に決める",
+    "excerpt": "業務改善を「AIに何をさせるか」から始めると、今の手順へAIを足すだけになりがちです。業務を細かく可視化し、人が担う判断・確認・対話を先に決める考え方を紹介します。",
+    "content": "業務にAIを取り入れるとき、どの作業から試せばよいでしょうか。打ち合わせで受けた変更希望を、次の担当者に引き継ぐ場面を例に考えます。\n\nまず、誰が議事録を作り、どこへ保存し、誰に通知するのかを書き出します。続いて、誰が変更内容を確認し、図面へ反映するのかを書き添えます。\n\n### 人が担う仕事を先に残す\n\n次に考えるのは、AIへ任せる作業ではなく、人が外れてはいけない仕事です。たとえば、お客様との対話、変更内容の最終確認、発注の承認などは、人が責任を持つ部分として残します。その上で、記録の整理、通知、転記、確認用一覧の作成などをAIで仕組み化します。\n\n進め方は、次の4段階です。\n\n1. 業務の流れを細かく書き出す\n2. 人が担う判断・対話・承認を決める\n3. それ以外から小さくAIで試す\n4. 実際の結果を人が確認して直す\n\n個人情報や機密情報を扱う場合は、使用するサービス、入力できる情報、保存先、最終確認者を社内ルールとして決めてから試しましょう。",
+    "sources": [
+      {
+        "label": "OpenAI：From experiments to deployments",
+        "url": "https://cdn.openai.com/business-guides-and-resources/from-experiments-to-deployments_whitepaper_11-25.pdf"
+      },
+      {
+        "label": "OpenAI：How enterprises are scaling AI",
+        "url": "https://openai.com/business/guides-and-resources/how-enterprises-are-scaling-ai/"
+      }
+    ]
+  },
+  {
     "id": "2026-10-27-goodnotes-handwriting-ai",
     "date": "2026.10.27",
     "category": "other-ai",
