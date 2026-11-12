@@ -21,6 +21,25 @@ export const AI_JOURNAL_CATEGORIES: Record<AIJournalCategory, string> = {
 // Generated from checked Obsidian notes. Do not edit article data here.
 export const aiJournalData: AIJournalItem[] = [
   {
+    "id": "2026-10-29-ai-adoption-four-stages",
+    "date": "2026.10.29",
+    "category": "chatgpt",
+    "product": "ChatGPT",
+    "title": "AIを入れても会社が変わらない理由。定着は4段階で考える",
+    "excerpt": "社員がChatGPTを使っていても、会社全体の業務改善につながるとは限りません。AI活用の現在地を4段階で捉え、最初の一業務を選んで試し、共有するまでの進め方を整理します。",
+    "content": "「ChatGPTを契約したのに、使う人が増えない」「一部の社員だけが便利に使っている」。企業のAI活用では、ツールを導入したことと、仕事の進め方が変わったことを分けて考える必要があります。\n\n独自に、会社のAI定着を次の4段階に整理しています。\n\n1. まだ使っていない、または検索の代わりに試している\n2. 一部の社員が個別に使っている\n3. 議事録や経理など、特定の業務で使っている\n4. 社内ルールを整え、活用例を共有しながら全社で使っている\n\n大切なのは、いきなり4段階目を目指すことではありません。まず現在地を確認し、繰り返し発生する仕事の中から一つを選びます。元になる資料があり、担当者が結果を確認できる業務なら、小さく試しやすくなります。\n\n### 定着へ進む3つの動き\n\n最初の業務を決めたら、実際の仕事で試し、人が内容を確認します。うまくいった指示や手順は、個人のチャットに閉じ込めず、チームで共有します。この「選ぶ→試す→確認する→共有する」の繰り返しが、個人利用を会社の力へ変えていきます。\n\nOpenAIの企業向けガイドでも、目的をそろえること、社員が実務で試せる環境を作ること、成功例を共有すること、ガバナンスを整えることが、組織的なAI活用の要素として示されています。\n\n利用回数だけで定着を判断せず、誰が結果を確認するか、どの情報を入力してよいか、どこへ相談するかまで決めておくことが重要です。\nまた、AIを使う上での会社でのルールを策定することも大切です。",
+    "sources": [
+      {
+        "label": "OpenAI：Staying Ahead in the Age of AI—A Leadership Guide",
+        "url": "https://openai.com/business/guides-and-resources/staying-ahead-in-the-age-of-ai/"
+      },
+      {
+        "label": "OpenAI：How enterprises are scaling AI",
+        "url": "https://openai.com/business/guides-and-resources/how-enterprises-are-scaling-ai/"
+      }
+    ]
+  },
+  {
     "id": "2026-10-29-human-first-workflow-design",
     "date": "2026.10.29",
     "category": "chatgpt",
