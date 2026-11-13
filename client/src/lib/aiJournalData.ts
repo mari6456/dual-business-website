@@ -21,6 +21,25 @@ export const AI_JOURNAL_CATEGORIES: Record<AIJournalCategory, string> = {
 // Generated from checked Obsidian notes. Do not edit article data here.
 export const aiJournalData: AIJournalItem[] = [
   {
+    "id": "2026-10-29-oracle-ai-workspace-chatgpt",
+    "date": "2026.10.29",
+    "category": "chatgpt",
+    "product": "ChatGPT",
+    "title": "Oracleの業務データをChatGPTへ。AI Workspace構想",
+    "excerpt": "OpenAIとOracleが、Oracleの業務アプリやデータをChatGPTにつなぐ「Oracle AI Workspace」の構想を発表しました。財務・購買・計画の情報を横断し、権限と承認の範囲で業務を進める設計です。",
+    "content": "OpenAIとOracleは2026年10月27日、Oracleの業務アプリやデータをChatGPTで扱うための「Oracle AI Workspace」を発表しました。Oracleは現在この仕組みを開発しており、プラグインを通じて、必要な情報の検索から承認済みの業務フローまでを一つの会話で進める構想です。\n\n### 財務・購買・計画を一つの会話で横断\n\n想定例は、コストの調査、購買判断の背景確認、月末締めまでに残っている作業の把握です。財務、購買、計画の各アプリに分散した情報をChatGPT上でまとめることで、Oracleの画面やデータに詳しくない担当者でも、必要な情報へたどり着きやすくすることを目指しています。\n\nOpenAIの公式パートナーページには、NetSuite、QuickStart、NetSuite Finance Analyst、Oracle Analyticsなどのプラグインが案内されています。使う場合は、まず自社で承認された対象プラグインと接続範囲を確認し、達成したい仕事を具体的に伝えます。結果は出典、数値、対象期間を人が確認し、承認された操作だけを実行します。\n\n### 利用条件と社内権限を先に確認\n\nOracle AI Workspaceは発表時点で開発中と説明されています。利用できるプラグイン、対象プラン、地域、提供時期は、組織やサービスごとに異なる可能性があります。OpenAIは、各組織の権限と承認に従ってアクセスを管理する設計だと説明しています。\n\n業務データをつなぐ前に、閲覧できる範囲、個人情報や機密情報の扱い、誰が最終承認するかを決めておきましょう。AIの回答だけで経理処理や購買判断を確定せず、元データと社内ルールを人が照合することが重要です。",
+    "sources": [
+      {
+        "label": "OpenAI：OpenAI expands partnership with Oracle to bring its apps to ChatGPT",
+        "url": "https://openai.com/index/oracle-apps-in-chatgpt/"
+      },
+      {
+        "label": "OpenAI：OpenAI and Oracle partnership",
+        "url": "https://openai.com/business/partners/oracle/"
+      }
+    ]
+  },
+  {
     "id": "2026-10-29-ai-adoption-four-stages",
     "date": "2026.10.29",
     "category": "chatgpt",
