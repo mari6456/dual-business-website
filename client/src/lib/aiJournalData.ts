@@ -21,6 +21,352 @@ export const AI_JOURNAL_CATEGORIES: Record<AIJournalCategory, string> = {
 // Generated from checked Obsidian notes. Do not edit article data here.
 export const aiJournalData: AIJournalItem[] = [
   {
+    "id": "2026-11-19-work-gpt62-documents",
+    "date": "2026.11.19",
+    "category": "chatgpt",
+    "product": "ChatGPT",
+    "title": "ChatGPT WorkにGPT-6.2。資料づくりで確認すること",
+    "excerpt": "Workのモデル一覧で確認。元資料を渡し、スライドや文書を作った後は内容を照合します。",
+    "content": "新しいGPT-6.2が見当たらない。通常のChatで探していませんか。\n\n### 何が変わったか\n\nOpenAIはChatGPT WorkとCodexへGPT-6.2 AstraとGPT-6.2 Solを順次提供すると案内しています。今回の提供で通常のChatに両モデルが追加されるわけではありません。\n\n公式更新では、Astraは元資料からスライドを作るときのテンプレートへの追従、各スライドの要点を示す見出し、文書修正時の文体合わせを改善したと説明されています。Solは文章・画像・ツールを組み合わせた作業を扱います。これは公式の説明で、筆者の比較実験結果ではありません。\n\n### 使い方\n\n1. デスクトップアプリを使う場合は、メニューの「アップデートを確認」で更新し、再起動します。\n2. Workを開き、モデル選択で利用できるAstraまたはSolを確認します。\n3. 元資料と、望む成果物・条件を伝えます。作成後は内容を読み、修正を依頼できます。\n\n使い道には、元資料からのスライド作成、既存文書の修正があります。\n\n### 条件・注意点\n\n提供対象はPlus、Pro、Business、Enterprise、Eduなどですが、表示は契約・権限・提供状況に左右されます。更新後も表示されない場合があります。新モデルの利用と、Spaceなど成果物を扱う機能の利用条件は別に確認してください。資料中の事実や数字は、完成後も元資料と照合します。",
+    "sources": [
+      {
+        "label": "OpenAI公式 1",
+        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      },
+      {
+        "label": "OpenAI公式 2",
+        "url": "https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex"
+      }
+    ]
+  },
+  {
+    "id": "2026-11-18-clinicians-clinical-search-update",
+    "date": "2026.11.18",
+    "category": "chatgpt",
+    "product": "ChatGPT",
+    "title": "医療従事者向けChatGPTの検索更新。日本向けとは分けて確認",
+    "excerpt": "11月16日の検索更新は、米国の資格確認済み医療従事者向け。日本向けの提供とは分けて確認します。",
+    "content": "医療向けChatGPTの更新を見て、日本のアカウントでも使えるのか迷いませんか。\n\nOpenAIは11月16日、ChatGPT for Cliniciansの医療情報検索とプラグインの更新を案内しました。医療の根拠を探し、評価し、引用する仕組みの改善です。一般向けChatGPTの全利用者に、同じ機能が一斉に追加されたという発表ではありません。\n\n対象は米国で資格確認を済ませた医療従事者です。公式ヘルプでは、医師、ナースプラクティショナー、フィジシャンアシスタント、薬剤師を挙げています。日本での提供開始は今回確認した案内にはありません。\n\n### 使い方\n1. 自分が利用条件に該当するか、公式ヘルプの提供範囲を確認します。\n2. 対象の利用者は医療上の問いを入力し、回答に付いた出典から元の資料を開きます。\n3. 論文の方法や結果を読み、回答と照合します。有料購読や所属機関の契約が必要な資料もあります。\n\n公式の利用例には、医療文献の確認や、確認を前提とした紹介状の下書きがあります。診療判断を代行するものではなく、判断と情報の検証は医療従事者が担います。今回はサービスの更新紹介であり、診断や治療の助言ではありません。",
+    "sources": [
+      {
+        "label": "OpenAI公式 1",
+        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      },
+      {
+        "label": "OpenAI公式 2",
+        "url": "https://help.openai.com/en/articles/20001202-chatgpt-for-clinicians"
+      }
+    ]
+  },
+  {
+    "id": "2026-11-16-wallet-order-confirmation",
+    "date": "2026.11.16",
+    "category": "chatgpt",
+    "product": "ChatGPT",
+    "title": "ChatGPT Walletで支払いを承認したあとに見るもの",
+    "excerpt": "米国で提供が始まったChatGPT Wallet。販売店・合計を見て支払いを承認し、そのあと販売店の注文確認を見ます。",
+    "content": "ホテル代の支払いを承認したら、もう部屋は取れたのでしょうか。\n\nOpenAIが11月13日に発表したChatGPT Walletでは、ChatGPTのdotに商品の候補探しから購入までを頼めます。大事なのは、カードで払う許可を出す場面と、お店が注文を受け付けたと分かる場面を分けることです。\n\n### 使い方\n1. 対象のdotにWalletへのカード追加を頼みます。服の購入やホテルの予約など、必要なものを伝えます。\n2. 支払う前に販売店、商品、合計金額、使うカードを自分で読みます。内容が合っていれば、生体認証などで支払いを承認します。\n3. 承認後は販売店の注文確認を見ます。ホテルなら、支払いを許可した画面だけを見て予約済みと判断しないでください。\n\n今回の提供は米国の18歳以上のChatGPT Pro利用者へ段階的に行われ、対象の米国発行カードと米国の請求先住所が必要です。日本向けの開始案内ではありません。また、エージェントによる購入に対応しないサイトもあります。",
+    "sources": [
+      {
+        "label": "OpenAI公式 1",
+        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      }
+    ]
+  },
+  {
+    "id": "2026-11-14-archive-without-deleting",
+    "date": "2026.11.14",
+    "category": "chatgpt",
+    "product": "ChatGPT",
+    "title": "ChatGPTの会話を消さずに片づける",
+    "excerpt": "あとで読む会話はアーカイブへ。定期タスクの結果が届く会話には注意が必要です。",
+    "content": "終わった案件の会話を一覧から外したい。でも、来月また見返すかもしれません。\n\nそんなときは削除ではなく、アーカイブを選べます。会話は通常のサイドバーから消えても、アカウントには残り、検索できます。削除を選んで確定すると、後から会話を復元することはできません。\n\n### 使い方\n\nまず、履歴で片づけたい会話を一つ選びます。タイトルの横の「…」から「アーカイブ」を選びます。たとえば終了した打ち合わせの準備メモなら、必要になったときに検索して読み返せます。来年も使う催しの案内文なら、次の準備を始めるときに会話を一覧へ戻すこともできます。\n![記事内の説明画像](/ai-journal/assets/2026-11-14-archive-without-deleting-01.png)\n\n戻すときは「設定」→「データ コントロール」からアーカイブ済みのチャットを開き、該当の会話のアーカイブを解除します。管理画面の表示名は端末によって異なります。\n\n![記事内の説明画像](/ai-journal/assets/2026-11-14-archive-without-deleting-02.png)\n\n注意したいのは、定期タスクの結果が届く会話です。その会話をアーカイブすると、後の実行でタスクが一時停止する場合があります。今も使うタスクの届け先になっていないか、整理する前に確かめてください。",
+    "sources": [
+      {
+        "label": "OpenAI公式 1",
+        "url": "https://help.openai.com/ja-jp/articles/8809935"
+      },
+      {
+        "label": "OpenAI公式 2",
+        "url": "https://help.openai.com/en/articles/8809935"
+      }
+    ]
+  },
+  {
+    "id": "2026-11-11-branch-at-a-message",
+    "date": "2026.11.11",
+    "category": "chatgpt",
+    "product": "ChatGPT",
+    "title": "ChatGPTで元の会話を残して別案を試す",
+    "excerpt": "共通の条件がそろった発言の「…」から新しいチャットに分岐し、別案を頼めます。",
+    "content": "社内向けの案内がまとまったあと、お客さま向けの案も試したくなったら、どこから書き直しますか。\n\nChatGPTのウェブ版では、会話の途中の発言から新しいチャットに分岐できます。元の案は残るので、別の条件で相談を続けたいときに使えます。今回の新機能ではなく、既存機能の活用例です。\n\n### 使い方\n会話を分けたいチャットにポインターを合わせ、その他の操作（…）から「新しいチャットに分岐」（Branch in new chat）を選びます。開いた会話で新しい会話を始めることができ、元のチャットもそのまま続けることができます。\n\n![記事内の説明画像](/ai-journal/assets/2026-11-11-branch-at-a-message-01.png)",
+    "sources": [
+      {
+        "label": "OpenAI公式 1",
+        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      }
+    ]
+  },
+  {
+    "id": "2026-11-09-chat-search-by-phrase",
+    "date": "2026.11.09",
+    "category": "chatgpt",
+    "product": "ChatGPT",
+    "title": "ChatGPTで前の会話を探す",
+    "excerpt": "検索欄に、会話で使った会場名や資料名を入れてみてください。アーカイブした会話も探せます。",
+    "content": "昨日の会話を開きたいのに、タイトルを思い出せないことはありませんか。\n\nChatGPTのサイドバーにある検索では、会話のタイトルだけでなく、やり取りの中に出てきた言葉でも探せます。今回は、前に相談した会場の案内をもう一度開く場面で使ってみましょう。\n\n### 使い方\n\nまず、相談したときのアカウントとワークスペースを開きます。サイドバーの検索を選び、会話で使った会場名を入力します。資料の修正を頼んだ会話なら、資料名も手がかりです。結果が多い場合は、画面に「チャット」の絞り込みがあれば選び、該当する会話を開いて中身を確かめます。\n\n![記事内の説明画像](/ai-journal/assets/2026-11-09-chat-search-by-phrase-01.png)\n\n履歴の一覧に見えないだけで、消えたとは限りません。アーカイブした会話も検索の対象です。一方、自分で削除した会話は検索から復元できません。ロックした会話も通常の検索には表示されません。公式ヘルプでは、サインインした利用者は全プランでウェブ、iOS、Androidから検索でき、表示される絞り込みは環境によって異なると案内しています。",
+    "sources": [
+      {
+        "label": "OpenAI公式 1",
+        "url": "https://help.openai.com/ja-jp/articles/10056348"
+      }
+    ]
+  },
+  {
+    "id": "2026-11-08-images-edit-background",
+    "date": "2026.11.08",
+    "category": "chatgpt",
+    "product": "ChatGPT",
+    "title": "ChatGPTで画像の背景だけを変えたいとき",
+    "excerpt": "「背景を公園に。上着の柄はそのまま」と頼んでみてください。できた画像は元の服や小物と見比べます。",
+    "content": "背景を変えたら、気に入っていた服の柄まで変わっていませんか。\n\n11月4日、OpenAIはChatGPT Images 2.6を発表しました。画像の一部を編集したときに、ほかの細部を以前より保ちやすくなったと説明しています。公式の例は、背景を変える場面で登場人物の服装を保つこと。どの画像でも細部が一致するという意味ではありません。\n\n### 使ってみたところ、、、\n![記事内の説明画像](/ai-journal/assets/2026-11-08-images-edit-background-01.png)\n\n背景以外何も変えずに、変更してくれました。\nプロンプトは「背景変えて」のみ。\nその上で、昼間にしてくれたので、陽の光の当たり方や、リードの緑の色（光が当たっているので彩度があがっている）など、影と日向もいい感じに補正してくれました。\nその他顔含めての変更などは全くありません。\nすごい！！！！！精度かなり上がってますね。",
+    "sources": [
+      {
+        "label": "OpenAI公式 1",
+        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      },
+      {
+        "label": "OpenAI公式 2",
+        "url": "https://help.openai.com/en/articles/11084440-images-in-chatgpt"
+      }
+    ]
+  },
+  {
+    "id": "2026-11-07-chatgpt-sites-preview-before-publish",
+    "date": "2026.11.07",
+    "category": "chatgpt",
+    "product": "ChatGPT",
+    "title": "ChatGPT Sitesはプレビューで確かめてから公開",
+    "excerpt": "ChatGPT Sitesはプレビューで内容を確かめ、会話で修正してから公開へ。既存サイトのデプロイは公開中の版を更新します。",
+    "content": "サイトができあがってから、方向性が違うと気づくことありませんか。\n\nChatGPT Sitesには、生成されたサイトをプレビューし、会話で修正してから公開する流れがあります。完成した見た目だけで公開を決めず、確認用の表示と、他の人が見る状態を分けて扱えます。\n\n### 使い方：プレビュー、修正、公開を分ける\n\nウェブ版ではWorkを選び、作りたいウェブサイトと、使う文章・資料・条件を伝えます。生成されたプレビューを確認し、変更したい箇所を会話で伝えます。案内ページなら説明文、資料集なら元資料へのリンクなど、目的に合う内容かを見直します。\n\n確認できたらサイトをデプロイしてURLを作り、実際のページとURLを開いて確認します。新規サイトは初期状態では非公開です。共有する相手は共有設定で選びます。ワークスペースの管理者もアクセスできる場合があります。\n\n既存サイトの変更をデプロイすると、公開中の版が更新されます。公開中の内容を変えずに見直したいときは、まず版を保存し、確認してからデプロイします。\n\nSitesはPlus・Pro、Business・Enterpriseで利用できますが、組織の設定と役割による制限があります。Enterpriseの一般公開は初期状態で無効です。これは確認の手順であり、手戻りや売上の改善を保証するものではありません。",
+    "sources": [
+      {
+        "label": "OpenAI公式 1",
+        "url": "https://help.openai.com/en/articles/20001339-creating-and-using-chatgpt-sites"
+      }
+    ]
+  },
+  {
+    "id": "2026-11-07-chatgpt-saved-reference-photo",
+    "date": "2026.11.07",
+    "category": "chatgpt",
+    "product": "ChatGPT",
+    "title": "ChatGPTで保存した参照写真を使う",
+    "excerpt": "写真を参照用に保存し、別のチャットで「@名前」から呼び出す機能。犬の水彩画などに使い、仕上がりは確認します。",
+    "content": "同じ犬の写真を使いたいのに、チャットのたびに添付し直していませんか。\n\n11月4日、OpenAIはChatGPTで写真を参照用に保存し、後のチャットから呼び出す機能を案内しました。英語版の公式ヘルプでは、写真に名前を付け、その名前の前に「@」を置いて使う方法が説明されています。\n\n### 使い方：写真を保存して名前で呼ぶ\n\nまず写真をアップロードし、参照用に保存するよう頼みます。次に名前を決めて保存します。別のチャットでは、入力文に「@」と保存した名前を入れ、作りたい画像を伝えます。公式の例は、犬の写真を保存して水彩画のポートレートを頼むものです。写真を再添付せずに、その写真を参照できます。\n\nたとえば犬の水彩画を作る場面と、同じ写真を使って別の画風を試す場面で、参照元を呼び出せます。ただし、元の写真と生成結果が完全に一致するという保証ではありません。仕上がりの顔や模様は確認します。\n\nよく使う画像は、サイドバーの画像から登録する方法もおすすめです。\n簡単に追加できるので、自分の写真や、ペット、よく使う写真やロゴなどは、ここに入れておくのも管理が便利で良さそうですね！\n![記事内の説明画像](/ai-journal/assets/2026-11-07-chatgpt-saved-reference-photo-01.png)\n\nChatGPT Imagesは全プランのウェブ・iOS・Androidに対応しています。参照写真の保存機能について、確認した案内には個別の地域・プラン条件の詳しい記載がありません。使えない場合に、全アカウントへ提供済みとは判断しないでください。",
+    "sources": [
+      {
+        "label": "OpenAI公式 1",
+        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      },
+      {
+        "label": "OpenAI公式 2",
+        "url": "https://help.openai.com/en/articles/11084440-images-in-chatgpt"
+      },
+      {
+        "label": "OpenAI公式 3",
+        "url": "https://help.openai.com/ja-jp/articles/11084440-images-in-chatgpt"
+      }
+    ]
+  },
+  {
+    "id": "2026-11-06-gemini-handwriting-unclear",
+    "date": "2026.11.06",
+    "category": "google",
+    "product": "Gemini",
+    "title": "Geminiで手書きメモを読むときの不明欄",
+    "excerpt": "Geminiに写真を添えて、読めない字は「不明」と残すよう依頼。日付や品名は原本と見比べます。",
+    "content": "手書きメモの文字が読めないとき、もっともらしい言葉で埋めていませんか。\n\n紙のメモを文字にすると、読み取れた箇所と、前後の文から推測した箇所の区別が消えてしまうことがあります。文字起こしを頼むときは、迷った字を残す書き方まで指定できます。たとえば「読めない部分は［不明］と書き、どの行かを示してください」と頼みます。これは読み取り精度の保証ではなく、人が見直すための目印です。\n\n### 使い方：写真と回答を並べて確認する\n\nパソコンでGeminiにログインし、入力欄に依頼を書きます。ファイル追加から手元の写真を選び、送信します。打ち合わせメモなら日付、備品リストなら品名を原本と見比べます。［不明］の箇所だけでなく、読み取れたように見える数字も確認してください。原本でも読めなければ、その箇所は未確認のまま残します。",
+    "sources": [
+      {
+        "label": "Google公式 1",
+        "url": "https://support.google.com/gemini/answer/14903178?hl=ja"
+      }
+    ]
+  },
+  {
+    "id": "2026-11-05-chatgpt-project-writing-style",
+    "date": "2026.11.05",
+    "category": "chatgpt",
+    "product": "ChatGPT",
+    "title": "ChatGPTの文章が自分らしくないとき。文体のルールを渡す",
+    "excerpt": "普段の文体を言葉にして、プロジェクトの指示へ。文章の好みと、その都度変わる事実を分けて確認します。",
+    "content": "ChatGPTに文章を頼むたび、いつもの自分の言い方と違うと感じることはありませんか。\n\nChatGPTのプロジェクトでは、関連するチャット、資料、指示をまとめて管理できます。プロジェクトの指示は、そのプロジェクト内にだけ適用され、全体のカスタム指示より優先されます。継続して文章を作るときの文体や回答形式を指定する場所として利用できます。\n\n### 使い方\n\n1. サイドバーで「新しいプロジェクト」を選び、名前を付けます。\n2. その他のオプションから「プロジェクト設定」を開き、指示を追加します。\n3. プロジェクト内のチャットで文章作成を依頼し、出力を確認します。\n![記事内の説明画像](/ai-journal/assets/2026-11-05-chatgpt-project-writing-style-01.png)\n公式ヘルプは、簡潔な回答や箇条書き、不明点への確認質問といった指示例を紹介しています。また、コンテンツ制作でプロジェクト固有の指示を使い、トーンや文体をそろえる用途を挙げています。\n\n### 利用例と注意点\n\n継続して作る記事の下書きや、定期レポートの文章などが利用例です。参考資料を追加することもできますが、アップロード上限はプランによって異なります。プロジェクトと共有機能の利用条件は、プランの提供状況やワークスペース設定にも左右されます。\n\n指示を保存しただけで、文章の正確さや自分らしさが保証されるわけではありません。文体の好みと、その都度変わる事実は分けて確認します。共有プロジェクトではメンバーがチャット・ファイル・指示を扱えるため、個人用の内容を入れる前に共有範囲も確認してください。",
+    "sources": [
+      {
+        "label": "OpenAI公式 1",
+        "url": "https://help.openai.com/ja-jp/articles/10169521-projects-in-chatgpt"
+      },
+      {
+        "label": "OpenAI公式 2",
+        "url": "https://help.openai.com/en/articles/10169521-projects-in-chatgpt"
+      }
+    ]
+  },
+  {
+    "id": "2026-11-05-chatgpt-page-sharing-review",
+    "date": "2026.11.05",
+    "category": "chatgpt",
+    "product": "ChatGPT",
+    "title": "ChatGPTのページ共有。本文・添付・権限を先に確認",
+    "excerpt": "非公開チャットそのものは共有されなくても、ページへ書き出した情報は共有相手に見えます。本文、添付、閲覧・編集権限を確認します。",
+    "content": "ChatGPTで作ったページを渡すと、過去の会話まで相手に見えるのでしょうか。\n\n公式ヘルプでは、ページの共有によって非公開チャットや自分のメモリそのものへのアクセスが与えられるわけではない、と説明されています。一方、過去の会話などをもとにした情報がページに書かれれば、その部分はページを閲覧できる相手に見えます。\n\n### 使い方\n\n1. 共有するページの本文を読み、渡してよい内容か確認します。\n2. 添付ファイルと、別の場所のファイルへのリンクを区別します。\n3. 共有相手を選び、閲覧または編集の権限を設定します。\n![記事内の説明画像](/ai-journal/assets/2026-11-05-chatgpt-page-sharing-review-01.png)\n\nページにアップロードしたファイルは、そのページの権限に従います。別の場所に保存したファイルへのリンクを貼るだけでは、相手に元ファイルの閲覧権限は付与されません。ただし、内容をページへコピー・要約すれば、その記載部分は読めるようになります。\n\n### 利用例と注意点\n\n企画書のレビューや手順書の共同編集など、渡す内容と相手の権限を確認する場面で使える仕組みです。共有後もアクセスできる人を確認し、権限を変更・取り消せます。\n\n利用にはSpaceへのアクセスが必要です。管理対象ワークスペースでは管理者の共有制限も適用されます。自分の学習設定が相手の設定を一括で制御するわけでもありません。今日は新機能の発表ではなく、共有前に確認する範囲の整理です。",
+    "sources": [
+      {
+        "label": "OpenAI公式 1",
+        "url": "https://help.openai.com/en/articles/20001544-chatgpt-space-sharing-data-and-controls"
+      },
+      {
+        "label": "OpenAI公式 2",
+        "url": "https://help.openai.com/ja-jp/articles/20001544-chatgpt-space-sharing-data-and-controls"
+      },
+      {
+        "label": "OpenAI公式 3",
+        "url": "https://learn.chatgpt.com/docs/space/pages"
+      }
+    ]
+  },
+  {
+    "id": "2026-11-04-gemini-email-draft-fact-check",
+    "date": "2026.11.04",
+    "category": "google",
+    "product": "Gemini",
+    "title": "Geminiのメール下書き。期限・金額・宛先は人が確かめる",
+    "excerpt": "メールの文章が整っていても、未定の納期や金額を約束していないか確認する。Geminiの下書きからGmailでの確認までを整理します。",
+    "content": "AIにメールの返信を頼むとき、まだ決めていない納期まで書かれていないか気になりませんか。\n\nGeminiはチャット内でメールの下書きを作り、文体や長さを直せます。パソコン版では「Gmailで編集」から作成画面へ移せますが、文章が整っていることと、内容が正しいことは分けて確認する必要があります。\n\n### 使い方\n\n1. 相手に伝える要点と、確認済みの条件を整理します。\n2. Geminiに「返信の下書きだけを作成。未定の期限や金額は補わず、確認事項として分けて」と伝えます。\n3. 下書きの期限・金額・対応できる範囲を、元のメールや資料と照合します。\n4. 「Gmailで編集」で宛先と件名も確かめ、人が送信を判断します。\n\n例えば、日程調整なら確定した候補だけを渡す。見積もりへの返信なら、承認された金額と条件だけを渡します。「丁寧に」だけでなく、何が決まっていて、何が未定かを伝えるための使い分けです。\n\n指示文の例は、次のようにできます。\n\n> 以下の確認済み情報だけで返信の下書きを作ってください。未定の項目は本文で約束せず、確認事項として別に示してください。送信はしないでください。\n\n### 条件・注意点\n\nGmailの下書き機能には、GeminiアプリとGoogle Workspaceの接続が必要です。接続には同じアカウントでのログインやアクティビティ設定などの条件があります。組織で使う場合は許可された範囲で扱ってください。\n\nGoogleも、Geminiが古いメールを参照したり、誤った回答を返したりする可能性を案内しています。指示文を入れるだけで誤りを防げる保証はありません。下書きの作成と、内容の確認・送信を分けて進めましょう。",
+    "sources": [
+      {
+        "label": "Google公式 1",
+        "url": "https://support.google.com/gemini/answer/18741629?co=GENIE.Platform%3DDesktop&hl=ja"
+      },
+      {
+        "label": "Google公式 2",
+        "url": "https://support.google.com/gemini/answer/18741629?co=GENIE.Platform%3DDesktop&hl=en"
+      },
+      {
+        "label": "Google公式 3",
+        "url": "https://support.google.com/gemini/answer/15229592"
+      }
+    ]
+  },
+  {
+    "id": "2026-11-03-personal-information-protection",
+    "date": "2026.11.03",
+    "category": "other-ai",
+    "product": "AIセキュリティ",
+    "title": "情報漏洩の時代に、自分を守るためにやっておきたいこと",
+    "excerpt": "情報漏洩のニュースを見て、自分は何をすればいいのか迷ったら。パスワードと認証、登録・共有する情報、AIへの入力、不審な連絡への対応を見直す。研修とQA会の話題をもとに、情報を渡す側・預かる側の両方で今日できることをまとめます。",
+    "content": "「情報が漏れたらしい。でも、自分は何をしたらいい？」\n\n最近の研修でも、こうした不安が話題になりました。まず見直して欲しいことを4つにまとめます。\n\n### 1．アカウントの入口を守る\n\n同じパスワードの使い回しをやめ、管理アプリでサービスごとに長く異なるものを作る。対応していればパスキーや多要素認証も設定します。まずは普段使うメールと主要アカウントから。パスキーは自分専用の端末で設定し、復旧方法も確認しておきましょう。\n\n### 2．情報を渡しすぎない、集めすぎない\n\n登録フォームに欄があるからと、任意項目まで全部埋めていませんか。利用目的を確認し、使わなくなったサービスや、本人確認書類・カード情報を預けた先を見直す。共有リンクも「誰が見られるか」を確かめます。\n\n自分がフォームを作る側なら、「あると便利」と「提供に必須」を分ける。何のために集めるか説明できない項目は、減らすことも考えたいです。\n\n### 3．AIに渡す前に、情報を仕分ける\n\n顧客名簿や本人確認書類を、そのままAIへ入れない。仕事では会社が認めた環境とルールを確認し、必要な部分だけ、架空データなどに置き換えて使います。名前を消しただけで特定できなくなるとは限りません。\n\n「学習に使わない」と「保存されない」は別です。保存・共有・接続アプリの権限も確認する。例えば個人向けGeminiでは、アクティビティをオフにした会話にも保持期間があります。\n\n### 4．連絡も画面も、別の経路で確かめる\n\nログインや支払いは、届いたメールのリンクから進まず、公式アプリや自分で登録したブックマークから確認します。送金や機密情報を急に求められたら、一旦止め、以前から知っている連絡先へ。声や顔だけで判断せず、パスワードや認証コードは相手に渡さない。\n\nソフトを入れるときも、検索上位や広告だから公式とは限りません。提供元の正しいサイトや正規ストアから入手を。「人間であることの確認」「エラー修復」を口実に、ターミナルなどへ文字列を貼り付けて実行するよう求める偽画面（ClickFix）にも注意してください。その場の指示には従わず、操作を止めて確認します。\n\nパスキーや多要素認証を設定していても、不審なソフトの実行まで安全になるわけではありません。端末・ブラウザも更新し、認証と端末の両方を守りましょう。\n\n漏洩の通知が来たときも、公式窓口で「何が漏れたか」を確認してから対処を。パスワードなら使い回し先も変更し、カード情報ならカード会社へ相談します。\n\n提供元からの漏洩を、自分だけで防ぎきることはできません。それでも、被害が広がりにくい準備はできます。今日はまず、メールの認証設定と、使い回しているパスワードを一つ見直すところから始めませんか。",
+    "sources": [
+      {
+        "label": "Taiki Watanabeさん：偽広告と偽認証画面の注意喚起",
+        "url": "https://x.com/echode_dev/status/2117202696860266749"
+      }
+    ]
+  },
+  {
+    "id": "2026-11-03-chatgpt-audio-action-notes",
+    "date": "2026.11.03",
+    "category": "chatgpt",
+    "product": "ChatGPT",
+    "title": "ChatGPTで会議の録音を「次の行動」に整理する",
+    "excerpt": "音声ファイルを添付し、決定・未決・次の行動に整理。担当者や数字は原音で確認します。新発表ではなく既存機能の活用ヒントです。",
+    "content": "会議を録音したのに、結局「何を決めたか」を探して聞き直していませんか。ChatGPTには音声ファイルを添付し、文字起こしや要約、内容への質問を頼めます。今回は10月6日に案内された音声アップロードを使う活用ヒントです。今日初めて登場した機能ではありません。\n\n録音を短くするだけでなく、「決定事項・未決事項・次の行動」に分けると、会議後の確認に使いやすくなります。取材なら要点と追加で聞くことを整理する、といった使い道もあります。\n\n### 使い方\n\n1. 録音・共有してよい音声を選び、ChatGPTの会話に添付します。\n2. 「決定事項、未決事項、次の行動に分けて。担当者や期限が聞き取れない場合は不明と書いて」と頼みます。\n3. 分からない箇所を追加で質問し、推測で埋めていないか確認します。\n4. 人名・数字・担当者・期限を元の録音と照らし合わせてから共有します。\n\n「要約して」だけで終えるより、後で誰が何を確認するかまで見える形を目指すのが、ここでの使い方の提案です。自動で担当者や締切を決めてもらうものではありません。\n\n### 条件・注意点\n\n対象はChatGPTの有料サブスクリプションとワークスペースで、Freeでは音声アップロードを利用できません。地域、アプリのバージョン、選択モデル、組織の設定で利用可否が異なります。MP3やM4Aなどに対応しますが、動画として認識されるファイルは別扱いです。\n\n文字起こしや話者の識別は誤ることがあります。ChatのGPT-6（即時）では、1録音あたり6分までが案内されています。Work・Codexでは現在、アップロード音声の文字起こしを利用できません。長い録音の分割処理はData Analysisが利用できる場合のベストエフォートで、完了しない場合もあります。機密情報や参加者の発言は、所属先のルールと共有の許可を確認して扱いましょう。",
+    "sources": [
+      {
+        "label": "ChatGPT release notes（10月6日）",
+        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      },
+      {
+        "label": "ファイルと音声のアップロード（日本語）",
+        "url": "https://help.openai.com/ja-jp/articles/8555545-uploading-files-and-audio-to-chatgpt"
+      },
+      {
+        "label": "Uploading files and audio（英語）",
+        "url": "https://help.openai.com/en/articles/8555545-uploading-files-and-audio-to-chatgpt"
+      }
+    ]
+  },
+  {
+    "id": "2026-11-02-chatgpt-pro-work-codex-allowance",
+    "date": "2026.11.02",
+    "category": "chatgpt",
+    "product": "ChatGPT",
+    "title": "ChatGPT ProのWork・Codex利用枠が拡大。まず自分の残量を確認",
+    "excerpt": "Pro 100・500のWork・Codex利用枠が従来の2倍に。Pro 200は低い枠が引き上げられ、同じ枠にそろいます。残量を見ながら仕事に合うモデルを選びましょう。",
+    "content": "ChatGPTに調査や資料づくりを頼む途中で、利用枠が気になることはありませんか。OpenAIは2026年10月29日、ProのWork・Codexで使える利用枠の拡大を発表しました。今回は新機能の追加ではなく、契約に含まれる利用量の変更です。\n\nPro 100とPro 500は従来の2倍に。Pro 200は、以前から高い利用枠だった人はそのまま、低い枠だった人は2倍になり、同じ水準にそろいます。既存契約には更新日を待たず自動で反映され、契約をやり直す必要はありません。Plusの利用枠は今回変わりません。\n\n### 使い方\n\n1. 「設定」を開きます。\n2. 「利用状況（Usage）」で残量とリセット時刻を確認します。\n3. WorkやCodexで、作業に合うモデル・推論の強さを選びます。\n\n例えば、Workで調査結果を報告書にまとめる、CodexでWebページのコードを修正するといった使い方があります。どちらも以前からできる作業で、利用枠はWorkとCodexで共有します。片方を多く使った日は、もう片方を始める前にも残量を確認すると予定を立てやすくなります。\n\n### 条件・注意点\n\n対象プランはPro 100・200・500ですが、上のとおり変更内容は異なります。利用できるモデルや機能はアカウント・ワークスペースの設定にも左右されます。\n\n利用枠が2倍でも、完成する作業数が2倍になる保証はありません。モデル、入力の量、推論設定、作業の複雑さで消費量が変わるためです。通常のChatの上限やAPIの料金とも区別し、まず自分の画面で確認しましょう。",
+    "sources": [
+      {
+        "label": "ChatGPT release notes（2026年10月29日）｜OpenAI",
+        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      },
+      {
+        "label": "About ChatGPT Pro tiers｜OpenAI",
+        "url": "https://help.openai.com/en/articles/9793128-about-chatgpt-pro-tiers"
+      },
+      {
+        "label": "Managing usage with GPT-6 Astra in Work and Codex｜OpenAI",
+        "url": "https://help.openai.com/en/articles/20001516-managing-usage-with-gpt-6-astra-in-work-and-codex"
+      },
+      {
+        "label": "ChatGPT Work and Codex｜OpenAI",
+        "url": "https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex"
+      }
+    ]
+  },
+  {
+    "id": "2026-11-01-chatgpt-mobile-account-switching",
+    "date": "2026.11.01",
+    "category": "chatgpt",
+    "product": "ChatGPT",
+    "title": "スマホでChatGPTのアカウントを切り替える。仕事用と個人用を分けたまま",
+    "excerpt": "iOS・Androidへアカウント切り替えが順次提供。仕事用と個人用の履歴や契約を分けたまま、ログアウトの手間を減らせます。",
+    "content": "仕事用と個人用のChatGPTをスマホで使い分けるとき、毎回ログアウトする手間を減らせるようになります。OpenAIは2026年10月30日、iOS・Androidアプリへのアカウント切り替え機能の順次提供を発表しました。Webで使えた切り替えが、スマホにも広がる更新です。\n\n同時にログインしておけるのは2アカウントまでで、使用中になるのは1つです。仕事の文章を整えるときは仕事用、旅行の相談は個人用、といった使い分けができます。\n\n### 使い方\n\n1. アプリの「設定」を開きます。\n2. 「アカウント切り替え（Switch account）」を選びます。\n3. 「アカウントを追加（Add account）」から、もう一方へログインします。\n4. 使うアカウントを選び、送信前に使用中のアカウントを確認します。\n\nすでに2つへログインしている場合は、1つからログアウトしてから別のアカウントを追加します。\n\n### 条件・注意点\n\nモバイル版は順次提供のため、まだ項目が表示されない場合があります。公式ヘルプはWeb版について全プラン対応と案内していますが、組織の管理設定で制限される場合があります。\n\n切り替えても履歴・メモリ・ファイル・設定・契約は別々です。有料契約を共有したり、2つのアカウントを統合したりする機能ではありません。通知を開くと別アカウントへ切り替わる場合もあるため、業務情報を送る前には宛先となるアカウントを確かめましょう。\n\nただ、私の画面ではまだ実装されてません。\n順次提供中で、設定に『アカウント切り替え』が表示されない場合は、まだ利用できない可能性があります。",
+    "sources": [
+      {
+        "label": "ChatGPT release notes（2026年10月30日）｜OpenAI",
+        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      },
+      {
+        "label": "Using multiple ChatGPT accounts on web and mobile｜OpenAI",
+        "url": "https://help.openai.com/en/articles/20001068-using-multiple-chatgpt-accounts-on-web-and-mobile"
+      }
+    ]
+  },
+  {
+    "id": "2026-10-30-chatgpt-icloud-mail-calendar",
+    "date": "2026.10.30",
+    "category": "chatgpt",
+    "product": "ChatGPT",
+    "title": "ChatGPTでiCloudメールと予定を確認。接続は別々に",
+    "excerpt": "ChatGPTにiCloud MailとiCloud Calendarのプラグインが登場。メールの検索や予定の確認・更新を会話から頼めます。二つは別々に接続し、Appleのアプリ用パスワードは専用フォームに入力します。",
+    "content": "OpenAIは2026年10月27日、ChatGPTにiCloud MailとiCloud Calendarのプラグインを追加したと案内しました。iCloudのメールを探す、受信箱の内容を把握する、予定を確認・更新するといった作業を会話から頼めます。![記事内の説明画像](/ai-journal/assets/2026-10-30-chatgpt-icloud-mail-calendar-01.png)\n### メール探しと予定確認を会話から\n\nたとえば「来週の打ち合わせに関するメールを探して」「明日の予定を確認して」と、探す対象や期間を具体的に伝える使い方が考えられます。接続済みの情報をもとに確認できるため、必要なメールや予定を探す手間を減らす助けになります。\n\n### 使い方は4段階\n\n1. ChatGPTの「設定」→「プラグイン」で、使いたいiCloudのサービスを選ぶ。\n![CleanShot 2026-11-03 at 00.51.34.png](app://a08fb1748a4f85574bb24687ee6a72db231c/Users/mari/Library/Mobile%20Documents/iCloud%7Emd%7Eobsidian/Documents/iCloud-Obsidian/UNFRAME/50_Assets/90_Inbox/CleanShot%202026-11-03%20at%2000.51.34.png?1793634737892)\n2. 求められた権限を確認し、Appleのアプリ用パスワードを接続フォームへ入力する。\n3. 対象と期間を指定して、メール検索や予定確認を頼む。\n4. 元のメールや予定と結果を照合し、更新する場合は日時・対象を確認する。\n\niCloud MailとiCloud Calendarは別々に接続します。メール側はiCloudのメールアドレス、予定側はApple Accountの主要メールアドレスを使うため、同じとは限りません。\n\n### 利用条件と注意点\n\n対象プランはChatGPTの全プラン、対応はWeb・デスクトップ・iOSと案内されています。地域やワークスペース設定などによる利用可否は、自分の環境で確認してください。Androidへの提供は今回の案内では確認できません。\n\n通常のAppleパスワードは使わず、アプリ用パスワードも会話欄へ貼らないことが大切です。必要なサービスだけを接続し、予定の変更は元のカレンダーでも確認しましょう。",
+    "sources": [
+      {
+        "label": "OpenAI：ChatGPT release notes（2026年10月27日）",
+        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      },
+      {
+        "label": "OpenAI：Connecting and managing app accounts in ChatGPT",
+        "url": "https://help.openai.com/en/articles/20001494-connecting-and-managing-app-accounts-in-chatgpt"
+      },
+      {
+        "label": "OpenAI：Connected apps in ChatGPT",
+        "url": "https://help.openai.com/en/articles/11487775-connected-apps-in-chatgpt"
+      }
+    ]
+  },
+  {
     "id": "2026-10-29-oracle-ai-workspace-chatgpt",
     "date": "2026.10.29",
     "category": "chatgpt",
@@ -36,6 +382,25 @@ export const aiJournalData: AIJournalItem[] = [
       {
         "label": "OpenAI：OpenAI and Oracle partnership",
         "url": "https://openai.com/business/partners/oracle/"
+      }
+    ]
+  },
+  {
+    "id": "2026-10-29-human-first-workflow-design",
+    "date": "2026.10.29",
+    "category": "chatgpt",
+    "product": "ChatGPT",
+    "title": "「AIに何ができるか」より、人がやる仕事を先に決める",
+    "excerpt": "業務改善を「AIに何をさせるか」から始めると、今の手順へAIを足すだけになりがちです。業務を細かく可視化し、人が担う判断・確認・対話を先に決める考え方を紹介します。",
+    "content": "業務にAIを取り入れるとき、どの作業から試せばよいでしょうか。打ち合わせで受けた変更希望を、次の担当者に引き継ぐ場面を例に考えます。\n\nまず、誰が議事録を作り、どこへ保存し、誰に通知するのかを書き出します。続いて、誰が変更内容を確認し、図面へ反映するのかを書き添えます。\n\n### 人が担う仕事を先に残す\n\n次に考えるのは、AIへ任せる作業ではなく、人が外れてはいけない仕事です。たとえば、お客様との対話、変更内容の最終確認、発注の承認などは、人が責任を持つ部分として残します。その上で、記録の整理、通知、転記、確認用一覧の作成などをAIで仕組み化します。\n\n進め方は、次の4段階です。\n\n1. 業務の流れを細かく書き出す\n2. 人が担う判断・対話・承認を決める\n3. それ以外から小さくAIで試す\n4. 実際の結果を人が確認して直す\n\n個人情報や機密情報を扱う場合は、使用するサービス、入力できる情報、保存先、最終確認者を社内ルールとして決めてから試しましょう。",
+    "sources": [
+      {
+        "label": "OpenAI：From experiments to deployments",
+        "url": "https://cdn.openai.com/business-guides-and-resources/from-experiments-to-deployments_whitepaper_11-25.pdf"
+      },
+      {
+        "label": "OpenAI：How enterprises are scaling AI",
+        "url": "https://openai.com/business/guides-and-resources/how-enterprises-are-scaling-ai/"
       }
     ]
   },
@@ -59,21 +424,21 @@ export const aiJournalData: AIJournalItem[] = [
     ]
   },
   {
-    "id": "2026-10-29-human-first-workflow-design",
-    "date": "2026.10.29",
+    "id": "2026-10-28-gpt-6-1-terra-work-codex",
+    "date": "2026.10.28",
     "category": "chatgpt",
     "product": "ChatGPT",
-    "title": "「AIに何ができるか」より、人がやる仕事を先に決める",
-    "excerpt": "業務改善を「AIに何をさせるか」から始めると、今の手順へAIを足すだけになりがちです。業務を細かく可視化し、人が担う判断・確認・対話を先に決める考え方を紹介します。",
-    "content": "業務にAIを取り入れるとき、どの作業から試せばよいでしょうか。打ち合わせで受けた変更希望を、次の担当者に引き継ぐ場面を例に考えます。\n\nまず、誰が議事録を作り、どこへ保存し、誰に通知するのかを書き出します。続いて、誰が変更内容を確認し、図面へ反映するのかを書き添えます。\n\n### 人が担う仕事を先に残す\n\n次に考えるのは、AIへ任せる作業ではなく、人が外れてはいけない仕事です。たとえば、お客様との対話、変更内容の最終確認、発注の承認などは、人が責任を持つ部分として残します。その上で、記録の整理、通知、転記、確認用一覧の作成などをAIで仕組み化します。\n\n進め方は、次の4段階です。\n\n1. 業務の流れを細かく書き出す\n2. 人が担う判断・対話・承認を決める\n3. それ以外から小さくAIで試す\n4. 実際の結果を人が確認して直す\n\n個人情報や機密情報を扱う場合は、使用するサービス、入力できる情報、保存先、最終確認者を社内ルールとして決めてから試しましょう。",
+    "title": "GPT-6.1 Terra登場。画面を見ながら仕事を進めるモデル",
+    "excerpt": "OpenAIがGPT-6.1 Terraを発表しました。画面や資料を読み取り、フォーム入力や動画編集などのパソコン作業を進めることに重点を置いたモデルです。ChatGPTの通常チャットではなく、ChatGPT WorkとCodexで提供されます。",
+    "content": "OpenAIは2026年10月26日、GPT-6.1 Terraを発表しました。細かな画面理解とパソコン操作、自然な文章作成を組み合わせた、仕事向けの高速・高効率モデルです。\n\n### 画面を理解して、次の操作まで進める\n\nGPT-6.1 Terraは、提案書の下書き、技術図面の読み取り、フォーム入力、動画編集など、画面を見ながら複数の手順を進める作業を想定しています。たとえば請求書の内容を読み取り、会計ソフトへ入力するといった、件数の多い定型業務にも使いやすいとOpenAIは説明しています。\n\nOpenAIの社内評価では、旧GPT-5.6 Terraより視覚理解、パソコン操作、事実性、コーディングが改善したとされています。一方、最も複雑なコーディング作業では、GPT-6.1 SolやGPT-6 Astraの方が適している場合があります。\n\n### 使い方は「渡す→任せる→確認する」\n\nChatGPT WorkまたはCodexでGPT-6.1 Terraを選び、対象の画面、資料、ファイルと、達成したい目的を伝えます。作業範囲と完了条件を具体的にすると、途中の判断がぶれにくくなります。結果が出たら、入力内容、数値、宛先、公開範囲を人が確認してから確定します。\n\n利用例は、提案書の整形、図面やフォームの確認、動画の場面整理、請求書の読み取りなどです。繰り返し作業を任せつつ、判断が必要な箇所を人へ戻す使い方が向いています。\n\n### 対象はWorkとCodex。通常チャットとは別\n\nGPT-6.1 Terraは、Plus、Pro、Enterprise、Eduユーザー向けにChatGPT WorkとCodexで提供されています。通常のChatGPTチャット用モデルとしての提供ではありません。ワークスペースの設定によって表示されない場合もあるため、モデル選択画面で確認してください。\n\nパソコン操作を伴うAIは、意図と違う場所へ入力する可能性があります。個人情報や機密情報を含む作業ではアクセス範囲を絞り、送信、公開、削除、決済などの重要操作は必ず人が最終確認しましょう。",
     "sources": [
       {
-        "label": "OpenAI：From experiments to deployments",
-        "url": "https://cdn.openai.com/business-guides-and-resources/from-experiments-to-deployments_whitepaper_11-25.pdf"
+        "label": "OpenAI：GPT-6.1 Terra",
+        "url": "https://openai.com/index/introducing-gpt-6-1-terra/"
       },
       {
-        "label": "OpenAI：How enterprises are scaling AI",
-        "url": "https://openai.com/business/guides-and-resources/how-enterprises-are-scaling-ai/"
+        "label": "OpenAI：ChatGPTリリースノート",
+        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
       }
     ]
   },
@@ -101,6 +466,21 @@ export const aiJournalData: AIJournalItem[] = [
       {
         "label": "Goodnotes AI よくある質問",
         "url": "https://support.goodnotes.com/hc/ja/articles/7444477153295-Goodnotes-AI-%E3%82%88%E3%81%8F%E3%81%82%E3%82%8B%E8%B3%AA%E5%95%8F"
+      }
+    ]
+  },
+  {
+    "id": "2026-10-27-chatgpt-ads-89-countries",
+    "date": "2026.10.27",
+    "category": "chatgpt",
+    "product": "ChatGPT Ads",
+    "title": "ChatGPT広告が世界89か国へ拡大。広告主は10万社超に",
+    "excerpt": "ChatGPT広告が26か国追加され、世界89か国へ拡大。広告主は10万社を超えました。広告はFree・Goだけに表示され、回答とは分離されます。",
+    "content": "OpenAIは2026年10月21日、ChatGPT Adsの提供地域を26か国追加し、世界89か国へ拡大したと発表しました。開始から約8か月で、10万を超える広告主がキャンペーンを実施したとしています。\n\n広告主は対象地域で、提携する技術パートナーまたはAds Managerから広告を出稿できます。たとえば地域のサービスやEC商品を、利用者が会話で選択肢を比較・検討している場面に届ける活用が考えられます。利用する場合は、①Ads Managerを開く、②自社の地域で利用できるか確認する、③キャンペーン内容を設定する、④公開前に内容を確認し、公開後の結果を測定する、という順で進めます。\n\n利用者側で広告が表示されるのはFreeとGoです。Plus、Pro、Enterpriseは広告なしのままです。OpenAIは、広告を回答とは明確に分離し、広告が回答内容へ影響しないこと、会話を広告主へ開示せず、顧客データを販売しないことを説明しています。\n\n今回の公式発表は追加26か国の全一覧を掲載しておらず、日本での利用可否も本文では明示していません。出稿前にAds Managerの画面で、自社の国・地域、利用できる機能、料金や審査条件を確認してください。\n\n日本で開始の際の記事、使い方はこちら。\n[日本でも利用可能に。ChatGPT Ads Managerで広告を始める｜mari｜仕事に役立つAI Journal](https://note.com/mari6456/n/nced4d88b5226)",
+    "sources": [
+      {
+        "label": "ChatGPT Ads expands to 26 new countries as over 100,000 advertisers have used the platform｜OpenAI",
+        "url": "https://openai.com/index/chatgpt-ads-expands-26-new-countries/"
       }
     ]
   },
