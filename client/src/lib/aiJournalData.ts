@@ -21,6 +21,55 @@ export const AI_JOURNAL_CATEGORIES: Record<AIJournalCategory, string> = {
 // Generated from checked Obsidian notes. Do not edit article data here.
 export const aiJournalData: AIJournalItem[] = [
   {
+    "id": "2026-11-22-space-plus-rollout",
+    "date": "2026.11.22",
+    "category": "chatgpt",
+    "product": "ChatGPT",
+    "title": "ChatGPT SpaceがPlusへ。共有相手も利用条件を確認",
+    "excerpt": "11月20日から18歳以上のPlusへ世界で順次提供。共有には相手のSpace利用権限も必要です。",
+    "content": "Spaceで作った資料を送りたい。でも、相手はリンクを開けるでしょうか。\n\nOpenAIは11月20日、ChatGPT Spaceを世界の18歳以上のPlus利用者へ順次提供すると発表しました。Space自体の初登場ではなく、利用できる人が広がる更新です。\n\nSpaceでは、AIとページやプレゼンテーションを作り、Spaceを使える相手を招いて一緒に編集できます。接続したアプリやツールを使い、ページやスライドを自動更新する設定もできます。\n\n### 使い方\n\n1. サイドバーのSpaceを開きます。Libraryに代わり、ページ・スライド・画像・アップロードしたファイルを扱う場所になります。\n2. たとえば、打ち合わせ用の資料やプロジェクトの計画を作ります。これは仕事での利用例です。\n3. 共有前に、相手がSpaceを利用できるプランと閲覧権限を持っているか確認します。\n\n### 共有の注意点\n\n共有されたページやプレゼンテーションを開くには、閲覧許可と、Spaceを利用できるPlus・Pro・Business・Enterpriseのアカウントでのログインが必要です。Freeでは開けず、一般公開リンクもありません。URLを渡せば誰でも読める、とは考えないでください。\n\nページの作成・編集はWeb、デスクトップアプリ、iOS、Androidで利用できます。段階的な提供なので、自分の画面への反映も確かめましょう。共有する本文や添付に、公開してよい情報だけが入っているかも確認します。",
+    "sources": [
+      {
+        "label": "OpenAI公式",
+        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      }
+    ]
+  },
+  {
+    "id": "2026-11-21-mobile-favorite-tabs",
+    "date": "2026.11.21",
+    "category": "chatgpt",
+    "product": "ChatGPT",
+    "title": "ChatGPTのスマホ画面が変わる。よく使う機能をタブへ",
+    "excerpt": "Codex・Projects・Imagesなどをタブに固定できる新しい画面。対象者へ段階的に提供されます。",
+    "content": "スマホでChatGPTを開くたび、使いたい機能を探していませんか。\n\nOpenAIは11月19日、ChatGPTのモバイルアプリの新しい画面を発表しました。dotには専用のタブができ、Codex・Projects・Imagesなど、よく使う機能をタブバーに固定できます。機能の提供条件そのものが、固定によって変わるわけではありません。\n\n### 使い方\n\n1. まず、自分のアカウントに新しい画面が届いているか確認します。\n2. 新しい画面で、よく使う機能をタブバーに固定します。\n3. 次から、そのタブを開いて使います。\n\n使い道としては、企画の資料を扱うProjectsや、画像づくりのImagesをすぐ開ける場所に置く例が考えられます。これは利用例で、作業時間を測った結果ではありません。\n\n![記事内の説明画像](/ai-journal/assets/2026-11-21-mobile-favorite-tabs-01.png)\n### 対象と注意点\n\n提供はdotを利用できる地域の18歳以上のPro利用者から始まり、一部の対象Plus利用者にも届きます。EEA（EUを含む）・英国・スイス・韓国は今回の対象外です。段階的な提供のため、同じプランでも表示が異なる場合があります。\n\n設定に「New ChatGPT design」が表示される場合は、そこで新しい画面のオン・オフを切り替えられます。表示されない設定を無理に探さず、アカウントへの提供状況を確認してください。",
+    "sources": [
+      {
+        "label": "OpenAI公式",
+        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      }
+    ]
+  },
+  {
+    "id": "2026-11-20-live-dictation-text",
+    "date": "2026.11.20",
+    "category": "chatgpt",
+    "product": "ChatGPT",
+    "title": "ChatGPTの音声入力。話しながら文字を確認",
+    "excerpt": "マイクで話す→波形で文字を確認→直して送信。依頼文の下書きやメモに。名前と数字は送る前に見直します。",
+    "content": "話し終わってから、入力された文字を確認していませんか。\n\nOpenAIは11月18日、ChatGPTの音声入力で、話している途中の文字を表示できるようにしたと案内しました。これまでは話し終えた後に文字を確認する流れでしたが、新しい表示では途中でも入力内容を見られます。\n\n### 使い方\n\n1. メッセージ入力欄のマイクで話します。\n2. 波形を押すと、話している内容を文字で確認できます。\n3. 文字を見直し、必要な部分を直してから送ります。\n\nたとえば依頼文の下書きや、思いついたアイデアのメモに使えます。音声を文字にする機能なので、ChatGPTと声でやり取りを続ける「音声会話」とは別です。\n\n### 条件と注意点\n\n公式には、従来の10分の録音上限を取り除いたと説明されています。ただし、すべての利用制限がなくなったという意味ではありません。全プランを対象に、iOS・Android・ウェブ・デスクトップへ世界で順次提供されます。表示がまだない場合もあります。\n\n音声の文字起こしには誤りが含まれることがあります。送信前に、名前・数字・日付を確かめてください。機密情報や、相手の許可がない会話は入力しないようにしましょう。",
+    "sources": [
+      {
+        "label": "OpenAI公式 1",
+        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      },
+      {
+        "label": "OpenAI公式 2",
+        "url": "https://help.openai.com/ja-jp/articles/12168547-voice-dictation-faq"
+      }
+    ]
+  },
+  {
     "id": "2026-11-19-work-gpt62-documents",
     "date": "2026.11.19",
     "category": "chatgpt",
