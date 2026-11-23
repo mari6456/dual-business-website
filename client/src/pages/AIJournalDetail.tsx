@@ -1,42 +1,28 @@
 import { useEffect } from "react";
+import { Streamdown } from "streamdown";
 import { Link, useLocation } from "wouter";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { AI_JOURNAL_CATEGORIES, aiJournalData } from "@/lib/aiJournalData";
 
-function ArticleBody({ content }: { content: string }) {
+export function ArticleBody({ content }: { content: string }) {
   return (
-    <div className="space-y-6">
-      {content.split("\n\n").filter(Boolean).map((block, index) => {
-        const image = block.match(/^!\[([^\]]*)\]\((\/ai-journal\/assets\/[^)]+)\)$/);
-        if (image) {
-          return (
-            <figure key={index} className="my-8">
-              <img
-                src={image[2]}
-                alt={image[1] || "記事内の説明画像"}
-                className="w-full rounded-2xl border border-border/50 object-contain"
-                loading="lazy"
-              />
-            </figure>
-          );
-        }
-        if (block.startsWith("## ")) {
-          return <h2 key={index} className="pt-8 text-2xl">{block.slice(3)}</h2>;
-        }
-        if (block.startsWith("### ")) {
-          return <h3 key={index} className="pt-5 text-xl">{block.slice(4)}</h3>;
-        }
-        const lines = block.split("\n");
-        if (lines.every((line) => /^[-*] /.test(line))) {
-          return (
-            <ul key={index} className="list-disc space-y-2 pl-6 text-sm lg:text-base text-foreground/75 leading-[1.9]">
-              {lines.map((line, lineIndex) => <li key={lineIndex}>{line.slice(2)}</li>)}
-            </ul>
-          );
-        }
-        return <p key={index} className="text-sm lg:text-base text-foreground/75 leading-[2]">{block}</p>;
-      })}
-    </div>
+    <Streamdown
+      className="space-y-6"
+      parseIncompleteMarkdown={false}
+      controls={false}
+      rehypePlugins={[]}
+      skipHtml
+      components={{
+        h2: ({ children }) => <h2 className="pt-8 text-2xl">{children}</h2>,
+        h3: ({ children }) => <h3 className="pt-5 text-xl">{children}</h3>,
+        p: ({ children }) => <p className="text-sm lg:text-base text-foreground/75 leading-[2]">{children}</p>,
+        ul: ({ children }) => <ul className="list-disc space-y-2 pl-6 text-sm lg:text-base text-foreground/75 leading-[1.9]">{children}</ul>,
+        img: ({ src, alt }) => src ? <img src={src} alt={alt || "記事内の説明画像"} className="my-8 block h-auto w-full rounded-2xl border border-border/50 object-contain" loading="lazy" referrerPolicy="no-referrer" /> : <span>{alt || "画像を表示できません"}</span>,
+        a: ({ href, children }) => <a href={href} target="_blank" rel="noopener noreferrer" className="text-[#376f82] underline underline-offset-4">{children}</a>,
+      }}
+    >
+      {content}
+    </Streamdown>
   );
 }
 
