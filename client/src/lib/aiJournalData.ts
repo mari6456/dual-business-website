@@ -21,6 +21,48 @@ export const AI_JOURNAL_CATEGORIES: Record<AIJournalCategory, string> = {
 // Generated from checked Obsidian notes. Do not edit article data here.
 export const aiJournalData: AIJournalItem[] = [
   {
+    "id": "2026-11-23-dictation-five-criteria",
+    "date": "2026.11.23",
+    "category": "chatgpt",
+    "product": "ChatGPT",
+    "title": "音声入力、私が選ぶ5つの基準",
+    "excerpt": "Spokenly・Genspark Speakly・Aqua Voice・Typelessに課金して使い比べ、私が重視するのは五つの基準。特に大事なのが、話している途中から文字が見えることです。ChatGPTの音声入力の更新と、スマホではTypelessを無料枠で使う、今の使い分けを紹介します。",
+    "content": "Spokenly、Genspark Speakly、Aqua Voice、Typeless。気になる音声入力アプリには実際に課金して、使い比べてきました。\n\n### 私が重視する五つの基準\n\n① いろいろなアプリで使える\n② 言い間違いや言い直しを整えてくれる\n③ 話している最中から文字が見える\n④ スマホで使いやすい\n⑤ コスパがよい\n\n私が試した範囲では、①②に対応するものは結構あります。一方、③に対応するものは少なめで、特に重視していました。Spokenlyは対応モデルで途中表示ができます。\n\n### ChatGPTの純正でも、途中の文字が見えるように\n\nOpenAIは2026年11月18日、話しながら文字を確認できるLive Dictationを案内しました。全プランを対象に、Web・デスクトップ・iOS・Androidへ順次提供されます。チャット内の音声入力にPlusへの課金は不要です。これはあつい！ ChatGPTの中で使うなら、コスパも魅力的です。\n\n### 使い方\n\nChatGPTの入力欄のマイクで話す→波形で文字を見る→直して送信。依頼文やアイデアのメモに。名前・数字は確認しましょう。\n\n### スマホではTypelessも愛用中\n\n私は今、Typelessを無料で使える範囲で愛用しています。有料プランはスマホの音声入力中心で契約するには少し高め、と感じますが、精度や性能は私が試した中でもピカイチ。これは個人の使用感です。無料枠は語数制限があり、自分の使用量に合うかで選びましょう。\n\n### Macでほかのアプリに入力する設定\n\nデスクトップ版の「設定」→「音声」→「音声入力」でショートカットを登録。「どこでも音声入力」のセットアップが出たら、案内に沿ってマイク・入力監視・アクセシビリティを許可します。メモなどの入力欄をクリックし、登録キーを押したまま話して、離すと終了。文字を確認しましょう。項目の表示は環境により異なります。",
+    "sources": [
+      {
+        "label": "OpenAI：11月18日のLive Dictation更新",
+        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      },
+      {
+        "label": "OpenAI：音声入力FAQ",
+        "url": "https://help.openai.com/en/articles/12168547-voice-dictation-faq"
+      },
+      {
+        "label": "Spokenly：対応モデルとリアルタイム文字表示",
+        "url": "https://spokenly.app/docs/model-comparison"
+      },
+      {
+        "label": "Typeless：無料・有料プラン",
+        "url": "https://www.typeless.com/pricing"
+      }
+    ]
+  },
+  {
+    "id": "2026-11-23-accounting-plugin-drafts",
+    "date": "2026.11.23",
+    "category": "chatgpt",
+    "product": "ChatGPT",
+    "title": "ChatGPTの会計プラグイン。記録とひな形から下書きを作る",
+    "excerpt": "取引の照合や請求書の入力、月末報告の下書きを支援する会計プラグイン。利用できる条件を先に確認します。",
+    "content": "月末の記録を照合したい。でも、会計の作業をAIへどこまで頼めるのでしょうか。\n\nOpenAIは11月18日、ChatGPTのAccounting（会計）プラグインを案内しました。手元の記録とひな形を使い、取引の照合、請求書に関する入力の下書き、月末報告の準備を支援するものです。会計処理や申告をすべて任せられる、という発表ではありません。\n\n### 使い方\n\n最初に、macOSまたはWindowsのChatGPTパソコン版で、会計プラグインの掲載ページを確認します。次に、画面を見て操作する機能の設定を確認します。自分のプランと組織で利用可能ならインストールできます。Enterpriseでは、メンバーが入れる前に管理者の承認が必要です。\n\n試すなら、使ってよい記録とひな形を指定し、「取引の照合結果を確認用にまとめて」「月末報告の下書きを作って」と頼む方法が考えられます。これは利用例の提案で、今回の実機検証や時短の実績ではありません。\n\n### 注意点\n\n利用できるプランや組織には条件があるため、全員がすぐ使えるとは限りません。金額、取引先、対象期間を元の記録と照合し、会計上の判断は担当者が確認しましょう。顧客情報や機密資料は、組織のルールに沿って扱ってください。",
+    "sources": [
+      {
+        "label": "OpenAI公式",
+        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      }
+    ]
+  },
+  {
     "id": "2026-11-22-space-plus-rollout",
     "date": "2026.11.22",
     "category": "chatgpt",
