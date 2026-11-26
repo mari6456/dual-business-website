@@ -21,6 +21,33 @@ export const AI_JOURNAL_CATEGORIES: Record<AIJournalCategory, string> = {
 // Generated from checked Obsidian notes. Do not edit article data here.
 export const aiJournalData: AIJournalItem[] = [
   {
+    "id": "aismiley-2026-11-25-dictation-criteria",
+    "date": "2026.11.25",
+    "category": "chatgpt",
+    "product": "ChatGPT",
+    "title": "音声入力は何で選ぶ？話しながら文字を見る使い方",
+    "excerpt": "Spokenly・Genspark Speakly・Aqua Voice・Typelessに課金して使い比べ、私が重視するのは五つの基準。特に大事なのが、話している途中から文字が見えることです。ChatGPTの音声入力の更新と、スマホではTypelessを無料枠で使う、今の使い分けを紹介します。",
+    "content": "音声入力を選ぶとき、文字に変わる速さだけで決めていませんか。私はSpokenly、Genspark Speakly、Aqua Voice、Typelessに課金して使い比べてきました。その中で重視しているのが、話している最中から文字を見られることです。これは私の使い方に基づく基準で、すべての人に同じアプリを勧めるランキングではありません。\n\n### 私が重視する五つの基準\n\n①いろいろなアプリで使える、\n②言い間違いや言い直しを整えてくれる、\n③話している最中から文字が見える、\n④スマホで使いやすい、\n⑤コスパがよい。この5つです。\n私が試した範囲では、①②に対応するものは結構あります。一方、③に対応するものは少なめと感じていました。Spokenlyは対応モデルで途中の文字表示ができます。どのモデルでも同じ条件で使える、という意味ではありません。\n\n### ChatGPTでも、話しながら文字を確認\n\nOpenAIは2026年11月18日、Live Dictationを案内しました。話す音声が途中から文字になり、波形を押すと文字の表示・非表示を切り替えられます。Web、デスクトップ、iOS、Androidの全プランへ順次提供される更新です。チャット内の音声入力を使うためにPlusへの課金は必要ありません。ただし、順次提供なので自分の画面で確認しましょう。\n\n使い方は、入力欄のマイクで話す→波形で文字を見る→直して送信、です。例えば、依頼文の下書きや、思いついたアイデアのメモに使う方法が考えられます。これは利用例の提案で、今回の実機テストや時短の実績ではありません。人名、日付、金額は元の情報と照らし、送信する前に確かめてください。仕事の機密や個人情報は、所属先のルールに沿って扱います。\n\n### スマホでは、今もTypelessを使い分ける\n\n私はスマホではTypelessを無料で使える範囲で愛用しています。精度や性能は私が試した中でもピカイチと感じますが、個人の使用感です。有料プランはスマホ中心で契約するには少し高め、と感じています。無料枠には語数制限があるので、自分が使う量に合うかを確認しましょう。\n\n選ぶときは「どのアプリが一番か」だけでなく、どこで入力したいか、途中の文字を見たいか、利用量に費用が合うかを分けると、比べる基準を作れます。まずは機密を含まない短いメモで、送る前に文字を確認するところから試してみてください。",
+    "sources": [
+      {
+        "label": "OpenAI：11月18日のLive Dictation更新",
+        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      },
+      {
+        "label": "OpenAI：音声入力FAQ",
+        "url": "https://help.openai.com/en/articles/12168547-voice-dictation-faq"
+      },
+      {
+        "label": "Spokenly：対応モデルとリアルタイム文字表示",
+        "url": "https://spokenly.app/docs/model-comparison"
+      },
+      {
+        "label": "Typeless：無料・有料プラン",
+        "url": "https://www.typeless.com/pricing"
+      }
+    ]
+  },
+  {
     "id": "2026-11-23-dictation-five-criteria",
     "date": "2026.11.23",
     "category": "chatgpt",
