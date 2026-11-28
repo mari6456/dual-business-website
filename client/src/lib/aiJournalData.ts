@@ -21,6 +21,21 @@ export const AI_JOURNAL_CATEGORIES: Record<AIJournalCategory, string> = {
 // Generated from checked Obsidian notes. Do not edit article data here.
 export const aiJournalData: AIJournalItem[] = [
   {
+    "id": "2026-11-28-uploaded-audio-model-check",
+    "date": "2026.11.28",
+    "category": "chatgpt",
+    "product": "ChatGPT",
+    "title": "録音を添付できても文字起こしできない？ChatGPTのモデルを確認",
+    "excerpt": "録音ファイルの添付と文字起こしの対応は別。通常のChat、モデル、録音の長さを確認します。",
+    "content": "録音を添付したのに、文字起こしを頼むと進まない。そんなときは、ファイルだけでなく、使っている画面とモデルも確認してください。\n\nOpenAIの公式ヘルプでは、録音を添付したり再生したりできても、文字起こしには対応していない場合があると説明しています。現在、添付した録音の文字起こしは、利用条件を満たす有料プランなどで、通常のChatのGPT-6・Instantを使う案内です。GPT-6.2のChat、Work、Codexでは、この録音の文字起こしには対応していません。\n\n### 使い方\n1. 通常のChatで、GPT-6とInstantを選べるか確認します。\n2. 対応する録音ファイルを添付し、「この録音を文字にしてください」と頼みます。\n3. 返ってきた文を録音と照合し、人名・日付・金額などを確認します。\n\nこの方法の録音は1本6分まで。アカウント、地域、アプリの版によって利用できる範囲が異なります。長い録音を必ず処理できるとは限りません。例えば短い作業メモやインタビューの一部分を整理する用途が考えられますが、これは利用例で、実機検証の報告ではありません。\n\n話しながら入力欄へ文字を出す音声入力や、会議をその場で録音する機能とは別の話です。録音を渡す前に、関係者の許可や仕事先のルールも確認しましょう。",
+    "sources": [
+      {
+        "label": "OpenAI公式",
+        "url": "https://help.openai.com/en/articles/8555545-uploading-files-and-audio-to-chatgpt"
+      }
+    ]
+  },
+  {
     "id": "2026-11-28-one-post-one-purpose",
     "date": "2026.11.28",
     "category": "chatgpt",
