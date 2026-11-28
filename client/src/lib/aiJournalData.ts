@@ -21,6 +21,21 @@ export const AI_JOURNAL_CATEGORIES: Record<AIJournalCategory, string> = {
 // Generated from checked Obsidian notes. Do not edit article data here.
 export const aiJournalData: AIJournalItem[] = [
   {
+    "id": "2026-11-28-one-post-one-purpose",
+    "date": "2026.11.28",
+    "category": "chatgpt",
+    "product": "ChatGPT",
+    "title": "AIにSNS文を頼む前に。読んだ人にしてほしいことを一つ決める",
+    "excerpt": "知ってもらう、見返してもらう、詳しく読んでもらう。投稿の目的を先に決めてAIへ伝える練習です。",
+    "content": "SNS用の投稿文をAIに頼んだら、紹介も予約案内も詰まった長い文になった。そんなときは、**読んだ人に何をしてほしいのか、一つ決めて**から頼んでみましょう。\n\n例えば、初めて知る人にお店の特徴を伝える投稿と、検討中の人に予約方法を案内する投稿では、必要な情報が違います。「たくさん反応がほしい」だけでなく、誰に何を届けるかを具体的にします。\n\nOpenAIの公式ガイドも、AIへの依頼は明確にし、必要な背景を伝えること、回答を見て指示を調整することを案内しています。ここでは、その考え方をSNS文に使う練習を提案します。\n\n### 使い方\n1. 読者を決める。「お店をまだ知らない近所の人」など。\n2. 目的を一つ選ぶ。「特徴を知ってもらう」「手順を見返してもらう」など。\n3. 確認済みの材料と一緒にAIへ渡し、出てきた文章を読み直します。\n\n\n公開後も、表示数と記事の閲覧数、予約件数は別々に確認します。予約を数えていなければ、いいねが増えても予約につながったとは言えません。まず次の1本で、読者と目的を一行ずつ書くところから始めてみてください。",
+    "sources": [
+      {
+        "label": "OpenAI公式",
+        "url": "https://help.openai.com/en/articles/10032626-prompt-engineering-best-practices-for-chatgpt"
+      }
+    ]
+  },
+  {
     "id": "aismiley-2026-11-25-dictation-criteria",
     "date": "2026.11.25",
     "category": "chatgpt",
